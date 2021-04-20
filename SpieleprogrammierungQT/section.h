@@ -1,17 +1,15 @@
 #ifndef SECTION_H
 #define SECTION_H
-#include "description.h"
-#include "item.h"
-#include "interaction.h"
-#include "danger.h"
+
 
 class Section
 {
 public:
     Section();
-    description Description;
-    Interaction Interactions[];
-
+    Section* TopSection;
+    Section* BottomSection;
+    Section* LeftSection;
+    Section* RightSection;
 };
 
 #endif // SECTION_H
