@@ -10,6 +10,7 @@ CONFIG += c++11
 
 SOURCES += \
     character.cpp \
+    comunicazionhendler.cpp \
     danger.cpp \
     description.cpp \
     gameboard.cpp \
@@ -21,6 +22,7 @@ SOURCES += \
 
 HEADERS += \
     character.h \
+    comunicazionhendler.h \
     danger.h \
     description.h \
     gameboard.h \
