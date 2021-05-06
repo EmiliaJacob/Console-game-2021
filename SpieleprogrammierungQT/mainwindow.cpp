@@ -2,11 +2,13 @@
 #include "ui_mainwindow.h"
 #include <QMessageBox>
 #include <comunicazionhendler.h>
+#include <QTextStream>
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    //comunicazionhendler = new comunicazionhendler(this);
 }
 
 MainWindow::~MainWindow()
@@ -24,7 +26,10 @@ void MainWindow::on_Send_clicked()
 void MainWindow::on_lineEdit_returnPressed()
 {
     QString comand = ui ->lineEdit->text();
-    QString anser = comunicazionhendler.playersays(comand);
-    ui ->textBrowser->
+    QString anser = comunicazionhendler->playersays(comand);
+
+    QTextStream in(&anser);
+    ui->textBrowser->serText(in.readAll());
+    ui->textBrowser->append(in.readAll());
     QMessageBox::warning(this,"Peng","Hades ist ein gutes spiel");
 }

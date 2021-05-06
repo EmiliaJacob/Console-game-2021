@@ -11,10 +11,10 @@ comunicazionhendler::comunicazionhendler(){
 //{
 
 //}
-    playersays(string comand){
-        string decodetcomand[] = interpreter.interpret(comand);
+   // playersays(string comand){
+     //   string decodetcomand[] = interpreter.interpret(comand);
         //TODO lock for decodetcomand in DB
         //put in imposebil ansers else
-        return QString anser = comand + DBanser;
-    }
+       // return QString anser = comand + DBanser;
+    //}
 }
