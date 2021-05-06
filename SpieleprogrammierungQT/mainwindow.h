@@ -19,7 +19,8 @@ private slots:
     void on_Send_clicked();
 
     void on_lineEdit_returnPressed();
-
+    void dotext();
+    void on_lineEdit_upPressed();
 private:
     Ui::MainWindow *ui;
     comunicazionhendler *comunicazionhendler;

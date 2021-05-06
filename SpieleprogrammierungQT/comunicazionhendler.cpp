@@ -1,20 +1,20 @@
 #include "comunicazionhendler.h"
-
+#include <QTextStream>
 comunicazionhendler::comunicazionhendler(){
-
-//Comunicazionhendler::Comunicazionhendler()
-//{
-
-//}
-
-//Comunicazionhendler::~Comunicazionhendler()
-//{
-
-//}
-   // playersays(string comand){
-     //   string decodetcomand[] = interpreter.interpret(comand);
-        //TODO lock for decodetcomand in DB
-        //put in imposebil ansers else
-       // return QString anser = comand + DBanser;
-    //}
 }
+
+
+comunicazionhendler::~comunicazionhendler()
+{
+
+}
+QString comunicazionhendler::playersays(QString command){
+//        QString decodetcomand[] = interpreter->interpret(command);
+//        TODO lock for decodetcomand in DB
+
+         QString answer =  command
+         /*vor line bracke*/+ "                                                                                             "
+                            + "text";//command + DBanser;
+         return answer;
+    }
+
