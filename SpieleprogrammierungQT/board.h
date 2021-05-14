@@ -1,14 +1,14 @@
-#ifndef GAMEBOARD_H
-#define GAMEBOARD_H
+#ifndef BOARD_H
+#define BOARD_H
 #include "section.h"
 
-class GameBoard
+class Board
 {
 public:
-    GameBoard();
+    Board();
     void SetEntrySection(Section entrySection);
 private:
     Section* _entrySection;
 };
 
-#endif // GAMEBOARD_H
+#endif // BOARD_H
