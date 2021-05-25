@@ -10,12 +10,14 @@ CONFIG += c++11
 
 SOURCES += \
     field.cpp \
+    gamemanager.cpp \
     main.cpp \
     mainwindow.cpp \
     player.cpp
 
 HEADERS += \
     field.h \
+    gamemanager.h \
     mainwindow.h \
     player.h
 

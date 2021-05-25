@@ -1,36 +1,38 @@
 #include "player.h"
+#include <QtDebug>
+//#include <QtWarning>
 
 Player::Player()
 {
 
 }
 
-void Player::Move(std::string direction)
+void Player::Move(QString direction)
 {
     if(direction == "forward"){
         if(Player::CurrentPosition->Forward != nullptr){
             Player::CurrentPosition = Player::CurrentPosition->Forward;
-            std::cout << "Moving forward" << std::endl;
+            qDebug() << "Moving Forward";
         }
     }
     else if(direction == "backward"){
         if(Player::CurrentPosition->Backward != nullptr){
             Player::CurrentPosition = Player::CurrentPosition->Backward;
-            std::cout << "Moving backward" << std::endl;
+            qDebug() << "Moving backward";
         }
     }
     else if(direction == "left"){
         if(Player::CurrentPosition->Left != nullptr){
-            std::cout << "Moving left" << std::endl;
+            qDebug() << "Moving left";
             Player::CurrentPosition = Player::CurrentPosition->Left;
         }
         else{
-            std::cout << "No Field available" << std::endl;
+            qWarning() << "No Field available";
         }
     }
     else if(direction == "right"){
         if(Player::CurrentPosition->Right != nullptr){
-            std::cout << "Moving right" << std::endl;
+            qDebug() << "Moving right";
             Player::CurrentPosition = Player::CurrentPosition->Right;
         }
     }

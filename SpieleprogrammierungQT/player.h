@@ -1,7 +1,7 @@
 #ifndef PLAYER_H
 #define PLAYER_H
-#include <string>
 #include "field.h"
+#include <QString>
 #include <iostream>
 
 class Player
@@ -12,7 +12,7 @@ public:
     Field* CurrentPosition;
 
     Player();
-    void Move(std::string direction);
+    void Move(QString direction);
 };
 
 #endif // PLAYER_H

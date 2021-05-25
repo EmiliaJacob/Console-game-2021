@@ -2,9 +2,14 @@
 #include "field.h"
 #include "player.h"
 #include <QApplication>
+#include <QString>
+#include "gamemanager.h"
 
 int main(int argc, char *argv[])
 {
+    GameManager gameManager;
+    gameManager.LoadGame();
+
     Field g,h,j,k;
     g.Forward = &h;
     h.Backward = &g;
