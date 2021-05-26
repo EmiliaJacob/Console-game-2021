@@ -11,10 +11,9 @@ private:
     QList<Field> mFields;
 public:
     GameBoard();
-    bool CheckForRelativeField(QString direction);
-    Field GetRelativeField(QString direction);
-    void Read(QJsonObject &json);
-    void Write(QJsonObject &json);
+    Field* GetField(QString fieldId);
+    void Read(const QJsonObject &json);
+    void Write(const QJsonObject &json);
 };
 
 #endif // GAMEBOARD_H

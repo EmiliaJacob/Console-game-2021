@@ -7,8 +7,8 @@
 
 int main(int argc, char *argv[])
 {
-    Game gameManager;
-    gameManager.LoadGame();
+    Game game;
+    game.LoadGame();
 
     Field g,h,j,k;
     g.Forward = &h;

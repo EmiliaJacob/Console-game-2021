@@ -1,3 +1,5 @@
+#include "game.h"
+#include "gameboard.h"
 #include "player.h"
 #include "testhelper.h"
 #include <QtDebug>
@@ -27,36 +29,18 @@ void Player::Read(const QJsonObject &json)
     }
     TestHelper testHelper;
     testHelper.PrintQList(Player::mInventory.CollectedItems);
-    //TODO: Current Field einlesen und setzen
+
+    CurrentField = Game::GameBoard.GetField(json["currentFieldId"].toString());
+    qDebug() << "Created player and put them onto Field: " << CurrentField->Id;
 }
 
 void Player::Move(QString direction)
 {
     if(direction == "forward"){
-        if(Player::CurrentField->Forward != nullptr){
-            Player::CurrentField = Player::CurrentField->Forward;
-            qDebug() << "Moving Forward";
-        }
-    }
-    else if(direction == "backward"){
-        if(Player::CurrentField->Backward != nullptr){
-            Player::CurrentField = Player::CurrentField->Backward;
-            qDebug() << "Moving backward";
-        }
-    }
-    else if(direction == "left"){
-        if(Player::CurrentField->Left != nullptr){
-            qDebug() << "Moving left";
-            Player::CurrentField = Player::CurrentField->Left;
-        }
-        else{
-            qWarning() << "No Field available";
-        }
-    }
-    else if(direction == "right"){
-        if(Player::CurrentField->Right != nullptr){
-            qDebug() << "Moving right";
-            Player::CurrentField = Player::CurrentField->Right;
+        if(QString::compare(CurrentField->FieldForward, "x") != 0)
+        {
+            CurrentField = Game::GameBoard.GetField(CurrentField->FieldForward);
+            qDebug() << "Moved Forward to field " << CurrentField->Id;
         }
     }
 }

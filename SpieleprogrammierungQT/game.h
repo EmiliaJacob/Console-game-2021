@@ -1,6 +1,7 @@
 #ifndef GAME_H
 #define GAME_H
 
+#include "gameboard.h"
 #include "player.h"
 
 
@@ -15,6 +16,7 @@ public:
         Json, Binary
     };
     Player Player;
+    static GameBoard GameBoard;
     Game();
     void NewGame();
     void SaveGame();

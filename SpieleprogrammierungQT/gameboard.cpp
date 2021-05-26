@@ -8,7 +8,7 @@ GameBoard::GameBoard()
 
 }
 
-void GameBoard::Read(QJsonObject &json)
+void GameBoard::Read(const QJsonObject &json)
 {
     QJsonArray fieldArray = json["fields"].toArray();
     for(int i=0; i<fieldArray.size(); i++)
@@ -19,4 +19,15 @@ void GameBoard::Read(QJsonObject &json)
         mFields.append(field);
     }
     TestHelper testHelper;
+}
+
+Field* GameBoard::GetField(QString fieldId)
+{
+    for(int i=0; i<mFields.size(); i++)
+    {
+        if(QString::compare(mFields[i].Id, fieldId, Qt::CaseSensitive) == 0)
+        {
+            return &mFields[i];
+        }
+    }
 }
