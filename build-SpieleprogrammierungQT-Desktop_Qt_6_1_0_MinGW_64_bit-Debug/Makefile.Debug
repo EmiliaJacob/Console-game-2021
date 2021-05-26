@@ -51,25 +51,41 @@ OBJECTS_DIR   = debug
 ####### Files
 
 SOURCES       = ..\SpieleprogrammierungQT\field.cpp \
-		..\SpieleprogrammierungQT\gamemanager.cpp \
+		..\SpieleprogrammierungQT\game.cpp \
+		..\SpieleprogrammierungQT\gameboard.cpp \
+		..\SpieleprogrammierungQT\inventory.cpp \
+		..\SpieleprogrammierungQT\item.cpp \
 		..\SpieleprogrammierungQT\main.cpp \
 		..\SpieleprogrammierungQT\mainwindow.cpp \
-		..\SpieleprogrammierungQT\player.cpp debug\moc_mainwindow.cpp
+		..\SpieleprogrammierungQT\player.cpp \
+		..\SpieleprogrammierungQT\testhelper.cpp debug\moc_mainwindow.cpp
 OBJECTS       = debug/field.o \
-		debug/gamemanager.o \
+		debug/game.o \
+		debug/gameboard.o \
+		debug/inventory.o \
+		debug/item.o \
 		debug/main.o \
 		debug/mainwindow.o \
 		debug/player.o \
+		debug/testhelper.o \
 		debug/moc_mainwindow.o
 
 DIST          =  ..\SpieleprogrammierungQT\field.h \
-		..\SpieleprogrammierungQT\gamemanager.h \
+		..\SpieleprogrammierungQT\game.h \
+		..\SpieleprogrammierungQT\gameboard.h \
+		..\SpieleprogrammierungQT\inventory.h \
+		..\SpieleprogrammierungQT\item.h \
 		..\SpieleprogrammierungQT\mainwindow.h \
-		..\SpieleprogrammierungQT\player.h ..\SpieleprogrammierungQT\field.cpp \
-		..\SpieleprogrammierungQT\gamemanager.cpp \
+		..\SpieleprogrammierungQT\player.h \
+		..\SpieleprogrammierungQT\testhelper.h ..\SpieleprogrammierungQT\field.cpp \
+		..\SpieleprogrammierungQT\game.cpp \
+		..\SpieleprogrammierungQT\gameboard.cpp \
+		..\SpieleprogrammierungQT\inventory.cpp \
+		..\SpieleprogrammierungQT\item.cpp \
 		..\SpieleprogrammierungQT\main.cpp \
 		..\SpieleprogrammierungQT\mainwindow.cpp \
-		..\SpieleprogrammierungQT\player.cpp
+		..\SpieleprogrammierungQT\player.cpp \
+		..\SpieleprogrammierungQT\testhelper.cpp
 QMAKE_TARGET  = SpieleprogrammierungQT
 DESTDIR        = debug\ #avoid trailing-slash linebreak
 TARGET         = SpieleprogrammierungQT.exe
@@ -81,7 +97,7 @@ first: all
 all: Makefile.Debug  debug/SpieleprogrammierungQT.exe
 
 debug/SpieleprogrammierungQT.exe: C:/Qt/6.1.0/mingw81_64/lib/libQt6Widgets.a C:/Qt/6.1.0/mingw81_64/lib/libQt6Gui.a C:/Qt/6.1.0/mingw81_64/lib/libQt6Core.a C:/Qt/6.1.0/mingw81_64/lib/libQt6EntryPoint.a ui_mainwindow.h $(OBJECTS) 
-	$(LINKER) $(LFLAGS) -o $(DESTDIR_TARGET) $(OBJECTS)  $(LIBS)
+	$(LINKER) $(LFLAGS) -o $(DESTDIR_TARGET) @object_script.SpieleprogrammierungQT.Debug  $(LIBS)
 
 qmake: FORCE
 	@$(QMAKE) -o Makefile.Debug ..\SpieleprogrammierungQT\SpieleprogrammierungQT.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
@@ -89,10 +105,10 @@ qmake: FORCE
 qmake_all: FORCE
 
 dist:
-	$(ZIP) SpieleprogrammierungQT.zip $(SOURCES) $(DIST) ..\SpieleprogrammierungQT\SpieleprogrammierungQT.pro C:\Qt\6.1.0\mingw81_64\mkspecs\features\spec_pre.prf C:\Qt\6.1.0\mingw81_64\mkspecs\features\device_config.prf C:\Qt\6.1.0\mingw81_64\mkspecs\common\sanitize.conf C:\Qt\6.1.0\mingw81_64\mkspecs\common\gcc-base.conf C:\Qt\6.1.0\mingw81_64\mkspecs\common\g++-base.conf C:\Qt\6.1.0\mingw81_64\mkspecs\features\win32\windows_vulkan_sdk.prf C:\Qt\6.1.0\mingw81_64\mkspecs\common\windows-vulkan.conf C:\Qt\6.1.0\mingw81_64\mkspecs\common\g++-win32.conf C:\Qt\6.1.0\mingw81_64\mkspecs\common\windows-desktop.conf C:\Qt\6.1.0\mingw81_64\mkspecs\qconfig.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_ext_freetype.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_ext_libpng.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_concurrent.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_concurrent_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_core.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_core_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_dbus.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_dbus_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_designer.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_designer_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_designercomponents_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_entrypoint_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_fb_support_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_gui.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_gui_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_help.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_help_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_labsanimation.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_labsanimation_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_labsfolderlistmodel.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_labsfolderlistmodel_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_labsqmlmodels.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_labsqmlmodels_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_labssettings.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_labssettings_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_labssharedimage.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_labssharedimage_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_labswavefrontmesh.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_labswavefrontmesh_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_linguist.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_linguist_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_network.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_network_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_opengl.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_opengl_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_openglwidgets.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_openglwidgets_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_packetprotocol_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_printsupport.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_printsupport_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_qml.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_qml_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_qmlcompiler_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_qmldebug_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_qmldevtools_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_qmldom_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_qmllocalstorage.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_qmllocalstorage_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_qmlmodels.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_qmlmodels_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_qmltest.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_qmltest_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_qmlworkerscript.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_qmlworkerscript_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_quick.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_quick_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_quickcontrols2.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_quickcontrols2impl.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_quickcontrols2impl_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_quicklayouts.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_quicklayouts_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_quickparticles_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_quickshapes_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_quicktemplates2.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_quickwidgets.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_quickwidgets_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_sql.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_sql_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_svg.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_svg_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_svgwidgets.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_svgwidgets_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_testlib.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_testlib_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_tools_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_uiplugin.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_uitools.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_uitools_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_widgets.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_widgets_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_xml.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_xml_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_zlib_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\features\qt_functions.prf C:\Qt\6.1.0\mingw81_64\mkspecs\features\qt_config.prf C:\Qt\6.1.0\mingw81_64\mkspecs\win32-g++\qmake.conf C:\Qt\6.1.0\mingw81_64\mkspecs\features\spec_post.prf .qmake.stash C:\Qt\6.1.0\mingw81_64\mkspecs\features\exclusive_builds.prf C:\Qt\6.1.0\mingw81_64\mkspecs\features\toolchain.prf C:\Qt\6.1.0\mingw81_64\mkspecs\features\default_pre.prf C:\Qt\6.1.0\mingw81_64\mkspecs\features\win32\default_pre.prf C:\Qt\6.1.0\mingw81_64\mkspecs\features\resolve_config.prf C:\Qt\6.1.0\mingw81_64\mkspecs\features\exclusive_builds_post.prf C:\Qt\6.1.0\mingw81_64\mkspecs\features\default_post.prf C:\Qt\6.1.0\mingw81_64\mkspecs\features\build_pass.prf C:\Qt\6.1.0\mingw81_64\mkspecs\features\qml_debug.prf C:\Qt\6.1.0\mingw81_64\mkspecs\features\entrypoint.prf C:\Qt\6.1.0\mingw81_64\mkspecs\features\precompile_header.prf C:\Qt\6.1.0\mingw81_64\mkspecs\features\warn_on.prf C:\Qt\6.1.0\mingw81_64\mkspecs\features\qt.prf C:\Qt\6.1.0\mingw81_64\mkspecs\features\resources_functions.prf C:\Qt\6.1.0\mingw81_64\mkspecs\features\resources.prf C:\Qt\6.1.0\mingw81_64\mkspecs\features\moc.prf C:\Qt\6.1.0\mingw81_64\mkspecs\features\win32\opengl.prf C:\Qt\6.1.0\mingw81_64\mkspecs\features\uic.prf C:\Qt\6.1.0\mingw81_64\mkspecs\features\qmake_use.prf C:\Qt\6.1.0\mingw81_64\mkspecs\features\file_copies.prf C:\Qt\6.1.0\mingw81_64\mkspecs\features\win32\windows.prf C:\Qt\6.1.0\mingw81_64\mkspecs\features\testcase_targets.prf C:\Qt\6.1.0\mingw81_64\mkspecs\features\exceptions.prf C:\Qt\6.1.0\mingw81_64\mkspecs\features\yacc.prf C:\Qt\6.1.0\mingw81_64\mkspecs\features\lex.prf ..\SpieleprogrammierungQT\SpieleprogrammierungQT.pro C:\Qt\6.1.0\mingw81_64\lib\Qt6Widgets.prl C:\Qt\6.1.0\mingw81_64\lib\Qt6Gui.prl C:\Qt\6.1.0\mingw81_64\lib\Qt6Core.prl C:\Qt\6.1.0\mingw81_64\lib\Qt6EntryPoint.prl    C:\Qt\6.1.0\mingw81_64\mkspecs\features\data\dummy.cpp ..\SpieleprogrammierungQT\field.h ..\SpieleprogrammierungQT\gamemanager.h ..\SpieleprogrammierungQT\mainwindow.h ..\SpieleprogrammierungQT\player.h  ..\SpieleprogrammierungQT\field.cpp ..\SpieleprogrammierungQT\gamemanager.cpp ..\SpieleprogrammierungQT\main.cpp ..\SpieleprogrammierungQT\mainwindow.cpp ..\SpieleprogrammierungQT\player.cpp ..\SpieleprogrammierungQT\mainwindow.ui    
+	$(ZIP) SpieleprogrammierungQT.zip $(SOURCES) $(DIST) ..\SpieleprogrammierungQT\SpieleprogrammierungQT.pro C:\Qt\6.1.0\mingw81_64\mkspecs\features\spec_pre.prf C:\Qt\6.1.0\mingw81_64\mkspecs\features\device_config.prf C:\Qt\6.1.0\mingw81_64\mkspecs\common\sanitize.conf C:\Qt\6.1.0\mingw81_64\mkspecs\common\gcc-base.conf C:\Qt\6.1.0\mingw81_64\mkspecs\common\g++-base.conf C:\Qt\6.1.0\mingw81_64\mkspecs\features\win32\windows_vulkan_sdk.prf C:\Qt\6.1.0\mingw81_64\mkspecs\common\windows-vulkan.conf C:\Qt\6.1.0\mingw81_64\mkspecs\common\g++-win32.conf C:\Qt\6.1.0\mingw81_64\mkspecs\common\windows-desktop.conf C:\Qt\6.1.0\mingw81_64\mkspecs\qconfig.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_ext_freetype.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_ext_libpng.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_concurrent.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_concurrent_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_core.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_core_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_dbus.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_dbus_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_designer.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_designer_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_designercomponents_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_entrypoint_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_fb_support_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_gui.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_gui_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_help.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_help_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_labsanimation.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_labsanimation_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_labsfolderlistmodel.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_labsfolderlistmodel_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_labsqmlmodels.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_labsqmlmodels_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_labssettings.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_labssettings_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_labssharedimage.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_labssharedimage_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_labswavefrontmesh.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_labswavefrontmesh_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_linguist.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_linguist_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_network.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_network_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_opengl.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_opengl_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_openglwidgets.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_openglwidgets_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_packetprotocol_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_printsupport.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_printsupport_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_qml.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_qml_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_qmlcompiler_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_qmldebug_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_qmldevtools_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_qmldom_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_qmllocalstorage.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_qmllocalstorage_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_qmlmodels.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_qmlmodels_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_qmltest.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_qmltest_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_qmlworkerscript.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_qmlworkerscript_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_quick.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_quick_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_quickcontrols2.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_quickcontrols2impl.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_quickcontrols2impl_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_quicklayouts.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_quicklayouts_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_quickparticles_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_quickshapes_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_quicktemplates2.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_quickwidgets.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_quickwidgets_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_sql.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_sql_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_svg.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_svg_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_svgwidgets.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_svgwidgets_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_testlib.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_testlib_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_tools_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_uiplugin.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_uitools.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_uitools_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_widgets.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_widgets_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_xml.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_xml_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\modules\qt_lib_zlib_private.pri C:\Qt\6.1.0\mingw81_64\mkspecs\features\qt_functions.prf C:\Qt\6.1.0\mingw81_64\mkspecs\features\qt_config.prf C:\Qt\6.1.0\mingw81_64\mkspecs\win32-g++\qmake.conf C:\Qt\6.1.0\mingw81_64\mkspecs\features\spec_post.prf .qmake.stash C:\Qt\6.1.0\mingw81_64\mkspecs\features\exclusive_builds.prf C:\Qt\6.1.0\mingw81_64\mkspecs\features\toolchain.prf C:\Qt\6.1.0\mingw81_64\mkspecs\features\default_pre.prf C:\Qt\6.1.0\mingw81_64\mkspecs\features\win32\default_pre.prf C:\Qt\6.1.0\mingw81_64\mkspecs\features\resolve_config.prf C:\Qt\6.1.0\mingw81_64\mkspecs\features\exclusive_builds_post.prf C:\Qt\6.1.0\mingw81_64\mkspecs\features\default_post.prf C:\Qt\6.1.0\mingw81_64\mkspecs\features\build_pass.prf C:\Qt\6.1.0\mingw81_64\mkspecs\features\qml_debug.prf C:\Qt\6.1.0\mingw81_64\mkspecs\features\entrypoint.prf C:\Qt\6.1.0\mingw81_64\mkspecs\features\precompile_header.prf C:\Qt\6.1.0\mingw81_64\mkspecs\features\warn_on.prf C:\Qt\6.1.0\mingw81_64\mkspecs\features\qt.prf C:\Qt\6.1.0\mingw81_64\mkspecs\features\resources_functions.prf C:\Qt\6.1.0\mingw81_64\mkspecs\features\resources.prf C:\Qt\6.1.0\mingw81_64\mkspecs\features\moc.prf C:\Qt\6.1.0\mingw81_64\mkspecs\features\win32\opengl.prf C:\Qt\6.1.0\mingw81_64\mkspecs\features\uic.prf C:\Qt\6.1.0\mingw81_64\mkspecs\features\qmake_use.prf C:\Qt\6.1.0\mingw81_64\mkspecs\features\file_copies.prf C:\Qt\6.1.0\mingw81_64\mkspecs\features\win32\windows.prf C:\Qt\6.1.0\mingw81_64\mkspecs\features\testcase_targets.prf C:\Qt\6.1.0\mingw81_64\mkspecs\features\exceptions.prf C:\Qt\6.1.0\mingw81_64\mkspecs\features\yacc.prf C:\Qt\6.1.0\mingw81_64\mkspecs\features\lex.prf ..\SpieleprogrammierungQT\SpieleprogrammierungQT.pro C:\Qt\6.1.0\mingw81_64\lib\Qt6Widgets.prl C:\Qt\6.1.0\mingw81_64\lib\Qt6Gui.prl C:\Qt\6.1.0\mingw81_64\lib\Qt6Core.prl C:\Qt\6.1.0\mingw81_64\lib\Qt6EntryPoint.prl    C:\Qt\6.1.0\mingw81_64\mkspecs\features\data\dummy.cpp ..\SpieleprogrammierungQT\field.h ..\SpieleprogrammierungQT\game.h ..\SpieleprogrammierungQT\gameboard.h ..\SpieleprogrammierungQT\inventory.h ..\SpieleprogrammierungQT\item.h ..\SpieleprogrammierungQT\mainwindow.h ..\SpieleprogrammierungQT\player.h ..\SpieleprogrammierungQT\testhelper.h  ..\SpieleprogrammierungQT\field.cpp ..\SpieleprogrammierungQT\game.cpp ..\SpieleprogrammierungQT\gameboard.cpp ..\SpieleprogrammierungQT\inventory.cpp ..\SpieleprogrammierungQT\item.cpp ..\SpieleprogrammierungQT\main.cpp ..\SpieleprogrammierungQT\mainwindow.cpp ..\SpieleprogrammierungQT\player.cpp ..\SpieleprogrammierungQT\testhelper.cpp ..\SpieleprogrammierungQT\mainwindow.ui    
 
 clean: compiler_clean 
-	-$(DEL_FILE) debug\field.o debug\gamemanager.o debug\main.o debug\mainwindow.o debug\player.o debug\moc_mainwindow.o
+	-$(DEL_FILE) debug\field.o debug\game.o debug\gameboard.o debug\inventory.o debug\item.o debug\main.o debug\mainwindow.o debug\player.o debug\testhelper.o debug\moc_mainwindow.o
 
 distclean: clean 
 	-$(DEL_FILE) .qmake.stash
@@ -277,13 +293,11 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_ui
 
 ####### Compile
 
-debug/field.o: ../SpieleprogrammierungQT/field.cpp ../SpieleprogrammierungQT/field.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\field.o ..\SpieleprogrammierungQT\field.cpp
-
-debug/gamemanager.o: ../SpieleprogrammierungQT/gamemanager.cpp ../SpieleprogrammierungQT/gamemanager.h \
-		C:/Qt/6.1.0/mingw81_64/include/QtCore/QString \
-		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstring.h \
-		C:/Qt/6.1.0/mingw81_64/include/QtCore/qchar.h \
+debug/field.o: ../SpieleprogrammierungQT/field.cpp ../SpieleprogrammierungQT/field.h \
+		../SpieleprogrammierungQT/item.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/QJsonObject \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qjsonobject.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qjsonvalue.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qglobal.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qconfig-bootstrapped.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qconfig.h \
@@ -305,6 +319,8 @@ debug/gamemanager.o: ../SpieleprogrammierungQT/gamemanager.cpp ../Spieleprogramm
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qmutex.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qnumeric.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qversiontagging.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstring.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qchar.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstringview.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qbytearray.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qrefcount.h \
@@ -323,48 +339,444 @@ debug/gamemanager.o: ../SpieleprogrammierungQT/gamemanager.cpp ../Spieleprogramm
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qutf8stringview.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstringtokenizer.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstringbuilder.h \
-		C:/Qt/6.1.0/mingw81_64/include/QtCore/QFile \
-		C:/Qt/6.1.0/mingw81_64/include/QtCore/qfile.h \
-		C:/Qt/6.1.0/mingw81_64/include/QtCore/qfiledevice.h \
-		C:/Qt/6.1.0/mingw81_64/include/QtCore/qiodevice.h \
-		C:/Qt/6.1.0/mingw81_64/include/QtCore/qiodevicebase.h \
-		C:/Qt/6.1.0/mingw81_64/include/QtCore/qobject.h \
-		C:/Qt/6.1.0/mingw81_64/include/QtCore/qobjectdefs.h \
-		C:/Qt/6.1.0/mingw81_64/include/QtCore/qobjectdefs_impl.h \
-		C:/Qt/6.1.0/mingw81_64/include/QtCore/qlist.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qshareddata.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qhashfunctions.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcborvalue.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qdatetime.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcalendar.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qlocale.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qvariant.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qlist.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qiterator.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qbytearraylist.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstringlist.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qalgorithms.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstringmatcher.h \
-		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcoreevent.h \
-		C:/Qt/6.1.0/mingw81_64/include/QtCore/qscopedpointer.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qmetatype.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcompare.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qvarlengtharray.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qdatastream.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qscopedpointer.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qiodevicebase.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qiterable.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qmetacontainer.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcontainerinfo.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qtaggedpointer.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qmath.h \
-		C:/Qt/6.1.0/mingw81_64/include/QtCore/qobject_impl.h \
-		C:/Qt/6.1.0/mingw81_64/include/QtCore/qproperty.h \
-		C:/Qt/6.1.0/mingw81_64/include/QtCore/qshareddata.h \
-		C:/Qt/6.1.0/mingw81_64/include/QtCore/qpropertyprivate.h \
-		C:/Qt/6.1.0/mingw81_64/include/QtCore/QtDebug \
-		C:/Qt/6.1.0/mingw81_64/include/QtCore/qdebug.h \
-		C:/Qt/6.1.0/mingw81_64/include/QtCore/qhash.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qobjectdefs.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qobjectdefs_impl.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qmap.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qshareddata_impl.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qhash.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qobject.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcoreevent.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qobject_impl.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qproperty.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qpropertyprivate.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qdebug.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qtextstream.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstringconverter.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qset.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcontiguouscache.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qsharedpointer.h \
-		C:/Qt/6.1.0/mingw81_64/include/QtCore/qsharedpointer_impl.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\gamemanager.o ..\SpieleprogrammierungQT\gamemanager.cpp
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qsharedpointer_impl.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcborcommon.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qregularexpression.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qurl.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/quuid.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/QString
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\field.o ..\SpieleprogrammierungQT\field.cpp
+
+debug/game.o: ../SpieleprogrammierungQT/game.cpp ../SpieleprogrammierungQT/game.h \
+		../SpieleprogrammierungQT/player.h \
+		../SpieleprogrammierungQT/field.h \
+		../SpieleprogrammierungQT/item.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/QJsonObject \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qjsonobject.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qjsonvalue.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qglobal.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qconfig-bootstrapped.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qconfig.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qtcore-config.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qsystemdetection.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qprocessordetection.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcompilerdetection.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qtypeinfo.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcontainerfwd.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qsysinfo.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qlogging.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qflags.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qatomic.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qbasicatomic.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qatomic_bootstrap.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qgenericatomic.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qatomic_cxx11.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qglobalstatic.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qmutex.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qnumeric.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qversiontagging.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstring.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qchar.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstringview.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qbytearray.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qrefcount.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qnamespace.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qtmetamacros.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qarraydata.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qpair.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qarraydatapointer.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qarraydataops.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcontainertools_impl.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qbytearrayalgorithms.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qbytearrayview.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstringliteral.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstringalgorithms.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qanystringview.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qutf8stringview.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstringtokenizer.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstringbuilder.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qshareddata.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qhashfunctions.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcborvalue.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qdatetime.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcalendar.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qlocale.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qvariant.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qlist.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qiterator.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qbytearraylist.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstringlist.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qalgorithms.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstringmatcher.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qmetatype.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcompare.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qvarlengtharray.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qdatastream.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qscopedpointer.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qiodevicebase.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qiterable.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qmetacontainer.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcontainerinfo.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qtaggedpointer.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qmath.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qobjectdefs.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qobjectdefs_impl.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qmap.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qshareddata_impl.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qhash.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qobject.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcoreevent.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qobject_impl.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qproperty.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qpropertyprivate.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qdebug.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qtextstream.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstringconverter.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qset.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcontiguouscache.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qsharedpointer.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qsharedpointer_impl.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcborcommon.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qregularexpression.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qurl.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/quuid.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/QString \
+		../SpieleprogrammierungQT/inventory.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/QJsonArray \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qjsonarray.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/QFile \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qfile.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qfiledevice.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qiodevice.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/QJsonDocument \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qjsondocument.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\game.o ..\SpieleprogrammierungQT\game.cpp
+
+debug/gameboard.o: ../SpieleprogrammierungQT/gameboard.cpp ../SpieleprogrammierungQT/gameboard.h \
+		../SpieleprogrammierungQT/field.h \
+		../SpieleprogrammierungQT/item.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/QJsonObject \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qjsonobject.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qjsonvalue.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qglobal.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qconfig-bootstrapped.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qconfig.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qtcore-config.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qsystemdetection.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qprocessordetection.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcompilerdetection.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qtypeinfo.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcontainerfwd.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qsysinfo.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qlogging.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qflags.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qatomic.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qbasicatomic.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qatomic_bootstrap.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qgenericatomic.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qatomic_cxx11.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qglobalstatic.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qmutex.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qnumeric.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qversiontagging.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstring.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qchar.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstringview.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qbytearray.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qrefcount.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qnamespace.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qtmetamacros.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qarraydata.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qpair.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qarraydatapointer.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qarraydataops.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcontainertools_impl.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qbytearrayalgorithms.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qbytearrayview.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstringliteral.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstringalgorithms.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qanystringview.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qutf8stringview.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstringtokenizer.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstringbuilder.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qshareddata.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qhashfunctions.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcborvalue.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qdatetime.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcalendar.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qlocale.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qvariant.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qlist.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qiterator.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qbytearraylist.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstringlist.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qalgorithms.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstringmatcher.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qmetatype.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcompare.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qvarlengtharray.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qdatastream.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qscopedpointer.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qiodevicebase.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qiterable.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qmetacontainer.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcontainerinfo.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qtaggedpointer.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qmath.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qobjectdefs.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qobjectdefs_impl.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qmap.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qshareddata_impl.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qhash.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qobject.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcoreevent.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qobject_impl.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qproperty.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qpropertyprivate.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qdebug.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qtextstream.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstringconverter.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qset.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcontiguouscache.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qsharedpointer.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qsharedpointer_impl.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcborcommon.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qregularexpression.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qurl.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/quuid.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/QString \
+		../SpieleprogrammierungQT/testhelper.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/QList \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/QJsonArray \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qjsonarray.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\gameboard.o ..\SpieleprogrammierungQT\gameboard.cpp
+
+debug/inventory.o: ../SpieleprogrammierungQT/inventory.cpp ../SpieleprogrammierungQT/inventory.h \
+		../SpieleprogrammierungQT/item.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/QJsonObject \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qjsonobject.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qjsonvalue.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qglobal.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qconfig-bootstrapped.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qconfig.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qtcore-config.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qsystemdetection.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qprocessordetection.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcompilerdetection.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qtypeinfo.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcontainerfwd.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qsysinfo.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qlogging.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qflags.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qatomic.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qbasicatomic.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qatomic_bootstrap.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qgenericatomic.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qatomic_cxx11.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qglobalstatic.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qmutex.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qnumeric.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qversiontagging.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstring.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qchar.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstringview.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qbytearray.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qrefcount.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qnamespace.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qtmetamacros.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qarraydata.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qpair.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qarraydatapointer.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qarraydataops.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcontainertools_impl.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qbytearrayalgorithms.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qbytearrayview.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstringliteral.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstringalgorithms.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qanystringview.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qutf8stringview.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstringtokenizer.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstringbuilder.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qshareddata.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qhashfunctions.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcborvalue.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qdatetime.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcalendar.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qlocale.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qvariant.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qlist.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qiterator.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qbytearraylist.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstringlist.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qalgorithms.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstringmatcher.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qmetatype.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcompare.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qvarlengtharray.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qdatastream.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qscopedpointer.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qiodevicebase.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qiterable.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qmetacontainer.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcontainerinfo.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qtaggedpointer.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qmath.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qobjectdefs.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qobjectdefs_impl.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qmap.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qshareddata_impl.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qhash.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qobject.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcoreevent.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qobject_impl.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qproperty.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qpropertyprivate.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qdebug.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qtextstream.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstringconverter.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qset.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcontiguouscache.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qsharedpointer.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qsharedpointer_impl.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcborcommon.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qregularexpression.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qurl.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/quuid.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/QString
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\inventory.o ..\SpieleprogrammierungQT\inventory.cpp
+
+debug/item.o: ../SpieleprogrammierungQT/item.cpp ../SpieleprogrammierungQT/item.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/QJsonObject \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qjsonobject.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qjsonvalue.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qglobal.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qconfig-bootstrapped.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qconfig.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qtcore-config.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qsystemdetection.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qprocessordetection.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcompilerdetection.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qtypeinfo.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcontainerfwd.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qsysinfo.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qlogging.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qflags.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qatomic.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qbasicatomic.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qatomic_bootstrap.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qgenericatomic.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qatomic_cxx11.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qglobalstatic.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qmutex.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qnumeric.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qversiontagging.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstring.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qchar.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstringview.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qbytearray.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qrefcount.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qnamespace.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qtmetamacros.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qarraydata.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qpair.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qarraydatapointer.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qarraydataops.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcontainertools_impl.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qbytearrayalgorithms.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qbytearrayview.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstringliteral.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstringalgorithms.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qanystringview.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qutf8stringview.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstringtokenizer.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstringbuilder.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qshareddata.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qhashfunctions.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcborvalue.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qdatetime.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcalendar.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qlocale.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qvariant.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qlist.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qiterator.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qbytearraylist.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstringlist.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qalgorithms.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstringmatcher.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qmetatype.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcompare.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qvarlengtharray.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qdatastream.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qscopedpointer.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qiodevicebase.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qiterable.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qmetacontainer.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcontainerinfo.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qtaggedpointer.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qmath.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qobjectdefs.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qobjectdefs_impl.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qmap.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qshareddata_impl.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qhash.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qobject.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcoreevent.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qobject_impl.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qproperty.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qpropertyprivate.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qdebug.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qtextstream.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstringconverter.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qset.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcontiguouscache.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qsharedpointer.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qsharedpointer_impl.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcborcommon.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qregularexpression.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qurl.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/quuid.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/QString
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\item.o ..\SpieleprogrammierungQT\item.cpp
 
 debug/main.o: ../SpieleprogrammierungQT/main.cpp ../SpieleprogrammierungQT/mainwindow.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtWidgets/QMainWindow \
@@ -497,15 +909,29 @@ debug/main.o: ../SpieleprogrammierungQT/main.cpp ../SpieleprogrammierungQT/mainw
 		C:/Qt/6.1.0/mingw81_64/include/QtWidgets/qtabwidget.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtGui/qicon.h \
 		../SpieleprogrammierungQT/field.h \
-		../SpieleprogrammierungQT/player.h \
+		../SpieleprogrammierungQT/item.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/QJsonObject \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qjsonobject.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qjsonvalue.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcborvalue.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qdatetime.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcalendar.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qlocale.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcborcommon.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qregularexpression.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/quuid.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/QString \
+		../SpieleprogrammierungQT/player.h \
+		../SpieleprogrammierungQT/inventory.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/QJsonArray \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qjsonarray.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtWidgets/QApplication \
 		C:/Qt/6.1.0/mingw81_64/include/QtWidgets/qapplication.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcoreapplication.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qeventloop.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtGui/qguiapplication.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtGui/qinputmethod.h \
-		C:/Qt/6.1.0/mingw81_64/include/QtCore/qlocale.h
+		../SpieleprogrammierungQT/game.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\main.o ..\SpieleprogrammierungQT\main.cpp
 
 debug/mainwindow.o: ../SpieleprogrammierungQT/mainwindow.cpp ../SpieleprogrammierungQT/mainwindow.h \
@@ -679,9 +1105,10 @@ debug/mainwindow.o: ../SpieleprogrammierungQT/mainwindow.cpp ../Spieleprogrammie
 
 debug/player.o: ../SpieleprogrammierungQT/player.cpp ../SpieleprogrammierungQT/player.h \
 		../SpieleprogrammierungQT/field.h \
-		C:/Qt/6.1.0/mingw81_64/include/QtCore/QString \
-		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstring.h \
-		C:/Qt/6.1.0/mingw81_64/include/QtCore/qchar.h \
+		../SpieleprogrammierungQT/item.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/QJsonObject \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qjsonobject.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qjsonvalue.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qglobal.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qconfig-bootstrapped.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qconfig.h \
@@ -703,6 +1130,8 @@ debug/player.o: ../SpieleprogrammierungQT/player.cpp ../SpieleprogrammierungQT/p
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qmutex.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qnumeric.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qversiontagging.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstring.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qchar.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstringview.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qbytearray.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qrefcount.h \
@@ -721,44 +1150,154 @@ debug/player.o: ../SpieleprogrammierungQT/player.cpp ../SpieleprogrammierungQT/p
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qutf8stringview.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstringtokenizer.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstringbuilder.h \
-		C:/Qt/6.1.0/mingw81_64/include/QtCore/QtDebug \
-		C:/Qt/6.1.0/mingw81_64/include/QtCore/qdebug.h \
-		C:/Qt/6.1.0/mingw81_64/include/QtCore/qalgorithms.h \
-		C:/Qt/6.1.0/mingw81_64/include/QtCore/qhash.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qshareddata.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qhashfunctions.h \
-		C:/Qt/6.1.0/mingw81_64/include/QtCore/qiterator.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcborvalue.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qdatetime.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcalendar.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qlocale.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qvariant.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qlist.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qiterator.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qbytearraylist.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstringlist.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qalgorithms.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstringmatcher.h \
-		C:/Qt/6.1.0/mingw81_64/include/QtCore/qmath.h \
-		C:/Qt/6.1.0/mingw81_64/include/QtCore/qmap.h \
-		C:/Qt/6.1.0/mingw81_64/include/QtCore/qshareddata.h \
-		C:/Qt/6.1.0/mingw81_64/include/QtCore/qshareddata_impl.h \
-		C:/Qt/6.1.0/mingw81_64/include/QtCore/qtextstream.h \
-		C:/Qt/6.1.0/mingw81_64/include/QtCore/qiodevicebase.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qmetatype.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcompare.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qvarlengtharray.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qdatastream.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qscopedpointer.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qiodevicebase.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qiterable.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qmetacontainer.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcontainerinfo.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qtaggedpointer.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qmath.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qobjectdefs.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qobjectdefs_impl.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qmap.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qshareddata_impl.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qhash.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qobject.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcoreevent.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qobject_impl.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qproperty.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qpropertyprivate.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qdebug.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qtextstream.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstringconverter.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qset.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcontiguouscache.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qsharedpointer.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qsharedpointer_impl.h \
-		C:/Qt/6.1.0/mingw81_64/include/QtCore/qobject.h \
-		C:/Qt/6.1.0/mingw81_64/include/QtCore/qobjectdefs.h \
-		C:/Qt/6.1.0/mingw81_64/include/QtCore/qobjectdefs_impl.h \
-		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcoreevent.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcborcommon.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qregularexpression.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qurl.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/quuid.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/QString \
+		../SpieleprogrammierungQT/inventory.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/QJsonArray \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qjsonarray.h \
+		../SpieleprogrammierungQT/testhelper.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/QList \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/QtDebug
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\player.o ..\SpieleprogrammierungQT\player.cpp
+
+debug/testhelper.o: ../SpieleprogrammierungQT/testhelper.cpp ../SpieleprogrammierungQT/item.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/QJsonObject \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qjsonobject.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qjsonvalue.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qglobal.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qconfig-bootstrapped.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qconfig.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qtcore-config.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qsystemdetection.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qprocessordetection.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcompilerdetection.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qtypeinfo.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcontainerfwd.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qsysinfo.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qlogging.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qflags.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qatomic.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qbasicatomic.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qatomic_bootstrap.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qgenericatomic.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qatomic_cxx11.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qglobalstatic.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qmutex.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qnumeric.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qversiontagging.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstring.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qchar.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstringview.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qbytearray.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qrefcount.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qnamespace.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qtmetamacros.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qarraydata.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qpair.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qarraydatapointer.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qarraydataops.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcontainertools_impl.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qbytearrayalgorithms.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qbytearrayview.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstringliteral.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstringalgorithms.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qanystringview.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qutf8stringview.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstringtokenizer.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstringbuilder.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qshareddata.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qhashfunctions.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcborvalue.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qdatetime.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcalendar.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qlocale.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qvariant.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qlist.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qiterator.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qbytearraylist.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstringlist.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qalgorithms.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstringmatcher.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qmetatype.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcompare.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qvarlengtharray.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qdatastream.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qscopedpointer.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qiodevicebase.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qiterable.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qmetacontainer.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcontainerinfo.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qtaggedpointer.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qmath.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qobjectdefs.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qobjectdefs_impl.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qmap.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qshareddata_impl.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qhash.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qobject.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcoreevent.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qobject_impl.h \
 		C:/Qt/6.1.0/mingw81_64/include/QtCore/qproperty.h \
-		C:/Qt/6.1.0/mingw81_64/include/QtCore/qpropertyprivate.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\player.o ..\SpieleprogrammierungQT\player.cpp
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qpropertyprivate.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qdebug.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qtextstream.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qstringconverter.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qset.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcontiguouscache.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qsharedpointer.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qsharedpointer_impl.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qcborcommon.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qregularexpression.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/qurl.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/quuid.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/QString \
+		../SpieleprogrammierungQT/testhelper.h \
+		C:/Qt/6.1.0/mingw81_64/include/QtCore/QList
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\testhelper.o ..\SpieleprogrammierungQT\testhelper.cpp
 
 debug/moc_mainwindow.o: debug/moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\moc_mainwindow.o debug\moc_mainwindow.cpp

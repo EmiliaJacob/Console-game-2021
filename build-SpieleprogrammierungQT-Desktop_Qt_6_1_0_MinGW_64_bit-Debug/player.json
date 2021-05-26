@@ -1,0 +1,15 @@
+{
+    "name" : "Felix",
+    "currentFieldId" : "0", 
+    "inventory" : 
+    [
+        {
+            "name" : "Magic Amulet",
+            "description" : "A beautiful amulet"
+        },
+        {
+            "name" : "Pear",
+            "description" : "A delicious pear"
+        }
+    ]
+}

@@ -3,11 +3,11 @@
 #include "player.h"
 #include <QApplication>
 #include <QString>
-#include "gamemanager.h"
+#include "game.h"
 
 int main(int argc, char *argv[])
 {
-    GameManager gameManager;
+    Game gameManager;
     gameManager.LoadGame();
 
     Field g,h,j,k;
@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
     h.Backward = &g;
 
     Player Felix;
-    Felix.CurrentPosition = &g;
+    Felix.CurrentField = &g;
     Felix.Move("forward");
     Felix.Move("backward");
     Felix.Move("left");

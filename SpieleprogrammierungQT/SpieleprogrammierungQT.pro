@@ -10,16 +10,24 @@ CONFIG += c++11
 
 SOURCES += \
     field.cpp \
-    gamemanager.cpp \
+    game.cpp \
+    gameboard.cpp \
+    inventory.cpp \
+    item.cpp \
     main.cpp \
     mainwindow.cpp \
-    player.cpp
+    player.cpp \
+    testhelper.cpp
 
 HEADERS += \
     field.h \
-    gamemanager.h \
+    game.h \
+    gameboard.h \
+    inventory.h \
+    item.h \
     mainwindow.h \
-    player.h
+    player.h \
+    testhelper.h
 
 FORMS += \
     mainwindow.ui
