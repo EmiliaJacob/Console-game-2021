@@ -10,15 +10,10 @@ int main(int argc, char *argv[])
     Game game;
     game.LoadGame();
 
-    Field g,h,j,k;
-    g.Forward = &h;
-    h.Backward = &g;
-
-    Player Felix;
-    Felix.CurrentField = &g;
-    Felix.Move("forward");
-    Felix.Move("backward");
-    Felix.Move("left");
+    game.Player.Move("forward");
+    game.Player.Move("backward");
+    //Felix.Move("backward");
+    //Felix.Move("left");
 
     QApplication a(argc, argv);
     MainWindow w;

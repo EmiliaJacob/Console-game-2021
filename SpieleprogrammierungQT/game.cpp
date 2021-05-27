@@ -1,15 +1,16 @@
 #include "game.h"
 #include "field.h"
+#include "gameboard.h"
 
 #include <QFile>
 #include <QJsonDocument>
 
 Game::Game()
 {
-
 }
 
-void Game::LoadGame(){
+void Game::LoadGame()
+{
     //Loading Fields
     QFile fieldsFile("fields.json");
     if(!fieldsFile.open(QIODevice::ReadOnly)){

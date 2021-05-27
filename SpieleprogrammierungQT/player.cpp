@@ -42,6 +42,22 @@ void Player::Move(QString direction)
             CurrentField = Game::GameBoard.GetField(CurrentField->FieldForward);
             qDebug() << "Moved Forward to field " << CurrentField->Id;
         }
+        else
+        {
+            qDebug() << "Can't move into that direction";
+        }
+    }
+
+    if(direction == "backward"){
+        if(QString::compare(CurrentField->FieldBackward, "x") != 0)
+        {
+            CurrentField = Game::GameBoard.GetField(CurrentField->FieldBackward);
+            qDebug() << "Moved Backward to field " << CurrentField->Id;
+        }
+        else
+        {
+            qDebug() << "Can't move into that direction";
+        }
     }
 }
 
