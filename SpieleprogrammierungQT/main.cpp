@@ -12,8 +12,6 @@ int main(int argc, char *argv[])
 
     game.Player.Move("forward");
     game.Player.Move("backward");
-    //Felix.Move("backward");
-    //Felix.Move("left");
 
     QApplication a(argc, argv);
     MainWindow w;

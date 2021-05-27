@@ -8,10 +8,6 @@ class Field
 private:
 public:
     QString Id;
-    Field* Forward;
-    Field* Backward;
-    Field* Left;
-    Field* Right;
     QString FieldRight, FieldLeft, FieldForward, FieldBackward; // Create ID with QUUid::createUuid().toString()
     QString Description;
     QList<Item> Items;
