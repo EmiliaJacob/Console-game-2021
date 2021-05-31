@@ -13,23 +13,29 @@ SOURCES += \
     comunicazionhendler.cpp \
     danger.cpp \
     description.cpp \
+    field.cpp \
+    game.cpp \
     gameboard.cpp \
-    interaction.cpp \
+    inventory.cpp \
     item.cpp \
     main.cpp \
     mainwindow.cpp \
-    section.cpp
+    player.cpp \
+    testhelper.cpp
 
 HEADERS += \
     character.h \
     comunicazionhendler.h \
     danger.h \
     description.h \
+    field.h \
+    game.h \
     gameboard.h \
-    interaction.h \
+    inventory.h \
     item.h \
     mainwindow.h \
-    section.h
+    player.h \
+    testhelper.h
 
 FORMS += \
     mainwindow.ui
