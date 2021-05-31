@@ -139,7 +139,7 @@ color: rgb(115, 230, 0);</string>
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="">
+      <widget class="QWidget" name="layoutWidget">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -375,7 +375,7 @@ p, li { white-space: pre-wrap; }
         <attribute name="title">
          <string>Optionen</string>
         </attribute>
-        <widget class="QWidget" name="">
+        <widget class="QWidget" name="layoutWidget">
          <property name="geometry">
           <rect>
            <x>0</x>

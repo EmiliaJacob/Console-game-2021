@@ -29,9 +29,11 @@ dotext();}
 void MainWindow::dotext(){
     QString command = ui ->lineEdit->text();                        //list befel ein
     if(!command.isEmpty()){
-       QString answer = comunicazionhendler->playersays(command);   //oferarbetet befel
+       QString answer = "~$ " + command + "\n" + "        ";
        ui->textBrowser->append(answer);                             //zeigt befel und antwort im text feld
        ui->lineEdit->clear();
+       //answer=deinemetode(command);
+       //ui->textBrowser->append(answer);
     }
 }
 void MainWindow::on_lineEdit_upPressed(){
@@ -71,4 +73,11 @@ void MainWindow::on_tabWidget_tabBarClicked(int index)
 void MainWindow::on_pushButton_6_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
+}
+
+//verlasen
+void MainWindow::on_pushButton_5_clicked()
+{
+    //save();
+    close();
 }
