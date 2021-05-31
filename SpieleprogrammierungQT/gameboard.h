@@ -1,14 +1,19 @@
 #ifndef GAMEBOARD_H
 #define GAMEBOARD_H
-#include "section.h"
+
+#include <field.h>
+
+
 
 class GameBoard
 {
+private:
+    QList<Field> mFields;
 public:
     GameBoard();
-    void SetEntrySection(Section entrySection);
-private:
-    Section* _entrySection;
+    Field* GetField(QString fieldId);
+    void Read(const QJsonObject &json);
+    void Write(const QJsonObject &json);
 };
 
 #endif // GAMEBOARD_H
