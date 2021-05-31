@@ -3,12 +3,15 @@
 #include <QMessageBox>
 #include <comunicazionhendler.h>
 #include <QTextStream>
+#include <QFile>
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    //ui->tabWidget->setTabIcon(1, const QIcon & icon);
     //comunicazionhendler = new comunicazionhendler(this);
+    ui->stackedWidget->setCurrentIndex(0);
 }
 
 MainWindow::~MainWindow()
@@ -38,3 +41,34 @@ void MainWindow::on_lineEdit_upPressed(){
 
 
 
+//New Game
+void MainWindow::on_pushButton_2_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+}
+
+//Load Game
+void MainWindow::on_pushButton_clicked()
+{
+    ui->textBrowser->clear();
+    ui->stackedWidget->setCurrentIndex(1);
+    QFile file(".\\savelogfiel.txt");
+    if(!file.open(QIODevice::ReadOnly)){
+        QMessageBox::information(0,"Error",file.errorString() + " file not fonde");
+    }
+    else{
+        QTextStream log(&file);
+        ui->textBrowser->append(log.readAll());
+    }
+    ui->textBrowser->append("System reboot 100% \n all funktions rady \n letzten 10 bevefele widerhergestelt \n");
+}
+
+void MainWindow::on_tabWidget_tabBarClicked(int index)
+{
+    //ui->tabWidget->
+}
+//zu Titelbildschirm
+void MainWindow::on_pushButton_6_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}
