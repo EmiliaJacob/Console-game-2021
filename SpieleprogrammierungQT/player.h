@@ -18,6 +18,8 @@ public:
     void Write(QJsonObject &json);
     void Move(QString direction);
     void PickUpItems(QString itemName, int numberOfItems);
+    void ListAvailableItems();
+    void GetFieldDescription();
 };
 
 #endif // PLAYER_H

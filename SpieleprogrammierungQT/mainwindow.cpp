@@ -12,6 +12,7 @@ MainWindow::MainWindow(QWidget *parent)
     //ui->tabWidget->setTabIcon(1, const QIcon & icon);
     //comunicazionhendler = new comunicazionhendler(this);
     ui->stackedWidget->setCurrentIndex(0);
+    mGame.LoadGame();
 }
 
 MainWindow::~MainWindow()
@@ -32,6 +33,8 @@ void MainWindow::dotext(){
        QString answer = "~$ " + command + "\n" + "        ";
        ui->textBrowser->append(answer);                             //zeigt befel und antwort im text feld
        ui->lineEdit->clear();
+       qDebug() << "Player entered: " <<  command;
+       mGame.InputHandler(command);
        //answer=deinemetode(command);
        //ui->textBrowser->append(answer);
     }

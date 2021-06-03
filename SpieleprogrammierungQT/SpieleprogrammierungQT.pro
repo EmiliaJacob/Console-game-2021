@@ -9,7 +9,6 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    character.cpp \
     comunicazionhendler.cpp \
     danger.cpp \
     description.cpp \
@@ -24,7 +23,6 @@ SOURCES += \
     testhelper.cpp
 
 HEADERS += \
-    character.h \
     comunicazionhendler.h \
     danger.h \
     description.h \

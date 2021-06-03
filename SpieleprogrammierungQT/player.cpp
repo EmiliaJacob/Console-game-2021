@@ -69,8 +69,31 @@ void Player::PickUpItems(QString itemName, int numberOfItems) // TODO: make it p
         Item* item = &CurrentField->Items[i];
         if(QString::compare(item->Name, itemName, Qt::CaseSensitive) == 0)
         {
-            CurrentField->Items.removeAt(i);
+            Item pickedUpItem = CurrentField->Items[i];
+;           CurrentField->Items.removeAt(i);
+            mInventory.CollectedItems.append(pickedUpItem);
+            qDebug() << "Picked up: " << pickedUpItem.Name;
+            return;
         }
     }
+    qDebug() << "Item " << itemName << " not found";
     //Add Item to List in Inventory
+}
+
+void Player::ListAvailableItems()
+{
+   if(Player::CurrentField->Items.length() == 0)
+       qDebug() << "There are no items on this field";
+   else
+   {
+       for(int i = 0; i<Player::CurrentField->Items.length(); i++)
+       {
+           qDebug() << "Found Item: " << Player::CurrentField->Items[i].Name;
+       }
+   }
+}
+
+void Player::GetFieldDescription()
+{
+    qDebug() << "Field Description: " << Player::CurrentField->Description;
 }

@@ -4,6 +4,7 @@
 
 #include <QFile>
 #include <QJsonDocument>
+#include <QDebug>
 
 Game::Game()
 {
@@ -34,4 +35,43 @@ void Game::LoadGame()
     QJsonDocument playerDoc(QJsonDocument::fromJson(playerData));
 
     Player.Read(playerDoc.object());
+}
+
+void Game::InputHandler(QString input)
+{
+    if(input == "mf")
+    {
+        Player.Move("forward");
+        return;
+    }
+    if(input == "mb")
+    {
+        Player.Move("backward");
+        return;
+    }
+    if(input == "mr")
+    {
+        Player.Move("right");
+        return;
+    }
+    if(input == "ml")
+    {
+        Player.Move("left");
+        return;
+    }
+    if(input == "i")
+    {
+        Player.ListAvailableItems();
+        return;
+    }
+    if(input == "d")
+    {
+        Player.GetFieldDescription();
+        return; //TODO: return are unneccessary
+    }
+    if(input.split(" ")[0] == "p")
+    {
+        Player.PickUpItems(input.split(" ")[1], 1);
+        return;
+    }
 }

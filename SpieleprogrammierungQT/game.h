@@ -21,6 +21,7 @@ public:
     void NewGame();
     void SaveGame();
     void LoadGame();
+    void InputHandler(QString input);
 };
 
 #endif // GAME_H
