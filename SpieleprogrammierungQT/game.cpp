@@ -74,4 +74,9 @@ void Game::InputHandler(QString input)
         Player.PickUpItems(input.split(" ")[1], 1);
         return;
     }
+    if(input.split(" ")[0] == "d")
+    {
+        Player.DropItems(input.split(" ")[1], 1);
+        return;
+    }
 }

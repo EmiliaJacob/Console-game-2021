@@ -4,6 +4,7 @@
 #include "testhelper.h"
 #include <QtDebug>
 #include <item.h>
+#include <item.h>
 //#include <QtWarning>
 
 Player::Player()
@@ -63,21 +64,34 @@ void Player::Move(QString direction)
 
 void Player::PickUpItems(QString itemName, int numberOfItems) // TODO: make it possible to pick up multiple items
 {
-    //Remove Item from List in Field
     for (int i=0; i<CurrentField->Items.size(); i++)
     {
-        Item* item = &CurrentField->Items[i];
-        if(QString::compare(item->Name, itemName, Qt::CaseSensitive) == 0)
+        Item item = CurrentField->Items[i];
+        if(item.Name == itemName)
         {
-            Item pickedUpItem = CurrentField->Items[i];
-;           CurrentField->Items.removeAt(i);
-            mInventory.CollectedItems.append(pickedUpItem);
-            qDebug() << "Picked up: " << pickedUpItem.Name;
+            CurrentField->Items.removeAt(i);
+            mInventory.CollectedItems.append(item);
+            qDebug() << "Picked up: " << item.Name;
             return;
         }
     }
     qDebug() << "Item " << itemName << " not found";
-    //Add Item to List in Inventory
+}
+
+void Player::DropItems(QString itemName, int numberOfItems)
+{
+    for(int i=0; i<mInventory.CollectedItems.size(); i++)
+    {
+        Item item = mInventory.CollectedItems[i];
+        if(item.Name == itemName)
+        {
+            mInventory.CollectedItems.removeAt(i);
+            CurrentField->Items.append(item);
+            qDebug() << "Dropped item: " << item.Name;
+            return;
+        }
+    }
+    qDebug() << "Item " << itemName << " was not found in inventory";
 }
 
 void Player::ListAvailableItems()
