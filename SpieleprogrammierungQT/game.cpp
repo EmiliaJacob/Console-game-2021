@@ -5,6 +5,7 @@
 #include <QFile>
 #include <QJsonDocument>
 #include <QDebug>
+#include <QString>
 
 Game::Game()
 {
@@ -76,7 +77,16 @@ void Game::InputHandler(QString input)
     }
     if(input.split(" ")[0] == "d")
     {
-        Player.DropItems(input.split(" ")[1], 1);
+        QStringList splittedInput = input.split(" ");
+        if(splittedInput.size()==2)
+            Player.DropItemOfType(splittedInput[1]);
+        else
+        {
+            if(splittedInput[2] == "a")
+                Player.DropAllItemsOfType(splittedInput[1]);
+            else
+                Player.DropMultipleItemsOfType(splittedInput[1], splittedInput[2].toInt());
+        }
         return;
     }
 }

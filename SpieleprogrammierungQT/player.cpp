@@ -78,12 +78,12 @@ void Player::PickUpItems(QString itemName, int numberOfItems) // TODO: make it p
     qDebug() << "Item " << itemName << " not found";
 }
 
-void Player::DropItems(QString itemName, int numberOfItems)
+void Player::DropItemOfType(QString itemType)
 {
     for(int i=0; i<mInventory.CollectedItems.size(); i++)
     {
-        Item item = mInventory.CollectedItems[i];
-        if(item.Name == itemName)
+        Item item = mInventory.CollectedItems[i]; //TODO : Muss item wieder zerstört werden?
+        if(item.Name == itemType)
         {
             mInventory.CollectedItems.removeAt(i);
             CurrentField->Items.append(item);
@@ -91,7 +91,42 @@ void Player::DropItems(QString itemName, int numberOfItems)
             return;
         }
     }
-    qDebug() << "Item " << itemName << " was not found in inventory";
+    qDebug() << "Item " << itemType << " was not found in inventory";
+}
+
+void Player::DropAllItemsOfType(QString itemType)
+{
+    QList<Item>::iterator i;
+    for(i=mInventory.CollectedItems.begin(); i != mInventory.CollectedItems.end(); i++)
+    {
+        qDebug() << "Loop counter at: " << i;
+        qDebug() << "Invetory size: " << mInventory.CollectedItems.size();
+        Item item = mInventory.CollectedItems[i]; //TODO : Muss item wieder zerstört werden?
+        if(item.Name == itemType)
+        {
+            mInventory.CollectedItems.remove(i);
+            CurrentField->Items.append(item);
+            qDebug() << "Dropped item: " << item.Name;
+        }
+    }
+}
+
+void Player::DropMultipleItemsOfType(QString itemType, int numberOfItems)
+{
+    for(int i=0; i<mInventory.CollectedItems.size(); i++)
+    {
+        Item item = mInventory.CollectedItems[i]; //TODO : Muss item wieder zerstört werden?
+        if(item.Name == itemType)
+        {
+            mInventory.CollectedItems.removeAt(i);
+            CurrentField->Items.append(item);
+            qDebug() << "Dropped item: " << item.Name;
+            numberOfItems -= 1;
+            if(numberOfItems == 0)
+                return;
+        }
+    }
+    qDebug() << "Item " << itemType << " was not found in inventory";
 }
 
 void Player::ListAvailableItems()

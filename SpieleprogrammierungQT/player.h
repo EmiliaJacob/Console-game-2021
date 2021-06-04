@@ -18,7 +18,9 @@ public:
     void Write(QJsonObject &json);
     void Move(QString direction);
     void PickUpItems(QString itemName, int numberOfItems);
-    void DropItems(QString itemname, int numberOfItems);
+    void DropItemOfType(QString itemType);
+    void DropMultipleItemsOfType(QString itemType, int numberOfItems);
+    void DropAllItemsOfType(QString itemType);
     void ListAvailableItems();
     void GetFieldDescription();
 };
