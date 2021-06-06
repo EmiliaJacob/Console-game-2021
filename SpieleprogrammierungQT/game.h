@@ -20,7 +20,8 @@ public:
     Game();
     void NewGame();
     void SaveGame();
-    void LoadGame();
+    bool LoadGame();
+    void InputHandler(QString input);
 };
 
 #endif // GAME_H

@@ -1,6 +1,9 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include "game.h"
+#include "player.h"
+
 #include <QMainWindow>
 #include <comunicazionhendler.h>
 QT_BEGIN_NAMESPACE
@@ -31,7 +34,10 @@ private slots:
 
     void on_pushButton_5_clicked();
 
+    void on_pushButton_8_clicked();
+
 private:
+    Game game;
     Ui::MainWindow *ui;
     comunicazionhendler *comunicazionhendler;
 };

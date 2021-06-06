@@ -9,6 +9,7 @@ class Inventory
 private:
 public:
     Inventory();
+
     QList<Item> CollectedItems;
 };
 

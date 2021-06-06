@@ -7,11 +7,11 @@
 
 int main(int argc, char *argv[])
 {
-    Game game;
-    game.LoadGame();
+   // Game game;
+    //game.LoadGame();
 
-    game.Player.Move("forward");
-    game.Player.Move("backward");
+    //game.Player.Move("forward");
+    //game.Player.Move("backward");
 
     QApplication a(argc, argv);
     MainWindow w;
