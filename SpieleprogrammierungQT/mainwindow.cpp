@@ -12,6 +12,7 @@ MainWindow::MainWindow(QWidget *parent)
     //ui->tabWidget->setTabIcon(1, const QIcon & icon);
     //comunicazionhendler = new comunicazionhendler(this);
     ui->stackedWidget->setCurrentIndex(0);
+    mGame.LoadGame();
 }
 
 MainWindow::~MainWindow()

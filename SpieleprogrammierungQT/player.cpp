@@ -93,7 +93,7 @@ void Player::DropItemOfType(QString itemType)
     }
     qDebug() << "Item " << itemType << " was not found in inventory";
 }
-/*
+
 void Player::DropAllItemsOfType(QString itemType)
 {
     QList<Item>::iterator i;
@@ -107,10 +107,47 @@ void Player::DropAllItemsOfType(QString itemType)
             mInventory.CollectedItems.remove(i);
             CurrentField->Items.append(item);
             qDebug() << "Dropped item: " << item.Name;
-        }
+     }
     }
 }
-*/
+
+void Player::DropMultipleItemsOfType(QString itemType, int numberOfItems)
+{
+    for(int i=0; i<mInventory.CollectedItems.size(); i++)
+    {
+        Item item = mInventory.CollectedItems[i]; //TODO : Muss item wieder zerstört werden?
+        if(item.Name == itemType)
+        {
+            mInventory.CollectedItems.removeAt(i);
+            CurrentField->Items.append(item);
+            qDebug() << "Dropped item: " << item.Name;
+            numberOfItems -= 1;
+            if(numberOfItems == 0)
+                return;
+        }
+    }
+    qDebug() << "Item " << itemType << " was not found in inventory";
+}
+
+void Player::ListAvailableItems()
+{
+   if(Player::CurrentField->Items.length() == 0)
+       qDebug() << "There are no items on this field";
+   else
+   {
+       for(int i = 0; i<Player::CurrentField->Items.length(); i++)
+       {
+           qDebug() << "Found Item: " << Player::CurrentField->Items[i].Name;
+       }
+   }
+}
+
+void Player::GetFieldDescription()
+{
+    qDebug() << "Field Description: " << Player::CurrentField->Description;
+
+}
+
 void Player::DropMultipleItemsOfType(QString itemType, int numberOfItems)
 {
     for(int i=0; i<mInventory.CollectedItems.size(); i++)

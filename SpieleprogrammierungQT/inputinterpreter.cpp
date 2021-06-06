@@ -1,3 +1,4 @@
+
 #include "inputinterpreter.h"
 #include <QDebug>
 

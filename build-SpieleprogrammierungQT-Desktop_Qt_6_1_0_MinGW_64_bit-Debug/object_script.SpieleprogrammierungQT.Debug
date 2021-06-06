@@ -1,3 +1,6 @@
+debug/comunicazionhendler.o
+debug/danger.o
+debug/description.o
 debug/field.o
 debug/game.o
 debug/gameboard.o
