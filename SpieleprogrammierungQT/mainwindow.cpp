@@ -33,15 +33,12 @@ void MainWindow::dotext(){
        QString answer = "~$ " + command + "\n" + "        ";
        ui->textBrowser->append(answer);                             //zeigt befel und antwort im text feld
        ui->lineEdit->clear();
-       qDebug() << "Player entered: " <<  command;
-       mGame.InputHandler(command);
+       game.InputHandler(command);
        //answer=deinemetode(command);
        //ui->textBrowser->append(answer);
     }
 }
-void MainWindow::on_lineEdit_upPressed(){
 
-}
 
 
 
@@ -57,21 +54,12 @@ void MainWindow::on_pushButton_clicked()
 {
     ui->textBrowser->clear();
     ui->stackedWidget->setCurrentIndex(1);
-    QFile file(".\\savelogfiel.txt");
-    if(!file.open(QIODevice::ReadOnly)){
-        QMessageBox::information(0,"Error",file.errorString() + " file not fonde");
+    if(!game.LoadGame()){
+        QMessageBox::information(0,"Error", " file not fonde");
     }
-    else{
-        QTextStream log(&file);
-        ui->textBrowser->append(log.readAll());
-    }
-    ui->textBrowser->append("System reboot 100% \n all funktions rady \n letzten 10 bevefele widerhergestelt \n");
+    ui->textBrowser->append("System reboot 100% \n all funktions rady \n");
 }
 
-void MainWindow::on_tabWidget_tabBarClicked(int index)
-{
-    //ui->tabWidget->
-}
 //zu Titelbildschirm
 void MainWindow::on_pushButton_6_clicked()
 {
@@ -81,6 +69,23 @@ void MainWindow::on_pushButton_6_clicked()
 //verlasen
 void MainWindow::on_pushButton_5_clicked()
 {
-    //save();
+    //game.SaveGame();
     close();
+}
+
+//Hilfe
+void MainWindow::on_pushButton_8_clicked()
+{
+/*
+    QFile hilfeanleitung("./sorce/hilfefile.txt");
+    if(!hilfeanleitung.open(QFile::ReadOnly | QFile::Text)){
+        qDebug() << "fiel not open";
+    }
+    QTextStream in(&hilfeanleitung);
+    QString hilfenachricht = in.readAll();
+    ui->textBrowser->append(hilfenachricht);
+    */
+    QString hilfestring = "Hiengabehofel ...";
+    ui->textBrowser->append(hilfestring);
+
 }

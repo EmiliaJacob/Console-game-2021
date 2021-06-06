@@ -34,8 +34,10 @@ private slots:
 
     void on_pushButton_5_clicked();
 
+    void on_pushButton_8_clicked();
+
 private:
-    Game mGame;
+    Game game;
     Ui::MainWindow *ui;
     comunicazionhendler *comunicazionhendler;
 };
