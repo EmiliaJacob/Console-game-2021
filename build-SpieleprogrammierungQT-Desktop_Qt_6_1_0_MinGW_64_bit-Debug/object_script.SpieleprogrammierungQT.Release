@@ -1,3 +1,6 @@
+release/comunicazionhendler.o
+release/danger.o
+release/description.o
 release/field.o
 release/game.o
 release/gameboard.o
