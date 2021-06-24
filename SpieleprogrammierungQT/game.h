@@ -15,8 +15,8 @@ public:
     {
         Json, Binary
     };
-    Player Player;
-    inline static GameBoard GameBoard;
+    Player mPlayer;
+    inline static GameBoard mGameBoard;
     Game();
     void NewGame();
     void SaveGame();

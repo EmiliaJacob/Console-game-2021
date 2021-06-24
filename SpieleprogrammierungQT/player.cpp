@@ -31,7 +31,7 @@ void Player::Read(const QJsonObject &json)
     TestHelper testHelper;
     testHelper.PrintQList(Player::mInventory.CollectedItems);
 
-    CurrentField = Game::GameBoard.GetField(json["currentFieldId"].toString());
+    CurrentField = Game::mGameBoard.GetField(json["currentFieldId"].toString());
     qDebug() << "Created player and put them onto Field: " << CurrentField->Id;
 }
 
@@ -40,7 +40,7 @@ void Player::Move(QString direction)
     if(direction == "forward"){
         if(QString::compare(CurrentField->FieldForward, "x") != 0)
         {
-            CurrentField = Game::GameBoard.GetField(CurrentField->FieldForward);
+            CurrentField = Game::mGameBoard.GetField(CurrentField->FieldForward);
             qDebug() << "Moved Forward to field " << CurrentField->Id;
         }
         else
@@ -52,7 +52,7 @@ void Player::Move(QString direction)
     if(direction == "backward"){
         if(QString::compare(CurrentField->FieldBackward, "x") != 0)
         {
-            CurrentField = Game::GameBoard.GetField(CurrentField->FieldBackward);
+            CurrentField = Game::mGameBoard.GetField(CurrentField->FieldBackward);
             qDebug() << "Moved Backward to field " << CurrentField->Id;
         }
         else
@@ -99,7 +99,7 @@ void Player::DropAllItemsOfType(QString itemType)
     QList<Item>::iterator i;
     for(i=mInventory.CollectedItems.begin(); i != mInventory.CollectedItems.end(); i++)
     {
-        qDebug() << "Loop counter at: " << i;
+        //qDebug() << "Loop counter at: " << i;
         qDebug() << "Invetory size: " << mInventory.CollectedItems.size();
         Item item = mInventory.CollectedItems[i]; //TODO : Muss item wieder zerstört werden?
         if(item.Name == itemType)

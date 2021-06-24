@@ -39,6 +39,6 @@ private slots:
 private:
     Game game;
     Ui::MainWindow *ui;
-    comunicazionhendler *comunicazionhendler;
+    comunicazionhendler *mComunicazionhdendler;
 };
 #endif // MAINWINDOW_H
