@@ -36,6 +36,10 @@ private slots:
 
     void on_pushButton_8_clicked();
 
+    void on_downbutton_clicked();
+
+    void on_upbutton_clicked();
+
 private:
     Game game;
     Ui::MainWindow *ui;

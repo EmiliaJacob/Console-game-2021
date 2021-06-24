@@ -4,6 +4,9 @@
 #include <comunicazionhendler.h>
 #include <QTextStream>
 #include <QFile>
+
+int florlevel=0,maxflorlevel=1;
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -22,10 +25,8 @@ MainWindow::~MainWindow()
 //Consol
 void MainWindow::on_Send_clicked(){
     dotext();}
-
 void MainWindow::on_lineEdit_returnPressed(){
 dotext();}
-
 void MainWindow::dotext(){
     QString command = ui ->lineEdit->text();                        //list befel ein
     if(!command.isEmpty()){
@@ -87,4 +88,24 @@ void MainWindow::on_pushButton_8_clicked()
     QString hilfestring = "Hiengabehofel ...";
     ui->textBrowser->append(hilfestring);
 
+}
+
+//mapup Ʌ
+void MainWindow::on_upbutton_clicked()
+{
+    if(florlevel>0){
+        ui->stackedWidget_2->setCurrentIndex( ui->stackedWidget_2->currentIndex()-1);
+        florlevel-=1;
+        ui->Florlabel->setText("UG " +  QString::number(florlevel));
+    }
+}
+
+//mapdown V
+void MainWindow::on_downbutton_clicked()
+{
+    if(florlevel<maxflorlevel){
+        ui->stackedWidget_2->setCurrentIndex(+1);
+        florlevel+=1;
+        ui->Florlabel->setText("UG " +  QString::number(florlevel));
+    }
 }
