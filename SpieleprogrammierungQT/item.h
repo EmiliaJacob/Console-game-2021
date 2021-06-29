@@ -9,7 +9,7 @@
 class Item
 {
 private:
-    QString mDescription;
+    QString mDescription; // TODO : why is only the description private?
 public:
     Item();
     QString Name;

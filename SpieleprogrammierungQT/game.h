@@ -4,8 +4,6 @@
 #include "gameboard.h"
 #include "player.h"
 
-
-
 class Game
 {
 private:
@@ -15,6 +13,7 @@ public:
     {
         Json, Binary
     };
+
     Player mPlayer;
     inline static GameBoard mGameBoard;
     Game();

@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "inputparser.h"
 #include <QMessageBox>
 #include <comunicazionhendler.h>
 #include <QTextStream>
@@ -33,7 +34,7 @@ void MainWindow::dotext(){
        QString answer = "~$ " + command + "\n" + "        ";
        ui->textBrowser->append(answer);                             //zeigt befel und antwort im text feld
        ui->lineEdit->clear();
-       game.InputHandler(command);
+       mGame.InputHandler(command);
        //answer=deinemetode(command);
        //ui->textBrowser->append(answer);
     }
@@ -54,7 +55,7 @@ void MainWindow::on_pushButton_clicked()
 {
     ui->textBrowser->clear();
     ui->stackedWidget->setCurrentIndex(1);
-    if(!game.LoadGame()){
+    if(!mGame.LoadGame()){
         QMessageBox::information(0,"Error", " file not fonde");
     }
     ui->textBrowser->append("System reboot 100% \n all funktions rady \n");

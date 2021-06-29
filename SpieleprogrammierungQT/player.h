@@ -22,7 +22,7 @@ public:
     void DropMultipleItemsOfType(QString itemType, int numberOfItems);
     void DropAllItemsOfType(QString itemType);
     void ListAvailableItems();
-    void GetFieldDescription();
+    void GetFieldDescription(); // TODO : rename -> you don't get anything
 };
 
 #endif // PLAYER_H

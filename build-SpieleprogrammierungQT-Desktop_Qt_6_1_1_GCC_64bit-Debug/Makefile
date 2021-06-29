@@ -52,22 +52,20 @@ OBJECTS_DIR   = ./
 
 ####### Files
 
-SOURCES       = ../SpieleprogrammierungQT/danger.cpp \
-		../SpieleprogrammierungQT/description.cpp \
-		../SpieleprogrammierungQT/field.cpp \
+SOURCES       = ../SpieleprogrammierungQT/field.cpp \
 		../SpieleprogrammierungQT/game.cpp \
 		../SpieleprogrammierungQT/gameboard.cpp \
+		../SpieleprogrammierungQT/inputparser.cpp \
 		../SpieleprogrammierungQT/inventory.cpp \
 		../SpieleprogrammierungQT/item.cpp \
 		../SpieleprogrammierungQT/main.cpp \
 		../SpieleprogrammierungQT/mainwindow.cpp \
 		../SpieleprogrammierungQT/player.cpp \
 		../SpieleprogrammierungQT/testhelper.cpp moc_mainwindow.cpp
-OBJECTS       = danger.o \
-		description.o \
-		field.o \
+OBJECTS       = field.o \
 		game.o \
 		gameboard.o \
+		inputparser.o \
 		inventory.o \
 		item.o \
 		main.o \
@@ -178,6 +176,7 @@ DIST          = ../../Qt/6.1.1/gcc_64/mkspecs/features/spec_pre.prf \
 		../../Qt/6.1.1/gcc_64/mkspecs/features/qt_config.prf \
 		../../Qt/6.1.1/gcc_64/mkspecs/linux-g++/qmake.conf \
 		../../Qt/6.1.1/gcc_64/mkspecs/features/spec_post.prf \
+		../SpieleprogrammierungQT/.qmake.stash \
 		../../Qt/6.1.1/gcc_64/mkspecs/features/exclusive_builds.prf \
 		../../Qt/6.1.1/gcc_64/mkspecs/features/toolchain.prf \
 		../../Qt/6.1.1/gcc_64/mkspecs/features/default_pre.prf \
@@ -203,15 +202,15 @@ DIST          = ../../Qt/6.1.1/gcc_64/mkspecs/features/spec_pre.prf \
 		../SpieleprogrammierungQT/field.h \
 		../SpieleprogrammierungQT/game.h \
 		../SpieleprogrammierungQT/gameboard.h \
+		../SpieleprogrammierungQT/inputparser.h \
 		../SpieleprogrammierungQT/inventory.h \
 		../SpieleprogrammierungQT/item.h \
 		../SpieleprogrammierungQT/mainwindow.h \
 		../SpieleprogrammierungQT/player.h \
-		../SpieleprogrammierungQT/testhelper.h ../SpieleprogrammierungQT/danger.cpp \
-		../SpieleprogrammierungQT/description.cpp \
-		../SpieleprogrammierungQT/field.cpp \
+		../SpieleprogrammierungQT/testhelper.h ../SpieleprogrammierungQT/field.cpp \
 		../SpieleprogrammierungQT/game.cpp \
 		../SpieleprogrammierungQT/gameboard.cpp \
+		../SpieleprogrammierungQT/inputparser.cpp \
 		../SpieleprogrammierungQT/inventory.cpp \
 		../SpieleprogrammierungQT/item.cpp \
 		../SpieleprogrammierungQT/main.cpp \
@@ -332,6 +331,7 @@ Makefile: ../SpieleprogrammierungQT/SpieleprogrammierungQT.pro ../../Qt/6.1.1/gc
 		../../Qt/6.1.1/gcc_64/mkspecs/features/qt_config.prf \
 		../../Qt/6.1.1/gcc_64/mkspecs/linux-g++/qmake.conf \
 		../../Qt/6.1.1/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../Qt/6.1.1/gcc_64/mkspecs/features/exclusive_builds.prf \
 		../../Qt/6.1.1/gcc_64/mkspecs/features/toolchain.prf \
 		../../Qt/6.1.1/gcc_64/mkspecs/features/default_pre.prf \
@@ -460,6 +460,7 @@ Makefile: ../SpieleprogrammierungQT/SpieleprogrammierungQT.pro ../../Qt/6.1.1/gc
 ../../Qt/6.1.1/gcc_64/mkspecs/features/qt_config.prf:
 ../../Qt/6.1.1/gcc_64/mkspecs/linux-g++/qmake.conf:
 ../../Qt/6.1.1/gcc_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../../Qt/6.1.1/gcc_64/mkspecs/features/exclusive_builds.prf:
 ../../Qt/6.1.1/gcc_64/mkspecs/features/toolchain.prf:
 ../../Qt/6.1.1/gcc_64/mkspecs/features/default_pre.prf:
@@ -499,8 +500,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../../Qt/6.1.1/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents danger.h description.h ../SpieleprogrammierungQT/field.h ../SpieleprogrammierungQT/game.h ../SpieleprogrammierungQT/gameboard.h ../SpieleprogrammierungQT/inventory.h ../SpieleprogrammierungQT/item.h ../SpieleprogrammierungQT/mainwindow.h ../SpieleprogrammierungQT/player.h ../SpieleprogrammierungQT/testhelper.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../SpieleprogrammierungQT/danger.cpp ../SpieleprogrammierungQT/description.cpp ../SpieleprogrammierungQT/field.cpp ../SpieleprogrammierungQT/game.cpp ../SpieleprogrammierungQT/gameboard.cpp ../SpieleprogrammierungQT/inventory.cpp ../SpieleprogrammierungQT/item.cpp ../SpieleprogrammierungQT/main.cpp ../SpieleprogrammierungQT/mainwindow.cpp ../SpieleprogrammierungQT/player.cpp ../SpieleprogrammierungQT/testhelper.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents danger.h description.h ../SpieleprogrammierungQT/field.h ../SpieleprogrammierungQT/game.h ../SpieleprogrammierungQT/gameboard.h ../SpieleprogrammierungQT/inputparser.h ../SpieleprogrammierungQT/inventory.h ../SpieleprogrammierungQT/item.h ../SpieleprogrammierungQT/mainwindow.h ../SpieleprogrammierungQT/player.h ../SpieleprogrammierungQT/testhelper.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../SpieleprogrammierungQT/field.cpp ../SpieleprogrammierungQT/game.cpp ../SpieleprogrammierungQT/gameboard.cpp ../SpieleprogrammierungQT/inputparser.cpp ../SpieleprogrammierungQT/inventory.cpp ../SpieleprogrammierungQT/item.cpp ../SpieleprogrammierungQT/main.cpp ../SpieleprogrammierungQT/mainwindow.cpp ../SpieleprogrammierungQT/player.cpp ../SpieleprogrammierungQT/testhelper.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../SpieleprogrammierungQT/mainwindow.ui $(DISTDIR)/
 
 
@@ -711,12 +712,6 @@ compiler_lex_clean:
 compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_uic_clean 
 
 ####### Compile
-
-danger.o: ../SpieleprogrammierungQT/danger.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o danger.o ../SpieleprogrammierungQT/danger.cpp
-
-description.o: ../SpieleprogrammierungQT/description.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o description.o ../SpieleprogrammierungQT/description.cpp
 
 field.o: ../SpieleprogrammierungQT/field.cpp ../SpieleprogrammierungQT/field.h \
 		../SpieleprogrammierungQT/item.h \
@@ -1019,6 +1014,88 @@ gameboard.o: ../SpieleprogrammierungQT/gameboard.cpp ../SpieleprogrammierungQT/g
 		../../Qt/6.1.1/gcc_64/include/QtCore/QJsonArray \
 		../../Qt/6.1.1/gcc_64/include/QtCore/qjsonarray.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o gameboard.o ../SpieleprogrammierungQT/gameboard.cpp
+
+inputparser.o: ../SpieleprogrammierungQT/inputparser.cpp ../SpieleprogrammierungQT/inputparser.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/QString \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qstring.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qchar.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qglobal.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qconfig.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qtcore-config.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qsystemdetection.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qprocessordetection.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qcompilerdetection.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qtypeinfo.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qcontainerfwd.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qsysinfo.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qlogging.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qflags.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qatomic.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qbasicatomic.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qgenericatomic.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qatomic_cxx11.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qglobalstatic.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qmutex.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qnumeric.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qversiontagging.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qstringview.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qbytearray.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qrefcount.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qnamespace.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qtmetamacros.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qarraydata.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qpair.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qarraydatapointer.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qarraydataops.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qcontainertools_impl.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qbytearrayalgorithms.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qbytearrayview.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qstringliteral.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qstringalgorithms.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qanystringview.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qutf8stringview.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qstringtokenizer.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qstringbuilder.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/QtDebug \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qdebug.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qalgorithms.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qhash.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qhashfunctions.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qiterator.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qlist.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qbytearraylist.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qstringlist.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qstringmatcher.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qmath.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qmap.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qshareddata.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qshareddata_impl.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qtextstream.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qiodevicebase.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qscopedpointer.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qstringconverter.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qset.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qcontiguouscache.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qsharedpointer.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qobject.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qobjectdefs.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qcoreevent.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qmetatype.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qcompare.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qvarlengtharray.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qdatastream.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qiterable.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qmetacontainer.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qcontainerinfo.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qtaggedpointer.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qobject_impl.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qproperty.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qpropertyprivate.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o inputparser.o ../SpieleprogrammierungQT/inputparser.cpp
 
 inventory.o: ../SpieleprogrammierungQT/inventory.cpp ../SpieleprogrammierungQT/inventory.h \
 		../SpieleprogrammierungQT/item.h \
@@ -1518,6 +1595,46 @@ mainwindow.o: ../SpieleprogrammierungQT/mainwindow.cpp ../SpieleprogrammierungQT
 		../SpieleprogrammierungQT/comunicazionhendler.h \
 		../../Qt/6.1.1/gcc_64/include/QtCore/QTextStream \
 		ui_mainwindow.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/QVariant \
+		../../Qt/6.1.1/gcc_64/include/QtWidgets/QApplication \
+		../../Qt/6.1.1/gcc_64/include/QtWidgets/qapplication.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qcoreapplication.h \
+		../../Qt/6.1.1/gcc_64/include/QtCore/qeventloop.h \
+		../../Qt/6.1.1/gcc_64/include/QtGui/qguiapplication.h \
+		../../Qt/6.1.1/gcc_64/include/QtGui/qinputmethod.h \
+		../../Qt/6.1.1/gcc_64/include/QtWidgets/QGridLayout \
+		../../Qt/6.1.1/gcc_64/include/QtWidgets/qgridlayout.h \
+		../../Qt/6.1.1/gcc_64/include/QtWidgets/qlayout.h \
+		../../Qt/6.1.1/gcc_64/include/QtWidgets/qlayoutitem.h \
+		../../Qt/6.1.1/gcc_64/include/QtWidgets/qboxlayout.h \
+		../../Qt/6.1.1/gcc_64/include/QtWidgets/QHBoxLayout \
+		../../Qt/6.1.1/gcc_64/include/QtWidgets/QLabel \
+		../../Qt/6.1.1/gcc_64/include/QtWidgets/qlabel.h \
+		../../Qt/6.1.1/gcc_64/include/QtWidgets/qframe.h \
+		../../Qt/6.1.1/gcc_64/include/QtGui/qpicture.h \
+		../../Qt/6.1.1/gcc_64/include/QtGui/qtextdocument.h \
+		../../Qt/6.1.1/gcc_64/include/QtWidgets/QLineEdit \
+		../../Qt/6.1.1/gcc_64/include/QtWidgets/qlineedit.h \
+		../../Qt/6.1.1/gcc_64/include/QtGui/qtextcursor.h \
+		../../Qt/6.1.1/gcc_64/include/QtGui/qtextformat.h \
+		../../Qt/6.1.1/gcc_64/include/QtGui/qpen.h \
+		../../Qt/6.1.1/gcc_64/include/QtGui/qtextoption.h \
+		../../Qt/6.1.1/gcc_64/include/QtWidgets/QPushButton \
+		../../Qt/6.1.1/gcc_64/include/QtWidgets/qpushbutton.h \
+		../../Qt/6.1.1/gcc_64/include/QtWidgets/qabstractbutton.h \
+		../../Qt/6.1.1/gcc_64/include/QtWidgets/QScrollArea \
+		../../Qt/6.1.1/gcc_64/include/QtWidgets/qscrollarea.h \
+		../../Qt/6.1.1/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		../../Qt/6.1.1/gcc_64/include/QtWidgets/QSpacerItem \
+		../../Qt/6.1.1/gcc_64/include/QtWidgets/QStackedWidget \
+		../../Qt/6.1.1/gcc_64/include/QtWidgets/qstackedwidget.h \
+		../../Qt/6.1.1/gcc_64/include/QtWidgets/QTabWidget \
+		../../Qt/6.1.1/gcc_64/include/QtWidgets/QTextBrowser \
+		../../Qt/6.1.1/gcc_64/include/QtWidgets/qtextbrowser.h \
+		../../Qt/6.1.1/gcc_64/include/QtWidgets/qtextedit.h \
+		../../Qt/6.1.1/gcc_64/include/QtWidgets/QVBoxLayout \
+		../../Qt/6.1.1/gcc_64/include/QtWidgets/QWidget \
+		../SpieleprogrammierungQT/inputparser.h \
 		../../Qt/6.1.1/gcc_64/include/QtWidgets/QMessageBox \
 		../../Qt/6.1.1/gcc_64/include/QtWidgets/qmessagebox.h \
 		../../Qt/6.1.1/gcc_64/include/QtWidgets/qdialog.h \

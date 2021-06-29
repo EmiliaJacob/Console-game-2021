@@ -23,7 +23,7 @@ bool Game::LoadGame()
     QByteArray fieldsData = fieldsFile.readAll();
     QJsonDocument fieldsDoc(QJsonDocument::fromJson(fieldsData));
 
-    GameBoard.Read(fieldsDoc.object());
+    mGameBoard.Read(fieldsDoc.object());
 
     // Loading Player
     QFile playerFile("player.json");
@@ -35,112 +35,81 @@ bool Game::LoadGame()
     QByteArray playerData = playerFile.readAll();
     QJsonDocument playerDoc(QJsonDocument::fromJson(playerData));
 
-    Player.Read(playerDoc.object());
+    mPlayer.Read(playerDoc.object());
+
     return true;
 }
 
 void Game::InputHandler(QString input)
 {
-    if(input == "mf")
+    if(input == "mf" || input == "move forward")
     {
-        Player.Move("forward");
+        mPlayer.Move("forward");
         return;
     }
-    if(input == "mb")
+    if(input == "mb" || input == "move backward")
     {
-        Player.Move("backward");
+        mPlayer.Move("backward");
         return;
     }
-    if(input == "mr")
+    if(input == "mr" || input == "move right")
     {
-        Player.Move("right");
+        mPlayer.Move("right");
         return;
     }
-    if(input == "ml")
+    if(input == "ml" || input == "move left")
     {
-        Player.Move("left");
+        mPlayer.Move("left");
         return;
     }
-    if(input == "i")
+    if(input == "ai" || input == "available items")
     {
-        Player.ListAvailableItems();
+        mPlayer.ListAvailableItems();
         return;
     }
-    if(input == "d")
+    if(input == "d" || input == "description")
     {
-        Player.GetFieldDescription();
-        return; //TODO: return are unneccessary
-    }
-    if(input.split(" ")[0] == "p")
-    {
-        Player.PickUpItems(input.split(" ")[1], 1);
+        mPlayer.GetFieldDescription();
         return;
     }
-    if(input.split(" ")[0] == "d")
-    {
-        QStringList splittedInput = input.split(" ");
-        if(splittedInput.size()==2)
-            Player.DropItemOfType(splittedInput[1]);
-        else
-            {
-                if(splittedInput[2] == "a")
-                //Player.DropAllItemsOfType(splittedInput[1]);
-           // else
-                Player.DropMultipleItemsOfType(splittedInput[1], splittedInput[2].toInt());
-        }
-        return;
-    }
-}
 
-void Game::InputHandler(QString input)
-{
-    if(input == "mf")
+    //Pick-up and Drop Items
+    QStringList splittedInput = input.split(" ");
+
+    if(splittedInput.length() == 2) // pick-up/drop only one item
     {
-        Player.Move("forward");
-        return;
-    }
-    if(input == "mb")
-    {
-        Player.Move("backward");
-        return;
-    }
-    if(input == "mr")
-    {
-        Player.Move("right");
-        return;
-    }
-    if(input == "ml")
-    {
-        Player.Move("left");
-        return;
-    }
-    if(input == "i")
-    {
-        Player.ListAvailableItems();
-        return;
-    }
-    if(input == "d")
-    {
-        Player.GetFieldDescription();
-        return; //TODO: return are unneccessary
-    }
-    if(input.split(" ")[0] == "p")
-    {
-        Player.PickUpItems(input.split(" ")[1], 1);
-        return;
-    }
-    if(input.split(" ")[0] == "d")
-    {
-        QStringList splittedInput = input.split(" ");
-        if(splittedInput.size()==2)
-            Player.DropItemOfType(splittedInput[1]);
-        else
+        if(splittedInput[0] == "p" || splittedInput[0] == "pickup")
         {
-            if(splittedInput[2] == "a")
-                Player.DropAllItemsOfType(splittedInput[1]);
-            else
-                Player.DropMultipleItemsOfType(splittedInput[1], splittedInput[2].toInt());
+            mPlayer.PickUpItems(splittedInput[1], 1);
+            return;
         }
-        return;
+        if(splittedInput[0] == "d" || splittedInput[0] == "drop")
+        {
+            mPlayer.DropItemOfType(splittedInput[1]);
+            return;
+        }
     }
+
+    if(splittedInput.length() == 3) // pick-up/drop multiple or all available items
+    {
+        if(splittedInput[0] == "p" || splittedInput[0] == "pickup")
+        {
+            // TODO: implement adequate methods for picking up multiple items
+        }
+        if(splittedInput[0] == "d" || splittedInput[0] == "drop")
+        {
+            if(splittedInput[2] == "a" || splittedInput[2] == "all")
+            {
+                mPlayer.DropAllItemsOfType(splittedInput[1]);
+                return;
+            }
+            else
+            {
+                mPlayer.DropMultipleItemsOfType(splittedInput[1], splittedInput[2].toInt());
+                return;
+            }
+        }
+    }
+
+    qDebug() << "No fitting interpretation was found for: " << input; //TODO: Define return-value when nothing matched
 }
