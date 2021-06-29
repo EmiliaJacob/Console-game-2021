@@ -40,8 +40,31 @@ bool Game::LoadGame()
     return true;
 }
 
+void Game::SaveGame()
+{
+    QFile playerFile(QStringLiteral("player.json"));
+
+    if(!playerFile.open(QIODevice::WriteOnly))
+    {
+        qWarning("Couldn't open playerFile");
+    }
+    else
+    {
+        QJsonObject playerObject;
+        mPlayer.Write(playerObject);
+
+        playerFile.write(QJsonDocument(playerObject).toJson());
+    }
+}
+
 void Game::InputHandler(QString input)
 {
+    if(input == "sg")
+    {
+        SaveGame();
+        return;
+    }
+
     if(input == "mf" || input == "move forward")
     {
         mPlayer.Move("forward");

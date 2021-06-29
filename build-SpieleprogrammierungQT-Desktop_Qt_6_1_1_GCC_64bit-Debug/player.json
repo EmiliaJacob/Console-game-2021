@@ -1,23 +1,26 @@
 {
-    "name" : "Felix",
-    "currentFieldId" : "0", 
-    "inventory" : 
-    [
+    "currentFieldId": "0",
+    "inventory": [
         {
-            "name" : "Magic Amulet",
-            "description" : "A beautiful amulet"
+            "description": "A beautiful amulet",
+            "name": "Magic Amulet"
         },
         {
-            "name" : "Pear",
-            "description" : "A delicious pear"
+            "description": "A delicious pear",
+            "name": "Pear"
         },
         {
-            "name" : "Pear",
-            "description" : "A delicious pear"
+            "description": "A delicious pear",
+            "name": "Pear"
         },
         {
-            "name" : "Pear",
-            "description" : "A delicious pear"
+            "description": "A delicious pear",
+            "name": "Pear"
+        },
+        {
+            "description": "A shining emerald. It looks like it's been part of a piece of jewelery",
+            "name": "emerald"
         }
-    ]
+    ],
+    "name": "Felix"
 }

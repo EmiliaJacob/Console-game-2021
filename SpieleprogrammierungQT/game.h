@@ -17,6 +17,7 @@ public:
     Player mPlayer;
     inline static GameBoard mGameBoard;
     Game();
+    void Write(QJsonObject &json);
     void NewGame();
     void SaveGame();
     bool LoadGame();
