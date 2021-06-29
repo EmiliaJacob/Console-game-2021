@@ -80,7 +80,7 @@ void Game::InputHandler(QString input)
     {
         if(splittedInput[0] == "p" || splittedInput[0] == "pickup")
         {
-            mPlayer.PickUpItems(splittedInput[1], 1);
+            mPlayer.PickUpItemOfType(splittedInput[1]);
             return;
         }
         if(splittedInput[0] == "d" || splittedInput[0] == "drop")
@@ -94,8 +94,18 @@ void Game::InputHandler(QString input)
     {
         if(splittedInput[0] == "p" || splittedInput[0] == "pickup")
         {
-            // TODO: implement adequate methods for picking up multiple items
+            if(splittedInput[2] == "a" || splittedInput[2] == "all")
+            {
+                mPlayer.PickUpAllItemsOfType(splittedInput[1]);
+                return;
+            }
+            else
+            {
+                mPlayer.PickUpMultipleItemsOfType(splittedInput[1], splittedInput[2].toInt());
+                return;
+            }
         }
+
         if(splittedInput[0] == "d" || splittedInput[0] == "drop")
         {
             if(splittedInput[2] == "a" || splittedInput[2] == "all")

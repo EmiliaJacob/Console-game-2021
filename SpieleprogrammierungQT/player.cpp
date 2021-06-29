@@ -35,7 +35,7 @@ void Player::Read(const QJsonObject &json)
     qDebug() << "Created player and put them onto Field: " << CurrentField->Id;
 }
 
-void Player::Move(QString direction)
+void Player::Move(QString direction) // Done!
 {
     if(direction == "forward"){
         if(QString::compare(CurrentField->FieldForward, "x") != 0)
@@ -62,59 +62,80 @@ void Player::Move(QString direction)
     }
 }
 
-void Player::PickUpItems(QString itemName, int numberOfItems) // TODO: make it possible to pick up multiple items
+
+void Player::PickUpItemOfType(QString itemType) // Done!
 {
-    for (int i=0; i<CurrentField->Items.size(); i++)
+    for(int i = 0; i < CurrentField->Items.size(); i++)
     {
-        Item item = CurrentField->Items[i];
-        if(item.Name == itemName)
+        if(CurrentField->Items[i].Name == itemType)
         {
+            mInventory.CollectedItems.append(CurrentField->Items[i]);
             CurrentField->Items.removeAt(i);
-            mInventory.CollectedItems.append(item);
-            qDebug() << "Picked up: " << item.Name;
-            return;
+            break;
         }
     }
-    qDebug() << "Item " << itemName << " not found";
 }
 
-void Player::DropItemOfType(QString itemType)
-{
-    for(int i=0; i<mInventory.CollectedItems.size(); i++)
+void Player::PickUpMultipleItemsOfType(QString itemType, int numberOfItems) { // Done!
+    int i = 0;
+    while (i != CurrentField->Items.size())
     {
-        Item item = mInventory.CollectedItems[i]; //TODO : Muss item wieder zerstört werden?
-        if(item.Name == itemType)
+        if(CurrentField->Items[i].Name == itemType)
         {
-            mInventory.CollectedItems.removeAt(i);
-            CurrentField->Items.append(item);
-            qDebug() << "Dropped item: " << item.Name;
-            return;
+            mInventory.CollectedItems.append(CurrentField->Items[i]);
+            CurrentField->Items.removeAt(i);
+            numberOfItems -= 1;
+            if(numberOfItems == 0) {
+                break;
+            }
+            i = 0;
         }
+        i += 1;
     }
-    qDebug() << "Item " << itemType << " was not found in inventory";
+
+    if(numberOfItems > 0)
+    {
+        qDebug() << "Not enough items were available";
+    }
 }
 
-void Player::DropAllItemsOfType(QString itemName)
+void Player::PickUpAllItemsOfType(QString itemType) // Done!
 {
     int i = 0;
-    while (i != mInventory.CollectedItems.size())
+    while (i != CurrentField->Items.size())
     {
-        if(mInventory.CollectedItems[i].Name == itemName)
+        if(CurrentField->Items[i].Name == itemType)
         {
-            CurrentField->Items.append(mInventory.CollectedItems[i]);
-            mInventory.CollectedItems.removeAt(i);
+            mInventory.CollectedItems.append(CurrentField->Items[i]);
+            CurrentField->Items.removeAt(i);
+
             i = 0;
         }
         i += 1;
     }
 }
 
-void Player::DropMultipleItemsOfType(QString itemName, int numberOfItems)
+
+void Player::DropItemOfType(QString itemType) // Done!
+{
+    for(int i=0; i<mInventory.CollectedItems.size(); i++)
+    {
+        Item item = mInventory.CollectedItems[i];
+        if(item.Name == itemType)
+        {
+            mInventory.CollectedItems.removeAt(i);
+            CurrentField->Items.append(item);
+            return;
+        }
+    }
+}
+
+void Player::DropMultipleItemsOfType(QString itemType, int numberOfItems) // Done!
 {
     int i = 0;
     while (i != mInventory.CollectedItems.size())
     {
-        if(mInventory.CollectedItems[i].Name == itemName)
+        if(mInventory.CollectedItems[i].Name == itemType)
         {
             CurrentField->Items.append(mInventory.CollectedItems[i]);
             mInventory.CollectedItems.removeAt(i);
@@ -126,9 +147,30 @@ void Player::DropMultipleItemsOfType(QString itemName, int numberOfItems)
         }
         i += 1;
     }
+
+    if(numberOfItems > 0)
+    {
+        qDebug() << "Not enough items were available";
+    }
 }
 
-void Player::ListAvailableItems()
+void Player::DropAllItemsOfType(QString itemType) // Done!
+{
+    int i = 0;
+    while (i != mInventory.CollectedItems.size())
+    {
+        if(mInventory.CollectedItems[i].Name == itemType)
+        {
+            CurrentField->Items.append(mInventory.CollectedItems[i]);
+            mInventory.CollectedItems.removeAt(i);
+            i = 0;
+        }
+        i += 1;
+    }
+}
+
+
+void Player::ListAvailableItems() // Done!
 {
    if(Player::CurrentField->Items.length() == 0)
        qDebug() << "There are no items on this field";
@@ -141,7 +183,7 @@ void Player::ListAvailableItems()
    }
 }
 
-void Player::GetFieldDescription()
+void Player::GetFieldDescription() // Done!
 {
     qDebug() << "Field Description: " << Player::CurrentField->Description;
 
