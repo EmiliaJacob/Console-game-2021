@@ -109,24 +109,23 @@ void Player::DropAllItemsOfType(QString itemName)
     }
 }
 
-void Player::DropMultipleItemsOfType(QString itemType, int numberOfItems)
+void Player::DropMultipleItemsOfType(QString itemName, int numberOfItems)
 {
-   //for(int i=0; i<mInventory.CollectedItems.size(); i++)
-   //{
-   //    Item item = mInventory.CollectedItems[i]; //TODO : Muss item wieder zerstört werden?
-   //    if(item.Name == itemType)
-   //    {
-   //        mInventory.CollectedItems.removeAt(i);
-   //        CurrentField->Items.append(item);
-   //        qDebug() << "Dropped item: " << item.Name;
-   //        numberOfItems -= 1;
-   //        if(numberOfItems == 0)
-   //            return;
-   //    }
-   //}
-
-
-    //qDebug() << "Item " << itemType << " was not found in inventory";
+    int i = 0;
+    while (i != mInventory.CollectedItems.size())
+    {
+        if(mInventory.CollectedItems[i].Name == itemName)
+        {
+            CurrentField->Items.append(mInventory.CollectedItems[i]);
+            mInventory.CollectedItems.removeAt(i);
+            numberOfItems -= 1;
+            if(numberOfItems == 0) {
+                break;
+            }
+            i = 0;
+        }
+        i += 1;
+    }
 }
 
 void Player::ListAvailableItems()
