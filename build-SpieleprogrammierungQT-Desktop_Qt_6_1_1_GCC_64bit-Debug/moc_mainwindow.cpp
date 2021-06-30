@@ -111,10 +111,10 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 0: _t->on_Send_clicked(); break;
         case 1: _t->on_lineEdit_returnPressed(); break;
         case 2: _t->dotext(); break;
-        case 3: _t->on_lineEdit_upPressed(); break;
+        //case 3: _t->on_lineEdit_upPressed(); break;
         case 4: _t->on_pushButton_newgame_clicked(); break;
         case 5: _t->on_pushButton_clicked(); break;
-        case 6: _t->on_tabWidget_tabBarClicked((*reinterpret_cast< int(*)>(_a[1]))); break;
+        //case 6: _t->on_tabWidget_tabBarClicked((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 7: _t->on_pushButton_titel_clicked(); break;
         case 8: _t->on_pushButton_leave_clicked(); break;
         case 9: _t->on_pushButton_help_clicked(); break;

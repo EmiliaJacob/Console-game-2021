@@ -248,7 +248,7 @@ p, li { white-space: pre-wrap; }
         <enum>QTabWidget::Triangular</enum>
        </property>
        <property name="currentIndex">
-        <number>2</number>
+        <number>0</number>
        </property>
        <widget class="QWidget" name="Inventar">
         <property name="font">
@@ -2106,7 +2106,7 @@ border-color: rgb(255, 255, 255);
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-image:url(D:/Data/aalen/semester6/Spieleprogrammierung/sorcebilder/11os.png);
+             <string notr="true">background-image:url(./sorcebilder/11os.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -2140,7 +2140,7 @@ border-color: rgb(255, 255, 255);
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-image:url(D:/Data/aalen/semester6/Spieleprogrammierung/sorcebilder/11now.png);
+             <string notr="true">background-image:url(./sorcebilder/11now.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -2174,7 +2174,7 @@ border-color: rgb(255, 255, 255);
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-image:url(D:/Data/aalen/semester6/Spieleprogrammierung/sorcebilder/13nw.png);
+             <string notr="true">background-image:url(./sorcebilder/13nw.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -2208,7 +2208,7 @@ border-color: rgb(255, 255, 255);
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-image:url(D:/Data/aalen/semester6/Spieleprogrammierung/sorcebilder/12ow.png);
+             <string notr="true">background-image:url(./sorcebilder/12ow.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -2242,7 +2242,7 @@ border-color: rgb(255, 255, 255);
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-image:url(D:/Data/aalen/semester6/Spieleprogrammierung/sorcebilder/13nosw.png);
+             <string notr="true">background-image:url(./sorcebilder/13nosw.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -2276,7 +2276,7 @@ border-color: rgb(255, 255, 255);
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-image:url(D:/Data/aalen/semester6/Spieleprogrammierung/sorcebilder/12osw.png);
+             <string notr="true">background-image:url(./sorcebilder/12osw.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);</string>
             </property>
@@ -2303,7 +2303,7 @@ border-color: rgb(255, 255, 255);</string>
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-image:url(D:/Data/aalen/semester6/Spieleprogrammierung/sorcebilder/11sw.png);
+             <string notr="true">background-image:url(./sorcebilder/11sw.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -2337,7 +2337,7 @@ border-color: rgb(255, 255, 255);
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-image:url(D:/Data/aalen/semester6/Spieleprogrammierung/sorcebilder/12nos.png);
+             <string notr="true">background-image:url(./sorcebilder/12nos.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -2371,7 +2371,7 @@ border-color: rgb(255, 255, 255);
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-image:url(D:/Data/aalen/semester6/Spieleprogrammierung/sorcebilder/13sw.png);
+             <string notr="true">background-image:url(./sorcebilder/13sw.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -2405,7 +2405,7 @@ border-color: rgb(255, 255, 255);
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-image:url(D:/Data/aalen/semester6/Spieleprogrammierung/sorcebilder/13no.png);
+             <string notr="true">background-image:url(./sorcebilder/13no.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -2439,7 +2439,7 @@ border-color: rgb(255, 255, 255);
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-image:url(D:/Data/aalen/semester6/Spieleprogrammierung/sorcebilder/13osw.png);
+             <string notr="true">background-image:url(./sorcebilder/13osw.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -2473,7 +2473,7 @@ border-color: rgb(255, 255, 255);
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-image:url(D:/Data/aalen/semester6/Spieleprogrammierung/sorcebilder/12ow.png);
+             <string notr="true">background-image:url(./sorcebilder/12ow.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -2507,7 +2507,7 @@ border-color: rgb(255, 255, 255);
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-image:url(D:/Data/aalen/semester6/Spieleprogrammierung/sorcebilder/13os.png);
+             <string notr="true">background-image:url(./sorcebilder/13os.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -2541,7 +2541,7 @@ border-color: rgb(255, 255, 255);
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-image:url(D:/Data/aalen/semester6/Spieleprogrammierung/sorcebilder/13now.png);
+             <string notr="true">background-image:url(./sorcebilder/13now.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -2575,7 +2575,7 @@ border-color: rgb(255, 255, 255);
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-image:url(D:/Data/aalen/semester6/Spieleprogrammierung/sorcebilder/12sw.png);
+             <string notr="true">background-image:url(./sorcebilder/12sw.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -2609,7 +2609,7 @@ border-color: rgb(255, 255, 255);
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-image:url(D:/Data/aalen/semester6/Spieleprogrammierung/sorcebilder/12s.png);
+             <string notr="true">background-image:url(./sorcebilder/12s.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -2643,7 +2643,7 @@ border-color: rgb(255, 255, 255);
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-image:url(D:/Data/aalen/semester6/Spieleprogrammierung/sorcebilder/11now.png);
+             <string notr="true">background-image:url(./sorcebilder/11now.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -2677,7 +2677,7 @@ border-color: rgb(255, 255, 255);
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-image:url(D:/Data/aalen/semester6/Spieleprogrammierung/sorcebilder/11ns.png);
+             <string notr="true">background-image:url(./sorcebilder/11ns.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -2711,7 +2711,7 @@ border-color: rgb(255, 255, 255);
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-image:url(D:/Data/aalen/semester6/Spieleprogrammierung/sorcebilder/11ow.png);
+             <string notr="true">background-image:url(./sorcebilder/11ow.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -2745,7 +2745,7 @@ border-color: rgb(255, 255, 255);
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-image:url(D:/Data/aalen/semester6/Spieleprogrammierung/sorcebilder/12ns.png);
+             <string notr="true">background-image:url(./sorcebilder/12ns.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -2779,7 +2779,7 @@ border-color: rgb(255, 255, 255);
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-image:url(D:/Data/aalen/semester6/Spieleprogrammierung/sorcebilder/13os.png);
+             <string notr="true">background-image:url(./sorcebilder/13os.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -2807,7 +2807,7 @@ border-color: rgb(255, 255, 255);
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-image:url(D:/Data/aalen/semester6/Spieleprogrammierung/sorcebilder/12nsw.png);
+             <string notr="true">background-image:url(./sorcebilder/12nsw.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -2835,7 +2835,7 @@ border-color: rgb(255, 255, 255);
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-image:url(D:/Data/aalen/semester6/Spieleprogrammierung/sorcebilder/12no.png);
+             <string notr="true">background-image:url(./sorcebilder/12no.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -2869,7 +2869,7 @@ border-color: rgb(255, 255, 255);
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-image:url(D:/Data/aalen/semester6/Spieleprogrammierung/sorcebilder/12now.png);
+             <string notr="true">background-image:url(./sorcebilder/12now.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -2903,7 +2903,7 @@ border-color: rgb(255, 255, 255);
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-image:url(D:/Data/aalen/semester6/Spieleprogrammierung/sorcebilder/12nos.png);
+             <string notr="true">background-image:url(./sorcebilder/12nos.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -2937,7 +2937,7 @@ border-color: rgb(255, 255, 255);
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-image:url(D:/Data/aalen/semester6/Spieleprogrammierung/sorcebilder/13no_s.png);
+             <string notr="true">background-image:url(./sorcebilder/13no_s.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -2971,7 +2971,7 @@ border-color: rgb(255, 255, 255);
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-image:url(D:/Data/aalen/semester6/Spieleprogrammierung/sorcebilder/12no.png);
+             <string notr="true">background-image:url(./sorcebilder/12no.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -3005,7 +3005,7 @@ border-color: rgb(255, 255, 255);
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-image:url(D:/Data/aalen/semester6/Spieleprogrammierung/sorcebilder/12now.png);
+             <string notr="true">background-image:url(./sorcebilder/12now.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -3039,7 +3039,7 @@ border-color: rgb(255, 255, 255);
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-image:url(D:/Data/aalen/semester6/Spieleprogrammierung/sorcebilder/12nsw.png);
+             <string notr="true">background-image:url(./sorcebilder/12nsw.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -3073,7 +3073,7 @@ border-color: rgb(255, 255, 255);
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-image:url(D:/Data/aalen/semester6/Spieleprogrammierung/sorcebilder/13nsw.png);
+             <string notr="true">background-image:url(./sorcebilder/13nsw.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -3107,7 +3107,7 @@ border-color: rgb(255, 255, 255);
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-image:url(D:/Data/aalen/semester6/Spieleprogrammierung/sorcebilder/13sw.png);
+             <string notr="true">background-image:url(./sorcebilder/13sw.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -3141,7 +3141,7 @@ border-color: rgb(255, 255, 255);
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-image:url(D:/Data/aalen/semester6/Spieleprogrammierung/sorcebilder/12sw.png);
+             <string notr="true">background-image:url(./sorcebilder/12sw.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -3175,7 +3175,7 @@ border-color: rgb(255, 255, 255);
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-image:url(D:/Data/aalen/semester6/Spieleprogrammierung/sorcebilder/13nos_w.png);
+             <string notr="true">background-image:url(./sorcebilder/13nos_w.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -3209,7 +3209,7 @@ border-color: rgb(255, 255, 255);
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-image:url(D:/Data/aalen/semester6/Spieleprogrammierung/sorcebilder/11no.png);
+             <string notr="true">background-image:url(./sorcebilder/11no.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -3243,7 +3243,7 @@ border-color: rgb(255, 255, 255);
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-image:url(D:/Data/aalen/semester6/Spieleprogrammierung/sorcebilder/13nw_s.png);
+             <string notr="true">background-image:url(./sorcebilder/13nw_s.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -3277,7 +3277,7 @@ border-color: rgb(255, 255, 255);
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-image:url(D:/Data/aalen/semester6/Spieleprogrammierung/sorcebilder/12ow.png);
+             <string notr="true">background-image:url(./sorcebilder/12ow.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -3311,7 +3311,7 @@ border-color: rgb(255, 255, 255);
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-image:url(D:/Data/aalen/semester6/Spieleprogrammierung/sorcebilder/11sw.png);
+             <string notr="true">background-image:url(./sorcebilder/11sw.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -3339,7 +3339,7 @@ border-color: rgb(255, 255, 255);
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-image:url(D:/Data/aalen/semester6/Spieleprogrammierung/sorcebilder/12nos.png);
+             <string notr="true">background-image:url(./sorcebilder/12nos.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -3373,7 +3373,7 @@ border-color: rgb(255, 255, 255);
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-image:url(D:/Data/aalen/semester6/Spieleprogrammierung/sorcebilder/12nw.png);
+             <string notr="true">background-image:url(./sorcebilder/12nw.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -3407,7 +3407,7 @@ border-color: rgb(255, 255, 255);
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-image:url(D:/Data/aalen/semester6/Spieleprogrammierung/sorcebilder/11.png);
+             <string notr="true">background-image:url(./sorcebilder/11.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);</string>
             </property>
@@ -3491,9 +3491,6 @@ border-color: rgb(255, 255, 255);</string>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_4">
         <item>
-         <widget class="QTableWidget" name="tableWidget_3"/>
-        </item>
-        <item>
          <widget class="QScrollArea" name="scrollArea">
           <property name="widgetResizable">
            <bool>true</bool>
@@ -3504,7 +3501,7 @@ border-color: rgb(255, 255, 255);</string>
              <x>0</x>
              <y>0</y>
              <width>587</width>
-             <height>349</height>
+             <height>708</height>
             </rect>
            </property>
            <property name="styleSheet">

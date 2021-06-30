@@ -30,7 +30,7 @@ void MainWindow::on_Send_clicked(){
 void MainWindow::on_lineEdit_returnPressed(){
 dotext();}
 void MainWindow::dotext(){
-    QString command = ui ->lineEdit->text();                        //list befel ein
+    QString command = ui ->lineEdit->text();
     if(!command.isEmpty()){
        WriteLine(command);
 
@@ -42,7 +42,7 @@ void MainWindow::dotext(){
            UpdatePositionInUi(oldPosition, answer.split(" ")[4]);
        }
 
-       WriteLine(mGame.InputHandler(answer));
+       WriteLine(answer);
        ui->lineEdit->clear();
     }
 }
@@ -56,6 +56,7 @@ void MainWindow::WriteLine(QString input)
 void MainWindow::UpdatePositionInUi(QString oldPosition, QString newPosition)
 {
     qDebug() << "OldPosition: " << oldPosition << " NewPosition: " << newPosition;
+    //ui->pushButton_1->setStyleSheet();
 }
 
 
