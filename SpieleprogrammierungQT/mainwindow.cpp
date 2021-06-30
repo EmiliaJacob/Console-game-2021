@@ -33,7 +33,16 @@ void MainWindow::dotext(){
     QString command = ui ->lineEdit->text();                        //list befel ein
     if(!command.isEmpty()){
        WriteLine(command);
-       WriteLine(mGame.InputHandler(command));
+
+       QString oldPosition = mGame.mPlayer.CurrentField->Id;
+
+       QString answer = mGame.InputHandler(command);
+       if(answer.split(" ")[0] == "Moved")
+       {
+           UpdatePositionInUi(oldPosition, answer.split(" ")[4]);
+       }
+
+       WriteLine(mGame.InputHandler(answer));
        ui->lineEdit->clear();
     }
 }
@@ -44,7 +53,10 @@ void MainWindow::WriteLine(QString input)
     ui->textBrowser->append(newLine);
 }
 
-
+void MainWindow::UpdatePositionInUi(QString oldPosition, QString newPosition)
+{
+    qDebug() << "OldPosition: " << oldPosition << " NewPosition: " << newPosition;
+}
 
 
 //New Game
