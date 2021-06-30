@@ -7,12 +7,8 @@
             "backward" : "x",
             "left" : "2",
             "right" : "x",
-            "description" : "This is the entrance to the caves.
-            A single light stralen vallen behind you through denn eingan. 
-            Towards the north there is a large tunnel that looks almost like hell.
-            To the west there is a crevice and to the east there is a small shaft.",
+            "description" : "This is the entrance to the caves",
             "items" :
-<<<<<<< HEAD:build-SpieleprogrammierungQT-Desktop_Qt_6_1_1_GCC_64bit-Debug/fields.json
             [
                 {
                     "name" : "key",
@@ -21,19 +17,8 @@
                 {
                     "name" : "emerald", 
                     "description" : "A shining emerald. It looks like it's been part of a piece of jewelery"
-                }, 
-				{
-                    "name" : "emerald", 
-                    "description" : "A shining emerald. It looks like it's been part of a piece of jewelery"
-                }, 
-                {
-                    "name" : "emerald", 
-                    "description" : "A shining emerald. It looks like it's been part of a piece of jewelery"
-                } 
+                }
             ] 
-=======
-            [ ] 
->>>>>>> UI:build-SpieleprogrammierungQT-Desktop_Qt_6_1_0_MinGW_64_bit-Debug/fields.json
         },
         {
             "id" : "1",
@@ -45,7 +30,7 @@
             "items" :
             [
                 {
-                    "name" : "torch",
+                    "name" : "old torch",
                     "description" : "An extinguished torch that somebody must have left here"
                 }
             ] 
