@@ -1,0 +1,47 @@
+{
+    "fields": 
+    [
+        {
+            "id" : "0",
+            "forward" : "1",
+            "backward" : "x",
+            "left" : "2",
+            "right" : "x",
+            "description" : "This is the entrance to the caves. A single light stralen vallen behind you through denn eingant. Towards the north there is a large tunnel that looks almost 								 like hell. To the west there is a crevice and to the east there is a small shaft.",
+            "items" :
+            [
+                {
+                    "name" : "key",
+                    "description" : "A rusty key"
+                },
+                {
+                    "name" : "emerald", 
+                    "description" : "A shining emerald. It looks like it's been part of a piece of jewelery"
+                }, 
+				{
+                    "name" : "emerald", 
+                    "description" : "A shining emerald. It looks like it's been part of a piece of jewelery"
+                }, 
+                {
+                    "name" : "emerald", 
+                    "description" : "A shining emerald. It looks like it's been part of a piece of jewelery"
+                } 
+            ] 
+        },
+        {
+            "id" : "1",
+            "forward" : "x",
+            "backward" : "0",
+            "left" : "x",
+            "right" : "x",
+            "description" : "This nothing but a plain dark tunnel",
+            "items" :
+            [
+                {
+                    "name" : "torch",
+                    "description" : "An extinguished torch that somebody must have left here"
+                }
+            ] 
+        }
+    ]
+}

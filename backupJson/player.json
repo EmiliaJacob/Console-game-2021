@@ -1,0 +1,30 @@
+{
+    "currentFieldId": "0",
+    "inventory": [
+        {
+            "description": "A beautiful amulet",
+            "name": "Magic Amulet"
+        },
+        {
+            "description": "A delicious pear",
+            "name": "Pear"
+        },
+        {
+            "description": "A delicious pear",
+            "name": "Pear"
+        },
+        {
+            "description": "A delicious pear",
+            "name": "Pear"
+        },
+        {
+            "description": "A shining emerald. It looks like it's been part of a piece of jewelery",
+            "name": "emerald"
+        },
+        {
+            "description": "A shining emerald. It looks like it's been part of a piece of jewelery",
+            "name": "emerald"
+        }
+    ],
+    "name": "Felix"
+}

@@ -55,6 +55,20 @@ void Game::SaveGame()
 
         playerFile.write(QJsonDocument(playerObject).toJson());
     }
+
+    QFile fieldsFile(QStringLiteral("fields.json"));
+
+    if(!fieldsFile.open((QIODevice::WriteOnly)))
+    {
+        qWarning("Couldn't open fieldsFile");
+    }
+    else
+    {
+        QJsonObject gameBoardObject;
+        mGameBoard.Write(gameBoardObject);
+
+        fieldsFile.write(QJsonDocument(gameBoardObject).toJson());
+    }
 }
 
 void Game::InputHandler(QString input)

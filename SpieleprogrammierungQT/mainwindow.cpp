@@ -98,7 +98,7 @@ void MainWindow::on_upbutton_clicked()
     if(florlevel>0){
         ui->stackedWidget_2->setCurrentIndex( ui->stackedWidget_2->currentIndex()-1);
         florlevel-=1;
-        ui->Florlabel->setText("UG " +  QString::number(florlevel));
+        //ui->Florlabel->setText("UG " +  QString::number(florlevel));
     }
 }
 
@@ -108,6 +108,6 @@ void MainWindow::on_downbutton_clicked()
     if(florlevel<maxflorlevel){
         ui->stackedWidget_2->setCurrentIndex(+1);
         florlevel+=1;
-        ui->Florlabel->setText("UG " +  QString::number(florlevel));
+        //ui->Florlabel->setText("UG " +  QString::number(florlevel));
     }
 }

@@ -21,6 +21,20 @@ void GameBoard::Read(const QJsonObject &json)
     TestHelper testHelper;
 }
 
+void GameBoard::Write(QJsonObject &json)
+{
+    QJsonArray fieldsArray;
+
+    for(Field &field: this->mFields) // TODO: implement this elegant way into your other methods as well
+    {
+       QJsonObject fieldObject;
+       field.Write(fieldObject);
+       fieldsArray.append(fieldObject);
+    }
+
+    json["inventory"] = fieldsArray;
+}
+
 Field* GameBoard::GetField(QString fieldId)
 {
     for(int i=0; i<mFields.size(); i++)

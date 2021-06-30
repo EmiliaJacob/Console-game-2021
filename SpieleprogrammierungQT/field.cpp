@@ -24,3 +24,24 @@ void Field::Read(QJsonObject &json)
            Items.append(item);
    }
 }
+
+void Field::Write(QJsonObject &json)
+{
+    json["id"] = this->Id;
+    json["forward"] = this->FieldForward;
+    json["backward"] = this->FieldBackward;
+    json["left"] = this->FieldLeft;
+    json["right"] = this->FieldRight;
+    json["description"] = this->Description;
+
+    QJsonArray itemArray;
+
+    for(Item &item : this->Items) // TODO: implement this elegant way into your other methods as well
+    {
+       QJsonObject itemObject;
+       item.Write(itemObject);
+       itemArray.append(itemObject);
+    }
+
+    json["items"] = itemArray;
+}
