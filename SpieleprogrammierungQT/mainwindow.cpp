@@ -30,7 +30,7 @@ void MainWindow::on_Send_clicked(){
 void MainWindow::on_lineEdit_returnPressed(){
 dotext();}
 void MainWindow::dotext(){
-    QString command = ui ->lineEdit->text();                        //list befel ein
+    QString command = ui ->lineEdit->text();
     if(!command.isEmpty()){
        WriteLine(command);
        WriteLine(mGame.InputHandler(command));
