@@ -3,64 +3,30 @@
     "inventory": [
         {
             "description": "A beautiful amulet",
-            "name": "Magic Amulet"
+            "name": "Magic Amulet",
+            "locationDescription" : "lays on the floor"
         },
         {
             "description": "A delicious pear",
-            "name": "Pear"
+            "name": "Pear",
+			"locationDescription" : "lays on the floor"
         },
         {
             "description": "A delicious pear",
-            "name": "Pear"
+            "name": "Pear",
+            "locationDescription" : "lays on the floor"
         },
         {
             "description": "A delicious pear",
-            "name": "Pear"
+            "name": "Pear",
+            "locationDescription" : "lays on the floor"
         },
         {
-            "description": "A shining emerald. It looks like it's been part of a piece of jewelery",
-            "name": "emerald"
-        },
-        {
-            "description": "A shining emerald. It looks like it's been part of a piece of jewelery",
-            "name": "emerald"
-        },
-        {
-            "description": "A shining emerald. It looks like it's been part of a piece of jewelery",
-            "name": "emerald"
-        },
-        {
-            "description": "A shining emerald. It looks like it's been part of a piece of jewelery",
-            "name": "emerald"
-        },
-        {
-            "description": "A shining emerald. It looks like it's been part of a piece of jewelery",
-            "name": "emerald"
-        },
-        {
-            "description": "A shining emerald. It looks like it's been part of a piece of jewelery",
-            "name": "emerald"
-        },
-        {
-            "description": "A shining emerald. It looks like it's been part of a piece of jewelery",
-            "name": "emerald"
-        },
-        {
-            "description": "A shining emerald. It looks like it's been part of a piece of jewelery",
-            "name": "emerald"
-        },
-        {
-            "description": "A shining emerald. It looks like it's been part of a piece of jewelery",
-            "name": "emerald"
-        },
-        {
-            "description": "A rusty key",
-            "name": "key"
-        },
-        {
-            "description": "A shining emerald. It looks like it's been part of a piece of jewelery",
-            "name": "emerald"
+            "description": "A delicious pear",
+            "name": "Pear",
+            "locationDescription" : "lays on the floor"
         }
+
     ],
     "name": "Felix"
 }

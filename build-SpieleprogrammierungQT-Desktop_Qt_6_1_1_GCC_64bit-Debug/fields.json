@@ -8,15 +8,18 @@
             "items": [
                 {
                     "description": "A rusty key",
-                    "name": "key"
+                    "name": "key",
+                    "locationDescription" : "lays on the floor"
                 },
                 {
                     "description": "A shining emerald. It looks like it's been part of a piece of jewelery",
-                    "name": "emerald"
+                    "name": "emerald",
+                    "locationDescription" : "lays on the floor"
                 },
                 {
                     "description": "A shining emerald. It looks like it's been part of a piece of jewelery",
-                    "name": "emerald"
+                    "name": "emerald",
+                    "locationDescription" : "lays on the floor"
                 }
             ],
             "left": "2",
