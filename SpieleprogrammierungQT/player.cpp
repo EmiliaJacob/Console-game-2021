@@ -245,10 +245,12 @@ QString Player::ListAvailableItems() // Done!
        return("There are no items on this field");
    else
    {
+       QString answer;
        for(int i = 0; i<Player::CurrentField->Items.length(); i++)
        {
-           return("Found Item: " + Player::CurrentField->Items[i].Name);
+           answer.append("Found Item: " + Player::CurrentField->Items[i].Name + "\n");
        }
+       return answer;
    }
 }
 
