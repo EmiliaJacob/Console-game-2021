@@ -24,17 +24,17 @@ private slots:
     void on_lineEdit_returnPressed();
     void dotext();
     void on_lineEdit_upPressed();
-    void on_pushButton_2_clicked();
+    void on_pushButton_newgame_clicked();
 
     void on_pushButton_clicked();
 
     void on_tabWidget_tabBarClicked(int index);
 
-    void on_pushButton_6_clicked();
+    void on_pushButton_titel_clicked();
 
-    void on_pushButton_5_clicked();
+    void on_pushButton_leave_clicked();
 
-    void on_pushButton_8_clicked();
+    void on_pushButton_help_clicked();
 
     void on_downbutton_clicked();
 

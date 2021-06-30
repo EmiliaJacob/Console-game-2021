@@ -92,7 +92,7 @@ void Game::InputHandler(QString input)
     }
 }
 
-void Game::InputHandler(QString input)
+/*void Game::InputHandler(QString input)
 {
     if(input == "mf")
     {
@@ -144,3 +144,4 @@ void Game::InputHandler(QString input)
         return;
     }
 }
+*/

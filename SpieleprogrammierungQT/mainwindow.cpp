@@ -15,7 +15,7 @@ MainWindow::MainWindow(QWidget *parent)
     //ui->tabWidget->setTabIcon(1, const QIcon & icon);
     //comunicazionhendler = new comunicazionhendler(this);
     ui->stackedWidget->setCurrentIndex(0);
-    mGame.LoadGame();
+    //mGame.LoadGame();
 }
 
 MainWindow::~MainWindow()
@@ -45,7 +45,7 @@ void MainWindow::dotext(){
 
 
 //New Game
-void MainWindow::on_pushButton_2_clicked()
+void MainWindow::on_pushButton_newgame_clicked()
 {
     ui->stackedWidget->setCurrentIndex(1);
 }
@@ -62,20 +62,20 @@ void MainWindow::on_pushButton_clicked()
 }
 
 //zu Titelbildschirm
-void MainWindow::on_pushButton_6_clicked()
+void MainWindow::on_pushButton_titel_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
 }
 
 //verlasen
-void MainWindow::on_pushButton_5_clicked()
+void MainWindow::on_pushButton_leave_clicked()
 {
     //game.SaveGame();
     close();
 }
 
 //Hilfe
-void MainWindow::on_pushButton_8_clicked()
+void MainWindow::on_pushButton_help_clicked()
 {
 /*
     QFile hilfeanleitung("./sorce/hilfefile.txt");

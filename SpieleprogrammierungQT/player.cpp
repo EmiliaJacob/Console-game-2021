@@ -99,7 +99,7 @@ void Player::DropAllItemsOfType(QString itemType)
     QList<Item>::iterator i;
     for(i=mInventory.CollectedItems.begin(); i != mInventory.CollectedItems.end(); i++)
     {
-        qDebug() << "Loop counter at: " << i;
+      /*  qDebug() << "Loop counter at: " << i;
         qDebug() << "Invetory size: " << mInventory.CollectedItems.size();
         Item item = mInventory.CollectedItems[i]; //TODO : Muss item wieder zerstört werden?
         if(item.Name == itemType)
@@ -107,7 +107,7 @@ void Player::DropAllItemsOfType(QString itemType)
             mInventory.CollectedItems.remove(i);
             CurrentField->Items.append(item);
             qDebug() << "Dropped item: " << item.Name;
-     }
+     }*/
     }
 }
 
@@ -147,7 +147,8 @@ void Player::GetFieldDescription()
     qDebug() << "Field Description: " << Player::CurrentField->Description;
 
 }
-
+/*
+ *
 void Player::DropMultipleItemsOfType(QString itemType, int numberOfItems)
 {
     for(int i=0; i<mInventory.CollectedItems.size(); i++)
@@ -184,3 +185,4 @@ void Player::GetFieldDescription()
     qDebug() << "Field Description: " << Player::CurrentField->Description;
 }
 
+*/
