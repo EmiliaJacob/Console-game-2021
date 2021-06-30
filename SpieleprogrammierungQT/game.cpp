@@ -40,13 +40,13 @@ bool Game::LoadGame()
     return true;
 }
 
-void Game::SaveGame()
+QString Game::SaveGame()
 {
     QFile playerFile(QStringLiteral("player.json"));
 
     if(!playerFile.open(QIODevice::WriteOnly))
     {
-        qWarning("Couldn't open playerFile");
+        return("Couldn't open playerFile");
     }
     else
     {
@@ -60,7 +60,7 @@ void Game::SaveGame()
 
     if(!fieldsFile.open((QIODevice::WriteOnly)))
     {
-        qWarning("Couldn't open fieldsFile");
+        return("Couldn't open fieldsFile");
     }
     else
     {
@@ -71,43 +71,36 @@ void Game::SaveGame()
     }
 }
 
-void Game::InputHandler(QString input)
+QString Game::InputHandler(QString input)
 {
     if(input == "sg")
     {
-        SaveGame();
-        return;
+        return SaveGame();
     }
 
     if(input == "mf" || input == "move forward")
     {
-        mPlayer.Move("forward");
-        return;
+        return mPlayer.Move("forward");
     }
     if(input == "mb" || input == "move backward")
     {
-        mPlayer.Move("backward");
-        return;
+        return mPlayer.Move("backward");
     }
     if(input == "mr" || input == "move right")
     {
-        mPlayer.Move("right");
-        return;
+        return mPlayer.Move("right");
     }
     if(input == "ml" || input == "move left")
     {
-        mPlayer.Move("left");
-        return;
+        return mPlayer.Move("left");
     }
     if(input == "ai" || input == "available items")
     {
-        mPlayer.ListAvailableItems();
-        return;
+        return mPlayer.ListAvailableItems();
     }
     if(input == "d" || input == "description")
     {
-        mPlayer.GetFieldDescription();
-        return;
+        return mPlayer.GetFieldDescription();
     }
 
     //Pick-up and Drop Items
@@ -117,13 +110,11 @@ void Game::InputHandler(QString input)
     {
         if(splittedInput[0] == "p" || splittedInput[0] == "pickup")
         {
-            mPlayer.PickUpItemOfType(splittedInput[1]);
-            return;
+            return mPlayer.PickUpItemOfType(splittedInput[1]);
         }
         if(splittedInput[0] == "d" || splittedInput[0] == "drop")
         {
-            mPlayer.DropItemOfType(splittedInput[1]);
-            return;
+            return mPlayer.DropItemOfType(splittedInput[1]);
         }
     }
 
@@ -133,13 +124,11 @@ void Game::InputHandler(QString input)
         {
             if(splittedInput[2] == "a" || splittedInput[2] == "all")
             {
-                mPlayer.PickUpAllItemsOfType(splittedInput[1]);
-                return;
+                return mPlayer.PickUpAllItemsOfType(splittedInput[1]);
             }
             else
             {
-                mPlayer.PickUpMultipleItemsOfType(splittedInput[1], splittedInput[2].toInt());
-                return;
+                return mPlayer.PickUpMultipleItemsOfType(splittedInput[1], splittedInput[2].toInt());
             }
         }
 
@@ -147,13 +136,11 @@ void Game::InputHandler(QString input)
         {
             if(splittedInput[2] == "a" || splittedInput[2] == "all")
             {
-                mPlayer.DropAllItemsOfType(splittedInput[1]);
-                return;
+                return mPlayer.DropAllItemsOfType(splittedInput[1]);
             }
             else
             {
-                mPlayer.DropMultipleItemsOfType(splittedInput[1], splittedInput[2].toInt());
-                return;
+                return mPlayer.DropMultipleItemsOfType(splittedInput[1], splittedInput[2].toInt());
             }
         }
     }

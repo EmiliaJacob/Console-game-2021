@@ -18,6 +18,8 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+    void WriteLine(QString newLine);
+
 private slots:
     void on_Send_clicked();
 
@@ -39,6 +41,7 @@ private slots:
     void on_downbutton_clicked();
 
     void on_upbutton_clicked();
+
 
 private:
     Game mGame;

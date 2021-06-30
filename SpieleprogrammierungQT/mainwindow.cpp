@@ -32,15 +32,17 @@ dotext();}
 void MainWindow::dotext(){
     QString command = ui ->lineEdit->text();                        //list befel ein
     if(!command.isEmpty()){
-       QString answer = "~$ " + command + "\n" + "        ";
-       ui->textBrowser->append(answer);                             //zeigt befel und antwort im text feld
+       WriteLine(command);
+       WriteLine(mGame.InputHandler(command));
        ui->lineEdit->clear();
-       mGame.InputHandler(command);
-       //answer=deinemetode(command);
-       //ui->textBrowser->append(answer);
     }
 }
 
+void MainWindow::WriteLine(QString input)
+{
+    QString newLine = "~$ " + input + "\n";
+    ui->textBrowser->append(newLine);
+}
 
 
 

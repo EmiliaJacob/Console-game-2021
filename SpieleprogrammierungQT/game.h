@@ -19,9 +19,9 @@ public:
     Game();
     void Write(QJsonObject &json);
     void NewGame();
-    void SaveGame();
+    QString SaveGame();
     bool LoadGame();
-    void InputHandler(QString input);
+    QString InputHandler(QString input);
 };
 
 #endif // GAME_H

@@ -16,16 +16,16 @@ public:
     Player();
     void Read(const QJsonObject &json);
     void Write(QJsonObject &json);
-    void Move(QString direction);
-    void PickUpItems(QString itemType, int numberOfItems);
-    void PickUpItemOfType(QString itemType);
-    void PickUpMultipleItemsOfType(QString itemType, int numberOfItems);
-    void PickUpAllItemsOfType(QString itemType);
-    void DropItemOfType(QString itemName);
-    void DropMultipleItemsOfType(QString itemType, int numberOfItems);
-    void DropAllItemsOfType(QString itemType);
-    void ListAvailableItems();
-    void GetFieldDescription(); // TODO : rename -> you don't get anything
+    QString Move(QString direction);
+    QString PickUpItems(QString itemType, int numberOfItems);
+    QString PickUpItemOfType(QString itemType);
+    QString PickUpMultipleItemsOfType(QString itemType, int numberOfItems);
+    QString PickUpAllItemsOfType(QString itemType);
+    QString DropItemOfType(QString itemName);
+    QString DropMultipleItemsOfType(QString itemType, int numberOfItems);
+    QString DropAllItemsOfType(QString itemType);
+    QString ListAvailableItems();
+    QString GetFieldDescription(); // TODO : rename -> you don't get anything
 };
 
 #endif // PLAYER_H

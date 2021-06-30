@@ -8,19 +8,23 @@
             "items": [
                 {
                     "description": "A rusty key",
-                    "name": "key"
+                    "name": "key",
+                    "locationDescription": "that lays on the ground"
                 },
                 {
                     "description": "A shining emerald. It looks like it's been part of a piece of jewelery",
-                    "name": "emerald"
+                    "name": "emerald",
+                    "locationDescription": "that lays on the ground"
                 },
                 {
                     "description": "A shining emerald. It looks like it's been part of a piece of jewelery",
-                    "name": "emerald"
+                    "name": "emerald",
+                    "locationDescription": "that lays on the ground"
                 },
                 {
                     "description": "A shining emerald. It looks like it's been part of a piece of jewelery",
-                    "name": "emerald"
+                    "name": "emerald",
+                    "locationDescription": "that lays on the ground"
                 }
             ],
             "left": "2",
@@ -34,7 +38,8 @@
             "items": [
                 {
                     "description": "An extinguished torch that somebody must have left here",
-                    "name": "torch"
+                    "name": "torch",
+                    "locationDescription": "that lays on the ground"
                 }
             ],
             "left": "x",
