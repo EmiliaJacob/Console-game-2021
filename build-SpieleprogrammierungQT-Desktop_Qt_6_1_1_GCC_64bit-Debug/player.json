@@ -3,30 +3,28 @@
     "inventory": [
         {
             "description": "A beautiful amulet",
-            "name": "Magic Amulet",
-            "locationDescription" : "lays on the floor"
+            "name": "Magic Amulet"
         },
         {
             "description": "A delicious pear",
-            "name": "Pear",
-			"locationDescription" : "lays on the floor"
+            "name": "Pear"
         },
         {
             "description": "A delicious pear",
-            "name": "Pear",
-            "locationDescription" : "lays on the floor"
+            "name": "Pear"
         },
         {
             "description": "A delicious pear",
-            "name": "Pear",
-            "locationDescription" : "lays on the floor"
+            "name": "Pear"
         },
         {
-            "description": "A delicious pear",
-            "name": "Pear",
-            "locationDescription" : "lays on the floor"
+            "description": "A shining emerald. It looks like it's been part of a piece of jewelery",
+            "name": "emerald"
+        },
+        {
+            "description": "A shining emerald. It looks like it's been part of a piece of jewelery",
+            "name": "emerald"
         }
-
     ],
     "name": "Felix"
 }

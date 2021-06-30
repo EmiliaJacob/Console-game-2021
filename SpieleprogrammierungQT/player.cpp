@@ -44,9 +44,7 @@ void Player::Read(const QJsonObject &json)
     testHelper.PrintQList(Player::mInventory.CollectedItems);
 
     CurrentField = Game::mGameBoard.GetField(json["currentFieldId"].toString());
-    qDebug() << "jdlfkfsdjlk;";
     qDebug() << "Created player and put them onto Field: " << CurrentField->Id;
-    qDebug() << "kjhfskjfhlsdkfuhk";
 }
 
 

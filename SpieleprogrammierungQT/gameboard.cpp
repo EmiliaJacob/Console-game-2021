@@ -32,7 +32,7 @@ void GameBoard::Write(QJsonObject &json)
        fieldsArray.append(fieldObject);
     }
 
-    json["inventory"] = fieldsArray;
+    json["fields"] = fieldsArray;
 }
 
 Field* GameBoard::GetField(QString fieldId)

@@ -1,25 +1,26 @@
 {
-    "inventory": [
+    "fields": [
         {
             "backward": "x",
-            "description": "This is the entrance to the caves. A single light stralen vallen behind you through denn eingant. Towards the north there is a large tunnel that looks almost \t\t\t\t\t\t\t\t like hell. To the west there is a crevice and to the east there is a small shaft.",
+            "description": "This is the entrance to the caves. A single light stralen vallen behind you through denn eingant. Towards the north there is a large tunnel that looks almost like hell. To the west there is a crevice and to the east there is a small shaft.",
             "forward": "1",
             "id": "0",
             "items": [
                 {
                     "description": "A rusty key",
-                    "name": "key",
-                    "locationDescription" : "lays on the floor"
+                    "name": "key"
                 },
                 {
                     "description": "A shining emerald. It looks like it's been part of a piece of jewelery",
-                    "name": "emerald",
-                    "locationDescription" : "lays on the floor"
+                    "name": "emerald"
                 },
                 {
                     "description": "A shining emerald. It looks like it's been part of a piece of jewelery",
-                    "name": "emerald",
-                    "locationDescription" : "lays on the floor"
+                    "name": "emerald"
+                },
+                {
+                    "description": "A shining emerald. It looks like it's been part of a piece of jewelery",
+                    "name": "emerald"
                 }
             ],
             "left": "2",
