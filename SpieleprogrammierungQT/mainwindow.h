@@ -24,8 +24,11 @@ private slots:
     void on_Send_clicked();
 
     void on_lineEdit_returnPressed();
+
     void dotext();
+
     void on_lineEdit_upPressed();
+
     void on_pushButton_newgame_clicked();
 
     void on_pushButton_clicked();
@@ -42,6 +45,8 @@ private slots:
 
     void on_upbutton_clicked();
 
+    void UpdatePositionInUi(QString, QString);
+    void on_tableWidget_cellClicked(int row, int column);
 
 private:
     Game mGame;
