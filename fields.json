@@ -45,5 +45,561 @@
             "left": "x",
             "right": "x"
         }
+
+
+
+
+
+
+        {
+            "id": "1",
+            "n!n": "x",
+            "o!o": "6",
+            "s!s": "2",
+            "w!w": "x",
+        
+            "description": "big",
+            "items": [
+                {
+                   
+                },
+               
+                
+            ],
+        },
+        {
+            "id": "2",
+            "n!n": "1",
+            "o!o": "7",
+            "s!s": "3",
+            "w!w": "x",
+
+            "description": "big",
+            "items": [
+                {
+                    
+                },
+            ],
+        },
+        {
+            "id": "3",
+            "n!n": "2",
+            "o!o": "8",
+            "s!s": "4",
+            "w!w": "x",
+
+            "description": "coridor",
+            "items": [
+                {
+                  
+                }, 
+            ],
+        },
+        {
+            "id": "4",
+            "n!n": "3",
+            "o!o": "9",
+            "s!s": "5",
+            "w!w": "x",
+
+            "description": "coridor",
+            "items": [
+                {
+                   
+                }, 
+            ],
+        },
+        {
+            "id": "5",
+            "n!n": "4",
+            "o!o": "x",
+            "s!s": "x",
+            "w!w": "x",
+
+            "description": "coridor",
+            "items": [
+                {
+                   
+                }, 
+            ],
+        },
+        {
+            "id": "6",
+            "n!n": "x",
+            "o!o": "x",
+            "s!s": "7",
+            "w!w": "2",
+
+            "description": "big",
+            "items": [
+                {
+                   
+                }, 
+            ],
+        },
+        {
+            "id": "7",
+            "n!n": "6",
+            "o!o": "x",
+            "s!s": "x",
+            "w!w": "2",
+
+            "description": "big",
+            "items": [
+                {
+                   
+                }, 
+            ],
+        },
+        {
+            "id": "8",
+            "n!n": "x",
+            "o!o": "13",
+            "s!s": "x",
+            "w!w": "3",
+
+            "description": "coridor",
+            "items": [
+                {
+                   
+                }, 
+            ],
+        },
+        {
+            "id": "9",
+            "n!n": "x",
+            "o!o": "14",
+            "s!s": "x",
+            "w!w": "4",
+
+            "description": "coridor",
+            "items": [
+                {
+                   
+                }, 
+            ],
+        },
+        {
+            "id": "11",
+            "n!n": "x",
+            "o!o": "16",
+            "s!s": "12",
+            "w!w": "x",
+
+            "description": "rome",
+            "items": [
+                {
+                   
+                }, 
+            ],
+        },
+        {
+            "id": "12",
+            "n!n": "11",
+            "o!o": "x",
+            "s!s": "13",
+            "w!w": "x",
+
+            "description": "rome",
+            "items": [
+                {
+                   
+                }, 
+            ],
+        },
+        {
+            "id": "13",
+            "n!n": "12",
+            "o!o": "18",
+            "s!s": "x",
+            "w!w": "8",
+
+            "description": "rome",
+            "items": [
+                {
+                   
+                }, 
+            ],
+        },
+        {
+            "id": "14",
+            "n!n": "x",
+            "o!o": "x",
+            "s!s": "15",
+            "w!w": "9",
+
+            "description": "rome",
+            "items": [
+                {
+                   
+                }, 
+            ],
+        },
+        {
+            "id": "15",
+            "n!n": "14",
+            "o!o": "20",
+            "s!s": "x",
+            "w!w": "x",
+
+            "description": "rome",
+            "items": [
+                {
+                   
+                }, 
+            ],
+        },
+        {
+            "id": "16",
+            "n!n": "x",
+            "o!o": "21",
+            "s!s": "x",
+            "w!w": "11",
+
+            "description": "coridor",
+            "items": [
+                {
+                   
+                }, 
+            ],
+        },
+        {
+            "id": "17",
+            "n!n": "x",
+            "o!o": "x",
+            "s!s": "x",
+            "w!w": "x",
+
+            "description": "rome",
+            "items": [
+                {
+                   
+                }, 
+            ],
+        },
+        {
+            "id": "18",
+            "n!n": "x",
+            "o!o": "13",
+            "s!s": "x",
+            "w!w": "3",
+
+            "description": "coridor",
+            "items": [
+                {
+                   
+                }, 
+            ],
+        },
+        {
+            "id": "19",
+            "n!n": "18",
+            "o!o": "x",
+            "s!s": "20",
+            "w!w": "x",
+
+            "description": "coridor",
+            "items": [
+                {
+                   
+                }, 
+            ],
+        },
+        {
+            "id": "20",
+            "n!n": "19",
+            "o!o": "25",
+            "s!s": "x",
+            "w!w": "15",
+
+            "description": "coridor",
+            "items": [
+                {
+                   
+                }, 
+            ],
+        },
+        {
+            "id": "21",
+            "n!n": "x",
+            "o!o": "x",
+            "s!s": "22",
+            "w!w": "16",
+
+            "description": "coridor",
+            "items": [
+                {
+                   
+                }, 
+            ],
+        },
+        {
+            "id": "22",
+            "n!n": "21",
+            "o!o": "27",
+            "s!s": "23",
+            "w!w": "x",
+
+            "description": "coridor",
+            "items": [
+                {
+                   
+                }, 
+            ],
+        },
+        {
+            "id": "23",
+            "n!n": "22",
+            "o!o": "x",
+            "s!s": "24",
+            "w!w": "18",
+
+            "description": "coridor",
+            "items": [
+                {
+                   
+                }, 
+            ],
+        },
+        {
+            "id": "24",
+            "n!n": "23",
+            "o!o": "29",
+            "s!s": "x",
+            "w!w": "x",
+
+            "description": "coridor",
+            "items": [
+                {
+                   
+                }, 
+            ],
+        },
+        {
+            "id": "25",
+            "n!n": "x",
+            "o!o": "30",
+            "s!s": "x",
+            "w!w": "20",
+
+            "description": "coridor",
+            "items": [
+                {
+                   
+                }, 
+            ],
+        },
+        {
+            "id": "26",
+            "n!n": "x",
+            "o!o": "31",
+            "s!s": "27",
+            "w!w": "x",
+
+            "description": "big",
+            "items": [
+                {
+                   
+                }, 
+            ],
+        },
+        {
+            "id": "27",
+            "n!n": "26",
+            "o!o": "32",
+            "s!s": "28",
+            "w!w": "22",
+
+            "description": "big",
+            "items": [
+                {
+                   
+                }, 
+            ],
+        },
+        {
+            "id": "28",
+            "n!n": "27",
+            "o!o": "33",
+            "s!s": "x",
+            "w!w": "x",
+
+            "description": "big",
+            "items": [
+                {
+                   
+                }, 
+            ],
+        },
+        {
+            "id": "29",
+            "n!n": "x",
+            "o!o": "x",
+            "s!s": "30",
+            "w!w": "24",
+
+            "description": "coridor",
+            "items": [
+                {
+                   
+                }, 
+            ],
+        },
+        {
+            "id": "30",
+            "n!n": "29",
+            "o!o": "35",
+            "s!s": "x",
+            "w!w": "25",
+
+            "description": "coridor",
+            "items": [
+                {
+                   
+                }, 
+            ],
+        },
+        {
+            "id": "31",
+            "n!n": "x",
+            "o!o": "36",
+            "s!s": "32",
+            "w!w": "26",
+
+            "description": "big",
+            "items": [
+                {
+                   
+                }, 
+            ],
+        },
+        {
+            "id": "32",
+            "n!n": "31",
+            "o!o": "37",
+            "s!s": "33",
+            "w!w": "27",
+
+            "description": "big",
+            "items": [
+                {
+                   
+                }, 
+            ],
+        },
+        {
+            "id": "33",
+            "n!n": "32",
+            "o!o": "38",
+            "s!s": "x",
+            "w!w": "28",
+
+            "description": "big",
+            "items": [
+                {
+                   
+                }, 
+            ],
+        },
+        {
+            "id": "34",
+            "n!n": "x",
+            "o!o": "x",
+            "s!s": "35",
+            "w!w": "x",
+
+            "description": "coridor",
+            "items": [
+                {
+                   
+                }, 
+            ],
+        },
+        {
+            "id": "35",
+            "n!n": "34",
+            "o!o": "40",
+            "s!s": "x",
+            "w!w": "30",
+
+            "description": "rome",
+            "items": [
+                {
+                   
+                }, 
+            ],
+        },
+        {
+            "id": "36",
+            "n!n": "x",
+            "o!o": "x",
+            "s!s": "37",
+            "w!w": "31",
+
+            "description": "big",
+            "items": [
+                {
+                   
+                }, 
+            ],
+        },
+        {
+            "id": "37",
+            "n!n": "36",
+            "o!o": "x",
+            "s!s": "38",
+            "w!w": "32",
+
+            "description": "big",
+            "items": [
+                {
+                   
+                }, 
+            ],
+        },
+        {
+            "id": "38",
+            "n!n": "37",
+            "o!o": "x",
+            "s!s": "39",
+            "w!w": "33",
+
+            "description": "big",
+            "items": [
+                {
+                   
+                }, 
+            ],
+        },
+        {
+            "id": "39",
+            "n!n": "38",
+            "o!o": "x",
+            "s!s": "40",
+            "w!w": "x",
+
+            "description": "coridor",
+            "items": [
+                {
+                   
+                }, 
+            ],
+        },
+        {
+            "id": "40",
+            "n!n": "39",
+            "o!o": "x",
+            "s!s": "x",
+            "w!w": "35",
+
+            "description": "coridor",
+            "items": [
+                {
+                   
+                }, 
+            ],
+        },
+
+
     ]
 }

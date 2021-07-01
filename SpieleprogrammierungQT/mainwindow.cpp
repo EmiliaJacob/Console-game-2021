@@ -156,7 +156,7 @@ void MainWindow::on_pushButton_help_clicked()
     QString hilfenachricht = in.readAll();
     ui->textBrowser->append(hilfenachricht);
     */
-    QString hilfestring = "Hello users of the DET-3026 is at your disposal. \n Use the following buttons to move forward:\n\nAnd the following for interaction:\n\n";
+    QString hilfestring = "Hello users of the DET-3026 is at your disposal. \n Use the following buttons to move forward:\nmb==move bage\nmf==move forward\nml==move levt left\nmr==move right\n\nAnd the following for interaction:p==pick-up\nd==drop only one item\na==drop multiple or all available items\nai==available items\n\n";
     ui->textBrowser->append(hilfestring);
 
 }
