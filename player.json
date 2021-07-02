@@ -1,0 +1,36 @@
+{
+    "currentFieldId": "0",
+    "inventory": [
+        {
+            "description": "A beautiful amulet",
+            "name": "Magic Amulet",
+            "locationDescription": "that lays on the ground"
+        },
+        {
+            "description": "A delicious pear",
+            "name": "Pear",
+            "locationDescription": "that lays on the ground"
+        },
+        {
+            "description": "A delicious pear",
+            "name": "Pear",
+            "locationDescription": "that lays on the ground"
+        },
+        {
+            "description": "A delicious pear",
+            "name": "Pear",
+            "locationDescription": "that lays on the ground"
+        },
+        {
+            "description": "A shining emerald. It looks like it's been part of a piece of jewelery",
+            "name": "emerald",
+            "locationDescription": "that lays on the ground"
+        },
+        {
+            "description": "A shining emerald. It looks like it's been part of a piece of jewelery",
+            "name": "emerald",
+            "locationDescription": "that lays on the ground"
+        }
+    ],
+    "name": "Felix"
+}

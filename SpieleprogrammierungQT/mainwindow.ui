@@ -401,7 +401,7 @@ p, li { white-space: pre-wrap; }
          </item>
          <item row="1" column="0">
           <property name="text">
-           <string>kristal</string>
+           <string>cristal</string>
           </property>
          </item>
          <item row="1" column="1">
@@ -558,44 +558,138 @@ p, li { white-space: pre-wrap; }
           </rect>
          </property>
          <layout class="QGridLayout" name="gridLayout">
-          <item row="0" column="0">
+          <item row="1" column="0">
            <layout class="QVBoxLayout" name="verticalLayout_3">
+            <item>
+             <spacer name="verticalSpacer_7">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
             <item>
              <widget class="QPushButton" name="pushButton_help">
               <property name="text">
-               <string>Hilfe</string>
+               <string>Help</string>
               </property>
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="pushButton_options">
-              <property name="text">
-               <string>Erweiterte einstelungen</string>
+             <spacer name="verticalSpacer">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
               </property>
-             </widget>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <layout class="QFormLayout" name="formLayout_2"/>
             </item>
             <item>
              <widget class="QPushButton" name="pushButton_titel">
               <property name="text">
-               <string>zum Titelbildschirm</string>
+               <string>Back to Titel</string>
               </property>
              </widget>
+            </item>
+            <item>
+             <spacer name="verticalSpacer_3">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
             </item>
             <item>
              <widget class="QPushButton" name="pushButton_save">
               <property name="text">
-               <string>Spiel Speichern</string>
+               <string>Save Game</string>
               </property>
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="pushButton_leave">
+             <spacer name="verticalSpacer_4">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButton_save_2">
               <property name="text">
-               <string>Verlasen</string>
+               <string>Load Game</string>
               </property>
              </widget>
             </item>
+            <item>
+             <spacer name="verticalSpacer_6">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButton_leave">
+              <property name="text">
+               <string>Leave</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="verticalSpacer_5">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
            </layout>
+          </item>
+          <item row="0" column="0">
+           <spacer name="verticalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
           </item>
          </layout>
         </widget>
@@ -2112,7 +2206,7 @@ border-color: rgb(255, 255, 255);
 </string>
             </property>
             <property name="text">
-             <string>11</string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -2146,7 +2240,7 @@ border-color: rgb(255, 255, 255);
 </string>
             </property>
             <property name="text">
-             <string>35</string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -2180,7 +2274,7 @@ border-color: rgb(255, 255, 255);
 </string>
             </property>
             <property name="text">
-             <string>7</string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -2214,7 +2308,7 @@ border-color: rgb(255, 255, 255);
 </string>
             </property>
             <property name="text">
-             <string>8</string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -2248,7 +2342,7 @@ border-color: rgb(255, 255, 255);
 </string>
             </property>
             <property name="text">
-             <string>32</string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -2281,7 +2375,7 @@ border: 0px solid;
 border-color: rgb(255, 255, 255);</string>
             </property>
             <property name="text">
-             <string>18</string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -2309,7 +2403,7 @@ border-color: rgb(255, 255, 255);
 </string>
             </property>
             <property name="text">
-             <string>21</string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -2343,7 +2437,7 @@ border-color: rgb(255, 255, 255);
 </string>
             </property>
             <property name="text">
-             <string>3</string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -2377,7 +2471,7 @@ border-color: rgb(255, 255, 255);
 </string>
             </property>
             <property name="text">
-             <string>36</string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -2411,7 +2505,7 @@ border-color: rgb(255, 255, 255);
 </string>
             </property>
             <property name="text">
-             <string>28</string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -2445,7 +2539,7 @@ border-color: rgb(255, 255, 255);
 </string>
             </property>
             <property name="text">
-             <string>31</string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -2479,7 +2573,7 @@ border-color: rgb(255, 255, 255);
 </string>
             </property>
             <property name="text">
-             <string>16</string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -2513,7 +2607,7 @@ border-color: rgb(255, 255, 255);
 </string>
             </property>
             <property name="text">
-             <string>1</string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -2547,7 +2641,7 @@ border-color: rgb(255, 255, 255);
 </string>
             </property>
             <property name="text">
-             <string>33</string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -2581,7 +2675,7 @@ border-color: rgb(255, 255, 255);
 </string>
             </property>
             <property name="text">
-             <string>29</string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -2615,7 +2709,7 @@ border-color: rgb(255, 255, 255);
 </string>
             </property>
             <property name="text">
-             <string>34</string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -2649,7 +2743,7 @@ border-color: rgb(255, 255, 255);
 </string>
             </property>
             <property name="text">
-             <string>13</string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -2677,13 +2771,13 @@ border-color: rgb(255, 255, 255);
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-image:url(./sorcebilder/11ns.png);
+             <string notr="true">background-image:url(./sorcebilder/01ns.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
             </property>
             <property name="text">
-             <string>12</string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -2717,7 +2811,7 @@ border-color: rgb(255, 255, 255);
 </string>
             </property>
             <property name="text">
-             <string>25</string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -2751,7 +2845,7 @@ border-color: rgb(255, 255, 255);
 </string>
             </property>
             <property name="text">
-             <string>19</string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -2785,7 +2879,7 @@ border-color: rgb(255, 255, 255);
 </string>
             </property>
             <property name="text">
-             <string>26</string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -2813,7 +2907,7 @@ border-color: rgb(255, 255, 255);
 </string>
             </property>
             <property name="text">
-             <string>23</string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -2841,7 +2935,7 @@ border-color: rgb(255, 255, 255);
 </string>
             </property>
             <property name="text">
-             <string>24</string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -2875,7 +2969,7 @@ border-color: rgb(255, 255, 255);
 </string>
             </property>
             <property name="text">
-             <string>30</string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -2909,7 +3003,7 @@ border-color: rgb(255, 255, 255);
 </string>
             </property>
             <property name="text">
-             <string>4</string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -2943,7 +3037,7 @@ border-color: rgb(255, 255, 255);
 </string>
             </property>
             <property name="text">
-             <string>2</string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -2977,7 +3071,7 @@ border-color: rgb(255, 255, 255);
 </string>
             </property>
             <property name="text">
-             <string>5</string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -3011,7 +3105,7 @@ border-color: rgb(255, 255, 255);
 </string>
             </property>
             <property name="text">
-             <string>20</string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -3045,7 +3139,7 @@ border-color: rgb(255, 255, 255);
 </string>
             </property>
             <property name="text">
-             <string>39</string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -3079,7 +3173,7 @@ border-color: rgb(255, 255, 255);
 </string>
             </property>
             <property name="text">
-             <string>37</string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -3113,7 +3207,7 @@ border-color: rgb(255, 255, 255);
 </string>
             </property>
             <property name="text">
-             <string>6</string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -3147,41 +3241,7 @@ border-color: rgb(255, 255, 255);
 </string>
             </property>
             <property name="text">
-             <string>10</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="5">
-           <widget class="QPushButton" name="pushButton_27">
-            <property name="enabled">
-             <bool>false</bool>
-            </property>
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>60</width>
-              <height>60</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>60</width>
-              <height>60</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">background-image:url(./sorcebilder/13nos_w.png);
-border: 0px solid;
-border-color: rgb(255, 255, 255);
-</string>
-            </property>
-            <property name="text">
-             <string>27</string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -3215,7 +3275,7 @@ border-color: rgb(255, 255, 255);
 </string>
             </property>
             <property name="text">
-             <string>15</string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -3249,7 +3309,7 @@ border-color: rgb(255, 255, 255);
 </string>
             </property>
             <property name="text">
-             <string>38</string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -3283,7 +3343,7 @@ border-color: rgb(255, 255, 255);
 </string>
             </property>
             <property name="text">
-             <string>9</string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -3317,7 +3377,7 @@ border-color: rgb(255, 255, 255);
 </string>
             </property>
             <property name="text">
-             <string>14</string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -3345,7 +3405,7 @@ border-color: rgb(255, 255, 255);
 </string>
             </property>
             <property name="text">
-             <string>22</string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -3379,7 +3439,7 @@ border-color: rgb(255, 255, 255);
 </string>
             </property>
             <property name="text">
-             <string>40</string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -3412,7 +3472,41 @@ border: 0px solid;
 border-color: rgb(255, 255, 255);</string>
             </property>
             <property name="text">
-             <string>17</string>
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="5">
+           <widget class="QPushButton" name="pushButton_27">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>60</width>
+              <height>60</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>60</width>
+              <height>60</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-image:url(./sorcebilder/13nos_w.png);
+border: 0px solid;
+border-color: rgb(255, 255, 255);
+</string>
+            </property>
+            <property name="text">
+             <string/>
             </property>
            </widget>
           </item>
