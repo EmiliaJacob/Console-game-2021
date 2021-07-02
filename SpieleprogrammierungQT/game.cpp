@@ -145,5 +145,5 @@ QString Game::InputHandler(QString input)
         }
     }
 
-    qDebug() << "No fitting interpretation was found for: " << input; //TODO: Define return-value when nothing matched
+    return("No fitting interpretation was found for: " + input + "\n      Please try something else.");
 }

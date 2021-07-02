@@ -19,6 +19,7 @@ public:
     ~MainWindow();
 
     void WriteLine(QString newLine);
+    void UpdatePositionInUi(QString oldPosition, QString newPosition);
 
 private slots:
     void on_Send_clicked();
@@ -45,7 +46,6 @@ private slots:
 
     void on_upbutton_clicked();
 
-    void UpdatePositionInUi(QString, QString);
     void on_tableWidget_cellClicked(int row, int column);
 
 private:

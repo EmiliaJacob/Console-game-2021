@@ -31,20 +31,21 @@ void MainWindow::on_lineEdit_returnPressed(){
 dotext();}
 void MainWindow::dotext(){
     QString command = ui ->lineEdit->text();
-       if(!command.isEmpty()){
-          WriteLine(command);
 
-          QString oldPosition = mGame.mPlayer.CurrentField->Id;
+    if(!command.isEmpty()){
+       WriteLine(command);
 
-          QString answer = mGame.InputHandler(command);
-          if(answer.split(" ")[0] == "Moved")
-          {
-              UpdatePositionInUi(oldPosition, answer.split(" ")[4]);
-          }
+       QString oldPosition = mGame.mPlayer.CurrentField->Id;
 
-          WriteLine(answer);
-          ui->lineEdit->clear();
+       QString answer = mGame.InputHandler(command);
+       if(answer.split(" ")[0] == "Moved")
+       {
+           UpdatePositionInUi(oldPosition, answer.split(" ")[4]);
        }
+
+       WriteLine(answer);
+       ui->lineEdit->clear();
+    }
 }
 
 void MainWindow::WriteLine(QString input)
@@ -53,7 +54,11 @@ void MainWindow::WriteLine(QString input)
     ui->textBrowser->append(newLine);
 }
 
-
+void MainWindow::UpdatePositionInUi(QString oldPosition, QString newPosition)
+{
+    qDebug() << "OldPosition: " << oldPosition << " NewPosition: " << newPosition;
+    //ui->pushButton_1->setStyleSheet();
+}
 
 
 
