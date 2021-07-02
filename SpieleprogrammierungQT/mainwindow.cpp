@@ -48,19 +48,21 @@ void MainWindow::dotext(){
     }
 }
 
+void MainWindow::on_lineEdit_upPressed()
+{
+
+}
+
+void MainWindow::on_tabWidget_tabBarClicked(int)
+{
+
+}
+
 void MainWindow::WriteLine(QString input)
 {
     QString newLine = "~$ " + input + "\n";
     ui->textBrowser->append(newLine);
 }
-
-void MainWindow::UpdatePositionInUi(QString oldPosition, QString newPosition)
-{
-    qDebug() << "OldPosition: " << oldPosition << " NewPosition: " << newPosition;
-    //ui->pushButton_1->setStyleSheet();
-}
-
-
 
 //mapup Ʌ
 void MainWindow::on_upbutton_clicked()
