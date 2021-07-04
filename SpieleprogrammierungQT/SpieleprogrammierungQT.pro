@@ -9,26 +9,30 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    consoleoutputs.cpp \
     field.cpp \
     game.cpp \
     gameboard.cpp \
-    inputparser.cpp \
+    inputhandler.cpp \
     inventory.cpp \
     item.cpp \
     main.cpp \
     mainwindow.cpp \
     player.cpp \
+    signaldemo.cpp \
     testhelper.cpp
 
 HEADERS += \
+    consoleoutputs.h \
     field.h \
     game.h \
     gameboard.h \
-    inputparser.h \
+    inputhandler.h \
     inventory.h \
     item.h \
     mainwindow.h \
     player.h \
+    signaldemo.h \
     testhelper.h
 
 FORMS += \

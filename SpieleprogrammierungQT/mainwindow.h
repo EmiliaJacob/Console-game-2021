@@ -3,9 +3,9 @@
 
 #include "game.h"
 #include "player.h"
-
+#include "inputhandler.h"
 #include <QMainWindow>
-#include <comunicazionhendler.h>
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -20,6 +20,9 @@ public:
 
     void WriteLine(QString newLine);
     void UpdatePositionInUi(QString oldPosition, QString newPosition);
+
+    void SetGame(Game game);
+    void SetInputHandler(InputHandler inputHandler);
 
 private slots:
     void on_Send_clicked();
@@ -51,6 +54,5 @@ private slots:
 private:
     Game mGame;
     Ui::MainWindow *ui;
-    comunicazionhendler *mComunicazionhdendler;
 };
 #endif // MAINWINDOW_H

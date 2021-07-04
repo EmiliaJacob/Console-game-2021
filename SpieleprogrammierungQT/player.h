@@ -10,6 +10,8 @@ class Player
 {
 private:
     Inventory mInventory;
+    Field* LastField;
+
 public:
     QString Name;
     Field* CurrentField;

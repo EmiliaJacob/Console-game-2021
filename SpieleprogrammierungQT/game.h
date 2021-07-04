@@ -3,9 +3,11 @@
 
 #include "gameboard.h"
 #include "player.h"
+#include <QObject>
 
 class Game
 {
+
 private:
 
 public:

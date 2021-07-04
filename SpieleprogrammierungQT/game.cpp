@@ -71,7 +71,7 @@ QString Game::SaveGame()
     }
 }
 
-QString Game::InputHandler(QString input)
+QString Game::InputHandler(QString input) // TODO: Make this a slot
 {
     if(input == "sg")
     {
@@ -80,7 +80,7 @@ QString Game::InputHandler(QString input)
 
     if(input == "mf" || input == "move forward")
     {
-        return mPlayer.Move("forward");
+        return mPlayer.Move("forward"); // TODO: Make all these functions slots as well
     }
     if(input == "mb" || input == "move backward")
     {

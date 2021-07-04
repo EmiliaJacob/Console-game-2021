@@ -1,8 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "inputparser.h"
 #include <QMessageBox>
-#include <comunicazionhendler.h>
 #include <QTextStream>
 #include <QFile>
 
@@ -35,12 +33,13 @@ void MainWindow::dotext(){
     if(!command.isEmpty()){
        WriteLine(command);
 
-       QString oldPosition = mGame.mPlayer.CurrentField->Id;
+       QString oldPosition = mGame.mPlayer.CurrentField->Id; // TODO: How can I move this into the new style? -> make oldPosition a attribute in player and pass it over the signal!
 
        QString answer = mGame.InputHandler(command);
+
        if(answer.split(" ")[0] == "Moved")
        {
-           UpdatePositionInUi(oldPosition, answer.split(" ")[4]);
+           UpdatePositionInUi(oldPosition, answer.split(" ")[4]); // TODO: Make this a slot
        }
 
        WriteLine(answer);
@@ -58,7 +57,7 @@ void MainWindow::on_tabWidget_tabBarClicked(int)
 
 }
 
-void MainWindow::WriteLine(QString input)
+void MainWindow::WriteLine(QString input) // TODO: Make this a slot
 {
     QString newLine = "~$ " + input + "\n";
     ui->textBrowser->append(newLine);
