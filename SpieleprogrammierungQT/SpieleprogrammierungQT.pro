@@ -18,6 +18,7 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     player.cpp \
+    savepoint.cpp \
     testhelper.cpp
 
 HEADERS += \
@@ -29,6 +30,7 @@ HEADERS += \
     item.h \
     mainwindow.h \
     player.h \
+    savepoint.h \
     testhelper.h
 
 FORMS += \

@@ -31,7 +31,6 @@ void MainWindow::on_lineEdit_returnPressed(){
 dotext();}
 void MainWindow::dotext(){
     QString command = ui ->lineEdit->text();
-
     if(!command.isEmpty()){
        WriteLine(command);
 

@@ -69,6 +69,8 @@ QString Game::SaveGame()
 
         fieldsFile.write(QJsonDocument(gameBoardObject).toJson());
     }
+
+    return "Saved sucessfully";
 }
 
 QString Game::InputHandler(QString input)

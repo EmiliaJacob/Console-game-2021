@@ -2,6 +2,7 @@
 #define FIELD_H
 
 #include "item.h"
+#include "savepoint.h"
 
 class Field
 {
@@ -12,9 +13,12 @@ public:
     QString Description;
     QList<Item> Items;
 
+    SavePoint mSavePoint;
+
     Field();
     void Read(QJsonObject &json);
     void Write(QJsonObject &json);
+    bool HasSavePoint();
 };
 
 #endif // FIELD_H

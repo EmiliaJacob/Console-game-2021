@@ -2,8 +2,10 @@
 #define PLAYER_H
 #include "field.h"
 #include "inventory.h"
+#include "savepoint.h"
 #include <QJsonArray>
 #include <QString>
+#include <QList>
 #include <iostream>
 
 class Player
@@ -13,6 +15,7 @@ private:
 public:
     QString Name;
     Field* CurrentField;
+    QList<SavePoint> unlockedSavePoints;
     Player();
     void Read(const QJsonObject &json);
     void Write(QJsonObject &json);

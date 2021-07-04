@@ -7,5 +7,6 @@ release/item.o
 release/main.o
 release/mainwindow.o
 release/player.o
+release/savepoint.o
 release/testhelper.o
 release/moc_mainwindow.o
