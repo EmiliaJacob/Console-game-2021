@@ -104,7 +104,12 @@ QString Game::InputHandler(QString input)
     {
         return mPlayer.GetFieldDescription();
     }
-
+    if(input == "sp" || input == "savepoint") {
+        return mPlayer.SetSavePoint();
+    }
+    if(input == "listSavePoints") {
+        return mPlayer.ListAvailableSavePoints();
+    }
     //Pick-up and Drop Items
     QStringList splittedInput = input.split(" ");
 

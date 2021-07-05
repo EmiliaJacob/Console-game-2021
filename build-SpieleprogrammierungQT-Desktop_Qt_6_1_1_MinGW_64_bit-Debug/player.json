@@ -1,5 +1,5 @@
 {
-    "currentFieldId": "1",
+    "currentFieldId": "0",
     "inventory": [
         {
             "description": "A beautiful amulet",
@@ -32,5 +32,11 @@
             "name": "emerald"
         }
     ],
-    "name": "Felix"
+    "name": "Felix",
+    "unlockedSavepoint": [
+        {
+            "fieldId": "0",
+            "name": "this is the entrance of the caves"
+        }
+    ]
 }

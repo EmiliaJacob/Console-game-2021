@@ -5,11 +5,38 @@
 #include <QtDebug>
 #include <item.h>
 #include <item.h>
-//#include <QtWarning>
 
 Player::Player()
 {
 
+}
+
+void Player::Read(const QJsonObject &json)
+{
+    this->Name = json["name"].toString();
+
+    QJsonArray itemArray = json["inventory"].toArray();
+    for(int i=0; i<itemArray.size(); i++)
+    {
+        QJsonObject itemObject = itemArray[i].toObject();
+        Item item;
+        item.Read(itemObject);
+        this->mInventory.CollectedItems.append(item);
+    }
+
+    QJsonArray unlockedSavePointsArray = json["unlockedSavePoints"].toArray();
+    for(int j=0; j<unlockedSavePointsArray.size(); j++) {
+        QJsonObject unlockedSavepointObject = unlockedSavePointsArray[j].toObject();
+        SavePoint savePoint;
+        savePoint.Read(unlockedSavepointObject);
+        this->unlockedSavePoints.append(savePoint);
+    }
+
+    //TestHelper testHelper;
+    //testHelper.PrintQList(Player::mInventory.CollectedItems);
+
+    CurrentField = Game::mGameBoard.GetField(json["currentFieldId"].toString());
+    qDebug() << "Created player and put them onto Field: " << CurrentField->Id;
 }
 
 void Player::Write(QJsonObject &json)
@@ -18,34 +45,22 @@ void Player::Write(QJsonObject &json)
     json["currentFieldId"] = Player::CurrentField->Id;
 
     QJsonArray inventarArray;
-
-    for(Item &item : mInventory.CollectedItems) // TODO: implement this elegant way into your other methods as well
-    {
+    for(Item &item : this->mInventory.CollectedItems) {// TODO: implement this elegant way into your other methods as well
        QJsonObject itemObject;
        item.Write(itemObject);
        inventarArray.append(itemObject);
     }
-
     json["inventory"] = inventarArray;
-}
 
-void Player::Read(const QJsonObject &json)
-{
-    Player::Name = json["name"].toString();
-    QJsonArray itemArray = json["inventory"].toArray();
-    for(int i=0; i<itemArray.size(); i++)
-    {
-        QJsonObject itemObject = itemArray[i].toObject();
-        Item item;
-        item.Read(itemObject);
-        Player::mInventory.CollectedItems.append(item);
+    QJsonArray unlockedSavePointsArray;
+    for(SavePoint &savePoint : this->unlockedSavePoints) {
+        QJsonObject unlockedSavePointObject;
+        savePoint.Write(unlockedSavePointObject);
+        unlockedSavePointsArray.append(unlockedSavePointObject);
     }
-    TestHelper testHelper;
-    testHelper.PrintQList(Player::mInventory.CollectedItems);
-
-    CurrentField = Game::mGameBoard.GetField(json["currentFieldId"].toString());
-    qDebug() << "Created player and put them onto Field: " << CurrentField->Id;
+    json["unlockedSavePoints"] = unlockedSavePointsArray;
 }
+
 
 
 QString Player::Move(QString direction) // Done!
@@ -257,4 +272,28 @@ QString Player::ListAvailableItems() // Done!
 QString Player::GetFieldDescription() // Done!
 {
     return("Field Description: " + Player::CurrentField->Description);
+}
+
+QString Player::SetSavePoint()
+{
+    if(CurrentField->HasSavePoint) {
+        unlockedSavePoints.append(CurrentField->mSavePoint);
+        return "Savepoint successfully set";
+    }
+    else
+        return "The current field is not eligable to set a savepoint here";
+}
+
+QString Player::ListAvailableSavePoints()
+{
+    if(unlockedSavePoints.length() == 0) {
+        return("You have not checkpoints unlocked");
+    }
+    else {
+        QString answer;
+        for(int i=0; i<unlockedSavePoints.length(); i++) {
+            answer.append("Checkpoint: " + unlockedSavePoints[i].Name);
+        }
+        return answer;
+    }
 }

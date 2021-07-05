@@ -19,6 +19,9 @@ public:
     Player();
     void Read(const QJsonObject &json);
     void Write(QJsonObject &json);
+    QString SetSavePoint();
+    QString FastTravel(QString destination);
+    QString ListAvailableSavePoints();
     QString Move(QString direction);
     QString PickUpItems(QString itemType, int numberOfItems);
     QString PickUpItemOfType(QString itemType);

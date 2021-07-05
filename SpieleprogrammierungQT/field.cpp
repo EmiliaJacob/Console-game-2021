@@ -16,6 +16,7 @@ void Field::Read(QJsonObject &json)
    this->Description = json["description"].toString();
 
    if(!json["savePoint"].isNull()) {
+       this->HasSavePoint = true;
        this->mSavePoint.fieldId = this->Id;
        this->mSavePoint.Name = json["savePoint"].toString();
        qDebug() << "read savepoint";
@@ -39,7 +40,7 @@ void Field::Write(QJsonObject &json)
     json["left"] = this->FieldLeft;
     json["right"] = this->FieldRight;
     json["description"] = this->Description;
-    //json["savePoint"] = this->mSavePoint.Name;
+    json["savePoint"] = this->mSavePoint.Name;
 
     QJsonArray itemArray;
 
@@ -52,11 +53,3 @@ void Field::Write(QJsonObject &json)
 
     json["items"] = itemArray;
 }
-
-//bool Field::HasSavePoint()
-//{
-//    if(mSavePoint == nullptr) {
-//        return false;
-//    }
-//    else return true;
-//}

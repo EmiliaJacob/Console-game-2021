@@ -14,11 +14,11 @@ public:
     QList<Item> Items;
 
     SavePoint mSavePoint;
+    bool HasSavePoint = false;
 
     Field();
     void Read(QJsonObject &json);
     void Write(QJsonObject &json);
-    bool HasSavePoint();
 };
 
 #endif // FIELD_H
