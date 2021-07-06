@@ -317,8 +317,8 @@ p, li { white-space: pre-wrap; }
           <rect>
            <x>20</x>
            <y>50</y>
-           <width>576</width>
-           <height>275</height>
+           <width>578</width>
+           <height>276</height>
           </rect>
          </property>
          <property name="sizePolicy">
@@ -329,8 +329,8 @@ p, li { white-space: pre-wrap; }
          </property>
          <property name="minimumSize">
           <size>
-           <width>576</width>
-           <height>275</height>
+           <width>578</width>
+           <height>276</height>
           </size>
          </property>
          <property name="maximumSize">
@@ -342,7 +342,40 @@ p, li { white-space: pre-wrap; }
          <property name="font">
           <font>
            <pointsize>12</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+           <underline>false</underline>
+           <strikeout>false</strikeout>
+           <kerning>true</kerning>
           </font>
+         </property>
+         <property name="tabletTracking">
+          <bool>false</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border: 2px solid;
+border-color: rgb(217, 124, 44)
+
+</string>
+         </property>
+         <property name="dragDropOverwriteMode">
+          <bool>false</bool>
+         </property>
+         <property name="alternatingRowColors">
+          <bool>true</bool>
+         </property>
+         <property name="selectionMode">
+          <enum>QAbstractItemView::SingleSelection</enum>
+         </property>
+         <property name="selectionBehavior">
+          <enum>QAbstractItemView::SelectRows</enum>
+         </property>
+         <property name="textElideMode">
+          <enum>Qt::ElideMiddle</enum>
+         </property>
+         <property name="showGrid">
+          <bool>false</bool>
          </property>
          <attribute name="horizontalHeaderVisible">
           <bool>false</bool>
@@ -392,6 +425,9 @@ p, li { white-space: pre-wrap; }
          <item row="0" column="0">
           <property name="text">
            <string>tank</string>
+          </property>
+          <property name="flags">
+           <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
           </property>
          </item>
          <item row="0" column="1">
@@ -558,6 +594,19 @@ p, li { white-space: pre-wrap; }
           </rect>
          </property>
          <layout class="QGridLayout" name="gridLayout">
+          <item row="2" column="0">
+           <spacer name="verticalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
           <item row="1" column="0">
            <layout class="QVBoxLayout" name="verticalLayout_3">
             <item>
@@ -677,19 +726,6 @@ p, li { white-space: pre-wrap; }
              </spacer>
             </item>
            </layout>
-          </item>
-          <item row="0" column="0">
-           <spacer name="verticalSpacer_2">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>40</height>
-             </size>
-            </property>
-           </spacer>
           </item>
          </layout>
         </widget>
@@ -2201,6 +2237,7 @@ border-color: rgb(255, 255, 255);
             </property>
             <property name="styleSheet">
              <string notr="true">background-image:url(./sorcebilder/11os.png);
+background-image:url(./sorcebilder/0.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -2235,6 +2272,7 @@ border-color: rgb(255, 255, 255);
             </property>
             <property name="styleSheet">
              <string notr="true">background-image:url(./sorcebilder/11now.png);
+background-image:url(./sorcebilder/0.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -2269,6 +2307,7 @@ border-color: rgb(255, 255, 255);
             </property>
             <property name="styleSheet">
              <string notr="true">background-image:url(./sorcebilder/13nw.png);
+background-image:url(./sorcebilder/0.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -2303,6 +2342,7 @@ border-color: rgb(255, 255, 255);
             </property>
             <property name="styleSheet">
              <string notr="true">background-image:url(./sorcebilder/12ow.png);
+background-image:url(./sorcebilder/0.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -2337,6 +2377,7 @@ border-color: rgb(255, 255, 255);
             </property>
             <property name="styleSheet">
              <string notr="true">background-image:url(./sorcebilder/13nosw.png);
+background-image:url(./sorcebilder/0.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -2371,8 +2412,10 @@ border-color: rgb(255, 255, 255);
             </property>
             <property name="styleSheet">
              <string notr="true">background-image:url(./sorcebilder/12osw.png);
+background-image:url(./sorcebilder/0.png);
 border: 0px solid;
-border-color: rgb(255, 255, 255);</string>
+border-color: rgb(255, 255, 255);
+</string>
             </property>
             <property name="text">
              <string/>
@@ -2398,6 +2441,7 @@ border-color: rgb(255, 255, 255);</string>
             </property>
             <property name="styleSheet">
              <string notr="true">background-image:url(./sorcebilder/11sw.png);
+background-image:url(./sorcebilder/0.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -2432,6 +2476,7 @@ border-color: rgb(255, 255, 255);
             </property>
             <property name="styleSheet">
              <string notr="true">background-image:url(./sorcebilder/12nos.png);
+background-image:url(./sorcebilder/0.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -2466,6 +2511,7 @@ border-color: rgb(255, 255, 255);
             </property>
             <property name="styleSheet">
              <string notr="true">background-image:url(./sorcebilder/13sw.png);
+background-image:url(./sorcebilder/0.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -2500,6 +2546,7 @@ border-color: rgb(255, 255, 255);
             </property>
             <property name="styleSheet">
              <string notr="true">background-image:url(./sorcebilder/13no.png);
+background-image:url(./sorcebilder/0.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -2534,6 +2581,7 @@ border-color: rgb(255, 255, 255);
             </property>
             <property name="styleSheet">
              <string notr="true">background-image:url(./sorcebilder/13osw.png);
+background-image:url(./sorcebilder/0.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -2568,6 +2616,7 @@ border-color: rgb(255, 255, 255);
             </property>
             <property name="styleSheet">
              <string notr="true">background-image:url(./sorcebilder/12ow.png);
+background-image:url(./sorcebilder/0.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -2602,6 +2651,7 @@ border-color: rgb(255, 255, 255);
             </property>
             <property name="styleSheet">
              <string notr="true">background-image:url(./sorcebilder/13os.png);
+background-image:url(./sorcebilder/0.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -2636,6 +2686,7 @@ border-color: rgb(255, 255, 255);
             </property>
             <property name="styleSheet">
              <string notr="true">background-image:url(./sorcebilder/13now.png);
+background-image:url(./sorcebilder/0.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -2670,6 +2721,7 @@ border-color: rgb(255, 255, 255);
             </property>
             <property name="styleSheet">
              <string notr="true">background-image:url(./sorcebilder/12sw.png);
+background-image:url(./sorcebilder/0.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -2704,6 +2756,7 @@ border-color: rgb(255, 255, 255);
             </property>
             <property name="styleSheet">
              <string notr="true">background-image:url(./sorcebilder/12s.png);
+background-image:url(./sorcebilder/0.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -2738,6 +2791,7 @@ border-color: rgb(255, 255, 255);
             </property>
             <property name="styleSheet">
              <string notr="true">background-image:url(./sorcebilder/11now.png);
+background-image:url(./sorcebilder/0.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -2772,6 +2826,7 @@ border-color: rgb(255, 255, 255);
             </property>
             <property name="styleSheet">
              <string notr="true">background-image:url(./sorcebilder/01ns.png);
+background-image:url(./sorcebilder/0.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -2806,6 +2861,7 @@ border-color: rgb(255, 255, 255);
             </property>
             <property name="styleSheet">
              <string notr="true">background-image:url(./sorcebilder/11ow.png);
+background-image:url(./sorcebilder/0.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -2840,6 +2896,7 @@ border-color: rgb(255, 255, 255);
             </property>
             <property name="styleSheet">
              <string notr="true">background-image:url(./sorcebilder/12ns.png);
+background-image:url(./sorcebilder/0.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -2874,6 +2931,7 @@ border-color: rgb(255, 255, 255);
             </property>
             <property name="styleSheet">
              <string notr="true">background-image:url(./sorcebilder/13os.png);
+background-image:url(./sorcebilder/0.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -2902,6 +2960,7 @@ border-color: rgb(255, 255, 255);
             </property>
             <property name="styleSheet">
              <string notr="true">background-image:url(./sorcebilder/12nsw.png);
+background-image:url(./sorcebilder/0.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -2930,6 +2989,7 @@ border-color: rgb(255, 255, 255);
             </property>
             <property name="styleSheet">
              <string notr="true">background-image:url(./sorcebilder/12no.png);
+background-image:url(./sorcebilder/0.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -2964,6 +3024,7 @@ border-color: rgb(255, 255, 255);
             </property>
             <property name="styleSheet">
              <string notr="true">background-image:url(./sorcebilder/12now.png);
+background-image:url(./sorcebilder/0.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -2998,6 +3059,7 @@ border-color: rgb(255, 255, 255);
             </property>
             <property name="styleSheet">
              <string notr="true">background-image:url(./sorcebilder/12nos.png);
+background-image:url(./sorcebilder/0.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -3032,6 +3094,7 @@ border-color: rgb(255, 255, 255);
             </property>
             <property name="styleSheet">
              <string notr="true">background-image:url(./sorcebilder/13no_s.png);
+background-image:url(./sorcebilder/0.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -3066,6 +3129,7 @@ border-color: rgb(255, 255, 255);
             </property>
             <property name="styleSheet">
              <string notr="true">background-image:url(./sorcebilder/12no.png);
+background-image:url(./sorcebilder/0.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -3100,6 +3164,7 @@ border-color: rgb(255, 255, 255);
             </property>
             <property name="styleSheet">
              <string notr="true">background-image:url(./sorcebilder/12now.png);
+background-image:url(./sorcebilder/0.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -3134,6 +3199,7 @@ border-color: rgb(255, 255, 255);
             </property>
             <property name="styleSheet">
              <string notr="true">background-image:url(./sorcebilder/12nsw.png);
+background-image:url(./sorcebilder/0.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -3168,6 +3234,7 @@ border-color: rgb(255, 255, 255);
             </property>
             <property name="styleSheet">
              <string notr="true">background-image:url(./sorcebilder/13nsw.png);
+background-image:url(./sorcebilder/0.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -3202,6 +3269,7 @@ border-color: rgb(255, 255, 255);
             </property>
             <property name="styleSheet">
              <string notr="true">background-image:url(./sorcebilder/13sw.png);
+background-image:url(./sorcebilder/0.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -3236,6 +3304,7 @@ border-color: rgb(255, 255, 255);
             </property>
             <property name="styleSheet">
              <string notr="true">background-image:url(./sorcebilder/12sw.png);
+background-image:url(./sorcebilder/0.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -3270,6 +3339,7 @@ border-color: rgb(255, 255, 255);
             </property>
             <property name="styleSheet">
              <string notr="true">background-image:url(./sorcebilder/11no.png);
+background-image:url(./sorcebilder/0.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -3304,6 +3374,7 @@ border-color: rgb(255, 255, 255);
             </property>
             <property name="styleSheet">
              <string notr="true">background-image:url(./sorcebilder/13nw_s.png);
+background-image:url(./sorcebilder/0.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -3338,6 +3409,7 @@ border-color: rgb(255, 255, 255);
             </property>
             <property name="styleSheet">
              <string notr="true">background-image:url(./sorcebilder/12ow.png);
+background-image:url(./sorcebilder/0.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -3372,6 +3444,7 @@ border-color: rgb(255, 255, 255);
             </property>
             <property name="styleSheet">
              <string notr="true">background-image:url(./sorcebilder/11sw.png);
+background-image:url(./sorcebilder/0.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -3400,6 +3473,7 @@ border-color: rgb(255, 255, 255);
             </property>
             <property name="styleSheet">
              <string notr="true">background-image:url(./sorcebilder/12nos.png);
+background-image:url(./sorcebilder/0.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -3434,6 +3508,7 @@ border-color: rgb(255, 255, 255);
             </property>
             <property name="styleSheet">
              <string notr="true">background-image:url(./sorcebilder/12nw.png);
+background-image:url(./sorcebilder/0.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -3468,8 +3543,10 @@ border-color: rgb(255, 255, 255);
             </property>
             <property name="styleSheet">
              <string notr="true">background-image:url(./sorcebilder/11.png);
+background-image:url(./sorcebilder/0.png);
 border: 0px solid;
-border-color: rgb(255, 255, 255);</string>
+border-color: rgb(255, 255, 255);
+</string>
             </property>
             <property name="text">
              <string/>
@@ -3501,6 +3578,7 @@ border-color: rgb(255, 255, 255);</string>
             </property>
             <property name="styleSheet">
              <string notr="true">background-image:url(./sorcebilder/13nos_w.png);
+background-image:url(./sorcebilder/0.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -3695,10 +3773,102 @@ border-bottom-color: rgb(255,255,255);</string>
  </widget>
  <tabstops>
   <tabstop>lineEdit</tabstop>
-  <tabstop>tabWidget</tabstop>
-  <tabstop>scrollArea</tabstop>
   <tabstop>Send</tabstop>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>tableWidget</tabstop>
+  <tabstop>tableWidget_2</tabstop>
+  <tabstop>pushButton_help</tabstop>
+  <tabstop>pushButton_titel</tabstop>
+  <tabstop>pushButton_save</tabstop>
+  <tabstop>pushButton_save_2</tabstop>
+  <tabstop>pushButton_leave</tabstop>
   <tabstop>textBrowser</tabstop>
+  <tabstop>pushButton_1</tabstop>
+  <tabstop>pushButton_6</tabstop>
+  <tabstop>pushButton_11</tabstop>
+  <tabstop>pushButton_16</tabstop>
+  <tabstop>pushButton_21</tabstop>
+  <tabstop>pushButton_26</tabstop>
+  <tabstop>pushButton_31</tabstop>
+  <tabstop>pushButton_36</tabstop>
+  <tabstop>pushButton_2</tabstop>
+  <tabstop>pushButton_7</tabstop>
+  <tabstop>pushButton_12</tabstop>
+  <tabstop>pushButton_17</tabstop>
+  <tabstop>pushButton_22</tabstop>
+  <tabstop>pushButton_27</tabstop>
+  <tabstop>pushButton_32</tabstop>
+  <tabstop>pushButton_37</tabstop>
+  <tabstop>pushButton_3</tabstop>
+  <tabstop>pushButton_8</tabstop>
+  <tabstop>pushButton_13</tabstop>
+  <tabstop>pushButton_18</tabstop>
+  <tabstop>pushButton_23</tabstop>
+  <tabstop>pushButton_28</tabstop>
+  <tabstop>pushButton_38</tabstop>
+  <tabstop>pushButton_33</tabstop>
+  <tabstop>pushButton_4</tabstop>
+  <tabstop>pushButton_9</tabstop>
+  <tabstop>pushButton_14</tabstop>
+  <tabstop>pushButton_19</tabstop>
+  <tabstop>pushButton_24</tabstop>
+  <tabstop>pushButton_29</tabstop>
+  <tabstop>pushButton_34</tabstop>
+  <tabstop>pushButton_39</tabstop>
+  <tabstop>pushButton_5</tabstop>
+  <tabstop>pushButton_15</tabstop>
+  <tabstop>pushButton_10</tabstop>
+  <tabstop>pushButton_20</tabstop>
+  <tabstop>pushButton_25</tabstop>
+  <tabstop>pushButton_30</tabstop>
+  <tabstop>pushButton_35</tabstop>
+  <tabstop>pushButton_40</tabstop>
+  <tabstop>upbutton</tabstop>
+  <tabstop>downbutton</tabstop>
+  <tabstop>pushButton_1_1</tabstop>
+  <tabstop>pushButton_1_6</tabstop>
+  <tabstop>pushButton_1_11</tabstop>
+  <tabstop>pushButton_1_16</tabstop>
+  <tabstop>pushButton_1_21</tabstop>
+  <tabstop>pushButton_1_26</tabstop>
+  <tabstop>pushButton_1_31</tabstop>
+  <tabstop>pushButton_1_36</tabstop>
+  <tabstop>pushButton_1_2</tabstop>
+  <tabstop>pushButton_1_7</tabstop>
+  <tabstop>pushButton_1_12</tabstop>
+  <tabstop>pushButton_1_17</tabstop>
+  <tabstop>pushButton_1_22</tabstop>
+  <tabstop>pushButton_1_27</tabstop>
+  <tabstop>pushButton_1_32</tabstop>
+  <tabstop>pushButton_1_37</tabstop>
+  <tabstop>pushButton_1_3</tabstop>
+  <tabstop>pushButton_1_8</tabstop>
+  <tabstop>pushButton_1_13</tabstop>
+  <tabstop>pushButton_1_18</tabstop>
+  <tabstop>pushButton_1_23</tabstop>
+  <tabstop>pushButton_1_28</tabstop>
+  <tabstop>pushButton_1_33</tabstop>
+  <tabstop>pushButton_1_38</tabstop>
+  <tabstop>pushButton_1_4</tabstop>
+  <tabstop>pushButton_1_9</tabstop>
+  <tabstop>pushButton_1_14</tabstop>
+  <tabstop>pushButton_1_19</tabstop>
+  <tabstop>pushButton_1_24</tabstop>
+  <tabstop>pushButton_1_29</tabstop>
+  <tabstop>pushButton_1_34</tabstop>
+  <tabstop>pushButton_1_39</tabstop>
+  <tabstop>pushButton_1_5</tabstop>
+  <tabstop>pushButton_1_10</tabstop>
+  <tabstop>pushButton_1_15</tabstop>
+  <tabstop>pushButton_1_20</tabstop>
+  <tabstop>pushButton_1_25</tabstop>
+  <tabstop>pushButton_1_30</tabstop>
+  <tabstop>pushButton_1_35</tabstop>
+  <tabstop>pushButton_1_40</tabstop>
+  <tabstop>pushButton</tabstop>
+  <tabstop>pushButton_newgame</tabstop>
+  <tabstop>textBrowser_2</tabstop>
+  <tabstop>scrollArea</tabstop>
  </tabstops>
  <resources/>
  <connections/>

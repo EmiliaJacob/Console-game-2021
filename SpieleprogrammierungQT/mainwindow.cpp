@@ -5,6 +5,7 @@
 #include <comunicazionhendler.h>
 #include <QTextStream>
 #include <QFile>
+#include <QPushButton>
 
 int florlevel=0,maxflorlevel=1;
 
@@ -41,6 +42,14 @@ void MainWindow::dotext(){
           {
               UpdatePositionInUi(oldPosition, answer.split(" ")[4]);
           }
+          if(answer.split(" ")[0] == "pickup")
+          {
+              UpdateUiinventaradd();
+          }
+          if(answer.split(" ")[0] == "dropt")
+          {
+              UpdateUiinventarsuptrakt();
+          }
 
           WriteLine(answer);
           ui->lineEdit->clear();
@@ -56,7 +65,7 @@ void MainWindow::WriteLine(QString input)
 
 
 
-
+//map
 //mapup Ʌ
 void MainWindow::on_upbutton_clicked()
 {
@@ -79,27 +88,30 @@ void MainWindow::on_downbutton_clicked()
     }
 }
 
-
 //mapupdate
 void MainWindow::UpdatePositionInUi(QString oldPosition, QString newPosition)
 {
     qDebug() << "OldPosition: " << oldPosition << " NewPosition: " << newPosition;
-
-    QString buttonold= "pushButton_"+ oldPosition;
-    QString buttonnew= "pushButton_"+ newPosition;
-
-   // QString styleold =MainWindow::findChild<Qpushbutton*> (buttonold)->styleSheet();
-    QString styleold =ui->pushButton_13->styleSheet();
-    QString stylenew =ui->pushButton_12->styleSheet();
-    styleold.insert(35, "0");
-    styleold.remove(36,1);
-    stylenew.insert(35, "1");
-    stylenew.remove(36,1);
-    qDebug() << "styleSheet" << styleold;
-    ui->pushButton_13->setStyleSheet(styleold);
-    ui->pushButton_12->setStyleSheet(stylenew);
+    muveuser(oldPosition);
+    muveuser(newPosition);
 }
-
+void MainWindow::muveuser(QString posishon){
+    QString button= "pushButton_"+ posishon;
+    QPushButton *but = MainWindow::findChild<QPushButton*>(button);
+    QString style=but->styleSheet();
+    if(style.length()>130){discoverUimap(button);}
+    style.insert(35, "0");
+    style.remove(36,1);
+    but->setStyleSheet(style);
+}
+//mapupdate
+void MainWindow::discoverUimap(QString button){
+    QPushButton *but = MainWindow::findChild<QPushButton*>(button);
+    QString styl=but->styleSheet();
+    styl.remove(44,43);
+    qDebug() << styl;
+    but->setStyleSheet(styl);
+}
 
 
 //inventar
@@ -111,7 +123,10 @@ void MainWindow::on_tableWidget_cellClicked(int row, int column)
     if(row==2) ui->textBrowser->append("A purple fluorescence ore \n It's rather heavy\n");
     if(row==3) ui->textBrowser->append("A red ore \n It's rather light\n");
 }
-
+//add intem
+void MainWindow::UpdateUiinventaradd(){}
+//tacke item
+void MainWindow::UpdateUiinventarsuptrakt(){}
 
 //opzionen
 //New Game
@@ -166,3 +181,10 @@ void MainWindow::on_pushButton_help_clicked()
 
 
 
+
+void MainWindow::on_tableWidget_2_cellPressed(int row, int column)
+{
+    if(row==0) ui->textBrowser->append("test 1\n");
+    if(row==1) ui->textBrowser->append("test 2\n");
+
+}

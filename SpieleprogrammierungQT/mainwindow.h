@@ -45,8 +45,14 @@ private slots:
 
     void on_upbutton_clicked();
 
+    void muveuser(QString);
+    void discoverUimap(QString);
     void UpdatePositionInUi(QString, QString);
+    void UpdateUiinventaradd();
+    void UpdateUiinventarsuptrakt();
     void on_tableWidget_cellClicked(int row, int column);
+
+    void on_tableWidget_2_cellPressed(int row, int column);
 
 private:
     Game mGame;
