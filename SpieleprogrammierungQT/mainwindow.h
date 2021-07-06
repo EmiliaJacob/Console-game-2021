@@ -46,14 +46,10 @@ private slots:
 
     void on_upbutton_clicked();
 
-<<<<<<< HEAD
     void muveuser(QString);
     void discoverUimap(QString);
-    void UpdatePositionInUi(QString, QString);
-    void UpdateUiinventaradd();
-    void UpdateUiinventarsuptrakt();
-=======
->>>>>>> 3a58d99d297d3c61ac926444af2b8ee00544fc6e
+    void UpdateUiinventaradd(int);
+    void UpdateUiinventarsuptrakt(int);
     void on_tableWidget_cellClicked(int row, int column);
 
     void on_tableWidget_2_cellPressed(int row, int column);

@@ -7,8 +7,7 @@
 #include <QFile>
 #include <QPushButton>
 
-int florlevel=0,maxflorlevel=1;
-
+int florlevel=0,maxflorlevel=1, inventory[20];
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -17,7 +16,9 @@ MainWindow::MainWindow(QWidget *parent)
     //ui->tabWidget->setTabIcon(1, const QIcon & icon);
     //comunicazionhendler = new comunicazionhendler(this);
     ui->stackedWidget->setCurrentIndex(0);
-    //mGame.LoadGame();
+    for (int i=0;i<20 ;i++ ) {
+        inventory[i]=-1;
+    }
 }
 
 MainWindow::~MainWindow()
@@ -36,7 +37,7 @@ void MainWindow::dotext(){
     if(!command.isEmpty()){
        WriteLine(command);
 
-<<<<<<< HEAD
+
           QString answer = mGame.InputHandler(command);
           if(answer.split(" ")[0] == "Moved")
           {
@@ -50,16 +51,6 @@ void MainWindow::dotext(){
           {
               UpdateUiinventarsuptrakt();
           }
-=======
-       QString oldPosition = mGame.mPlayer.CurrentField->Id;
->>>>>>> 3a58d99d297d3c61ac926444af2b8ee00544fc6e
-
-       QString answer = mGame.InputHandler(command);
-       if(answer.split(" ")[0] == "Moved")
-       {
-           UpdatePositionInUi(oldPosition, answer.split(" ")[4]);
-       }
-
        WriteLine(answer);
        ui->lineEdit->clear();
     }
@@ -75,21 +66,16 @@ void MainWindow::on_tabWidget_tabBarClicked(int)
 
 }
 
-<<<<<<< HEAD
-//map
-=======
 void MainWindow::WriteLine(QString input)
 {
     QString newLine = "~$ " + input + "\n";
     ui->textBrowser->append(newLine);
 }
 
->>>>>>> 3a58d99d297d3c61ac926444af2b8ee00544fc6e
+//map
 //mapup Ʌ
 void MainWindow::on_upbutton_clicked()
 {
-
-
     if(florlevel>0){
        // ui->stackedWidget_2->setCurrentIndex( ui->stackedWidget_2->currentIndex()-1);
         florlevel-=1;
@@ -123,7 +109,6 @@ void MainWindow::muveuser(QString posishon){
     style.remove(36,1);
     but->setStyleSheet(style);
 }
-//mapupdate
 void MainWindow::discoverUimap(QString button){
     QPushButton *but = MainWindow::findChild<QPushButton*>(button);
     QString styl=but->styleSheet();
@@ -137,15 +122,49 @@ void MainWindow::discoverUimap(QString button){
 //inventar clicked
 void MainWindow::on_tableWidget_cellClicked(int row, int column)
 {
+//    ui->textBrowser->append(getintendiscription(inventory[1][row]));
     if(row==0) ui->textBrowser->append("it is emti tank\n");
     if(row==1) ui->textBrowser->append("A Cristal\n it's schinie nofing more\n");
     if(row==2) ui->textBrowser->append("A purple fluorescence ore \n It's rather heavy\n");
     if(row==3) ui->textBrowser->append("A red ore \n It's rather light\n");
 }
 //add intem
-void MainWindow::UpdateUiinventaradd(){}
+void MainWindow::UpdateUiinventaradd(int item_id){
+    int i=0;
+    bool exist=false;
+    while (inventory[i]!=-1&&exist==false) {
+        if(inventory[i]==item_id){
+            exist=true;
+
+        }else{
+            i++;
+        }
+    }
+   //add item
+    if(exist==true){
+//        ui->tabWidget->modifi cell;
+    }
+    else{
+        inventory[i]=item_id;
+//         ui->tabWidget->appent();
+    }
+}
 //tacke item
-void MainWindow::UpdateUiinventarsuptrakt(){}
+void MainWindow::UpdateUiinventarsuptrakt(int item_id){
+    int i=0;
+    bool exist=false;
+    while (inventory[i]!= item_id) {
+            i++;
+    }
+    //if(dubel item){}else{
+    ui->tabWidget->remove;
+    i++;
+    while (i<21) {
+          inventory[i-1]=inventory[i];
+    }
+    inventory[20]=-1;
+//}
+}
 
 //opzionen
 //New Game
