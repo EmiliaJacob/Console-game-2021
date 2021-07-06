@@ -32,11 +32,11 @@ void MainWindow::on_lineEdit_returnPressed(){
 dotext();}
 void MainWindow::dotext(){
     QString command = ui ->lineEdit->text();
-       if(!command.isEmpty()){
-          WriteLine(command);
 
-          QString oldPosition = mGame.mPlayer.CurrentField->Id;
+    if(!command.isEmpty()){
+       WriteLine(command);
 
+<<<<<<< HEAD
           QString answer = mGame.InputHandler(command);
           if(answer.split(" ")[0] == "Moved")
           {
@@ -50,22 +50,41 @@ void MainWindow::dotext(){
           {
               UpdateUiinventarsuptrakt();
           }
+=======
+       QString oldPosition = mGame.mPlayer.CurrentField->Id;
+>>>>>>> 3a58d99d297d3c61ac926444af2b8ee00544fc6e
 
-          WriteLine(answer);
-          ui->lineEdit->clear();
+       QString answer = mGame.InputHandler(command);
+       if(answer.split(" ")[0] == "Moved")
+       {
+           UpdatePositionInUi(oldPosition, answer.split(" ")[4]);
        }
+
+       WriteLine(answer);
+       ui->lineEdit->clear();
+    }
 }
 
+void MainWindow::on_lineEdit_upPressed()
+{
+
+}
+
+void MainWindow::on_tabWidget_tabBarClicked(int)
+{
+
+}
+
+<<<<<<< HEAD
+//map
+=======
 void MainWindow::WriteLine(QString input)
 {
     QString newLine = "~$ " + input + "\n";
     ui->textBrowser->append(newLine);
 }
 
-
-
-
-//map
+>>>>>>> 3a58d99d297d3c61ac926444af2b8ee00544fc6e
 //mapup Ʌ
 void MainWindow::on_upbutton_clicked()
 {

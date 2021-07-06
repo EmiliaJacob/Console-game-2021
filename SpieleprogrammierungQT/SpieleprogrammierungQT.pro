@@ -21,8 +21,6 @@ SOURCES += \
     testhelper.cpp
 
 HEADERS += \
-    danger.h \
-    description.h \
     field.h \
     game.h \
     gameboard.h \
