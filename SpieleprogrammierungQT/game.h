@@ -1,7 +1,7 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include "gameboard.h"
+#include "level.h"
 #include "player.h"
 
 class Game
@@ -15,7 +15,7 @@ public:
     };
 
     Player mPlayer;
-    inline static GameBoard mGameBoard;
+    inline static Level Level_One;
     Game();
     void Write(QJsonObject &json);
     void NewGame();

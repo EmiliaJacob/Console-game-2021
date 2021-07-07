@@ -33,7 +33,7 @@
         {
             "backward": "0",
             "description": "This nothing but a plain dark tunnel",
-            "forward": "x",
+            "forward": "2",
             "id": "1",
             "items": [
                 {
@@ -44,6 +44,32 @@
             ],
             "left": "x",
             "right": "x"
-        }
+        },
+        {
+            "id":"2",
+            "backward" : "1",
+            "forward" : "x",
+            "left" :"x",
+            "right":"x",
+            "description":"You stand in front of an ancient looking door. It is locked.",
+            "items":[
+                {
+                    "description":"A swipey thing that somebody must have lost. It is super dusty!",
+                    "locationDescription":"It is laying on the floor right in front of us",
+                    "name":"Swipey thing"
+                }
+            ]
+        },
+        {
+            "id":"3",
+            "backward": "2",
+            "forward":"x",
+            "left":"x",
+            "right":"x",
+            "description":"A luxurious atrium",
+            "items":[
+                
+            ]
+        } 
     ]
 }

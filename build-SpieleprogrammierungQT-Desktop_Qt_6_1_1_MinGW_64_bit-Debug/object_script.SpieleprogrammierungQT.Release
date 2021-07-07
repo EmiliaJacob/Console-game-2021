@@ -1,9 +1,9 @@
 release/field.o
 release/game.o
-release/gameboard.o
 release/inputparser.o
 release/inventory.o
 release/item.o
+release/level.o
 release/main.o
 release/mainwindow.o
 release/player.o

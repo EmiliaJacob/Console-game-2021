@@ -1,9 +1,9 @@
 debug/field.o
 debug/game.o
-debug/gameboard.o
 debug/inputparser.o
 debug/inventory.o
 debug/item.o
+debug/level.o
 debug/main.o
 debug/mainwindow.o
 debug/player.o

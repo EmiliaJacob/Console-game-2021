@@ -11,10 +11,10 @@ CONFIG += c++11
 SOURCES += \
     field.cpp \
     game.cpp \
-    gameboard.cpp \
     inputparser.cpp \
     inventory.cpp \
     item.cpp \
+    level.cpp \
     main.cpp \
     mainwindow.cpp \
     player.cpp \
@@ -24,10 +24,10 @@ SOURCES += \
 HEADERS += \
     field.h \
     game.h \
-    gameboard.h \
     inputparser.h \
     inventory.h \
     item.h \
+    level.h \
     mainwindow.h \
     player.h \
     savepoint.h \

@@ -1,6 +1,6 @@
 #include "game.h"
 #include "field.h"
-#include "gameboard.h"
+#include "level.h"
 
 #include <QFile>
 #include <QJsonDocument>
@@ -23,7 +23,7 @@ bool Game::LoadGame()
     QByteArray fieldsData = fieldsFile.readAll();
     QJsonDocument fieldsDoc(QJsonDocument::fromJson(fieldsData));
 
-    mGameBoard.Read(fieldsDoc.object());
+    Level_One.Read(fieldsDoc.object());
 
     // Loading Player
     QFile playerFile("player.json");
@@ -65,7 +65,7 @@ QString Game::SaveGame()
     else
     {
         QJsonObject gameBoardObject;
-        mGameBoard.Write(gameBoardObject);
+        Level_One.Write(gameBoardObject);
 
         fieldsFile.write(QJsonDocument(gameBoardObject).toJson());
     }
@@ -115,12 +115,10 @@ QString Game::InputHandler(QString input)
 
     if(splittedInput.length() == 2) // pick-up/drop only one item
     {
-        if(splittedInput[0] == "p" || splittedInput[0] == "pickup")
-        {
+        if(splittedInput[0] == "p" || splittedInput[0] == "pickup") {
             return mPlayer.PickUpItemOfType(splittedInput[1]);
         }
-        if(splittedInput[0] == "d" || splittedInput[0] == "drop")
-        {
+        if(splittedInput[0] == "d" || splittedInput[0] == "drop") {
             return mPlayer.DropItemOfType(splittedInput[1]);
         }
     }
@@ -150,6 +148,16 @@ QString Game::InputHandler(QString input)
                 return mPlayer.DropMultipleItemsOfType(splittedInput[1], splittedInput[2].toInt());
             }
         }
+    }
+
+    //flexible input lenght
+    if(splittedInput[0] == "use") {
+        QString itemName = input.remove(0, 4);
+        if(mPlayer.HasItem(itemName) || mPlayer.CurrentField->HasItem(itemName)) {
+            return Level_One.UseItem(mPlayer.CurrentField, itemName);
+        }
+        else
+            return "Can't find item: " + itemName;
     }
 
     return("No fitting interpretation was found for: " + input + "\n      Please try something else.");

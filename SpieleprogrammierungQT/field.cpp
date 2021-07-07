@@ -53,3 +53,12 @@ void Field::Write(QJsonObject &json)
 
     json["items"] = itemArray;
 }
+
+bool Field::HasItem(QString itemName)
+{
+    for(int i=0; i<Items.length(); i++) {
+        if(Items[i].Name == itemName)
+            return true;
+    }
+    return false;
+}

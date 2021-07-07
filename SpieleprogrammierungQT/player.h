@@ -20,6 +20,7 @@ public:
     void Read(const QJsonObject &json);
     void Write(QJsonObject &json);
     QString SetSavePoint();
+    bool HasItem(QString itemName);
     QString FastTravel(QString destination);
     QString ListAvailableSavePoints();
     QString Move(QString direction);

@@ -1,5 +1,5 @@
 #include "game.h"
-#include "gameboard.h"
+#include "level.h"
 #include "player.h"
 #include "testhelper.h"
 #include <QtDebug>
@@ -35,7 +35,7 @@ void Player::Read(const QJsonObject &json)
     //TestHelper testHelper;
     //testHelper.PrintQList(Player::mInventory.CollectedItems);
 
-    CurrentField = Game::mGameBoard.GetField(json["currentFieldId"].toString());
+    CurrentField = Game::Level_One.GetField(json["currentFieldId"].toString());
     qDebug() << "Created player and put them onto Field: " << CurrentField->Id;
 }
 
@@ -68,7 +68,7 @@ QString Player::Move(QString direction) // Done!
     if(direction == "forward"){
         if(QString::compare(CurrentField->FieldForward, "x") != 0)
         {
-            CurrentField = Game::mGameBoard.GetField(CurrentField->FieldForward);
+            CurrentField = Game::Level_One.GetField(CurrentField->FieldForward);
             return("Moved forward to field with id: " + CurrentField->Id);
         }
         else
@@ -80,7 +80,7 @@ QString Player::Move(QString direction) // Done!
     if(direction == "backward"){
         if(QString::compare(CurrentField->FieldBackward, "x") != 0)
         {
-            CurrentField = Game::mGameBoard.GetField(CurrentField->FieldBackward);
+            CurrentField = Game::Level_One.GetField(CurrentField->FieldBackward);
             return("Moved forward to field with id: " + CurrentField->Id);
         }
         else
@@ -92,7 +92,7 @@ QString Player::Move(QString direction) // Done!
     if(direction == "left"){
         if(QString::compare(CurrentField->FieldBackward, "x") != 0)
         {
-            CurrentField = Game::mGameBoard.GetField(CurrentField->FieldBackward);
+            CurrentField = Game::Level_One.GetField(CurrentField->FieldBackward);
             return("Moved left to field with id: " + CurrentField->Id);
         }
         else
@@ -104,7 +104,7 @@ QString Player::Move(QString direction) // Done!
     if(direction == "right"){
         if(QString::compare(CurrentField->FieldBackward, "x") != 0)
         {
-            CurrentField = Game::mGameBoard.GetField(CurrentField->FieldBackward);
+            CurrentField = Game::Level_One.GetField(CurrentField->FieldBackward);
             return("Moved right to field with id: " + CurrentField->Id);
         }
         else
@@ -188,14 +188,23 @@ QString Player::PickUpAllItemsOfType(QString itemType) // Done!
     }
 }
 
+bool Player::HasItem(QString itemName)
+{
+    for (int i=0; i<mInventory.CollectedItems.size(); i++) {
+        Item item = mInventory.CollectedItems[i];
+        if(item.Name == itemName) {
+            return true;
+        }
+    }
+    return false;
+}
 
 QString Player::DropItemOfType(QString itemType) // Done!
 {
     for(int i=0; i<mInventory.CollectedItems.size(); i++)
     {
         Item item = mInventory.CollectedItems[i];
-        if(item.Name == itemType)
-        {
+        if(item.Name == itemType) {
             mInventory.CollectedItems.removeAt(i);
             CurrentField->Items.append(item);
             return("Dropped item");
