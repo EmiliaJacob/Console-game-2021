@@ -11,6 +11,7 @@ public:
     virtual void ExecuteCommand(int command);
     virtual void PrintMenu();
 signals:
+    void changeStateRequest(QString newState);
     void moveRequest(QString direction);
     void descriptionRequest();
     void issueConsoleOutput(QString output);

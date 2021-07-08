@@ -18,6 +18,7 @@ SOURCES += \
     level.cpp \
     main.cpp \
     mainwindow.cpp \
+    pickupstate.cpp \
     player.cpp \
     savepoint.cpp \
     states.cpp \
@@ -33,6 +34,7 @@ HEADERS += \
     item.h \
     level.h \
     mainwindow.h \
+    pickupstate.h \
     player.h \
     savepoint.h \
     states.h \

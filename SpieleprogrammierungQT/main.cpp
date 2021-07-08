@@ -16,8 +16,9 @@ int main(int argc, char *argv[])
     QObject::connect(&States::idleState, &IdleState::moveRequest, &game.mPlayer, &Player::Move);
     QObject::connect(&States::idleState, &IdleState::descriptionRequest, &game.mPlayer, &Player::GetFieldDescription);
     QObject::connect(&States::idleState, &IdleState::moveRequest, &game.mPlayer, &Player::Move);
+    QObject::connect(&States::idleState, &IdleState::changeStateRequest, &game, &Game::ChangeState);
     QObject::connect(&game.mPlayer, &Player::issueConsoleOutput, &mainWindow, &MainWindow::PrintOntoConsole);
-
+    QObject::connect(&States::pickUpState, &PickUpState::changeStateRequest, &game, &Game::ChangeState);
     mainWindow.SetGame(&game);
     mainWindow.show();
     return qApplication.exec();

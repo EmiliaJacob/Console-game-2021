@@ -30,6 +30,7 @@ public:
     QString InputHandler(QString input);
 public slots:
     void HandleCommand(int command);
+    void ChangeState(QString stateName);
 };
 
 #endif // GAME_H

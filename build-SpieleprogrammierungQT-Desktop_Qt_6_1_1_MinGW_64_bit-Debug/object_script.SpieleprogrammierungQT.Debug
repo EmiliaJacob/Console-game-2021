@@ -7,6 +7,7 @@ debug/item.o
 debug/level.o
 debug/main.o
 debug/mainwindow.o
+debug/pickupstate.o
 debug/player.o
 debug/savepoint.o
 debug/states.o
@@ -15,4 +16,5 @@ debug/moc_game.o
 debug/moc_idlestate.o
 debug/moc_istates.o
 debug/moc_mainwindow.o
+debug/moc_pickupstate.o
 debug/moc_player.o

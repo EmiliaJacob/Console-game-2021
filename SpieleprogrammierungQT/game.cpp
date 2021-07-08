@@ -47,6 +47,16 @@ void Game::HandleCommand(int command)
     currentState->PrintMenu();
 }
 
+void Game::ChangeState(QString stateName)
+{
+    if(stateName == "idleState") {
+        currentState = &States::idleState;
+    }
+    else if(stateName == "pickUpState") {
+        currentState = &States::pickUpState;
+    }
+}
+
 QString Game::SaveGame()
 {
     QFile playerFile(QStringLiteral("player.json"));

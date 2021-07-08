@@ -28,6 +28,7 @@ void IdleState::ExecuteCommand(int command)
             emit descriptionRequest();
             break;
         case 6:
+            emit changeStateRequest("pickUpState");
             break;
         case 7:
             break;
