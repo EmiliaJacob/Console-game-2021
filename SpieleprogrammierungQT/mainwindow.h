@@ -4,6 +4,7 @@
 #include "game.h"
 #include "player.h"
 #include "states.h"
+#include "istates.h"
 
 #include <QMainWindow>
 #include <comunicazionhendler.h>

@@ -1,13 +1,21 @@
 #ifndef IDLESTATE_H
 #define IDLESTATE_H
 #include "istates.h"
+#include <QObject>
+
+class Game;
 
 class IdleState : public IStates
 {
+    Q_OBJECT
 public:
     IdleState();
-    virtual void ExecuteCommand(Game game, QString command);
-    virtual void GetStandardOutput();
+    virtual void ExecuteCommand(int command);
+    virtual QString GetStandardOutput();
+signals:
+    void moveRequest(QString direction);
+    void descriptionRequest();
+    void issueConsoleOutput(QString output);
 };
 
 #endif // IDLESTATE_H

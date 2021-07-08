@@ -1,18 +1,17 @@
 #ifndef ISTATES_H
 #define ISTATES_H
 
-#include "game.h"
-
 #include <QString>
+#include <QObject>
 
 
-
-class IStates
+class IStates : public QObject
 {
+    Q_OBJECT
 public:
     virtual ~IStates() {};
-    virtual void ExecuteCommand(Game game, QString command) {};
-    virtual void GetStandardOutput() {};
+    virtual void ExecuteCommand(int command) {};
+    virtual QString GetStandardOutput() {};
 };
 
 #endif // ISTATES_H

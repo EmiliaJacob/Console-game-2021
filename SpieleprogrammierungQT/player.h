@@ -8,8 +8,9 @@
 #include <QList>
 #include <iostream>
 
-class Player
+class Player : public QObject
 {
+    Q_OBJECT
 private:
     Inventory mInventory;
 public:
@@ -21,10 +22,11 @@ public:
     void Write(QJsonObject &json);
     QString SetSavePoint();
     bool HasItem(QString itemName);
-    QString FastTravel(QString destination);
+public slots:
+    //QString FastTravel(QString destination);
     QString ListAvailableSavePoints();
     QString Move(QString direction);
-    QString PickUpItems(QString itemType, int numberOfItems);
+    //QString PickUpItems(QString itemType, int numberOfItems);
     QString PickUpItemOfType(QString itemType);
     QString PickUpMultipleItemsOfType(QString itemType, int numberOfItems);
     QString PickUpAllItemsOfType(QString itemType);
@@ -33,6 +35,8 @@ public:
     QString DropAllItemsOfType(QString itemType);
     QString ListAvailableItems();
     QString GetFieldDescription(); // TODO : rename -> you don't get anything
+signals:
+    void issueConsoleOutput(QString output);
 };
 
 #endif // PLAYER_H

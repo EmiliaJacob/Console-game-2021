@@ -11,4 +11,7 @@ release/player.o
 release/savepoint.o
 release/states.o
 release/testhelper.o
+release/moc_idlestate.o
+release/moc_istates.o
 release/moc_mainwindow.o
+release/moc_player.o

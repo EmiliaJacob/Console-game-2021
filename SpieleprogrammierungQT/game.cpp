@@ -9,6 +9,7 @@
 
 Game::Game()
 {
+    //currentState = &States::idleState;
 }
 
 bool Game::LoadGame()

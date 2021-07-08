@@ -1,12 +1,15 @@
 #ifndef GAME_H
 #define GAME_H
 
+#include "istates.h"
 #include "level.h"
 #include "player.h"
+#include "states.h"
 
 class Game
 {
 private:
+    IStates* currentState;
 
 public:
     enum SaveFormat // TODO: By-default binary speichern
