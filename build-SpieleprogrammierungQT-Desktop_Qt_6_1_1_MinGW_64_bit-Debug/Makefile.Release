@@ -163,9 +163,10 @@ compiler_moc_header_clean:
 	-$(DEL_FILE) release\moc_game.cpp release\moc_idlestate.cpp release\moc_istates.cpp release\moc_mainwindow.cpp release\moc_player.cpp
 release/moc_game.cpp: ../SpieleprogrammierungQT/game.h \
 		../SpieleprogrammierungQT/istates.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/QString \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qstring.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qchar.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/QObject \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobject.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobjectdefs.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qnamespace.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qglobal.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qconfig-bootstrapped.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qconfig.h \
@@ -187,11 +188,13 @@ release/moc_game.cpp: ../SpieleprogrammierungQT/game.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qmutex.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qnumeric.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qversiontagging.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qtmetamacros.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobjectdefs_impl.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qstring.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qchar.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qstringview.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qbytearray.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qrefcount.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qnamespace.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qtmetamacros.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qarraydata.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qpair.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qarraydatapointer.h \
@@ -205,10 +208,6 @@ release/moc_game.cpp: ../SpieleprogrammierungQT/game.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qutf8stringview.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qstringtokenizer.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qstringbuilder.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/QObject \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobject.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobjectdefs.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobjectdefs_impl.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qlist.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qhashfunctions.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qiterator.h \
@@ -257,6 +256,7 @@ release/moc_game.cpp: ../SpieleprogrammierungQT/game.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qregularexpression.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qurl.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/quuid.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/QString \
 		../SpieleprogrammierungQT/savepoint.h \
 		../SpieleprogrammierungQT/player.h \
 		../SpieleprogrammierungQT/inventory.h \
@@ -271,9 +271,10 @@ release/moc_game.cpp: ../SpieleprogrammierungQT/game.h \
 
 release/moc_idlestate.cpp: ../SpieleprogrammierungQT/idlestate.h \
 		../SpieleprogrammierungQT/istates.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/QString \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qstring.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qchar.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/QObject \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobject.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobjectdefs.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qnamespace.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qglobal.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qconfig-bootstrapped.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qconfig.h \
@@ -295,11 +296,13 @@ release/moc_idlestate.cpp: ../SpieleprogrammierungQT/idlestate.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qmutex.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qnumeric.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qversiontagging.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qtmetamacros.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobjectdefs_impl.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qstring.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qchar.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qstringview.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qbytearray.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qrefcount.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qnamespace.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qtmetamacros.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qarraydata.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qpair.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qarraydatapointer.h \
@@ -313,10 +316,6 @@ release/moc_idlestate.cpp: ../SpieleprogrammierungQT/idlestate.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qutf8stringview.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qstringtokenizer.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qstringbuilder.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/QObject \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobject.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobjectdefs.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobjectdefs_impl.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qlist.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qhashfunctions.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qiterator.h \
@@ -345,9 +344,10 @@ release/moc_idlestate.cpp: ../SpieleprogrammierungQT/idlestate.h \
 	C:\Qt\6.1.1\mingw81_64\bin\moc.exe $(DEFINES) --include C:/Users/V/Documents/sp/build-SpieleprogrammierungQT-Desktop_Qt_6_1_1_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/6.1.1/mingw81_64/mkspecs/win32-g++ -IC:/Users/V/Documents/sp/SpieleprogrammierungQT -IC:/Qt/6.1.1/mingw81_64/include -IC:/Qt/6.1.1/mingw81_64/include/QtWidgets -IC:/Qt/6.1.1/mingw81_64/include/QtGui -IC:/Qt/6.1.1/mingw81_64/include/QtCore -I. -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -IC:/Qt/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -IC:/Qt/Tools/mingw810_64/x86_64-w64-mingw32/include ..\SpieleprogrammierungQT\idlestate.h -o release\moc_idlestate.cpp
 
 release/moc_istates.cpp: ../SpieleprogrammierungQT/istates.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/QString \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qstring.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qchar.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/QObject \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobject.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobjectdefs.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qnamespace.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qglobal.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qconfig-bootstrapped.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qconfig.h \
@@ -369,11 +369,13 @@ release/moc_istates.cpp: ../SpieleprogrammierungQT/istates.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qmutex.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qnumeric.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qversiontagging.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qtmetamacros.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobjectdefs_impl.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qstring.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qchar.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qstringview.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qbytearray.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qrefcount.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qnamespace.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qtmetamacros.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qarraydata.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qpair.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qarraydatapointer.h \
@@ -387,10 +389,6 @@ release/moc_istates.cpp: ../SpieleprogrammierungQT/istates.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qutf8stringview.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qstringtokenizer.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qstringbuilder.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/QObject \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobject.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobjectdefs.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobjectdefs_impl.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qlist.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qhashfunctions.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qiterator.h \
@@ -421,9 +419,10 @@ release/moc_istates.cpp: ../SpieleprogrammierungQT/istates.h \
 release/moc_mainwindow.cpp: ../SpieleprogrammierungQT/mainwindow.h \
 		../SpieleprogrammierungQT/game.h \
 		../SpieleprogrammierungQT/istates.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/QString \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qstring.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qchar.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/QObject \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobject.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobjectdefs.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qnamespace.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qglobal.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qconfig-bootstrapped.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qconfig.h \
@@ -445,11 +444,13 @@ release/moc_mainwindow.cpp: ../SpieleprogrammierungQT/mainwindow.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qmutex.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qnumeric.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qversiontagging.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qtmetamacros.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobjectdefs_impl.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qstring.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qchar.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qstringview.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qbytearray.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qrefcount.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qnamespace.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qtmetamacros.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qarraydata.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qpair.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qarraydatapointer.h \
@@ -463,10 +464,6 @@ release/moc_mainwindow.cpp: ../SpieleprogrammierungQT/mainwindow.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qutf8stringview.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qstringtokenizer.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qstringbuilder.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/QObject \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobject.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobjectdefs.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobjectdefs_impl.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qlist.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qhashfunctions.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qiterator.h \
@@ -515,6 +512,7 @@ release/moc_mainwindow.cpp: ../SpieleprogrammierungQT/mainwindow.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qregularexpression.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qurl.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/quuid.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/QString \
 		../SpieleprogrammierungQT/savepoint.h \
 		../SpieleprogrammierungQT/player.h \
 		../SpieleprogrammierungQT/inventory.h \
@@ -801,9 +799,10 @@ release/field.o: ../SpieleprogrammierungQT/field.cpp ../SpieleprogrammierungQT/f
 
 release/game.o: ../SpieleprogrammierungQT/game.cpp ../SpieleprogrammierungQT/game.h \
 		../SpieleprogrammierungQT/istates.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/QString \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qstring.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qchar.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/QObject \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobject.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobjectdefs.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qnamespace.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qglobal.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qconfig-bootstrapped.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qconfig.h \
@@ -825,11 +824,13 @@ release/game.o: ../SpieleprogrammierungQT/game.cpp ../SpieleprogrammierungQT/gam
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qmutex.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qnumeric.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qversiontagging.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qtmetamacros.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobjectdefs_impl.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qstring.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qchar.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qstringview.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qbytearray.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qrefcount.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qnamespace.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qtmetamacros.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qarraydata.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qpair.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qarraydatapointer.h \
@@ -843,10 +844,6 @@ release/game.o: ../SpieleprogrammierungQT/game.cpp ../SpieleprogrammierungQT/gam
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qutf8stringview.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qstringtokenizer.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qstringbuilder.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/QObject \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobject.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobjectdefs.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobjectdefs_impl.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qlist.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qhashfunctions.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qiterator.h \
@@ -895,6 +892,7 @@ release/game.o: ../SpieleprogrammierungQT/game.cpp ../SpieleprogrammierungQT/gam
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qregularexpression.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qurl.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/quuid.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/QString \
 		../SpieleprogrammierungQT/savepoint.h \
 		../SpieleprogrammierungQT/player.h \
 		../SpieleprogrammierungQT/inventory.h \
@@ -914,9 +912,10 @@ release/game.o: ../SpieleprogrammierungQT/game.cpp ../SpieleprogrammierungQT/gam
 
 release/idlestate.o: ../SpieleprogrammierungQT/idlestate.cpp ../SpieleprogrammierungQT/idlestate.h \
 		../SpieleprogrammierungQT/istates.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/QString \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qstring.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qchar.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/QObject \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobject.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobjectdefs.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qnamespace.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qglobal.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qconfig-bootstrapped.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qconfig.h \
@@ -938,11 +937,13 @@ release/idlestate.o: ../SpieleprogrammierungQT/idlestate.cpp ../Spieleprogrammie
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qmutex.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qnumeric.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qversiontagging.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qtmetamacros.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobjectdefs_impl.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qstring.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qchar.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qstringview.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qbytearray.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qrefcount.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qnamespace.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qtmetamacros.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qarraydata.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qpair.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qarraydatapointer.h \
@@ -956,10 +957,6 @@ release/idlestate.o: ../SpieleprogrammierungQT/idlestate.cpp ../Spieleprogrammie
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qutf8stringview.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qstringtokenizer.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qstringbuilder.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/QObject \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobject.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobjectdefs.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobjectdefs_impl.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qlist.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qhashfunctions.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qiterator.h \
@@ -1357,9 +1354,10 @@ release/level.o: ../SpieleprogrammierungQT/level.cpp ../SpieleprogrammierungQT/l
 release/main.o: ../SpieleprogrammierungQT/main.cpp ../SpieleprogrammierungQT/mainwindow.h \
 		../SpieleprogrammierungQT/game.h \
 		../SpieleprogrammierungQT/istates.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/QString \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qstring.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qchar.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/QObject \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobject.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobjectdefs.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qnamespace.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qglobal.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qconfig-bootstrapped.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qconfig.h \
@@ -1381,11 +1379,13 @@ release/main.o: ../SpieleprogrammierungQT/main.cpp ../SpieleprogrammierungQT/mai
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qmutex.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qnumeric.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qversiontagging.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qtmetamacros.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobjectdefs_impl.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qstring.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qchar.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qstringview.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qbytearray.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qrefcount.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qnamespace.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qtmetamacros.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qarraydata.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qpair.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qarraydatapointer.h \
@@ -1399,10 +1399,6 @@ release/main.o: ../SpieleprogrammierungQT/main.cpp ../SpieleprogrammierungQT/mai
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qutf8stringview.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qstringtokenizer.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qstringbuilder.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/QObject \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobject.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobjectdefs.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobjectdefs_impl.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qlist.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qhashfunctions.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qiterator.h \
@@ -1451,6 +1447,7 @@ release/main.o: ../SpieleprogrammierungQT/main.cpp ../SpieleprogrammierungQT/mai
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qregularexpression.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qurl.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/quuid.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/QString \
 		../SpieleprogrammierungQT/savepoint.h \
 		../SpieleprogrammierungQT/player.h \
 		../SpieleprogrammierungQT/inventory.h \
@@ -1521,9 +1518,10 @@ release/main.o: ../SpieleprogrammierungQT/main.cpp ../SpieleprogrammierungQT/mai
 release/mainwindow.o: ../SpieleprogrammierungQT/mainwindow.cpp ../SpieleprogrammierungQT/mainwindow.h \
 		../SpieleprogrammierungQT/game.h \
 		../SpieleprogrammierungQT/istates.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/QString \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qstring.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qchar.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/QObject \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobject.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobjectdefs.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qnamespace.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qglobal.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qconfig-bootstrapped.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qconfig.h \
@@ -1545,11 +1543,13 @@ release/mainwindow.o: ../SpieleprogrammierungQT/mainwindow.cpp ../Spieleprogramm
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qmutex.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qnumeric.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qversiontagging.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qtmetamacros.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobjectdefs_impl.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qstring.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qchar.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qstringview.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qbytearray.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qrefcount.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qnamespace.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qtmetamacros.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qarraydata.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qpair.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qarraydatapointer.h \
@@ -1563,10 +1563,6 @@ release/mainwindow.o: ../SpieleprogrammierungQT/mainwindow.cpp ../Spieleprogramm
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qutf8stringview.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qstringtokenizer.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qstringbuilder.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/QObject \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobject.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobjectdefs.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobjectdefs_impl.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qlist.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qhashfunctions.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qiterator.h \
@@ -1615,6 +1611,7 @@ release/mainwindow.o: ../SpieleprogrammierungQT/mainwindow.cpp ../Spieleprogramm
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qregularexpression.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qurl.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/quuid.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/QString \
 		../SpieleprogrammierungQT/savepoint.h \
 		../SpieleprogrammierungQT/player.h \
 		../SpieleprogrammierungQT/inventory.h \
@@ -1744,9 +1741,10 @@ release/mainwindow.o: ../SpieleprogrammierungQT/mainwindow.cpp ../Spieleprogramm
 
 release/player.o: ../SpieleprogrammierungQT/player.cpp ../SpieleprogrammierungQT/game.h \
 		../SpieleprogrammierungQT/istates.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/QString \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qstring.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qchar.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/QObject \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobject.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobjectdefs.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qnamespace.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qglobal.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qconfig-bootstrapped.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qconfig.h \
@@ -1768,11 +1766,13 @@ release/player.o: ../SpieleprogrammierungQT/player.cpp ../SpieleprogrammierungQT
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qmutex.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qnumeric.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qversiontagging.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qtmetamacros.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobjectdefs_impl.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qstring.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qchar.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qstringview.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qbytearray.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qrefcount.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qnamespace.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qtmetamacros.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qarraydata.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qpair.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qarraydatapointer.h \
@@ -1786,10 +1786,6 @@ release/player.o: ../SpieleprogrammierungQT/player.cpp ../SpieleprogrammierungQT
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qutf8stringview.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qstringtokenizer.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qstringbuilder.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/QObject \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobject.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobjectdefs.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobjectdefs_impl.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qlist.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qhashfunctions.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qiterator.h \
@@ -1838,6 +1834,7 @@ release/player.o: ../SpieleprogrammierungQT/player.cpp ../SpieleprogrammierungQT
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qregularexpression.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qurl.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/quuid.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/QString \
 		../SpieleprogrammierungQT/savepoint.h \
 		../SpieleprogrammierungQT/player.h \
 		../SpieleprogrammierungQT/inventory.h \
@@ -1946,9 +1943,10 @@ release/savepoint.o: ../SpieleprogrammierungQT/savepoint.cpp ../Spieleprogrammie
 release/states.o: ../SpieleprogrammierungQT/states.cpp ../SpieleprogrammierungQT/states.h \
 		../SpieleprogrammierungQT/idlestate.h \
 		../SpieleprogrammierungQT/istates.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/QString \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qstring.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qchar.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/QObject \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobject.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobjectdefs.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qnamespace.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qglobal.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qconfig-bootstrapped.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qconfig.h \
@@ -1970,11 +1968,13 @@ release/states.o: ../SpieleprogrammierungQT/states.cpp ../SpieleprogrammierungQT
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qmutex.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qnumeric.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qversiontagging.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qtmetamacros.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobjectdefs_impl.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qstring.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qchar.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qstringview.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qbytearray.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qrefcount.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qnamespace.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qtmetamacros.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qarraydata.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qpair.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qarraydatapointer.h \
@@ -1988,10 +1988,6 @@ release/states.o: ../SpieleprogrammierungQT/states.cpp ../SpieleprogrammierungQT
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qutf8stringview.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qstringtokenizer.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qstringbuilder.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/QObject \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobject.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobjectdefs.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobjectdefs_impl.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qlist.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qhashfunctions.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qiterator.h \

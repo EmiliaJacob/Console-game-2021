@@ -19,9 +19,10 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-
-    void WriteLine(QString newLine);
     void UpdatePositionInUi(QString oldPosition, QString newPosition);
+
+public slots:
+    void PrintOntoConsole(QString newLine);
 
 private slots:
     void on_Send_clicked();

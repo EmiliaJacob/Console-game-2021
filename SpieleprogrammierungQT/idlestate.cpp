@@ -36,9 +36,9 @@ void IdleState::ExecuteCommand(int command)
     }
 };
 
-QString IdleState::GetStandardOutput()
+void IdleState::PrintMenu()
 {
-    QString standardOutput = "Please select an option: \n"
+    QString menu = "Please select an option: \n"
                              "     1.) Move forward \n"
                              "     2.) Move backward \n"
                              "     3.) Move left \n"
@@ -48,5 +48,5 @@ QString IdleState::GetStandardOutput()
                              "     7.) Drop item \n"
                              "     8.) Pick up item \n";
 
-    return standardOutput;
+    emit issueConsoleOutput(menu);
 }

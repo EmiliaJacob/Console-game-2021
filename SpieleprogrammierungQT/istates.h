@@ -1,7 +1,6 @@
 #ifndef ISTATES_H
 #define ISTATES_H
 
-#include <QString>
 #include <QObject>
 
 
@@ -11,7 +10,7 @@ class IStates : public QObject
 public:
     virtual ~IStates() {};
     virtual void ExecuteCommand(int command) {};
-    virtual QString GetStandardOutput() {};
+    virtual void PrintMenu() {};
 };
 
 #endif // ISTATES_H

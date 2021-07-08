@@ -32,7 +32,7 @@ dotext();}
 void MainWindow::dotext(){
     QString command = ui ->lineEdit->text();
     if(!command.isEmpty()){
-       WriteLine(command);
+       PrintOntoConsole(command);
 
        QString oldPosition = mGame.mPlayer.CurrentField->Id;
 
@@ -42,7 +42,7 @@ void MainWindow::dotext(){
            UpdatePositionInUi(oldPosition, answer.split(" ")[4]);
        }
 
-       WriteLine(answer);
+       PrintOntoConsole(answer);
        ui->lineEdit->clear();
     }
     //QString standardOutput = currentState->GetStandardOutput();
@@ -61,7 +61,7 @@ void MainWindow::on_tabWidget_tabBarClicked(int)
 
 }
 
-void MainWindow::WriteLine(QString input)
+void MainWindow::PrintOntoConsole(QString input)
 {
     QString newLine = "~$ " + input + "\n";
     ui->textBrowser->append(newLine);

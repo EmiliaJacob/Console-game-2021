@@ -9,7 +9,7 @@ class IdleState : public IStates
 public:
     IdleState();
     virtual void ExecuteCommand(int command);
-    virtual QString GetStandardOutput();
+    virtual void PrintMenu();
 signals:
     void moveRequest(QString direction);
     void descriptionRequest();

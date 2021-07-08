@@ -9,7 +9,7 @@
 
 Game::Game()
 {
-   currentState = &States::idleState;
+   currentState = &States::idleState; // TODO: Move into own function
 }
 
 bool Game::LoadGame()
@@ -43,6 +43,8 @@ bool Game::LoadGame()
 void Game::HandleCommand(int command)
 {
     qDebug() << "Received command: " + QString::number(command);
+    currentState->ExecuteCommand(command);
+    currentState->PrintMenu();
 }
 
 QString Game::SaveGame()

@@ -14,6 +14,7 @@ int main(int argc, char *argv[])
     Player player;
 
     QObject::connect(&mainWindow, &MainWindow::receivedCommand, &game, &Game::HandleCommand);
+    QObject::connect(&States::idleState, &IdleState::issueConsoleOutput, &mainWindow, &MainWindow::PrintOntoConsole);
 
     mainWindow.show();
     return qApplication.exec();
