@@ -3,6 +3,7 @@
 
 #include "game.h"
 #include "player.h"
+#include "states.h"
 
 #include <QMainWindow>
 #include <comunicazionhendler.h>
@@ -50,6 +51,7 @@ private slots:
 
 private:
     Game mGame;
+    IStates* currentState;
     Ui::MainWindow *ui;
     comunicazionhendler *mComunicazionhdendler;
 };

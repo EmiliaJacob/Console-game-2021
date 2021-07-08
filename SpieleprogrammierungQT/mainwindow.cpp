@@ -17,6 +17,7 @@ MainWindow::MainWindow(QWidget *parent)
     //comunicazionhendler = new comunicazionhendler(this);
     ui->stackedWidget->setCurrentIndex(0);
     //mGame.LoadGame();
+    currentState = &States::idleState;
 }
 
 MainWindow::~MainWindow()
@@ -45,6 +46,7 @@ void MainWindow::dotext(){
        WriteLine(answer);
        ui->lineEdit->clear();
     }
+    currentState->GetStandardOutput();
 }
 
 void MainWindow::on_lineEdit_upPressed()

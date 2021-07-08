@@ -1,5 +1,6 @@
 debug/field.o
 debug/game.o
+debug/idlestate.o
 debug/inputparser.o
 debug/inventory.o
 debug/item.o
@@ -8,5 +9,6 @@ debug/main.o
 debug/mainwindow.o
 debug/player.o
 debug/savepoint.o
+debug/states.o
 debug/testhelper.o
 debug/moc_mainwindow.o

@@ -11,6 +11,7 @@ CONFIG += c++11
 SOURCES += \
     field.cpp \
     game.cpp \
+    idlestate.cpp \
     inputparser.cpp \
     inventory.cpp \
     item.cpp \
@@ -19,18 +20,22 @@ SOURCES += \
     mainwindow.cpp \
     player.cpp \
     savepoint.cpp \
+    states.cpp \
     testhelper.cpp
 
 HEADERS += \
     field.h \
     game.h \
+    idlestate.h \
     inputparser.h \
     inventory.h \
+    istates.h \
     item.h \
     level.h \
     mainwindow.h \
     player.h \
     savepoint.h \
+    states.h \
     testhelper.h
 
 FORMS += \
