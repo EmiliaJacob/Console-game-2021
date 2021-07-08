@@ -41,6 +41,7 @@ Field* Level::GetField(QString fieldId)
     {
         if(QString::compare(mFields[i].Id, fieldId, Qt::CaseSensitive) == 0)
         {
+            qDebug() << "FIELD__ID: " + fieldId;
             return &mFields[i];
         }
     }

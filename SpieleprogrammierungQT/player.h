@@ -25,7 +25,7 @@ public:
 public slots:
     //QString FastTravel(QString destination);
     QString ListAvailableSavePoints();
-    QString Move(QString direction);
+    void Move(QString direction);
     //QString PickUpItems(QString itemType, int numberOfItems);
     QString PickUpItemOfType(QString itemType);
     QString PickUpMultipleItemsOfType(QString itemType, int numberOfItems);
@@ -34,7 +34,7 @@ public slots:
     QString DropMultipleItemsOfType(QString itemType, int numberOfItems);
     QString DropAllItemsOfType(QString itemType);
     QString ListAvailableItems();
-    QString GetFieldDescription(); // TODO : rename -> you don't get anything
+    void GetFieldDescription(); // TODO : rename -> you don't get anything
 signals:
     void issueConsoleOutput(QString output);
 };

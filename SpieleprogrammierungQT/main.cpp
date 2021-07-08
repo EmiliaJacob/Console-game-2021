@@ -11,11 +11,14 @@ int main(int argc, char *argv[])
     QApplication qApplication(argc, argv);
     Game game;
     MainWindow mainWindow;
-    Player player;
-
     QObject::connect(&mainWindow, &MainWindow::receivedCommand, &game, &Game::HandleCommand);
     QObject::connect(&States::idleState, &IdleState::issueConsoleOutput, &mainWindow, &MainWindow::PrintOntoConsole);
+    QObject::connect(&States::idleState, &IdleState::moveRequest, &game.mPlayer, &Player::Move);
+    QObject::connect(&States::idleState, &IdleState::descriptionRequest, &game.mPlayer, &Player::GetFieldDescription);
+    QObject::connect(&States::idleState, &IdleState::moveRequest, &game.mPlayer, &Player::Move);
+    QObject::connect(&game.mPlayer, &Player::issueConsoleOutput, &mainWindow, &MainWindow::PrintOntoConsole);
 
+    mainWindow.SetGame(&game);
     mainWindow.show();
     return qApplication.exec();
 }

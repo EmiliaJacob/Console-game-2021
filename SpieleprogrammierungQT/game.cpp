@@ -89,19 +89,19 @@ QString Game::InputHandler(QString input)
 
     if(input == "mf" || input == "move forward")
     {
-        return mPlayer.Move("forward");
+        //return mPlayer.Move("forward");
     }
     if(input == "mb" || input == "move backward")
     {
-        return mPlayer.Move("backward");
+        //return mPlayer.Move("backward");
     }
     if(input == "mr" || input == "move right")
     {
-        return mPlayer.Move("right");
+        //return mPlayer.Move("right");
     }
     if(input == "ml" || input == "move left")
     {
-        return mPlayer.Move("left");
+        //return mPlayer.Move("left");
     }
     if(input == "ai" || input == "available items")
     {
@@ -109,7 +109,7 @@ QString Game::InputHandler(QString input)
     }
     if(input == "d" || input == "description")
     {
-        return mPlayer.GetFieldDescription();
+        //return mPlayer.GetFieldDescription();
     }
     if(input == "sp" || input == "savepoint") {
         return mPlayer.SetSavePoint();

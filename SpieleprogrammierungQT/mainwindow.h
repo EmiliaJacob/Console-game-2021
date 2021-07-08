@@ -23,7 +23,7 @@ public:
 
 public slots:
     void PrintOntoConsole(QString newLine);
-
+    void SetGame(Game* game);
 private slots:
     void on_Send_clicked();
 
@@ -53,7 +53,7 @@ private slots:
 signals:
     void receivedCommand(int command);
 private:
-    Game mGame;
+    Game* mGame;
     IStates* currentState;
     Ui::MainWindow *ui;
     comunicazionhendler *mComunicazionhdendler;

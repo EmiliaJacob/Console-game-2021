@@ -5,6 +5,7 @@
 #include <comunicazionhendler.h>
 #include <QTextStream>
 #include <QFile>
+#include <QFont>
 
 int florlevel=0,maxflorlevel=1;
 
@@ -14,9 +15,12 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     //ui->tabWidget->setTabIcon(1, const QIcon & icon);
-    //comunicazionhendler = new comunicazionhendler(this);
     ui->stackedWidget->setCurrentIndex(0);
-    //mGame.LoadGame();
+
+    QFont textFont;
+    textFont.setFamily("monospace");
+    textFont.setFixedPitch(true);
+    ui->textBrowser->setFont(textFont);
 }
 
 MainWindow::~MainWindow()
@@ -29,20 +33,21 @@ void MainWindow::on_Send_clicked(){
     dotext();}
 void MainWindow::on_lineEdit_returnPressed(){
 dotext();}
+
 void MainWindow::dotext(){
     QString command = ui ->lineEdit->text();
     if(!command.isEmpty()){
-       PrintOntoConsole(command);
+       //PrintOntoConsole(command);
 
-       QString oldPosition = mGame.mPlayer.CurrentField->Id;
+       QString oldPosition = mGame->mPlayer.CurrentField->Id;
 
-       QString answer = mGame.InputHandler(command);
-       if(answer.split(" ")[0] == "Moved")
-       {
-           UpdatePositionInUi(oldPosition, answer.split(" ")[4]);
-       }
+      // QString answer = mGame.InputHandler(command);
+      //if(answer.split(" ")[0] == "Moved")
+      //{
+      //    UpdatePositionInUi(oldPosition, answer.split(" ")[4]);
+      //}
 
-       PrintOntoConsole(answer);
+       //PrintOntoConsole(answer);
        ui->lineEdit->clear();
     }
     //QString standardOutput = currentState->GetStandardOutput();
@@ -63,6 +68,7 @@ void MainWindow::on_tabWidget_tabBarClicked(int)
 
 void MainWindow::PrintOntoConsole(QString input)
 {
+    qDebug() << "received input for consoe: " + input;
     QString newLine = "~$ " + input + "\n";
     ui->textBrowser->append(newLine);
 }
@@ -135,7 +141,7 @@ void MainWindow::on_pushButton_clicked()
 {
     ui->textBrowser->clear();
     ui->stackedWidget->setCurrentIndex(1);
-    if(!mGame.LoadGame()){
+    if(!mGame->LoadGame()){
         QMessageBox::information(0,"Error", " file not fonde");
     }
     ui->textBrowser->append("System reboot 100% \n all funktions rady \n");
@@ -150,7 +156,7 @@ void MainWindow::on_pushButton_titel_clicked()
 //verlasen
 void MainWindow::on_pushButton_leave_clicked()
 {
-    mGame.SaveGame();
+    mGame->SaveGame();
     close();
 }
 
@@ -171,8 +177,9 @@ void MainWindow::on_pushButton_help_clicked()
 
 }
 
-
-
-
+void MainWindow::SetGame(Game* game)
+{
+    mGame = game;
+}
 
 

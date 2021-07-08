@@ -13,7 +13,7 @@ Player::Player()
 
 void Player::Read(const QJsonObject &json)
 {
-    this->Name = json["name"].toString();
+    Player::Name = json["name"].toString();
 
     QJsonArray itemArray = json["inventory"].toArray();
     for(int i=0; i<itemArray.size(); i++)
@@ -63,17 +63,21 @@ void Player::Write(QJsonObject &json)
 
 
 
-QString Player::Move(QString direction) // Done!
+void Player::Move(QString direction)
 {
     if(direction == "forward"){
+        qDebug() << "PLAYER_NAME: " + Player::Name;
+        qDebug() << "Currentfield_ID: " + this->CurrentField->Id;
+
         if(QString::compare(CurrentField->FieldForward, "x") != 0)
         {
+            qDebug() << "REACHED THE POINT";
             CurrentField = Game::Level_One.GetField(CurrentField->FieldForward);
-            return("Moved forward to field with id: " + CurrentField->Id);
+            emit issueConsoleOutput("Moved forward to field with id: " + CurrentField->Id);
         }
         else
         {
-            return("Can't move into that direction");
+            emit issueConsoleOutput("Can't move into that direction");
         }
     }
 
@@ -81,11 +85,11 @@ QString Player::Move(QString direction) // Done!
         if(QString::compare(CurrentField->FieldBackward, "x") != 0)
         {
             CurrentField = Game::Level_One.GetField(CurrentField->FieldBackward);
-            return("Moved forward to field with id: " + CurrentField->Id);
+            emit issueConsoleOutput("Moved forward to field with id: " + CurrentField->Id);
         }
         else
         {
-            return("Can't move into that direction");
+            emit issueConsoleOutput("Can't move into that direction");
         }
     }
 
@@ -93,11 +97,11 @@ QString Player::Move(QString direction) // Done!
         if(QString::compare(CurrentField->FieldBackward, "x") != 0)
         {
             CurrentField = Game::Level_One.GetField(CurrentField->FieldBackward);
-            return("Moved left to field with id: " + CurrentField->Id);
+            emit issueConsoleOutput("Moved forward to field with id: " + CurrentField->Id);
         }
         else
         {
-            return("Can't move into that direction");
+            emit issueConsoleOutput("Can't move into that direction");
         }
     }
 
@@ -105,11 +109,11 @@ QString Player::Move(QString direction) // Done!
         if(QString::compare(CurrentField->FieldBackward, "x") != 0)
         {
             CurrentField = Game::Level_One.GetField(CurrentField->FieldBackward);
-            return("Moved right to field with id: " + CurrentField->Id);
+            emit issueConsoleOutput("Moved forward to field with id: " + CurrentField->Id);
         }
         else
         {
-            return("Can't move into that direction");
+            emit issueConsoleOutput("Can't move into that direction");
         }
     }
 }
@@ -278,9 +282,9 @@ QString Player::ListAvailableItems() // Done!
    }
 }
 
-QString Player::GetFieldDescription() // Done!
+void Player::GetFieldDescription() // Done!
 {
-    return("Field Description: " + Player::CurrentField->Description);
+    emit issueConsoleOutput("Field Description: " + Player::CurrentField->Description);
 }
 
 QString Player::SetSavePoint()
