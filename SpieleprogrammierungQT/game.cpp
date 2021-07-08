@@ -9,7 +9,7 @@
 
 Game::Game()
 {
-    //currentState = &States::idleState;
+   currentState = &States::idleState;
 }
 
 bool Game::LoadGame()
@@ -39,6 +39,10 @@ bool Game::LoadGame()
     mPlayer.Read(playerDoc.object());
 
     return true;
+}
+void Game::HandleCommand(int command)
+{
+    qDebug() << "Received command: " + QString::number(command);
 }
 
 QString Game::SaveGame()

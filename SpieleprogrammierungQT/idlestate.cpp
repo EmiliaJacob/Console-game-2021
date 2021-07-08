@@ -1,7 +1,5 @@
 #include "idlestate.h"
 
-class Game;
-
 IdleState::IdleState()
 {
 

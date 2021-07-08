@@ -3,8 +3,6 @@
 #include "istates.h"
 #include <QObject>
 
-class Game;
-
 class IdleState : public IStates
 {
     Q_OBJECT

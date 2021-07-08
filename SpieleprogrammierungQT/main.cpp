@@ -8,19 +8,13 @@
 
 int main(int argc, char *argv[])
 {
-   // Game game;
-    //game.LoadGame();
+    QApplication qApplication(argc, argv);
+    Game game;
+    MainWindow mainWindow;
+    Player player;
 
-    //game.Player.Move("forward");
-    //game.Player.Move("backward");
-    int * pointer;
-    int i = 9;
-    pointer = &i;
-    qDebug() << "Pointer: " << *pointer;
+    QObject::connect(&mainWindow, &MainWindow::receivedCommand, &game, &Game::HandleCommand);
 
-
-    QApplication a(argc, argv);
-    MainWindow w;
-    w.show();
-    return a.exec();
+    mainWindow.show();
+    return qApplication.exec();
 }

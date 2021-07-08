@@ -49,7 +49,8 @@ private slots:
     void on_upbutton_clicked();
 
     void on_tableWidget_cellClicked(int row, int column);
-
+signals:
+    void receivedCommand(int command);
 private:
     Game mGame;
     IStates* currentState;

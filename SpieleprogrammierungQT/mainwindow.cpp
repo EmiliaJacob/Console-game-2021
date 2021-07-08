@@ -48,8 +48,7 @@ void MainWindow::dotext(){
     //QString standardOutput = currentState->GetStandardOutput();
     //WriteLine(standardOutput);
     int commandAsInt = command.toInt();
-    currentState->ExecuteCommand(commandAsInt);
-
+    emit receivedCommand(commandAsInt);
 }
 
 void MainWindow::on_lineEdit_upPressed()

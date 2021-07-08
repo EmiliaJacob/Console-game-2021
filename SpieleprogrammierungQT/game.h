@@ -5,9 +5,12 @@
 #include "level.h"
 #include "player.h"
 #include "states.h"
+#include <QObject>
 
-class Game
+class Game : public QObject
 {
+Q_OBJECT
+
 private:
     IStates* currentState;
 
@@ -25,6 +28,8 @@ public:
     QString SaveGame();
     bool LoadGame();
     QString InputHandler(QString input);
+public slots:
+    void HandleCommand(int command);
 };
 
 #endif // GAME_H

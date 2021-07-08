@@ -7,7 +7,7 @@ class States
 {
 public:
     States();
-    IdleState idleState;
+    inline static IdleState idleState;
 };
 
 #endif // STATES_H
