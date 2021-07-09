@@ -11,6 +11,7 @@ Player::Player()
 
 }
 
+
 void Player::Read(const QJsonObject &json)
 {
     Player::Name = json["name"].toString();
@@ -60,7 +61,6 @@ void Player::Write(QJsonObject &json)
     }
     json["unlockedSavePoints"] = unlockedSavePointsArray;
 }
-
 
 
 void Player::Move(QString direction)
@@ -120,6 +120,18 @@ void Player::Move(QString direction)
             emit issueConsoleOutput("Can't move into that direction");
         }
     }
+}
+
+
+bool Player::HasItem(QString itemName)
+{
+    for (int i=0; i<mInventory.CollectedItems.size(); i++) {
+        Item item = mInventory.CollectedItems[i];
+        if(item.Name == itemName) {
+            return true;
+        }
+    }
+    return false;
 }
 
 
@@ -214,21 +226,7 @@ QString Player::PickUpAllItemsOfType(QString itemType)
 }
 
 
-
-bool Player::HasItem(QString itemName)
-{
-    for (int i=0; i<mInventory.CollectedItems.size(); i++) {
-        Item item = mInventory.CollectedItems[i];
-        if(item.Name == itemName) {
-            return true;
-        }
-    }
-    return false;
-}
-
-
-
-QString Player::DropItemOfType(QString itemType) // Done!
+QString Player::DropItemOfType(QString itemType)
 {
     for(int i=0; i<mInventory.CollectedItems.size(); i++)
     {
@@ -245,7 +243,7 @@ QString Player::DropItemOfType(QString itemType) // Done!
     return("Item not found in inventory");
 }
 
-QString Player::DropMultipleItemsOfType(QString itemType, int numberOfItems) // Done!
+QString Player::DropMultipleItemsOfType(QString itemType, int numberOfItems)
 {
     int i = 0;
     int remainingItemsToDrop = numberOfItems;
@@ -276,7 +274,7 @@ QString Player::DropMultipleItemsOfType(QString itemType, int numberOfItems) // 
     }
 }
 
-QString Player::DropAllItemsOfType(QString itemType) // Done!
+QString Player::DropAllItemsOfType(QString itemType)
 {
     bool itemTypeAvailable = false;
     int i = 0;
@@ -308,7 +306,7 @@ QString Player::DropAllItemsOfType(QString itemType) // Done!
 }
 
 
-QString Player::ListAvailableItemsOnField() // Done!
+QString Player::ListAvailableItemsOnField()
 {
    if(Player::CurrentField->Items.length() == 0) {
        emit issueConsoleOutput("There are no items on this field");
@@ -345,31 +343,57 @@ void Player::ListInventory()
     }
 }
 
-void Player::GetFieldDescription() // Done!
+void Player::GetFieldDescription()
 {
     emit issueConsoleOutput("Field Description: " + Player::CurrentField->Description);
 }
 
-QString Player::SetSavePoint()
+void Player::SetSavePoint()
 {
     if(CurrentField->HasSavePoint) {
+        for(int i=0; i < unlockedSavePoints.length(); i++) {
+            if(unlockedSavePoints[i].Name == CurrentField->mSavePoint.Name) {
+                emit issueConsoleOutput("Savepoint is already set on this field");
+                return;
+            }
+        }
         unlockedSavePoints.append(CurrentField->mSavePoint);
-        return "Savepoint successfully set";
+        emit issueConsoleOutput("Savepoint successfully set");
     }
     else
-        return "The current field is not eligable to set a savepoint here";
+        emit issueConsoleOutput("The current field is not eligable to set a savepoint here");
 }
 
-QString Player::ListAvailableSavePoints()
+void Player::ListAvailableSavePoints()
 {
     if(unlockedSavePoints.length() == 0) {
-        return("You have not checkpoints unlocked");
+        qDebug() << "No savepoints unlocked";
+        emit issueConsoleOutput("You have no checkpoints unlocked yet");
     }
     else {
+        qDebug() << "Found savepoints";
+
         QString answer;
         for(int i=0; i<unlockedSavePoints.length(); i++) {
-            answer.append("Checkpoint: " + unlockedSavePoints[i].Name);
+            answer.append("Checkpoint: " + unlockedSavePoints[i].Name + "\n");
         }
-        return answer;
+        emit issueConsoleOutput(answer);
+    }
+}
+
+void Player::FastTravel(QString destination)
+{
+    for(int i=0; i<unlockedSavePoints.length(); i++) { // Player entered FieldId
+        if(unlockedSavePoints[i].fieldId == destination) {
+            CurrentField = Game::Level_One.GetField(unlockedSavePoints[i].fieldId);
+            emit issueConsoleOutput("Successfully fast-traveled to field: " + unlockedSavePoints[i].Name);
+            return;
+        }
+    }
+    for(int i=0; i<unlockedSavePoints.length(); i++) { // Player entered Name
+        if(unlockedSavePoints[i].Name == destination) {
+            CurrentField = Game::Level_One.GetField(unlockedSavePoints[i].fieldId);
+            emit issueConsoleOutput("Successfully fast-traveled to field: " + unlockedSavePoints[i].Name);
+        }
     }
 }

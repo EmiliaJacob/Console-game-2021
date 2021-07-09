@@ -24,9 +24,9 @@ int main(int argc, char *argv[])
     QObject::connect(&States::idleState, &IdleState::issueConsoleOutput, &mainWindow, &MainWindow::PrintOntoConsole);
     QObject::connect(&States::idleState, &IdleState::moveRequest, &game.mPlayer, &Player::Move);
     QObject::connect(&States::idleState, &IdleState::descriptionRequest, &game.mPlayer, &Player::GetFieldDescription);
-    QObject::connect(&States::idleState, &IdleState::moveRequest, &game.mPlayer, &Player::Move);
     QObject::connect(&States::idleState, &IdleState::changeStateRequest, &game, &Game::ChangeState);
     QObject::connect(&States::idleState, &IdleState::saveGameRequest, &game, &Game::SaveGame);
+    QObject::connect(&States::idleState, &IdleState::setSavePointRequest, &game.mPlayer, &Player::SetSavePoint);
 
     QObject::connect(&States::pickUpState, &PickUpState::changeStateRequest, &game, &Game::ChangeState);
     QObject::connect(&States::pickUpState, &PickUpState::issueConsoleOutput, &mainWindow, &MainWindow::PrintOntoConsole);
@@ -41,6 +41,11 @@ int main(int argc, char *argv[])
     QObject::connect(&States::dropState, &DropState::dropOneRequest, &game.mPlayer, &Player::DropItemOfType);
     QObject::connect(&States::dropState, &DropState::dropManyRequest, &game.mPlayer, &Player::DropMultipleItemsOfType);
     QObject::connect(&States::dropState, &DropState::dropAllRequest, &game.mPlayer, &Player::DropAllItemsOfType);
+
+    QObject::connect(&States::fastTravelState, &FastTravelState::issueConsoleOutput, &mainWindow, &MainWindow::PrintOntoConsole);
+    QObject::connect(&States::fastTravelState, &FastTravelState::fastTravelRequest,&game.mPlayer, &Player::FastTravel);
+    QObject::connect(&States::fastTravelState, &FastTravelState::listSavePointsRequest, &game.mPlayer, &Player::ListAvailableSavePoints);
+    QObject::connect(&States::fastTravelState, &FastTravelState::changeStateRequest, &game, &Game::ChangeState);
 
     mainWindow.SetGame(&game);
     mainWindow.show();

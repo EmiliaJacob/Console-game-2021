@@ -34,5 +34,13 @@
     ],
     "name": "Felix",
     "unlockedSavePoints": [
+        {
+            "name": "the very beginning",
+            "fieldId": "1"
+        },
+        {
+            "name": "Field two",
+            "fieldId": "2"
+        }
     ]
 }

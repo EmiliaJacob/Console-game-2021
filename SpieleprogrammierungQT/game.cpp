@@ -58,7 +58,9 @@ void Game::ChangeState(QString stateName)
     else if(stateName == "dropState") {
         currentState = &States::dropState;
     }
-}
+    else if(stateName == "fastTravelState") {
+        currentState = &States::fastTravelState;
+    }}
 
 void Game::SaveGame()
 {
@@ -126,10 +128,10 @@ QString Game::InputHandler(QString input)
         //return mPlayer.GetFieldDescription();
     }
     if(input == "sp" || input == "savepoint") {
-        return mPlayer.SetSavePoint();
+        //return mPlayer.SetSavePoint();
     }
     if(input == "listSavePoints") {
-        return mPlayer.ListAvailableSavePoints();
+        //return mPlayer.ListAvailableSavePoints();
     }
     //Pick-up and Drop Items
     QStringList splittedInput = input.split(" ");

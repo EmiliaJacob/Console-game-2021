@@ -10,6 +10,7 @@ CONFIG += c++11
 
 SOURCES += \
     dropstate.cpp \
+    fasttravelstate.cpp \
     field.cpp \
     game.cpp \
     idlestate.cpp \
@@ -27,6 +28,7 @@ SOURCES += \
 
 HEADERS += \
     dropstate.h \
+    fasttravelstate.h \
     field.h \
     game.h \
     idlestate.h \

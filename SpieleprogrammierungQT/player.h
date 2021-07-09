@@ -21,11 +21,11 @@ public:
     Player();
     void Read(const QJsonObject &json);
     void Write(QJsonObject &json);
-    QString SetSavePoint();
     bool HasItem(QString itemName);
 public slots:
-    //QString FastTravel(QString destination);
-    QString ListAvailableSavePoints();
+    void SetSavePoint();
+    void FastTravel(QString destination);
+    void ListAvailableSavePoints();
     void Move(QString direction);
     //QString PickUpItems(QString itemType, int numberOfItems);
     QString PickUpItemOfType(QString itemType);

@@ -27,9 +27,9 @@
                     "name": "emerald"
                 }
             ],
-            "left": "3",
+            "left": "x",
             "right": "x",
-            "savePoint": ""
+            "savePoint": "The very beginning of the adventure"
         },
         {
             "backward": "1",
@@ -45,12 +45,12 @@
             ],
             "left": "x",
             "right": "x",
-            "savePoint": ""
+            "savePoint": "Field number two"
         },
         {
             "backward": "2",
             "description": "You stand in front of an ancient looking door. It is locked.",
-            "forward": "x",
+            "forward": "4",
             "id": "3",
             "items": [
                 {
@@ -60,8 +60,7 @@
                 }
             ],
             "left": "x",
-            "right": "x",
-            "savePoint": ""
+            "right": "x"
         },
         {
             "backward": "3",
@@ -72,7 +71,7 @@
             ],
             "left": "x",
             "right": "x",
-            "savePoint": ""
+            "savePoint": "Field Four"
         }
     ]
 }
