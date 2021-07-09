@@ -27,6 +27,9 @@ void IdleState::ExecuteCommand(QString command)
     else if(command =="l") {
         emit descriptionRequest();
     }
+    else if(command == "r") {
+        emit changeStateRequest("dropState");
+    }
     else {
         emit issueConsoleOutput("I'm sorry i can't find a function for your command");
     }

@@ -1,3 +1,4 @@
+release/dropstate.o
 release/field.o
 release/game.o
 release/idlestate.o
@@ -12,6 +13,7 @@ release/player.o
 release/savepoint.o
 release/states.o
 release/testhelper.o
+release/moc_dropstate.o
 release/moc_game.o
 release/moc_idlestate.o
 release/moc_istates.o

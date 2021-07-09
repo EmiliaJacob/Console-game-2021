@@ -55,6 +55,9 @@ void Game::ChangeState(QString stateName)
     else if(stateName == "pickUpState") {
         currentState = &States::pickUpState;
     }
+    else if(stateName == "dropState") {
+        currentState = &States::dropState;
+    }
 }
 
 QString Game::SaveGame()
@@ -115,7 +118,7 @@ QString Game::InputHandler(QString input)
     }
     if(input == "ai" || input == "available items")
     {
-        return mPlayer.ListAvailableItems();
+        return mPlayer.ListAvailableItemsOnField();
     }
     if(input == "d" || input == "description")
     {

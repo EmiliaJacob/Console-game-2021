@@ -220,9 +220,11 @@ QString Player::DropItemOfType(QString itemType) // Done!
         if(item.Name == itemType) {
             mInventory.CollectedItems.removeAt(i);
             CurrentField->Items.append(item);
+            emit issueConsoleOutput("Dropped item");
             return("Dropped item");
         }
     }
+    emit issueConsoleOutput("Item not found in inventory");
     return("Item not found in inventory");
 }
 
@@ -236,6 +238,7 @@ QString Player::DropMultipleItemsOfType(QString itemType, int numberOfItems) // 
             CurrentField->Items.append(mInventory.CollectedItems[i]);
             mInventory.CollectedItems.removeAt(i);
             numberOfItems -= 1;
+            emit issueConsoleOutput("Dropped item");
             return("Dropped item");
             if(numberOfItems == 0) {
                 break;
@@ -247,6 +250,7 @@ QString Player::DropMultipleItemsOfType(QString itemType, int numberOfItems) // 
 
     if(numberOfItems > 0)
     {
+        emit issueConsoleOutput("Not enough items were available");
         return("Not enough items were available");
     }
 }
@@ -262,6 +266,7 @@ QString Player::DropAllItemsOfType(QString itemType) // Done!
         {
             CurrentField->Items.append(mInventory.CollectedItems[i]);
             mInventory.CollectedItems.removeAt(i);
+            emit issueConsoleOutput("Dropped item");
             return("Dropped item");
             itemTypeAvailable = true;
             i = 0;
@@ -271,12 +276,13 @@ QString Player::DropAllItemsOfType(QString itemType) // Done!
 
     if(itemTypeAvailable == false)
     {
+        emit issueConsoleOutput("ItemType is not available in inventory");
         return("ItemType is not available in inventory");
     }
 }
 
 
-QString Player::ListAvailableItems() // Done!
+QString Player::ListAvailableItemsOnField() // Done!
 {
    if(Player::CurrentField->Items.length() == 0) {
        emit issueConsoleOutput("There are no items on this field");
@@ -292,6 +298,24 @@ QString Player::ListAvailableItems() // Done!
        emit issueConsoleOutput(answer);
        return answer;
    }
+}
+
+QString Player::ListInventory()
+{
+    if(mInventory.CollectedItems.size() == 0) {
+        qDebug() << "1";
+        emit issueConsoleOutput("Inventory is empty\n");
+    }
+    else {
+        qDebug() << "2";
+        QString answer = "Inventory:\n";
+        for(int i=0; i<mInventory.CollectedItems.size(); i++) {
+            qDebug() << "3";
+            Item item = mInventory.CollectedItems[i];
+            answer.append("Collected Item: " + item.Name + "\n");
+        }
+        emit issueConsoleOutput(answer);
+    }
 }
 
 void Player::GetFieldDescription() // Done!

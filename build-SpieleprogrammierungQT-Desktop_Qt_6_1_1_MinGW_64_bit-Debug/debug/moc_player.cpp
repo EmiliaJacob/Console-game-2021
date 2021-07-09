@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Player_t {
-    const uint offsetsAndSize[36];
-    char stringdata0[266];
+    const uint offsetsAndSize[38];
+    char stringdata0[303];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(offsetof(qt_meta_stringdata_Player_t, stringdata0) + ofs), len 
@@ -45,8 +45,9 @@ QT_MOC_LITERAL(160, 14), // "DropItemOfType"
 QT_MOC_LITERAL(175, 8), // "itemName"
 QT_MOC_LITERAL(184, 23), // "DropMultipleItemsOfType"
 QT_MOC_LITERAL(208, 18), // "DropAllItemsOfType"
-QT_MOC_LITERAL(227, 18), // "ListAvailableItems"
-QT_MOC_LITERAL(246, 19) // "GetFieldDescription"
+QT_MOC_LITERAL(227, 25), // "ListAvailableItemsOnField"
+QT_MOC_LITERAL(253, 29), // "ListAvailableItemsInInventory"
+QT_MOC_LITERAL(283, 19) // "GetFieldDescription"
 
     },
     "Player\0issueConsoleOutput\0\0output\0"
@@ -55,7 +56,8 @@ QT_MOC_LITERAL(246, 19) // "GetFieldDescription"
     "PickUpMultipleItemsOfType\0numberOfItems\0"
     "PickUpAllItemsOfType\0DropItemOfType\0"
     "itemName\0DropMultipleItemsOfType\0"
-    "DropAllItemsOfType\0ListAvailableItems\0"
+    "DropAllItemsOfType\0ListAvailableItemsOnField\0"
+    "ListAvailableItemsInInventory\0"
     "GetFieldDescription"
 };
 #undef QT_MOC_LITERAL
@@ -66,7 +68,7 @@ static const uint qt_meta_data_Player[] = {
        9,       // revision
        0,       // classname
        0,    0, // classinfo
-      11,   14, // methods
+      12,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -74,19 +76,20 @@ static const uint qt_meta_data_Player[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    1,   80,    2, 0x06,    0 /* Public */,
+       1,    1,   86,    2, 0x06,    0 /* Public */,
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       4,    0,   83,    2, 0x0a,    2 /* Public */,
-       5,    1,   84,    2, 0x0a,    3 /* Public */,
-       7,    1,   87,    2, 0x0a,    5 /* Public */,
-       9,    2,   90,    2, 0x0a,    7 /* Public */,
-      11,    1,   95,    2, 0x0a,   10 /* Public */,
-      12,    1,   98,    2, 0x0a,   12 /* Public */,
-      14,    2,  101,    2, 0x0a,   14 /* Public */,
-      15,    1,  106,    2, 0x0a,   17 /* Public */,
-      16,    0,  109,    2, 0x0a,   19 /* Public */,
-      17,    0,  110,    2, 0x0a,   20 /* Public */,
+       4,    0,   89,    2, 0x0a,    2 /* Public */,
+       5,    1,   90,    2, 0x0a,    3 /* Public */,
+       7,    1,   93,    2, 0x0a,    5 /* Public */,
+       9,    2,   96,    2, 0x0a,    7 /* Public */,
+      11,    1,  101,    2, 0x0a,   10 /* Public */,
+      12,    1,  104,    2, 0x0a,   12 /* Public */,
+      14,    2,  107,    2, 0x0a,   14 /* Public */,
+      15,    1,  112,    2, 0x0a,   17 /* Public */,
+      16,    0,  115,    2, 0x0a,   19 /* Public */,
+      17,    0,  116,    2, 0x0a,   20 /* Public */,
+      18,    0,  117,    2, 0x0a,   21 /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QString,    3,
@@ -100,6 +103,7 @@ static const uint qt_meta_data_Player[] = {
     QMetaType::QString, QMetaType::QString,   13,
     QMetaType::QString, QMetaType::QString, QMetaType::Int,    8,   10,
     QMetaType::QString, QMetaType::QString,    8,
+    QMetaType::QString,
     QMetaType::QString,
     QMetaType::Void,
 
@@ -128,9 +132,11 @@ void Player::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = std::move(_r); }  break;
         case 8: { QString _r = _t->DropAllItemsOfType((*reinterpret_cast< QString(*)>(_a[1])));
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = std::move(_r); }  break;
-        case 9: { QString _r = _t->ListAvailableItems();
+        case 9: { QString _r = _t->ListAvailableItemsOnField();
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = std::move(_r); }  break;
-        case 10: _t->GetFieldDescription(); break;
+        case 10: { QString _r = _t->ListInventory();
+            if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = std::move(_r); }  break;
+        case 11: _t->GetFieldDescription(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -153,7 +159,7 @@ const QMetaObject Player::staticMetaObject = { {
     nullptr,
 qt_incomplete_metaTypeArray<qt_meta_stringdata_Player_t
 , QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>
-, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>
+, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>
 
 
 >,
@@ -180,13 +186,13 @@ int Player::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 11)
+        if (_id < 12)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 11;
+        _id -= 12;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 11)
+        if (_id < 12)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 11;
+        _id -= 12;
     }
     return _id;
 }

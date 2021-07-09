@@ -22,11 +22,17 @@ int main(int argc, char *argv[])
 
     QObject::connect(&States::pickUpState, &PickUpState::changeStateRequest, &game, &Game::ChangeState);
     QObject::connect(&States::pickUpState, &PickUpState::issueConsoleOutput, &mainWindow, &MainWindow::PrintOntoConsole);
-    QObject::connect(&States::pickUpState, &PickUpState::listAvailableItemsRequest, &game.mPlayer, &Player::ListAvailableItems);
+    QObject::connect(&States::pickUpState, &PickUpState::listAvailableItemsRequest, &game.mPlayer, &Player::ListAvailableItemsOnField);
     QObject::connect(&States::pickUpState, &PickUpState::pickUpOneRequest, &game.mPlayer, &Player::PickUpItemOfType);
     QObject::connect(&States::pickUpState, &PickUpState::pickUpManyRequest, &game.mPlayer, &Player::PickUpMultipleItemsOfType);
     QObject::connect(&States::pickUpState, &PickUpState::pickUpAllRequest, &game.mPlayer, &Player::PickUpAllItemsOfType);
 
+    QObject::connect(&States::dropState, &DropState::changeStateRequest, &game, &Game::ChangeState);
+    QObject::connect(&States::dropState, &DropState::issueConsoleOutput, &mainWindow, &MainWindow::PrintOntoConsole);
+    QObject::connect(&States::dropState, &DropState::listInventoryRequest, &game.mPlayer, &Player::ListInventory);
+    QObject::connect(&States::dropState, &DropState::dropOneRequest, &game.mPlayer, &Player::DropItemOfType);
+    QObject::connect(&States::dropState, &DropState::dropManyRequest, &game.mPlayer, &Player::DropMultipleItemsOfType);
+    QObject::connect(&States::dropState, &DropState::dropAllRequest, &game.mPlayer, &Player::DropAllItemsOfType);
 
     mainWindow.SetGame(&game);
     mainWindow.show();

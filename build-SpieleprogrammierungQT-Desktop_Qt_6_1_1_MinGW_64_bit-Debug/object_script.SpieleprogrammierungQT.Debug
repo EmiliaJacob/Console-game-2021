@@ -1,3 +1,4 @@
+debug/dropstate.o
 debug/field.o
 debug/game.o
 debug/idlestate.o
@@ -12,6 +13,7 @@ debug/player.o
 debug/savepoint.o
 debug/states.o
 debug/testhelper.o
+debug/moc_dropstate.o
 debug/moc_game.o
 debug/moc_idlestate.o
 debug/moc_istates.o
