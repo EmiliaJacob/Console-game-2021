@@ -12,17 +12,21 @@ int main(int argc, char *argv[])
     Game game;
     MainWindow mainWindow;
 
+    QObject::connect(&game, &Game::issueConsoleOutput, &mainWindow, &MainWindow::PrintOntoConsole);
+
     QObject::connect(&game.mPlayer, &Player::pickedUpItems, &mainWindow, &MainWindow::UpdateUiinventaradd);
     QObject::connect(&game.mPlayer, &Player::droppedItems, &mainWindow, &MainWindow::UpdateUiinventarsuptrakt);
     QObject::connect(&game.mPlayer, &Player::moved, &mainWindow, &MainWindow::UpdatePositionInUi);
+    QObject::connect(&game.mPlayer, &Player::issueConsoleOutput, &mainWindow, &MainWindow::PrintOntoConsole);
 
     QObject::connect(&mainWindow, &MainWindow::receivedCommand, &game, &Game::HandleCommand);
+
     QObject::connect(&States::idleState, &IdleState::issueConsoleOutput, &mainWindow, &MainWindow::PrintOntoConsole);
     QObject::connect(&States::idleState, &IdleState::moveRequest, &game.mPlayer, &Player::Move);
     QObject::connect(&States::idleState, &IdleState::descriptionRequest, &game.mPlayer, &Player::GetFieldDescription);
     QObject::connect(&States::idleState, &IdleState::moveRequest, &game.mPlayer, &Player::Move);
     QObject::connect(&States::idleState, &IdleState::changeStateRequest, &game, &Game::ChangeState);
-    QObject::connect(&game.mPlayer, &Player::issueConsoleOutput, &mainWindow, &MainWindow::PrintOntoConsole);
+    QObject::connect(&States::idleState, &IdleState::saveGameRequest, &game, &Game::SaveGame);
 
     QObject::connect(&States::pickUpState, &PickUpState::changeStateRequest, &game, &Game::ChangeState);
     QObject::connect(&States::pickUpState, &PickUpState::issueConsoleOutput, &mainWindow, &MainWindow::PrintOntoConsole);

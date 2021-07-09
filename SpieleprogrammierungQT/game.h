@@ -25,12 +25,14 @@ public:
     Game();
     void Write(QJsonObject &json);
     void NewGame();
-    QString SaveGame();
     bool LoadGame();
     QString InputHandler(QString input);
 public slots:
+    void SaveGame();
     void HandleCommand(QString command);
     void ChangeState(QString stateName);
+signals:
+    void issueConsoleOutput(QString output);
 };
 
 #endif // GAME_H

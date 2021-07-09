@@ -60,13 +60,13 @@ void Game::ChangeState(QString stateName)
     }
 }
 
-QString Game::SaveGame()
+void Game::SaveGame()
 {
     QFile playerFile(QStringLiteral("player.json"));
 
     if(!playerFile.open(QIODevice::WriteOnly))
     {
-        return("Couldn't open playerFile");
+        qDebug() << "Couldn't open playerFile";
     }
     else
     {
@@ -80,7 +80,8 @@ QString Game::SaveGame()
 
     if(!fieldsFile.open((QIODevice::WriteOnly)))
     {
-        return("Couldn't open fieldsFile");
+        qDebug() << "Couldn't open fieldsFile";
+        return;
     }
     else
     {
@@ -90,14 +91,14 @@ QString Game::SaveGame()
         fieldsFile.write(QJsonDocument(gameBoardObject).toJson());
     }
 
-    return "Saved sucessfully";
+    emit issueConsoleOutput("Game sucessfully saved");
 }
 
 QString Game::InputHandler(QString input)
 {
     if(input == "sg")
     {
-        return SaveGame();
+        //return SaveGame();
     }
 
     if(input == "mf" || input == "move forward")

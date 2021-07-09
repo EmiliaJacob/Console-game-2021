@@ -33,10 +33,6 @@
         }
     ],
     "name": "Felix",
-    "unlockedSavepoint": [
-        {
-            "fieldId": "1",
-            "name": "this is the entrance of the caves"
-        }
+    "unlockedSavePoints": [
     ]
 }

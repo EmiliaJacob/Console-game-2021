@@ -30,6 +30,9 @@ void IdleState::ExecuteCommand(QString command)
     else if(command == "r") {
         emit changeStateRequest("dropState");
     }
+    else if(command == "sg") {
+        emit saveGameRequest();
+    }
     else {
         emit issueConsoleOutput("I'm sorry i can't find a function for your command");
     }
@@ -43,7 +46,7 @@ void IdleState::PrintMenu()
                              *spacerLeft + "w: Move forward         l: Inspect environment\n" +
                              *spacerLeft + "s: Move backward        p: Pick up item\n" +
                              *spacerLeft + "a: Move left            r: Drop item\n" +
-                             *spacerLeft + "d: Move right";
+                             *spacerLeft + "d: Move right           sg: SaveGame";
 
     emit issueConsoleOutput(menu);
 }

@@ -28,7 +28,8 @@
                 }
             ],
             "left": "3",
-            "right": "x"
+            "right": "x",
+            "savePoint": ""
         },
         {
             "backward": "1",
@@ -43,33 +44,35 @@
                 }
             ],
             "left": "x",
-            "right": "x"
+            "right": "x",
+            "savePoint": ""
         },
         {
-            "id":"3",
-            "backward" : "2",
-            "forward" : "x",
-            "left" :"x",
-            "right":"x",
-            "description":"You stand in front of an ancient looking door. It is locked.",
-            "items":[
+            "backward": "2",
+            "description": "You stand in front of an ancient looking door. It is locked.",
+            "forward": "x",
+            "id": "3",
+            "items": [
                 {
-                    "description":"A swipey thing that somebody must have lost. It is super dusty!",
-                    "locationDescription":"It is laying on the floor right in front of us",
-                    "name":"Swipey thing"
+                    "description": "A swipey thing that somebody must have lost. It is super dusty!",
+                    "locationDescription": "It is laying on the floor right in front of us",
+                    "name": "Swipey thing"
                 }
-            ]
+            ],
+            "left": "x",
+            "right": "x",
+            "savePoint": ""
         },
         {
-            "id":"4",
             "backward": "3",
-            "forward":"x",
-            "left":"x",
-            "right":"x",
-            "description":"A luxurious atrium",
-            "items":[
-                
-            ]
-        } 
+            "description": "A luxurious atrium",
+            "forward": "x",
+            "id": "4",
+            "items": [
+            ],
+            "left": "x",
+            "right": "x",
+            "savePoint": ""
+        }
     ]
 }
