@@ -19,6 +19,7 @@ MainWindow::MainWindow(QWidget *parent)
     for (int i=0;i<20 ;i++ ) {
         inventory[i]=-1;
     }
+     inventory[0]=1;
 }
 
 MainWindow::~MainWindow()
@@ -37,19 +38,19 @@ void MainWindow::dotext(){
     if(!command.isEmpty()){
        WriteLine(command);
 
-
+    UpdateUiinventarsuptrakt(1);
           QString answer = mGame.InputHandler(command);
           if(answer.split(" ")[0] == "Moved")
           {
-              UpdatePositionInUi(oldPosition, answer.split(" ")[4]);
+            //  UpdatePositionInUi(oldPosition, answer.split(" ")[4]);
           }
           if(answer.split(" ")[0] == "pickup")
           {
-              UpdateUiinventaradd();
+             // UpdateUiinventaradd();
           }
           if(answer.split(" ")[0] == "dropt")
           {
-              UpdateUiinventarsuptrakt();
+          //    UpdateUiinventarsuptrakt();
           }
        WriteLine(answer);
        ui->lineEdit->clear();
@@ -122,7 +123,7 @@ void MainWindow::discoverUimap(QString button){
 //inventar clicked
 void MainWindow::on_tableWidget_cellClicked(int row, int column)
 {
-//    ui->textBrowser->append(getintendiscription(inventory[1][row]));
+//    ui->textBrowser->append(Qstring getintendiscription(inventory[row]));
     if(row==0) ui->textBrowser->append("it is emti tank\n");
     if(row==1) ui->textBrowser->append("A Cristal\n it's schinie nofing more\n");
     if(row==2) ui->textBrowser->append("A purple fluorescence ore \n It's rather heavy\n");
@@ -146,7 +147,8 @@ void MainWindow::UpdateUiinventaradd(int item_id){
     }
     else{
         inventory[i]=item_id;
-//         ui->tabWidget->appent();
+       // getitemnamebyid(item_id)
+         // ui->tableWidget->model()->insertRow();
     }
 }
 //tacke item
@@ -157,7 +159,7 @@ void MainWindow::UpdateUiinventarsuptrakt(int item_id){
             i++;
     }
     //if(dubel item){}else{
-    ui->tabWidget->remove;
+    ui->tableWidget->model()->removeRow(i);
     i++;
     while (i<21) {
           inventory[i-1]=inventory[i];
@@ -219,10 +221,10 @@ void MainWindow::on_pushButton_help_clicked()
 
 
 
-
+//Story mails
 void MainWindow::on_tableWidget_2_cellPressed(int row, int column)
 {
-    if(row==0) ui->textBrowser->append("test 1\n");
-    if(row==1) ui->textBrowser->append("test 2\n");
+    if(row==0) ui->textBrowser->append("Ihr erster autrag ist es die welt zu fernichten.");
+    if(row==1) ui->textBrowser->append("Wilkimm auf der worschungseinritung TJ-0015.");
 
 }
