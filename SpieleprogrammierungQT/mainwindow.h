@@ -51,7 +51,7 @@ private slots:
 
     void on_tableWidget_cellClicked(int row, int column);
 signals:
-    void receivedCommand(int command);
+    void receivedCommand(QString command);
 private:
     Game* mGame;
     IStates* currentState;

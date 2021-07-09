@@ -29,7 +29,7 @@ public:
     bool LoadGame();
     QString InputHandler(QString input);
 public slots:
-    void HandleCommand(int command);
+    void HandleCommand(QString command);
     void ChangeState(QString stateName);
 };
 

@@ -127,9 +127,11 @@ QString Player::PickUpItemOfType(QString itemType) // Done!
         {
             mInventory.CollectedItems.append(CurrentField->Items[i]);
             CurrentField->Items.removeAt(i);
+            emit issueConsoleOutput("Picked up " + itemType);
             return("Picked up " + itemType);
         }
     }
+    emit issueConsoleOutput("I can't find \"" + itemType + "\" on this field");
     return("I can't find \"" + itemType + "\" on this field");
 }
 
@@ -146,6 +148,7 @@ QString Player::PickUpMultipleItemsOfType(QString itemType, int numberOfItems) {
             remainingItemsToPickUp -= 1;
 
             if(remainingItemsToPickUp == 0) {
+                emit issueConsoleOutput("Picked up " + QString::number(numberOfItems) + " " + itemType);
                 return("Picked up " + QString::number(numberOfItems) + " " + itemType);
             }
 
@@ -157,9 +160,13 @@ QString Player::PickUpMultipleItemsOfType(QString itemType, int numberOfItems) {
     if(remainingItemsToPickUp > 0)
     {
         if(remainingItemsToPickUp == numberOfItems) {
+            emit issueConsoleOutput("I can't find \"" + itemType + "\" on this field");
             return("I can't find \"" + itemType + "\" on this field");
         }
         else {
+            emit issueConsoleOutput("The field doesn't contain as many items as you requested. I only found: "
+                    + QString::number(numberOfItems - remainingItemsToPickUp)
+                    + " " + itemType + "s");
             return("The field doesn't contain as many items as you requested. I only found: "
                     + QString::number(numberOfItems - remainingItemsToPickUp)
                     + " " + itemType + "s");
@@ -178,6 +185,7 @@ QString Player::PickUpAllItemsOfType(QString itemType) // Done!
         {
             mInventory.CollectedItems.append(CurrentField->Items[i]);
             CurrentField->Items.removeAt(i);
+            emit issueConsoleOutput("Picked up item");
             return("Picked up item");
 
             itemTypeAvailable = true;
@@ -188,6 +196,7 @@ QString Player::PickUpAllItemsOfType(QString itemType) // Done!
 
     if(itemTypeAvailable == false)
     {
+        emit issueConsoleOutput("I can't find \"" + itemType + "\" on this field");
         return("I can't find \"" + itemType + "\" on this field");
     }
 }
@@ -269,8 +278,10 @@ QString Player::DropAllItemsOfType(QString itemType) // Done!
 
 QString Player::ListAvailableItems() // Done!
 {
-   if(Player::CurrentField->Items.length() == 0)
+   if(Player::CurrentField->Items.length() == 0) {
+       emit issueConsoleOutput("There are no items on this field");
        return("There are no items on this field");
+   }
    else
    {
        QString answer;
@@ -278,6 +289,7 @@ QString Player::ListAvailableItems() // Done!
        {
            answer.append("Found Item: " + Player::CurrentField->Items[i].Name + "\n");
        }
+       emit issueConsoleOutput(answer);
        return answer;
    }
 }

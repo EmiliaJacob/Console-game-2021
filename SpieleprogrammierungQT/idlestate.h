@@ -8,7 +8,7 @@ class IdleState : public IStates
     Q_OBJECT
 public:
     IdleState();
-    virtual void ExecuteCommand(int command);
+    virtual void ExecuteCommand(QString command);
     virtual void PrintMenu();
 signals:
     void changeStateRequest(QString newState);

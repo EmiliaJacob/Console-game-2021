@@ -60,7 +60,7 @@ static const uint qt_meta_data_Game[] = {
        4,    1,   29,    2, 0x0a,    2 /* Public */,
 
  // slots: parameters
-    QMetaType::Void, QMetaType::Int,    3,
+    QMetaType::Void, QMetaType::QString,    3,
     QMetaType::Void, QMetaType::QString,    5,
 
        0        // eod
@@ -72,7 +72,7 @@ void Game::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void *
         auto *_t = static_cast<Game *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->HandleCommand((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 0: _t->HandleCommand((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 1: _t->ChangeState((*reinterpret_cast< QString(*)>(_a[1]))); break;
         default: ;
         }
@@ -87,7 +87,7 @@ const QMetaObject Game::staticMetaObject = { {
     nullptr,
 qt_incomplete_metaTypeArray<qt_meta_stringdata_Game_t
 
-, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>
+, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>
 
 
 >,

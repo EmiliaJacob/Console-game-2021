@@ -9,7 +9,7 @@ class IStates : public QObject
     Q_OBJECT
 public:
     virtual ~IStates() {};
-    virtual void ExecuteCommand(int command) {};
+    virtual void ExecuteCommand(QString command) {};
     virtual void PrintMenu() {};
 };
 

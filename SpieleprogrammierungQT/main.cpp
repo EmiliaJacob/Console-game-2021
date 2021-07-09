@@ -11,6 +11,7 @@ int main(int argc, char *argv[])
     QApplication qApplication(argc, argv);
     Game game;
     MainWindow mainWindow;
+
     QObject::connect(&mainWindow, &MainWindow::receivedCommand, &game, &Game::HandleCommand);
     QObject::connect(&States::idleState, &IdleState::issueConsoleOutput, &mainWindow, &MainWindow::PrintOntoConsole);
     QObject::connect(&States::idleState, &IdleState::moveRequest, &game.mPlayer, &Player::Move);
@@ -18,7 +19,15 @@ int main(int argc, char *argv[])
     QObject::connect(&States::idleState, &IdleState::moveRequest, &game.mPlayer, &Player::Move);
     QObject::connect(&States::idleState, &IdleState::changeStateRequest, &game, &Game::ChangeState);
     QObject::connect(&game.mPlayer, &Player::issueConsoleOutput, &mainWindow, &MainWindow::PrintOntoConsole);
+
     QObject::connect(&States::pickUpState, &PickUpState::changeStateRequest, &game, &Game::ChangeState);
+    QObject::connect(&States::pickUpState, &PickUpState::issueConsoleOutput, &mainWindow, &MainWindow::PrintOntoConsole);
+    QObject::connect(&States::pickUpState, &PickUpState::listAvailableItemsRequest, &game.mPlayer, &Player::ListAvailableItems);
+    QObject::connect(&States::pickUpState, &PickUpState::pickUpOneRequest, &game.mPlayer, &Player::PickUpItemOfType);
+    QObject::connect(&States::pickUpState, &PickUpState::pickUpManyRequest, &game.mPlayer, &Player::PickUpMultipleItemsOfType);
+    QObject::connect(&States::pickUpState, &PickUpState::pickUpAllRequest, &game.mPlayer, &Player::PickUpAllItemsOfType);
+
+
     mainWindow.SetGame(&game);
     mainWindow.show();
     return qApplication.exec();

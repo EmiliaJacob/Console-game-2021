@@ -1905,7 +1905,18 @@ release/pickupstate.o: ../SpieleprogrammierungQT/pickupstate.cpp ../Spieleprogra
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qobject_impl.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qproperty.h \
 		C:/Qt/6.1.1/mingw81_64/include/QtCore/qshareddata.h \
-		C:/Qt/6.1.1/mingw81_64/include/QtCore/qpropertyprivate.h
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qpropertyprivate.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/QDebug \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qdebug.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qhash.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qmap.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qshareddata_impl.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qtextstream.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qstringconverter.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qset.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qcontiguouscache.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qsharedpointer.h \
+		C:/Qt/6.1.1/mingw81_64/include/QtCore/qsharedpointer_impl.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\pickupstate.o ..\SpieleprogrammierungQT\pickupstate.cpp
 
 release/player.o: ../SpieleprogrammierungQT/player.cpp ../SpieleprogrammierungQT/game.h \

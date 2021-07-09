@@ -8,10 +8,12 @@
 class PickUpState : public IStates
 {
     Q_OBJECT
+
 public:
     PickUpState();
-    virtual void ExecuteCommand(int command);
+    virtual void ExecuteCommand(QString command);
     virtual void PrintMenu();
+
 signals:
     void changeStateRequest(QString newState);
     void issueConsoleOutput(QString output);
