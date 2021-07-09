@@ -1,15 +1,42 @@
 #include "game.h"
-#include "gameboard.h"
+#include "level.h"
 #include "player.h"
 #include "testhelper.h"
 #include <QtDebug>
 #include <item.h>
 #include <item.h>
-//#include <QtWarning>
 
 Player::Player()
 {
 
+}
+
+void Player::Read(const QJsonObject &json)
+{
+    Player::Name = json["name"].toString();
+
+    QJsonArray itemArray = json["inventory"].toArray();
+    for(int i=0; i<itemArray.size(); i++)
+    {
+        QJsonObject itemObject = itemArray[i].toObject();
+        Item item;
+        item.Read(itemObject);
+        this->mInventory.CollectedItems.append(item);
+    }
+
+    QJsonArray unlockedSavePointsArray = json["unlockedSavePoints"].toArray();
+    for(int j=0; j<unlockedSavePointsArray.size(); j++) {
+        QJsonObject unlockedSavepointObject = unlockedSavePointsArray[j].toObject();
+        SavePoint savePoint;
+        savePoint.Read(unlockedSavepointObject);
+        this->unlockedSavePoints.append(savePoint);
+    }
+
+    //TestHelper testHelper;
+    //testHelper.PrintQList(Player::mInventory.CollectedItems);
+
+    CurrentField = Game::Level_One.GetField(json["currentFieldId"].toString());
+    qDebug() << "Created player and put them onto Field: " << CurrentField->Id;
 }
 
 void Player::Write(QJsonObject &json)
@@ -18,89 +45,85 @@ void Player::Write(QJsonObject &json)
     json["currentFieldId"] = Player::CurrentField->Id;
 
     QJsonArray inventarArray;
-
-    for(Item &item : mInventory.CollectedItems) // TODO: implement this elegant way into your other methods as well
-    {
+    for(Item &item : this->mInventory.CollectedItems) {// TODO: implement this elegant way into your other methods as well
        QJsonObject itemObject;
        item.Write(itemObject);
        inventarArray.append(itemObject);
     }
-
     json["inventory"] = inventarArray;
-}
 
-void Player::Read(const QJsonObject &json)
-{
-    Player::Name = json["name"].toString();
-    QJsonArray itemArray = json["inventory"].toArray();
-    for(int i=0; i<itemArray.size(); i++)
-    {
-        QJsonObject itemObject = itemArray[i].toObject();
-        Item item;
-        item.Read(itemObject);
-        Player::mInventory.CollectedItems.append(item);
+    QJsonArray unlockedSavePointsArray;
+    for(SavePoint &savePoint : this->unlockedSavePoints) {
+        QJsonObject unlockedSavePointObject;
+        savePoint.Write(unlockedSavePointObject);
+        unlockedSavePointsArray.append(unlockedSavePointObject);
     }
-    TestHelper testHelper;
-    testHelper.PrintQList(Player::mInventory.CollectedItems);
-
-    CurrentField = Game::mGameBoard.GetField(json["currentFieldId"].toString());
-    qDebug() << "Created player and put them onto Field: " << CurrentField->Id;
+    json["unlockedSavePoints"] = unlockedSavePointsArray;
 }
 
 
-QString Player::Move(QString direction) // Done!
+
+void Player::Move(QString direction)
 {
     if(direction == "forward"){
         if(QString::compare(CurrentField->FieldForward, "x") != 0)
         {
-            CurrentField = Game::mGameBoard.GetField(CurrentField->FieldForward);
-            return("Moved forward to field with id: " + CurrentField->Id);
+            lastFieldId = CurrentField->Id;
+            CurrentField = Game::Level_One.GetField(CurrentField->FieldForward);
+            emit issueConsoleOutput("Moved forward to field with id: " + CurrentField->Id);
+            emit moved(lastFieldId, CurrentField->Id);
         }
         else
         {
-            return("Can't move into that direction");
+            emit issueConsoleOutput("Can't move into that direction");
         }
     }
 
     if(direction == "backward"){
         if(QString::compare(CurrentField->FieldBackward, "x") != 0)
         {
-            CurrentField = Game::mGameBoard.GetField(CurrentField->FieldBackward);
-            return("Moved forward to field with id: " + CurrentField->Id);
+            lastFieldId = CurrentField->Id;
+            CurrentField = Game::Level_One.GetField(CurrentField->FieldBackward);
+            emit issueConsoleOutput("Moved forward to field with id: " + CurrentField->Id);
+            emit moved(lastFieldId, CurrentField->Id);
         }
         else
         {
-            return("Can't move into that direction");
+            emit issueConsoleOutput("Can't move into that direction");
         }
     }
 
     if(direction == "left"){
         if(QString::compare(CurrentField->FieldBackward, "x") != 0)
         {
-            CurrentField = Game::mGameBoard.GetField(CurrentField->FieldBackward);
-            return("Moved left to field with id: " + CurrentField->Id);
+            lastFieldId = CurrentField->Id;
+            CurrentField = Game::Level_One.GetField(CurrentField->FieldBackward);
+            emit issueConsoleOutput("Moved forward to field with id: " + CurrentField->Id);
+            emit moved(lastFieldId, CurrentField->Id);
         }
         else
         {
-            return("Can't move into that direction");
+            emit issueConsoleOutput("Can't move into that direction");
         }
     }
 
     if(direction == "right"){
         if(QString::compare(CurrentField->FieldBackward, "x") != 0)
         {
-            CurrentField = Game::mGameBoard.GetField(CurrentField->FieldBackward);
-            return("Moved right to field with id: " + CurrentField->Id);
+            lastFieldId = CurrentField->Id;
+            CurrentField = Game::Level_One.GetField(CurrentField->FieldBackward);
+            emit issueConsoleOutput("Moved forward to field with id: " + CurrentField->Id);
+            emit moved(lastFieldId, CurrentField->Id);
         }
         else
         {
-            return("Can't move into that direction");
+            emit issueConsoleOutput("Can't move into that direction");
         }
     }
 }
 
 
-QString Player::PickUpItemOfType(QString itemType) // Done!
+QString Player::PickUpItemOfType(QString itemType)
 {
     for(int i = 0; i < CurrentField->Items.size(); i++)
     {
@@ -108,13 +131,16 @@ QString Player::PickUpItemOfType(QString itemType) // Done!
         {
             mInventory.CollectedItems.append(CurrentField->Items[i]);
             CurrentField->Items.removeAt(i);
+            emit issueConsoleOutput("Picked up " + itemType);
+            emit pickedUpItems(itemType, 1);
             return("Picked up " + itemType);
         }
     }
+    emit issueConsoleOutput("I can't find \"" + itemType + "\" on this field");
     return("I can't find \"" + itemType + "\" on this field");
 }
 
-QString Player::PickUpMultipleItemsOfType(QString itemType, int numberOfItems) { // Done!
+QString Player::PickUpMultipleItemsOfType(QString itemType, int numberOfItems) {
     int i = 0;
     int remainingItemsToPickUp = numberOfItems;
 
@@ -127,6 +153,8 @@ QString Player::PickUpMultipleItemsOfType(QString itemType, int numberOfItems) {
             remainingItemsToPickUp -= 1;
 
             if(remainingItemsToPickUp == 0) {
+                emit issueConsoleOutput("Picked up " + QString::number(numberOfItems) + " " + itemType);
+                emit pickedUpItems(itemType, numberOfItems);
                 return("Picked up " + QString::number(numberOfItems) + " " + itemType);
             }
 
@@ -138,9 +166,13 @@ QString Player::PickUpMultipleItemsOfType(QString itemType, int numberOfItems) {
     if(remainingItemsToPickUp > 0)
     {
         if(remainingItemsToPickUp == numberOfItems) {
+            emit issueConsoleOutput("I can't find \"" + itemType + "\" on this field");
             return("I can't find \"" + itemType + "\" on this field");
         }
         else {
+            emit issueConsoleOutput("The field doesn't contain as many items as you requested. I only found: "
+                    + QString::number(numberOfItems - remainingItemsToPickUp)
+                    + " " + itemType + "s");
             return("The field doesn't contain as many items as you requested. I only found: "
                     + QString::number(numberOfItems - remainingItemsToPickUp)
                     + " " + itemType + "s");
@@ -148,10 +180,11 @@ QString Player::PickUpMultipleItemsOfType(QString itemType, int numberOfItems) {
     }
 }
 
-QString Player::PickUpAllItemsOfType(QString itemType) // Done!
+QString Player::PickUpAllItemsOfType(QString itemType)
 {
     bool itemTypeAvailable = false;
     int i = 0;
+    int numberOfItemsFound = 0;
 
     while (i != CurrentField->Items.size())
     {
@@ -159,19 +192,40 @@ QString Player::PickUpAllItemsOfType(QString itemType) // Done!
         {
             mInventory.CollectedItems.append(CurrentField->Items[i]);
             CurrentField->Items.removeAt(i);
-            return("Picked up item");
-
             itemTypeAvailable = true;
+            numberOfItemsFound += 1;
             i = 0;
         }
         i += 1;
     }
 
+
+
     if(itemTypeAvailable == false)
     {
+        emit issueConsoleOutput("I can't find \"" + itemType + "\" on this field");
         return("I can't find \"" + itemType + "\" on this field");
     }
+    else {
+        emit issueConsoleOutput("Picked all available " + itemType);
+        emit pickedUpItems(itemType, numberOfItemsFound);
+        return("Picked up item");
+    }
 }
+
+
+
+bool Player::HasItem(QString itemName)
+{
+    for (int i=0; i<mInventory.CollectedItems.size(); i++) {
+        Item item = mInventory.CollectedItems[i];
+        if(item.Name == itemName) {
+            return true;
+        }
+    }
+    return false;
+}
+
 
 
 QString Player::DropItemOfType(QString itemType) // Done!
@@ -179,28 +233,35 @@ QString Player::DropItemOfType(QString itemType) // Done!
     for(int i=0; i<mInventory.CollectedItems.size(); i++)
     {
         Item item = mInventory.CollectedItems[i];
-        if(item.Name == itemType)
-        {
+        if(item.Name == itemType) {
             mInventory.CollectedItems.removeAt(i);
             CurrentField->Items.append(item);
+            emit issueConsoleOutput("Dropped item");
+            emit droppedItems(itemType, 1);
             return("Dropped item");
         }
     }
+    emit issueConsoleOutput("Item not found in inventory");
     return("Item not found in inventory");
 }
 
 QString Player::DropMultipleItemsOfType(QString itemType, int numberOfItems) // Done!
 {
     int i = 0;
+    int remainingItemsToDrop = numberOfItems;
+
     while (i != mInventory.CollectedItems.size())
     {
         if(mInventory.CollectedItems[i].Name == itemType)
         {
             CurrentField->Items.append(mInventory.CollectedItems[i]);
             mInventory.CollectedItems.removeAt(i);
-            numberOfItems -= 1;
-            return("Dropped item");
-            if(numberOfItems == 0) {
+            remainingItemsToDrop -= 1;
+
+            if(remainingItemsToDrop == 0) {
+                emit issueConsoleOutput("Dropped item");
+                emit droppedItems(itemType, numberOfItems);
+                return("Dropped item");
                 break;
             }
             i = 0;
@@ -208,8 +269,9 @@ QString Player::DropMultipleItemsOfType(QString itemType, int numberOfItems) // 
         i += 1;
     }
 
-    if(numberOfItems > 0)
+    if(remainingItemsToDrop > 0)
     {
+        emit issueConsoleOutput("Not enough items were available");
         return("Not enough items were available");
     }
 }
@@ -218,6 +280,7 @@ QString Player::DropAllItemsOfType(QString itemType) // Done!
 {
     bool itemTypeAvailable = false;
     int i = 0;
+    int numberOfItemsDropped = 0;
 
     while (i != mInventory.CollectedItems.size())
     {
@@ -225,8 +288,8 @@ QString Player::DropAllItemsOfType(QString itemType) // Done!
         {
             CurrentField->Items.append(mInventory.CollectedItems[i]);
             mInventory.CollectedItems.removeAt(i);
-            return("Dropped item");
             itemTypeAvailable = true;
+            numberOfItemsDropped += 1;
             i = 0;
         }
         i += 1;
@@ -234,15 +297,23 @@ QString Player::DropAllItemsOfType(QString itemType) // Done!
 
     if(itemTypeAvailable == false)
     {
+        emit issueConsoleOutput("ItemType is not available in inventory");
         return("ItemType is not available in inventory");
+    }
+    else {
+        emit issueConsoleOutput("Dropped item");
+        emit droppedItems(itemType, numberOfItemsDropped);
+        return("Dropped item");
     }
 }
 
 
-QString Player::ListAvailableItems() // Done!
+QString Player::ListAvailableItemsOnField() // Done!
 {
-   if(Player::CurrentField->Items.length() == 0)
+   if(Player::CurrentField->Items.length() == 0) {
+       emit issueConsoleOutput("There are no items on this field");
        return("There are no items on this field");
+   }
    else
    {
        QString answer;
@@ -250,11 +321,55 @@ QString Player::ListAvailableItems() // Done!
        {
            answer.append("Found Item: " + Player::CurrentField->Items[i].Name + "\n");
        }
+       emit issueConsoleOutput(answer);
        return answer;
    }
 }
 
-QString Player::GetFieldDescription() // Done!
+void Player::ListInventory()
 {
-    return("Field Description: " + Player::CurrentField->Description);
+    if(mInventory.CollectedItems.size() == 0) {
+        qDebug() << "1";
+        emit issueConsoleOutput("Inventory is empty\n");
+    }
+    else {
+        qDebug() << "2";
+        QString answer = "Inventory:\n";
+        for(int i=0; i<mInventory.CollectedItems.size(); i++) {
+            qDebug() << "3";
+            Item item = mInventory.CollectedItems[i];
+            answer.append("Collected Item: " + item.Name + "\n");
+        }
+        qDebug() << "4";
+        emit issueConsoleOutput(answer);
+    }
+}
+
+void Player::GetFieldDescription() // Done!
+{
+    emit issueConsoleOutput("Field Description: " + Player::CurrentField->Description);
+}
+
+QString Player::SetSavePoint()
+{
+    if(CurrentField->HasSavePoint) {
+        unlockedSavePoints.append(CurrentField->mSavePoint);
+        return "Savepoint successfully set";
+    }
+    else
+        return "The current field is not eligable to set a savepoint here";
+}
+
+QString Player::ListAvailableSavePoints()
+{
+    if(unlockedSavePoints.length() == 0) {
+        return("You have not checkpoints unlocked");
+    }
+    else {
+        QString answer;
+        for(int i=0; i<unlockedSavePoints.length(); i++) {
+            answer.append("Checkpoint: " + unlockedSavePoints[i].Name);
+        }
+        return answer;
+    }
 }

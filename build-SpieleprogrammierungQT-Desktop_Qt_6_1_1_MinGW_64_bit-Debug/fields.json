@@ -1,47 +1,75 @@
 {
-    "fields": 
-    [
+    "fields": [
         {
-            "id" : "0",
-            "forward" : "1",
-            "backward" : "x",
-            "left" : "2",
-            "right" : "x",
-            "description" : "This is the entrance to the caves. A single light stralen vallen behind you through denn eingant. Towards the north there is a large tunnel that looks almost like hell. To the west there is a crevice and to the east there is a small shaft.",
-            "items" :
-            [
+            "backward": "x",
+            "description": "This is the entrance to the caves. A single light stralen vallen behind you through denn eingant. Towards the north there is a large tunnel that looks almost like hell. To the west there is a crevice and to the east there is a small shaft.",
+            "forward": "2",
+            "id": "1",
+            "items": [
                 {
-                    "name" : "key",
-                    "description" : "A rusty key"
+                    "description": "A rusty key",
+                    "locationDescription": "",
+                    "name": "key"
                 },
                 {
-                    "name" : "emerald", 
-                    "description" : "A shining emerald. It looks like it's been part of a piece of jewelery"
-                }, 
-				{
-                    "name" : "emerald", 
-                    "description" : "A shining emerald. It looks like it's been part of a piece of jewelery"
-                }, 
+                    "description": "A shining emerald. It looks like it's been part of a piece of jewelery",
+                    "locationDescription": "",
+                    "name": "emerald"
+                },
                 {
-                    "name" : "emerald", 
-                    "description" : "A shining emerald. It looks like it's been part of a piece of jewelery"
-                } 
-            ] 
+                    "description": "A shining emerald. It looks like it's been part of a piece of jewelery",
+                    "locationDescription": "",
+                    "name": "emerald"
+                },
+                {
+                    "description": "A shining emerald. It looks like it's been part of a piece of jewelery",
+                    "locationDescription": "",
+                    "name": "emerald"
+                }
+            ],
+            "left": "3",
+            "right": "x"
         },
         {
-            "id" : "1",
-            "forward" : "x",
-            "backward" : "0",
-            "left" : "x",
-            "right" : "x",
-            "description" : "This nothing but a plain dark tunnel",
-            "items" :
-            [
+            "backward": "1",
+            "description": "This nothing but a plain dark tunnel",
+            "forward": "3",
+            "id": "2",
+            "items": [
                 {
-                    "name" : "torch",
-                    "description" : "An extinguished torch that somebody must have left here"
+                    "description": "An extinguished torch that somebody must have left here",
+                    "locationDescription": "",
+                    "name": "torch"
                 }
-            ] 
-        }
+            ],
+            "left": "x",
+            "right": "x"
+        },
+        {
+            "id":"3",
+            "backward" : "2",
+            "forward" : "x",
+            "left" :"x",
+            "right":"x",
+            "description":"You stand in front of an ancient looking door. It is locked.",
+            "items":[
+                {
+                    "description":"A swipey thing that somebody must have lost. It is super dusty!",
+                    "locationDescription":"It is laying on the floor right in front of us",
+                    "name":"Swipey thing"
+                }
+            ]
+        },
+        {
+            "id":"4",
+            "backward": "3",
+            "forward":"x",
+            "left":"x",
+            "right":"x",
+            "description":"A luxurious atrium",
+            "items":[
+                
+            ]
+        } 
     ]
 }

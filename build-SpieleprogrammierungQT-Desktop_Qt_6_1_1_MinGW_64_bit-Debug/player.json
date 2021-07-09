@@ -1,30 +1,42 @@
 {
-    "currentFieldId": "0",
+    "currentFieldId": "1",
     "inventory": [
         {
             "description": "A beautiful amulet",
+            "locationDescription": "",
             "name": "Magic Amulet"
         },
         {
             "description": "A delicious pear",
+            "locationDescription": "",
             "name": "Pear"
         },
         {
             "description": "A delicious pear",
+            "locationDescription": "",
             "name": "Pear"
         },
         {
             "description": "A delicious pear",
+            "locationDescription": "",
             "name": "Pear"
         },
         {
             "description": "A shining emerald. It looks like it's been part of a piece of jewelery",
+            "locationDescription": "",
             "name": "emerald"
         },
         {
             "description": "A shining emerald. It looks like it's been part of a piece of jewelery",
+            "locationDescription": "",
             "name": "emerald"
         }
     ],
-    "name": "Felix"
+    "name": "Felix",
+    "unlockedSavepoint": [
+        {
+            "fieldId": "1",
+            "name": "this is the entrance of the caves"
+        }
+    ]
 }

@@ -3,6 +3,8 @@
 
 #include "game.h"
 #include "player.h"
+#include "states.h"
+#include "istates.h"
 
 #include <QMainWindow>
 #include <comunicazionhendler.h>
@@ -18,8 +20,12 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-    void WriteLine(QString newLine);
+public slots:
+    void PrintOntoConsole(QString newLine);
+    void SetGame(Game* game);
     void UpdatePositionInUi(QString oldPosition, QString newPosition);
+    void UpdateUiinventarsuptrakt(QString itemName, int amount);
+    void UpdateUiinventaradd(QString itemName, int amount);
 
 private slots:
     void on_Send_clicked();
@@ -48,14 +54,15 @@ private slots:
 
     void muveuser(QString);
     void discoverUimap(QString);
-    void UpdateUiinventaradd(int);
-    void UpdateUiinventarsuptrakt(int);
     void on_tableWidget_cellClicked(int row, int column);
-
     void on_tableWidget_2_cellPressed(int row, int column);
 
+signals:
+    void receivedCommand(QString command);
+
 private:
-    Game mGame;
+    Game* mGame;
+    IStates* currentState;
     Ui::MainWindow *ui;
     comunicazionhendler *mComunicazionhdendler;
 };

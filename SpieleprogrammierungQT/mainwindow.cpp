@@ -5,7 +5,11 @@
 #include <comunicazionhendler.h>
 #include <QTextStream>
 #include <QFile>
+
 #include <QPushButton>
+
+#include <QFont>
+
 
 int florlevel=0,maxflorlevel=1, inventory[20];
 MainWindow::MainWindow(QWidget *parent)
@@ -14,12 +18,19 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     //ui->tabWidget->setTabIcon(1, const QIcon & icon);
-    //comunicazionhendler = new comunicazionhendler(this);
     ui->stackedWidget->setCurrentIndex(0);
+
     for (int i=0;i<20 ;i++ ) {
         inventory[i]=-1;
     }
      inventory[0]=1;
+
+
+    QFont textFont;
+    textFont.setFamily("monospace");
+    textFont.setFixedPitch(true);
+    ui->textBrowser->setFont(textFont);
+
 }
 
 MainWindow::~MainWindow()
@@ -32,29 +43,13 @@ void MainWindow::on_Send_clicked(){
     dotext();}
 void MainWindow::on_lineEdit_returnPressed(){
 dotext();}
+
 void MainWindow::dotext(){
     QString command = ui ->lineEdit->text();
-
     if(!command.isEmpty()){
-       WriteLine(command);
-
-    UpdateUiinventarsuptrakt(1);
-          QString answer = mGame.InputHandler(command);
-          if(answer.split(" ")[0] == "Moved")
-          {
-            //  UpdatePositionInUi(oldPosition, answer.split(" ")[4]);
-          }
-          if(answer.split(" ")[0] == "pickup")
-          {
-             // UpdateUiinventaradd();
-          }
-          if(answer.split(" ")[0] == "dropt")
-          {
-          //    UpdateUiinventarsuptrakt();
-          }
-       WriteLine(answer);
        ui->lineEdit->clear();
     }
+    emit receivedCommand(command);
 }
 
 void MainWindow::on_lineEdit_upPressed()
@@ -67,8 +62,9 @@ void MainWindow::on_tabWidget_tabBarClicked(int)
 
 }
 
-void MainWindow::WriteLine(QString input)
+void MainWindow::PrintOntoConsole(QString input)
 {
+    qDebug() << "received input for consoe: " + input;
     QString newLine = "~$ " + input + "\n";
     ui->textBrowser->append(newLine);
 }
@@ -130,41 +126,43 @@ void MainWindow::on_tableWidget_cellClicked(int row, int column)
     if(row==3) ui->textBrowser->append("A red ore \n It's rather light\n");
 }
 //add intem
-void MainWindow::UpdateUiinventaradd(int item_id){
-    int i=0;
-    bool exist=false;
-    while (inventory[i]!=-1&&exist==false) {
-        if(inventory[i]==item_id){
-            exist=true;
-
-        }else{
-            i++;
-        }
-    }
-   //add item
-    if(exist==true){
-//        ui->tabWidget->modifi cell;
-    }
-    else{
-        inventory[i]=item_id;
-       // getitemnamebyid(item_id)
-         // ui->tableWidget->model()->insertRow();
-    }
+void MainWindow::UpdateUiinventaradd(QString itemName, int amount){
+    qDebug() << "Picked up: " + itemName + " " + QString::number(amount) + " times";
+   //int i=0;
+   //bool exist=false;
+   //while (inventory[i]!=-1&&exist==false) {
+   //    if(inventory[i]==item_id){
+   //        exist=true;
+   //
+   //    }else{
+   //        i++;
+   //    }
+   //}
+   ///add item
+   //if(exist==true){
+// //      ui->tabWidget->modifi cell;
+   //}
+   //else{
+   //    inventory[i]=item_id;
+   //   // getitemnamebyid(item_id)
+   //     // ui->tableWidget->model()->insertRow();
+   //}
 }
 //tacke item
-void MainWindow::UpdateUiinventarsuptrakt(int item_id){
-    int i=0;
-    bool exist=false;
-    while (inventory[i]!= item_id) {
-            i++;
-    }
-    //if(dubel item){}else{
-    ui->tableWidget->model()->removeRow(i);
-    i++;
-    while (i<21) {
-          inventory[i-1]=inventory[i];
-    }
-    inventory[20]=-1;
+void MainWindow::UpdateUiinventarsuptrakt(QString itemName, int amount){
+    qDebug() << "Dropped: " + itemName + " " + QString::number(amount) + " times";
+   //int i=0;
+   //bool exist=false;
+   //while (inventory[i]!= item_id) {
+   //        i++;
+   //}
+   ////if(dubel item){}else{
+   //ui->tableWidget->model()->removeRow(i);
+   //i++;
+   //while (i<21) {
+   //      inventory[i-1]=inventory[i];
+   //}
+   //inventory[20]=-1;
 //}
 }
 
@@ -180,7 +178,7 @@ void MainWindow::on_pushButton_clicked()
 {
     ui->textBrowser->clear();
     ui->stackedWidget->setCurrentIndex(1);
-    if(!mGame.LoadGame()){
+    if(!mGame->LoadGame()){
         QMessageBox::information(0,"Error", " file not fonde");
     }
     ui->textBrowser->append("System reboot 100% \n all funktions rady \n");
@@ -195,7 +193,7 @@ void MainWindow::on_pushButton_titel_clicked()
 //verlasen
 void MainWindow::on_pushButton_leave_clicked()
 {
-    mGame.SaveGame();
+    mGame->SaveGame();
     close();
 }
 
@@ -216,9 +214,10 @@ void MainWindow::on_pushButton_help_clicked()
 
 }
 
-
-
-
+void MainWindow::SetGame(Game* game)
+{
+    mGame = game;
+}
 
 
 //Story mails

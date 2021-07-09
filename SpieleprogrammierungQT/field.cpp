@@ -8,12 +8,19 @@ Field::Field()
 
 void Field::Read(QJsonObject &json)
 {
-   Field::Id = json["id"].toString();
-   Field::FieldRight = json["right"].toString();
-   Field::FieldLeft = json["left"].toString();
-   Field::FieldForward = json["forward"].toString();
-   Field::FieldBackward = json["backward"].toString();
-   Field::Description = json["description"].toString();
+   this->Id = json["id"].toString();
+   this->FieldRight = json["right"].toString();
+   this->FieldLeft = json["left"].toString();
+   this->FieldForward = json["forward"].toString();
+   this->FieldBackward = json["backward"].toString();
+   this->Description = json["description"].toString();
+
+   if(!json["savePoint"].isNull()) {
+       this->HasSavePoint = true;
+       this->mSavePoint.fieldId = this->Id;
+       this->mSavePoint.Name = json["savePoint"].toString();
+       qDebug() << "read savepoint";
+   }
 
    QJsonArray itemArray = json["items"].toArray();
    for(int i=0; i<itemArray.size(); i++)
@@ -33,6 +40,7 @@ void Field::Write(QJsonObject &json)
     json["left"] = this->FieldLeft;
     json["right"] = this->FieldRight;
     json["description"] = this->Description;
+    json["savePoint"] = this->mSavePoint.Name;
 
     QJsonArray itemArray;
 
@@ -44,4 +52,13 @@ void Field::Write(QJsonObject &json)
     }
 
     json["items"] = itemArray;
+}
+
+bool Field::HasItem(QString itemName)
+{
+    for(int i=0; i<Items.length(); i++) {
+        if(Items[i].Name == itemName)
+            return true;
+    }
+    return false;
 }

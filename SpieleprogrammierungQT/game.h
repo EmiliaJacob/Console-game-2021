@@ -1,12 +1,18 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include "gameboard.h"
+#include "istates.h"
+#include "level.h"
 #include "player.h"
+#include "states.h"
+#include <QObject>
 
-class Game
+class Game : public QObject
 {
+Q_OBJECT
+
 private:
+    IStates* currentState;
 
 public:
     enum SaveFormat // TODO: By-default binary speichern
@@ -15,13 +21,16 @@ public:
     };
 
     Player mPlayer;
-    inline static GameBoard mGameBoard;
+    inline static Level Level_One;
     Game();
     void Write(QJsonObject &json);
     void NewGame();
     QString SaveGame();
     bool LoadGame();
     QString InputHandler(QString input);
+public slots:
+    void HandleCommand(QString command);
+    void ChangeState(QString stateName);
 };
 
 #endif // GAME_H
