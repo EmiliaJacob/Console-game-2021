@@ -300,7 +300,7 @@ QString Player::ListAvailableItemsOnField() // Done!
    }
 }
 
-QString Player::ListInventory()
+void Player::ListInventory()
 {
     if(mInventory.CollectedItems.size() == 0) {
         qDebug() << "1";
@@ -314,6 +314,7 @@ QString Player::ListInventory()
             Item item = mInventory.CollectedItems[i];
             answer.append("Collected Item: " + item.Name + "\n");
         }
+        qDebug() << "4";
         emit issueConsoleOutput(answer);
     }
 }

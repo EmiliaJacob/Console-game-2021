@@ -23,7 +23,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Player_t {
     const uint offsetsAndSize[38];
-    char stringdata0[303];
+    char stringdata0[287];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(offsetof(qt_meta_stringdata_Player_t, stringdata0) + ofs), len 
@@ -46,8 +46,8 @@ QT_MOC_LITERAL(175, 8), // "itemName"
 QT_MOC_LITERAL(184, 23), // "DropMultipleItemsOfType"
 QT_MOC_LITERAL(208, 18), // "DropAllItemsOfType"
 QT_MOC_LITERAL(227, 25), // "ListAvailableItemsOnField"
-QT_MOC_LITERAL(253, 29), // "ListAvailableItemsInInventory"
-QT_MOC_LITERAL(283, 19) // "GetFieldDescription"
+QT_MOC_LITERAL(253, 13), // "ListInventory"
+QT_MOC_LITERAL(267, 19) // "GetFieldDescription"
 
     },
     "Player\0issueConsoleOutput\0\0output\0"
@@ -57,8 +57,7 @@ QT_MOC_LITERAL(283, 19) // "GetFieldDescription"
     "PickUpAllItemsOfType\0DropItemOfType\0"
     "itemName\0DropMultipleItemsOfType\0"
     "DropAllItemsOfType\0ListAvailableItemsOnField\0"
-    "ListAvailableItemsInInventory\0"
-    "GetFieldDescription"
+    "ListInventory\0GetFieldDescription"
 };
 #undef QT_MOC_LITERAL
 
@@ -104,7 +103,7 @@ static const uint qt_meta_data_Player[] = {
     QMetaType::QString, QMetaType::QString, QMetaType::Int,    8,   10,
     QMetaType::QString, QMetaType::QString,    8,
     QMetaType::QString,
-    QMetaType::QString,
+    QMetaType::Void,
     QMetaType::Void,
 
        0        // eod
@@ -134,8 +133,7 @@ void Player::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = std::move(_r); }  break;
         case 9: { QString _r = _t->ListAvailableItemsOnField();
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = std::move(_r); }  break;
-        case 10: { QString _r = _t->ListInventory();
-            if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = std::move(_r); }  break;
+        case 10: _t->ListInventory(); break;
         case 11: _t->GetFieldDescription(); break;
         default: ;
         }
@@ -159,7 +157,7 @@ const QMetaObject Player::staticMetaObject = { {
     nullptr,
 qt_incomplete_metaTypeArray<qt_meta_stringdata_Player_t
 , QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>
-, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>
+, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>
 
 
 >,

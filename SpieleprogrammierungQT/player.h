@@ -34,7 +34,7 @@ public slots:
     QString DropMultipleItemsOfType(QString itemType, int numberOfItems);
     QString DropAllItemsOfType(QString itemType);
     QString ListAvailableItemsOnField();
-    QString ListInventory();
+    void ListInventory();
     void GetFieldDescription(); // TODO : rename -> you don't get anything
 signals:
     void issueConsoleOutput(QString output);
