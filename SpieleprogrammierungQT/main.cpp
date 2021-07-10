@@ -52,6 +52,11 @@ int main(int argc, char *argv[])
     QObject::connect(&States::combineItemsState, &CombineItemsState::combineItemsRequest, &game.mPlayer, &Player::CombineItems);
     QObject::connect(&States::combineItemsState, &CombineItemsState::listInventoryRequest, &game.mPlayer, &Player::ListInventory);
 
+    QObject::connect(&States::useItemState, &UseItemState::issueConsoleOutput, &mainWindow, &MainWindow::PrintOntoConsole);
+    QObject::connect(&States::useItemState, &UseItemState::changeStateRequest, &game, &Game::ChangeState);
+    QObject::connect(&States::useItemState, &UseItemState::useItemRequest, &game.mPlayer, &Player::UseItem);
+    QObject::connect(&States::useItemState, &UseItemState::listInventoryRequest, &game.mPlayer, &Player::ListInventory);
+
     mainWindow.SetGame(&game);
     mainWindow.show();
     return qApplication.exec();

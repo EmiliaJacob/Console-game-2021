@@ -65,6 +65,9 @@ void Game::ChangeState(QString stateName)
     else if(stateName == "combineItemsState") {
         currentState = &States::combineItemsState;
     }
+    else if(stateName == "useItemState") {
+        currentState = &States::useItemState;
+    }
 }
 
 

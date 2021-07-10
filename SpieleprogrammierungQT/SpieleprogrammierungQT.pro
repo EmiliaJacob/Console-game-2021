@@ -25,7 +25,8 @@ SOURCES += \
     player.cpp \
     savepoint.cpp \
     states.cpp \
-    testhelper.cpp
+    testhelper.cpp \
+    useitemstate.cpp
 
 HEADERS += \
     combineitemsstate.h \
@@ -44,7 +45,8 @@ HEADERS += \
     player.h \
     savepoint.h \
     states.h \
-    testhelper.h
+    testhelper.h \
+    useitemstate.h
 
 FORMS += \
     mainwindow.ui

@@ -42,6 +42,9 @@ void IdleState::ExecuteCommand(QString command)
     else if(command == "c") {
         emit changeStateRequest("combineItemsState");
     }
+    else if(command == "u") {
+        emit changeStateRequest("useItemState");
+    }
     else {
         emit issueConsoleOutput("I'm sorry i can't find a function for your command");
     }
@@ -57,7 +60,7 @@ void IdleState::PrintMenu()
                              *spacerLeft + "a: Move left            r: Drop item\n" +
                              *spacerLeft + "d: Move right           sg: SaveGame\n" +
                              *spacerLeft + "f: Fast-Travel          sp: Set Savepoint\n" +
-                             *spacerLeft + "c: Combine items\n";
+                             *spacerLeft + "c: Combine items        u: Use item\n";
 
     emit issueConsoleOutput(menu);
 }

@@ -38,6 +38,7 @@ public slots:
     void CombineItems(QString items);
     void ListInventory();
     void GetFieldDescription(); // TODO : rename -> you don't get anything
+    void UseItem(QString itemName);
 signals:
     void issueConsoleOutput(QString output);
     void moved (QString lastFieldId, QString newFieldId);

@@ -34,7 +34,7 @@
         {
             "backward": "1",
             "description": "This nothing but a plain dark tunnel",
-            "forward": "3",
+            "forward": "x",
             "id": "2",
             "items": [
                 {

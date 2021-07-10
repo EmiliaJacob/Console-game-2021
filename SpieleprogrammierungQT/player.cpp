@@ -448,3 +448,32 @@ void Player::CombineItems(QString items) // TODO: This is bad code
         emit issueConsoleOutput("I can't combine these two items");
     }
 }
+
+void Player::UseItem(QString itemName)
+{
+    QStringList splittedInput = itemName.split(' ');
+    if (splittedInput.length() > 1) {
+        emit issueConsoleOutput("I can only use one item at a time");
+        return;
+    }
+    if(splittedInput.length() == 0) {
+        emit issueConsoleOutput("Please specify the name of the item you want to use");
+        return;
+    }
+
+    if(!mInventory.HasItem(itemName)) {
+        emit issueConsoleOutput("The item: " + itemName + " cannot be found in the inventory");
+        return;
+    }
+
+    if(itemName == "key") {
+        if(CurrentField->Id == "2") {
+            CurrentField->FieldForward = "3";
+            emit issueConsoleOutput("You have sucessfully unlocked the way into direction: forward");
+            return;
+        }
+    }
+
+    emit issueConsoleOutput("I'm sorry this items seems to have no effect on this field.");
+    qDebug() << "request to use ITEM: " + itemName;
+}

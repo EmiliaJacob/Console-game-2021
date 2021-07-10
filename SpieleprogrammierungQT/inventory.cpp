@@ -12,9 +12,19 @@ void Inventory::InsertOne(Item item) {
 void Inventory::DeleteOne(Item item) {
    for(int i=0; i<CollectedItems.length(); i++) {
        if(CollectedItems[i].Name == item.Name) {
-           qDebug() << "REMOVING: " + item.Name;
            CollectedItems.removeAt(i);
            break;
        }
    }
+}
+
+bool Inventory::HasItem(QString itemName)
+{
+    for(int i=0; i<CollectedItems.length(); i++) {
+        if(CollectedItems[i].Name == itemName) {
+            return true;
+        }
+    }
+
+    return false;
 }
