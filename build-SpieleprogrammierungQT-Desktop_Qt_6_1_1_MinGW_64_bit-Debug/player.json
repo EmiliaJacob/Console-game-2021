@@ -30,6 +30,16 @@
             "description": "A shining emerald. It looks like it's been part of a piece of jewelery",
             "locationDescription": "",
             "name": "emerald"
+        }, 
+        {
+            "name":"Pogo",
+            "description":"idk dude",
+            "locationDescription":"Its just standing there MENACECINGLY"
+        },
+        {
+            "name":"Stick",
+            "description":"I keep a stick like a hobo, no checking me",
+            "locationDescription":"Standing in the corner"
         }
     ],
     "name": "Felix",

@@ -1,3 +1,4 @@
+debug/combineitemsstate.o
 debug/dropstate.o
 debug/fasttravelstate.o
 debug/field.o
@@ -14,6 +15,7 @@ debug/player.o
 debug/savepoint.o
 debug/states.o
 debug/testhelper.o
+debug/moc_combineitemsstate.o
 debug/moc_dropstate.o
 debug/moc_fasttravelstate.o
 debug/moc_game.o

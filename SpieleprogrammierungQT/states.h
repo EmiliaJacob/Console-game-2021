@@ -5,6 +5,7 @@
 #include "pickupstate.h"
 #include "dropstate.h"
 #include "fasttravelstate.h"
+#include "combineitemsstate.h"
 
 class States
 {
@@ -14,6 +15,7 @@ public:
     inline static PickUpState pickUpState;
     inline static DropState dropState;
     inline static FastTravelState fastTravelState;
+    inline static CombineItemsState combineItemsState;
 };
 
 #endif // STATES_H

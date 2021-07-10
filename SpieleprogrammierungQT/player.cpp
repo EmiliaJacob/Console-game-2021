@@ -397,3 +397,54 @@ void Player::FastTravel(QString destination)
         }
     }
 }
+
+void Player::CombineItems(QString items) // TODO: This is bad code
+{
+    QStringList splittedInput = items.split(' ');
+
+    if(splittedInput.length() != 2) {
+        emit issueConsoleOutput("Please specify TWO items");
+        return;
+    }
+
+    Item* itemOne = nullptr;
+    Item* itemTwo = nullptr;
+
+    for(int i=0; i<mInventory.CollectedItems.length(); i++) {
+        if(mInventory.CollectedItems[i].Name == splittedInput[0]) {
+            itemOne = &mInventory.CollectedItems[i];
+        }
+        if(mInventory.CollectedItems[i].Name == splittedInput[1]) {
+            itemTwo = &mInventory.CollectedItems[i];
+        }
+    }
+
+    if(itemOne == nullptr || itemTwo == nullptr) {
+        if(itemOne == nullptr  && itemTwo == nullptr ) {
+            emit issueConsoleOutput("I can't find: " + splittedInput[0] + " and " + splittedInput[1] + " in the Inventory");
+            return;
+        }
+        if(itemOne == nullptr) {
+            emit issueConsoleOutput("I can't find: " + splittedInput[0] + " in the Inventory");
+            return;
+        }
+        if(itemTwo == nullptr) {
+            emit issueConsoleOutput("I can't find: " + splittedInput[1] + " in the Inventory");
+            return;
+        }
+    }
+
+    if((itemOne->Name == "Pogo" && itemTwo->Name == "Stick") || (itemOne->Name == "Stick" && itemTwo->Name == "Pogo")) {
+        emit issueConsoleOutput("Combined items: 'Pogo' and 'Stick' to 'PogoStick'");
+        mInventory.DeleteOne(*itemOne);
+        mInventory.DeleteOne(*itemTwo);
+        Item pogoStick;
+        pogoStick.Name = "PogoStick";
+        pogoStick.Description = "Bouncy thing used for jumping";
+        pogoStick.LocationDescription = "Laying on the floor";
+        mInventory.InsertOne(pogoStick);
+    }
+    else {
+        emit issueConsoleOutput("I can't combine these two items");
+    }
+}

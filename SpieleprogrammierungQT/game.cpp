@@ -47,6 +47,7 @@ void Game::HandleCommand(QString command)
     currentState->PrintMenu();
 }
 
+
 void Game::ChangeState(QString stateName)
 {
     if(stateName == "idleState") {
@@ -60,7 +61,12 @@ void Game::ChangeState(QString stateName)
     }
     else if(stateName == "fastTravelState") {
         currentState = &States::fastTravelState;
-    }}
+    }
+    else if(stateName == "combineItemsState") {
+        currentState = &States::combineItemsState;
+    }
+}
+
 
 void Game::SaveGame()
 {
