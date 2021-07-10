@@ -31,6 +31,8 @@ MainWindow::MainWindow(QWidget *parent)
     textFont.setFamily("monospace");
     textFont.setFixedPitch(true);
     ui->textBrowser->setFont(textFont);
+
+    ui->lineEdit->setDisabled(true);
 }
 
 MainWindow::~MainWindow()
@@ -49,6 +51,7 @@ void MainWindow::dotext(){
     if(!command.isEmpty()){
        ui->lineEdit->clear();
     }
+
     emit receivedCommand(command);
 }
 
@@ -241,6 +244,8 @@ void MainWindow::PrintSystemBoot()
     QTimer::singleShot(9500, this, [=] () {
         DeleteLastLine();
         States::idleState.PrintMenu();
+        ui->lineEdit->setDisabled(false);
+        ui->lineEdit->setFocus();
     });
 }
 
