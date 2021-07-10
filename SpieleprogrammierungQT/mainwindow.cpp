@@ -9,6 +9,7 @@
 #include <QPushButton>
 
 #include <QFont>
+#include <QTimer>
 
 
 int florlevel=0,maxflorlevel=1, inventory[20];
@@ -30,7 +31,6 @@ MainWindow::MainWindow(QWidget *parent)
     textFont.setFamily("monospace");
     textFont.setFixedPitch(true);
     ui->textBrowser->setFont(textFont);
-
 }
 
 MainWindow::~MainWindow()
@@ -181,7 +181,80 @@ void MainWindow::on_pushButton_clicked()
     if(!mGame->LoadGame()){
         QMessageBox::information(0,"Error", " file not fonde");
     }
-    ui->textBrowser->append("System reboot 100% \n all funktions rady \n");
+    PrintSystemBoot();
+}
+
+void MainWindow::PrintSystemBoot()
+{
+    ui->textBrowser->append("I'm initializing please wait");
+    for(int i=0; i<1000; i+=200) {
+        QTimer::singleShot(i, this, [=] () {
+            ui->textBrowser->textCursor().insertText(".");
+        });
+    }
+    for(int i=1000; i<2000; i+=200) {
+        QTimer::singleShot(i, this, [=] () {
+            ui->textBrowser->textCursor().deletePreviousChar();
+        });
+    }
+    for(int i=2000; i<3000; i+=200) {
+        QTimer::singleShot(i, this, [=] () {
+            ui->textBrowser->textCursor().insertText(".");
+        });
+    }
+    for(int i=3000; i<3400; i+=200) {
+        QTimer::singleShot(i, this, [=] () {
+            ui->textBrowser->textCursor().deletePreviousChar();
+        });
+    }
+
+    QTimer::singleShot(3500, this, [=] () {
+        DeleteLastLine();
+        ui->textBrowser->append("I have successfully initialized");
+    });
+
+    QTimer::singleShot(4250, this, [=] () {
+        DeleteLastLine();
+        ui->textBrowser->append("Reading my memory: <");
+    });
+
+    for(int i=4250; i<7600; i+=200) {
+        QTimer::singleShot(i, this, [=] () {
+            ui->textBrowser->textCursor().insertText("-");
+        });
+    }
+
+    QTimer::singleShot(7600, this, [=] () {
+        ui->textBrowser->textCursor().insertText(">");
+    });
+
+    QTimer::singleShot(8100, this, [=] () {
+        DeleteLastLine();
+        ui->textBrowser->append("Memory was successfully read");
+    });
+
+    QTimer::singleShot(9000, this, [=] () {
+        DeleteLastLine();
+        ui->textBrowser->append("Welcome");
+    });
+
+    QTimer::singleShot(9500, this, [=] () {
+        DeleteLastLine();
+        States::idleState.PrintMenu();
+    });
+}
+
+void MainWindow::DeleteLastLine()
+{
+    // von https://stackoverflow.com/questions/15326569/removing-last-line-from-qtextedit
+    ui->textBrowser->setFocus();
+    QTextCursor storeCursorPos = ui->textBrowser->textCursor();
+    ui->textBrowser->moveCursor(QTextCursor::End, QTextCursor::MoveAnchor);
+    ui->textBrowser->moveCursor(QTextCursor::StartOfLine, QTextCursor::MoveAnchor);
+    ui->textBrowser->moveCursor(QTextCursor::End, QTextCursor::KeepAnchor);
+    ui->textBrowser->textCursor().removeSelectedText();
+    ui->textBrowser->textCursor().deletePreviousChar();
+    ui->textBrowser->setTextCursor(storeCursorPos);
 }
 
 //zu Titelbildschirm

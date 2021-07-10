@@ -475,5 +475,4 @@ void Player::UseItem(QString itemName)
     }
 
     emit issueConsoleOutput("I'm sorry this items seems to have no effect on this field.");
-    qDebug() << "request to use ITEM: " + itemName;
 }

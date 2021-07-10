@@ -26,7 +26,7 @@ public slots:
     void UpdatePositionInUi(QString oldPosition, QString newPosition);
     void UpdateUiinventarsuptrakt(QString itemName, int amount);
     void UpdateUiinventaradd(QString itemName, int amount);
-
+    void DeleteLastLine();
 private slots:
     void on_Send_clicked();
 
@@ -65,5 +65,6 @@ private:
     IStates* currentState;
     Ui::MainWindow *ui;
     comunicazionhendler *mComunicazionhdendler;
+    void PrintSystemBoot();
 };
 #endif // MAINWINDOW_H

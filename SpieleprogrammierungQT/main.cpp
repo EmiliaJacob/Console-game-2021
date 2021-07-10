@@ -59,5 +59,6 @@ int main(int argc, char *argv[])
 
     mainWindow.SetGame(&game);
     mainWindow.show();
+
     return qApplication.exec();
 }

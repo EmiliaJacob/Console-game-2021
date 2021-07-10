@@ -40,9 +40,9 @@ bool Game::LoadGame()
 
     return true;
 }
+
 void Game::HandleCommand(QString command)
 {
-    qDebug() << "Received command: " + command;
     currentState->ExecuteCommand(command);
     currentState->PrintMenu();
 }
