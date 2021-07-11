@@ -194,6 +194,7 @@ void MainWindow::on_pushButton_clicked()
     // TODO: Remove again
     ui->lineEdit->setDisabled(false);
     ui->lineEdit->setFocus();
+    States::idleState.PrintMenu();
 }
 
 void MainWindow::PrintSystemBoot()
