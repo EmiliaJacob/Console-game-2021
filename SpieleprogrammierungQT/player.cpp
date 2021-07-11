@@ -84,7 +84,7 @@ void Player::Move(QString direction)
         {
             lastFieldId = CurrentField->Id;
             CurrentField = Game::Level_One.GetField(CurrentField->FieldBackward);
-            emit issueConsoleOutput("Moved forward to field with id: " + CurrentField->Id);
+            emit issueConsoleOutput("Moved backward to field with id: " + CurrentField->Id);
             emit moved(lastFieldId, CurrentField->Id);
         }
         else
@@ -94,11 +94,11 @@ void Player::Move(QString direction)
     }
 
     if(direction == "left"){
-        if(QString::compare(CurrentField->FieldBackward, "x") != 0)
+        if(QString::compare(CurrentField->FieldLeft, "x") != 0)
         {
             lastFieldId = CurrentField->Id;
-            CurrentField = Game::Level_One.GetField(CurrentField->FieldBackward);
-            emit issueConsoleOutput("Moved forward to field with id: " + CurrentField->Id);
+            CurrentField = Game::Level_One.GetField(CurrentField->FieldLeft);
+            emit issueConsoleOutput("Moved left to field with id: " + CurrentField->Id);
             emit moved(lastFieldId, CurrentField->Id);
         }
         else
@@ -108,11 +108,11 @@ void Player::Move(QString direction)
     }
 
     if(direction == "right"){
-        if(QString::compare(CurrentField->FieldBackward, "x") != 0)
+        if(QString::compare(CurrentField->FieldRight, "x") != 0)
         {
             lastFieldId = CurrentField->Id;
-            CurrentField = Game::Level_One.GetField(CurrentField->FieldBackward);
-            emit issueConsoleOutput("Moved forward to field with id: " + CurrentField->Id);
+            CurrentField = Game::Level_One.GetField(CurrentField->FieldRight);
+            emit issueConsoleOutput("Moved right to field with id: " + CurrentField->Id);
             emit moved(lastFieldId, CurrentField->Id);
         }
         else

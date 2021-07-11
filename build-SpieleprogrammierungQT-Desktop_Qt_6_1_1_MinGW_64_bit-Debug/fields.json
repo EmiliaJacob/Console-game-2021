@@ -1,78 +1,53 @@
 {
     "fields": [
         {
-            "backward": "x",
-            "description": "This is the entrance to the caves. A single light stralen vallen behind you through denn eingant. Towards the north there is a large tunnel that looks almost like hell. To the west there is a crevice and to the east there is a small shaft.",
-            "forward": "2",
             "id": "1",
+            "description": "The entry to the caves. The beginning of your journey.",
+            "forward": "2",
+            "backward": "x", 
+            "left":"x",
+            "right":"x",
+            "savePoint":"The entry of the caves",
             "items": [
                 {
-                    "description": "A rusty key",
-                    "locationDescription": "",
-                    "name": "key"
-                },
-                {
-                    "description": "A shining emerald. It looks like it's been part of a piece of jewelery",
-                    "locationDescription": "",
-                    "name": "emerald"
-                },
-                {
-                    "description": "A shining emerald. It looks like it's been part of a piece of jewelery",
-                    "locationDescription": "",
-                    "name": "emerald"
-                },
-                {
-                    "description": "A shining emerald. It looks like it's been part of a piece of jewelery",
-                    "locationDescription": "",
-                    "name": "emerald"
+                    "description": "A rusty pickaxe",
+                    "name": "pickaxe",
+                    "locationDescription": "is laying on the floor."
                 }
-            ],
-            "left": "x",
-            "right": "x",
-            "savePoint": "The very beginning of the adventure"
+            ]
         },
-        {
-            "backward": "1",
-            "description": "This nothing but a plain dark tunnel",
-            "forward": "x",
+        {            
             "id": "2",
-            "items": [
-                {
-                    "description": "An extinguished torch that somebody must have left here",
-                    "locationDescription": "",
-                    "name": "torch"
-                }
-            ],
-            "left": "x",
-            "right": "x",
-            "savePoint": "Field number two"
-        },
-        {
-            "backward": "2",
-            "description": "You stand in front of an ancient looking door. It is locked.",
-            "forward": "4",
-            "id": "3",
-            "items": [
-                {
-                    "description": "A swipey thing that somebody must have lost. It is super dusty!",
-                    "locationDescription": "It is laying on the floor right in front of us",
-                    "name": "Swipey thing"
-                }
-            ],
-            "left": "x",
-            "right": "x",
-            "savePoint": ""
-        },
-        {
-            "backward": "3",
-            "description": "A luxurious atrium",
+            "description": "A spacious room. It has some weirdly looking glowing signs on the walls. I'm not sure how to describe them.",
             "forward": "x",
+            "backward": "1", 
+            "left":"x",
+            "right":"3",
+            "items": []
+        },
+        {            
+            "id": "3",
+            "description": "A short hallway. Nothing interesting here.",
+            "forward": "x",
+            "backward": "4", 
+            "left":"x",
+            "right":"x",
+            "items": []
+        },
+        {            
             "id": "4",
+            "description": "A tiny cave. One of the walls looks quite thin.",
+            "forward": "3",
+            "backward": "x", 
+            "left":"x",
+            "right":"x",
             "items": [
-            ],
-            "left": "x",
-            "right": "x",
-            "savePoint": "Field Four"
+                {
+                    "description": "A golden key",
+                    "name": "key",
+                    "locationDescription": "buried under dirt."
+                }
+            ]
         }
     ]
 }
