@@ -483,11 +483,26 @@ void Player::UseItem(QString itemName)
 
     if(itemName == "key") {
         if(CurrentField->Id == "2") {
-            CurrentField->FieldForward = "3";
+            CurrentField->FieldForward = "5";
             emit issueConsoleOutput("You have sucessfully unlocked the way into direction: forward");
             return;
         }
     }
 
+    if(itemName == "passcode_A") {
+        if(CurrentField->Id == "5") {
+            CurrentField->FieldForward = "7";
+            emit issueConsoleOutput("You have sucessfully unlocked the way into direction: forward");
+            return;
+        }
+    }
+
+    if(itemName == "pickaxe") {
+        if(CurrentField->Id == "4") {
+            CurrentField->FieldLeft = "1";
+            emit issueConsoleOutput("The wall broke. You have sucessfully unlocked the way into direction: left");
+            return;
+        }
+    }
     emit issueConsoleOutput("I'm sorry this items seems to have no effect on this field.");
 }

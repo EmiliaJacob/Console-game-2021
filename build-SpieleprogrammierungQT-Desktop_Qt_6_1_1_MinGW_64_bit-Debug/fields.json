@@ -32,7 +32,13 @@
             "backward": "4", 
             "left":"x",
             "right":"x",
-            "items": []
+            "items": [                
+                {
+                    "description": "A rusty pickaxe",
+                    "name": "pickaxe",
+                    "locationDescription": "is laying on the floor."
+                }
+            ]
         },
         {            
             "id": "4",
@@ -47,6 +53,61 @@
                     "name": "key",
                     "locationDescription": "buried under dirt."
                 }
+            ]
+        },
+        {            
+            "id": "5",
+            "description": "A room full of machines unknown to mankind. At one of the doors is a terminal. It seems like we need a passcode to procede.",
+            "forward": "x",
+            "backward": "2", 
+            "left":"8",
+            "right":"6",
+            "items": [
+            ]
+        },
+        {            
+            "id": "6",
+            "description": "A deadly trap!",
+            "forward": "x",
+            "backward": "x", 
+            "left":"x",
+            "right":"x",
+            "items": [
+            ]
+        },
+        {            
+            "id": "8",
+            "description": "Even more machines. I have never seen anything like this.",
+            "forward": "9",
+            "backward": "x", 
+            "left":"x",
+            "right":"5",
+            "items": [
+            ]
+        },
+        {            
+            "id": "9",
+            "description": "A workshop. Here are loads of loose machine parts and rusty tools.",
+            "forward": "8",
+            "backward": "x", 
+            "left":"x",
+            "right":"x",
+            "items": [
+                {
+                    "description": "A piece of paper with numbers written on it. Maybe this is the required passcode.",
+                    "name": "passcode_A",
+                    "locationDescription": "laying on a work-bench."
+                }
+            ]
+        },
+        {            
+            "id": "7",
+            "description": "Reached fist checkpoint",
+            "forward": "x",
+            "backward": "x", 
+            "left":"x",
+            "right":"x",
+            "items": [
             ]
         }
     ]
