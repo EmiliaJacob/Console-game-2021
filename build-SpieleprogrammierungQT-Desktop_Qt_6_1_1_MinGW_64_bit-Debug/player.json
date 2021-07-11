@@ -30,27 +30,31 @@
             "description": "A shining emerald. It looks like it's been part of a piece of jewelery",
             "locationDescription": "",
             "name": "emerald"
-        }, 
-        {
-            "name":"Pogo",
-            "description":"idk dude",
-            "locationDescription":"Its just standing there MENACECINGLY"
         },
         {
-            "name":"Stick",
-            "description":"I keep a stick like a hobo, no checking me",
-            "locationDescription":"Standing in the corner"
+            "description": "idk dude",
+            "locationDescription": "Its just standing there MENACECINGLY",
+            "name": "Pogo"
+        },
+        {
+            "description": "I keep a stick like a hobo, no checking me",
+            "locationDescription": "Standing in the corner",
+            "name": "Stick"
         }
     ],
     "name": "Felix",
     "unlockedSavePoints": [
         {
-            "name": "the very beginning",
-            "fieldId": "1"
+            "fieldId": "1",
+            "name": "the very beginning"
         },
         {
-            "name": "Field two",
-            "fieldId": "2"
+            "fieldId": "2",
+            "name": "Field two"
+        },
+        {
+            "fieldId": "1",
+            "name": "The very beginning of the adventure"
         }
     ]
 }

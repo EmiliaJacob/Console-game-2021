@@ -57,12 +57,12 @@ void IdleState::PrintMenu()
 
     QString* spacerLeft = new QString(5, ' ');
     QString menu = "Please select an option: \n" +
-                             *spacerLeft + "w: Move forward         l: Inspect environment\n" +
-                             *spacerLeft + "s: Move backward        p: Pick up item\n" +
-                             *spacerLeft + "a: Move left            r: Drop item\n" +
+                             *spacerLeft + "w: Move forward         l:  Inspect environment\n" +
+                             *spacerLeft + "s: Move backward        p:  Pick up item\n" +
+                             *spacerLeft + "a: Move left            r:  Drop item\n" +
                              *spacerLeft + "d: Move right           sg: SaveGame\n" +
                              *spacerLeft + "f: Fast-Travel          sp: Set Savepoint\n" +
-                             *spacerLeft + "c: Combine items        u: Use item";
+                             *spacerLeft + "c: Combine items        u:  Use item";
 
     emit issueConsoleOutput(menu);
 }

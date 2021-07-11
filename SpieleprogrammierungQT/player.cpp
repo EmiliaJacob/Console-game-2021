@@ -314,11 +314,18 @@ QString Player::ListAvailableItemsOnField()
    }
    else
    {
-       QString answer;
+       QString answer = "Found following items:\n";
+       QString* spacerLeft = new QString(5, ' ');
+
        for(int i = 0; i<Player::CurrentField->Items.length(); i++)
        {
-           answer.append("Found Item: " + Player::CurrentField->Items[i].Name + "\n");
+           if(i == Player::CurrentField->Items.length() - 1)
+               answer.append(*spacerLeft + "• " + Player::CurrentField->Items[i].Name);
+           else
+               answer.append(*spacerLeft + "• " + Player::CurrentField->Items[i].Name + "\n");
        }
+
+       delete spacerLeft;
        emit issueConsoleOutput(answer);
        return answer;
    }
