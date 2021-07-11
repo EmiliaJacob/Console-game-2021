@@ -28,10 +28,10 @@ MainWindow::MainWindow(QWidget *parent)
 
 
     QFont textFont;
-    textFont.setFamily("monospace");
+    textFont.setFamily("monospace[Consolas]");
     textFont.setFixedPitch(true);
     ui->textBrowser->setFont(textFont);
-
+    ui->textBrowser->setAcceptRichText(true);
     ui->lineEdit->setDisabled(true);
 }
 
@@ -41,15 +41,21 @@ MainWindow::~MainWindow()
 }
 
 //Consol
-void MainWindow::on_Send_clicked(){
-    dotext();}
-void MainWindow::on_lineEdit_returnPressed(){
-dotext();}
+void MainWindow::on_Send_clicked()
+{
+    dotext();
+}
+void MainWindow::on_lineEdit_returnPressed()
+{
+    dotext();
+}
 
 void MainWindow::dotext(){
     QString command = ui ->lineEdit->text();
+
     if(!command.isEmpty()){
        ui->lineEdit->clear();
+       PrintOntoConsole("Input: " + command);
     }
 
     emit receivedCommand(command);
@@ -67,7 +73,6 @@ void MainWindow::on_tabWidget_tabBarClicked(int)
 
 void MainWindow::PrintOntoConsole(QString input)
 {
-    qDebug() << "received input for consoe: " + input;
     QString newLine = "~$ " + input + "\n";
     ui->textBrowser->append(newLine);
 }
@@ -184,7 +189,11 @@ void MainWindow::on_pushButton_clicked()
     if(!mGame->LoadGame()){
         QMessageBox::information(0,"Error", " file not fonde");
     }
-    PrintSystemBoot();
+
+    //PrintSystemBoot();
+    // TODO: Remove again
+    ui->lineEdit->setDisabled(false);
+    ui->lineEdit->setFocus();
 }
 
 void MainWindow::PrintSystemBoot()

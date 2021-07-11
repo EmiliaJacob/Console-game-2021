@@ -327,25 +327,29 @@ QString Player::ListAvailableItemsOnField()
 void Player::ListInventory()
 {
     if(mInventory.CollectedItems.size() == 0) {
-        qDebug() << "1";
         emit issueConsoleOutput("Inventory is empty\n");
     }
     else {
-        qDebug() << "2";
         QString answer = "Inventory:\n";
+        QString* spacerLeft = new QString(5, ' ');
+
         for(int i=0; i<mInventory.CollectedItems.size(); i++) {
-            qDebug() << "3";
             Item item = mInventory.CollectedItems[i];
-            answer.append("Collected Item: " + item.Name + "\n");
+
+            if(i == mInventory.CollectedItems.size() - 1)
+                answer.append(*spacerLeft + "• " + item.Name);
+            else
+                answer.append(*spacerLeft + "• " + item.Name + "\n");
         }
-        qDebug() << "4";
+
+        delete spacerLeft;
         emit issueConsoleOutput(answer);
     }
 }
 
 void Player::GetFieldDescription()
 {
-    emit issueConsoleOutput("Field Description: " + Player::CurrentField->Description);
+    emit issueConsoleOutput("Field Description: \n" + Player::CurrentField->Description);
 }
 
 void Player::SetSavePoint()
@@ -367,16 +371,20 @@ void Player::SetSavePoint()
 void Player::ListAvailableSavePoints()
 {
     if(unlockedSavePoints.length() == 0) {
-        qDebug() << "No savepoints unlocked";
         emit issueConsoleOutput("You have no checkpoints unlocked yet");
     }
     else {
-        qDebug() << "Found savepoints";
+        QString answer = "Unlocked savepoints: \n";
+        QString* spacerLeft = new QString(5, ' ');
 
-        QString answer;
         for(int i=0; i<unlockedSavePoints.length(); i++) {
-            answer.append("Checkpoint: " + unlockedSavePoints[i].Name + "\n");
+            if(i == unlockedSavePoints.length() - 1)
+                answer.append(*spacerLeft + "• " + unlockedSavePoints[i].Name);
+            else
+                answer.append(*spacerLeft + "• " + unlockedSavePoints[i].Name + "\n");
         }
+
+        delete  spacerLeft;
         emit issueConsoleOutput(answer);
     }
 }

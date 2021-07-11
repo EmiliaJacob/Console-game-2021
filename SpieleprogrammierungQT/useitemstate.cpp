@@ -13,6 +13,6 @@ void UseItemState::ExecuteCommand(QString command)
 
 void UseItemState::PrintMenu()
 {
-    emit issueConsoleOutput("Select the item that you want to use here:");
     emit listInventoryRequest();
+    emit issueConsoleOutput("Enter name of item:");
 }

@@ -13,6 +13,7 @@ void FastTravelState::ExecuteCommand(QString command)
 
 void FastTravelState::PrintMenu()
 {
-    emit issueConsoleOutput("Enter desired Fast-Travel destination:");
     emit listSavePointsRequest();
+    emit issueConsoleOutput("b: return into main-menu");
+    emit issueConsoleOutput("Enter the desired save-point:");
 }
