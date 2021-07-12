@@ -19,7 +19,7 @@
         {            
             "id": "2",
             "description": "A spacious room. It has some weirdly looking glowing signs on the walls. I'm not sure how to describe them.",
-            "forward": "x",
+            "forward": "b",
             "backward": "1", 
             "left":"x",
             "right":"3",
@@ -45,7 +45,7 @@
             "description": "A tiny cave. One of the walls looks quite thin.",
             "forward": "3",
             "backward": "x", 
-            "left":"x",
+            "left":"b",
             "right":"x",
             "items": [
                 {
@@ -58,7 +58,7 @@
         {            
             "id": "5",
             "description": "A room full of machines unknown to mankind. At one of the doors is a terminal. It seems like we need a passcode to procede.",
-            "forward": "x",
+            "forward": "b",
             "backward": "2", 
             "left":"8",
             "right":"6",
@@ -113,10 +113,10 @@
         {            
             "id": "10",
             "description": "A huge cave.\n   No machines are here in sight. But more of the mysterious glowing signs on the walls.\n   The walls themselves appear smoother. As if someone tried to sand them even.\n   Three doors are located here. Two of them appear locked.",
-            "forward": "x",
+            "forward": "b",
             "backward": "7", 
             "left":"11",
-            "right":"x",
+            "right":"b",
             "items": [
             ]
         },

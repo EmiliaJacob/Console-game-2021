@@ -63,78 +63,86 @@ void Player::Write(QJsonObject &json)
 }
 
 
-void Player::Move(QString direction)
+void Player::Move(QString direction) // TODO: refactor make it smaller
 {
     if(direction == "forward"){
-        if(QString::compare(CurrentField->FieldForward, "x") != 0)
-        {
-            lastFieldId = CurrentField->Id;
-            CurrentField = Game::Level_One.GetField(CurrentField->FieldForward);
-            emit issueConsoleOutput("Moved forward to field with id: " + CurrentField->Id);
-
-            Game::Level_One.ExecuteFieldEvent(CurrentField->Id);
-
-            emit moved(lastFieldId, CurrentField->Id);
-            GetFieldDescription();
+        if(CurrentField->FieldForward == "x") {
+            emit issueConsoleOutput("It is impossible to move into this direction.");
+            return;
         }
-        else
-        {
-            emit issueConsoleOutput("Can't move into that direction");
+        if(CurrentField->FieldForward == "b") {
+            emit issueConsoleOutput("This direction is blocked.\n   There might be some way to free the way.");
+            return;
         }
+
+        lastFieldId = CurrentField->Id;
+        CurrentField = Game::Level_One.GetField(CurrentField->FieldForward);
+        emit issueConsoleOutput("Moved forward to field with id: " + CurrentField->Id);
+
+        Game::Level_One.ExecuteFieldEvent(CurrentField->Id);
+
+        emit moved(lastFieldId, CurrentField->Id);
+        GetFieldDescription();
     }
 
     if(direction == "backward"){
-        if(QString::compare(CurrentField->FieldBackward, "x") != 0)
-        {
-            lastFieldId = CurrentField->Id;
-            CurrentField = Game::Level_One.GetField(CurrentField->FieldBackward);
-            emit issueConsoleOutput("Moved backward to field with id: " + CurrentField->Id);
-
-            Game::Level_One.ExecuteFieldEvent(CurrentField->Id);
-
-            emit moved(lastFieldId, CurrentField->Id);
-            GetFieldDescription();
+        if(CurrentField->FieldBackward == "x") {
+            emit issueConsoleOutput("It is impossible to move into this direction.");
+            return;
         }
-        else
-        {
-            emit issueConsoleOutput("Can't move into that direction");
+        if(CurrentField->FieldBackward == "b") {
+            emit issueConsoleOutput("This direction is blocked.\n   There might be some way to free the way.");
+            return;
         }
+
+        lastFieldId = CurrentField->Id;
+        CurrentField = Game::Level_One.GetField(CurrentField->FieldBackward);
+        emit issueConsoleOutput("Moved backward to field with id: " + CurrentField->Id);
+
+        Game::Level_One.ExecuteFieldEvent(CurrentField->Id);
+
+        emit moved(lastFieldId, CurrentField->Id);
+        GetFieldDescription();
     }
 
     if(direction == "left"){
-        if(QString::compare(CurrentField->FieldLeft, "x") != 0)
-        {
-            lastFieldId = CurrentField->Id;
-            CurrentField = Game::Level_One.GetField(CurrentField->FieldLeft);
-            emit issueConsoleOutput("Moved left to field with id: " + CurrentField->Id);
-
-            Game::Level_One.ExecuteFieldEvent(CurrentField->Id);
-
-            emit moved(lastFieldId, CurrentField->Id);
-            GetFieldDescription();
+        if(CurrentField->FieldLeft== "x") {
+            emit issueConsoleOutput("It is impossible to move into this direction.");
+            return;
         }
-        else
-        {
-            emit issueConsoleOutput("Can't move into that direction");
+        if(CurrentField->FieldLeft == "b") {
+            emit issueConsoleOutput("This direction is blocked.\n   There might be some way to free the way.");
+            return;
         }
+
+        lastFieldId = CurrentField->Id;
+        CurrentField = Game::Level_One.GetField(CurrentField->FieldLeft);
+        emit issueConsoleOutput("Moved left to field with id: " + CurrentField->Id);
+
+        Game::Level_One.ExecuteFieldEvent(CurrentField->Id);
+
+        emit moved(lastFieldId, CurrentField->Id);
+        GetFieldDescription();
     }
 
     if(direction == "right"){
-        if(QString::compare(CurrentField->FieldRight, "x") != 0)
-        {
-            lastFieldId = CurrentField->Id;
-            CurrentField = Game::Level_One.GetField(CurrentField->FieldRight);
-            emit issueConsoleOutput("Moved right to field with id: " + CurrentField->Id);
-
-            Game::Level_One.ExecuteFieldEvent(CurrentField->Id);
-
-            emit moved(lastFieldId, CurrentField->Id);
-            GetFieldDescription();
+        if(CurrentField->FieldRight == "x") {
+            emit issueConsoleOutput("It is impossible to move into this direction.");
+            return;
         }
-        else
-        {
-            emit issueConsoleOutput("Can't move into that direction");
+        if(CurrentField->FieldRight == "b") {
+            emit issueConsoleOutput("This direction is blocked.\n   There might be some way to free the way.");
+            return;
         }
+
+        lastFieldId = CurrentField->Id;
+        CurrentField = Game::Level_One.GetField(CurrentField->FieldRight);
+        emit issueConsoleOutput("Moved right to field with id: " + CurrentField->Id);
+
+        Game::Level_One.ExecuteFieldEvent(CurrentField->Id);
+
+        emit moved(lastFieldId, CurrentField->Id);
+        GetFieldDescription();
     }
 }
 
