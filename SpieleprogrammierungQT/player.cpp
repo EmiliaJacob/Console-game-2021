@@ -8,7 +8,7 @@
 
 Player::Player()
 {
-
+    lastSavePoint = "The entry of the caves";
 }
 
 
@@ -71,6 +71,9 @@ void Player::Move(QString direction)
             lastFieldId = CurrentField->Id;
             CurrentField = Game::Level_One.GetField(CurrentField->FieldForward);
             emit issueConsoleOutput("Moved forward to field with id: " + CurrentField->Id);
+
+            Game::Level_One.ExecuteFieldEvent(CurrentField->Id);
+
             emit moved(lastFieldId, CurrentField->Id);
         }
         else
@@ -85,6 +88,9 @@ void Player::Move(QString direction)
             lastFieldId = CurrentField->Id;
             CurrentField = Game::Level_One.GetField(CurrentField->FieldBackward);
             emit issueConsoleOutput("Moved backward to field with id: " + CurrentField->Id);
+
+            Game::Level_One.ExecuteFieldEvent(CurrentField->Id);
+
             emit moved(lastFieldId, CurrentField->Id);
         }
         else
@@ -99,6 +105,9 @@ void Player::Move(QString direction)
             lastFieldId = CurrentField->Id;
             CurrentField = Game::Level_One.GetField(CurrentField->FieldLeft);
             emit issueConsoleOutput("Moved left to field with id: " + CurrentField->Id);
+
+            Game::Level_One.ExecuteFieldEvent(CurrentField->Id);
+
             emit moved(lastFieldId, CurrentField->Id);
         }
         else
@@ -113,6 +122,9 @@ void Player::Move(QString direction)
             lastFieldId = CurrentField->Id;
             CurrentField = Game::Level_One.GetField(CurrentField->FieldRight);
             emit issueConsoleOutput("Moved right to field with id: " + CurrentField->Id);
+
+            Game::Level_One.ExecuteFieldEvent(CurrentField->Id);
+
             emit moved(lastFieldId, CurrentField->Id);
         }
         else
@@ -122,6 +134,12 @@ void Player::Move(QString direction)
     }
 }
 
+void Player::Dies()
+{
+    qDebug() << "YOU DED";
+    emit issueConsoleOutput("You fell victim to a deadly trap.\n   You will respawn at your last save-point");
+    this->FastTravel(lastSavePoint);
+}
 
 bool Player::HasItem(QString itemName)
 {
@@ -401,6 +419,7 @@ void Player::FastTravel(QString destination)
     for(int i=0; i<unlockedSavePoints.length(); i++) { // Player entered FieldId
         if(unlockedSavePoints[i].fieldId == destination) {
             CurrentField = Game::Level_One.GetField(unlockedSavePoints[i].fieldId);
+            lastSavePoint = unlockedSavePoints[i].Name;
             emit issueConsoleOutput("Successfully fast-traveled to field: " + unlockedSavePoints[i].Name);
             return;
         }
@@ -408,6 +427,7 @@ void Player::FastTravel(QString destination)
     for(int i=0; i<unlockedSavePoints.length(); i++) { // Player entered Name
         if(unlockedSavePoints[i].Name == destination) {
             CurrentField = Game::Level_One.GetField(unlockedSavePoints[i].fieldId);
+            lastSavePoint = unlockedSavePoints[i].Name;
             emit issueConsoleOutput("Successfully fast-traveled to field: " + unlockedSavePoints[i].Name);
         }
     }

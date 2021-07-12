@@ -47,9 +47,19 @@ Field* Level::GetField(QString fieldId)
     }
 }
 
-void Level::Combine(Item itemOne, Item itemTwo)
+void Level::ExecuteFieldEvent(QString fieldId)
 {
+    qDebug() << "EXUCTION: " + fieldId;
 
+    if(fieldId == "3") {
+        emit issueConsoleOutput("Oh no!\n   The door closed behind us.\n   We have to find an alternative path now.");
+    }
+    if(fieldId == "6") {
+        emit playerDiesRequest();
+    }
+    if(fieldId == "13") {
+        emit issueConsoleOutput("Thank you for playing our Demo.");
+    }
 }
 
 QString Level::UseItem(Field* CurrentField, QString itemName)

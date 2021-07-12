@@ -14,6 +14,8 @@ class Player : public QObject
 private:
     Inventory mInventory;
     QString lastFieldId;
+    QString lastSavePoint;
+
 public:
     QString Name;
     Field* CurrentField;
@@ -39,6 +41,7 @@ public slots:
     void ListInventory();
     void GetFieldDescription(); // TODO : rename -> you don't get anything
     void UseItem(QString itemName);
+    void Dies();
 signals:
     void issueConsoleOutput(QString output);
     void moved (QString lastFieldId, QString newFieldId);

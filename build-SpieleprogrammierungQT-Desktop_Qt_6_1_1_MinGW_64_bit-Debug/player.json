@@ -5,56 +5,13 @@
             "description": "A beautiful amulet",
             "locationDescription": "",
             "name": "Magic Amulet"
-        },
-        {
-            "description": "A delicious pear",
-            "locationDescription": "",
-            "name": "Pear"
-        },
-        {
-            "description": "A delicious pear",
-            "locationDescription": "",
-            "name": "Pear"
-        },
-        {
-            "description": "A delicious pear",
-            "locationDescription": "",
-            "name": "Pear"
-        },
-        {
-            "description": "A shining emerald. It looks like it's been part of a piece of jewelery",
-            "locationDescription": "",
-            "name": "emerald"
-        },
-        {
-            "description": "A shining emerald. It looks like it's been part of a piece of jewelery",
-            "locationDescription": "",
-            "name": "emerald"
-        },
-        {
-            "description": "idk dude",
-            "locationDescription": "Its just standing there MENACECINGLY",
-            "name": "Pogo"
-        },
-        {
-            "description": "I keep a stick like a hobo, no checking me",
-            "locationDescription": "Standing in the corner",
-            "name": "Stick"
         }
     ],
     "name": "Felix",
     "unlockedSavePoints": [
         {
             "fieldId": "1",
-            "name": "the very beginning"
-        },
-        {
-            "fieldId": "2",
-            "name": "Field two"
-        },
-        {
-            "fieldId": "1",
-            "name": "The very beginning of the adventure"
+            "name": "The entry of the caves"
         }
     ]
 }
