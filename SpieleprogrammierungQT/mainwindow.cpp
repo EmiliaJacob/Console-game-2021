@@ -51,7 +51,7 @@ void MainWindow::on_lineEdit_returnPressed()
 }
 
 void MainWindow::dotext(){
-    QString command = ui ->lineEdit->text();
+    QString command = ui ->lineEdit->text().trimmed();
 
     if(!command.isEmpty()){
        ui->lineEdit->clear();
