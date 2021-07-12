@@ -10,7 +10,7 @@ private:
 public:
     Inventory();
     void InsertOne(Item item);
-    void DeleteOne(Item item);
+    void DeleteOne(Item* item);
     bool HasItem(QString itemName);
     QList<Item> CollectedItems; // QList can be made private
 };

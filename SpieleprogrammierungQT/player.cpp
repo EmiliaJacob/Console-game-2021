@@ -469,15 +469,24 @@ void Player::CombineItems(QString items) // TODO: This is bad code
         }
     }
 
-    if((itemOne->Name == "Pogo" && itemTwo->Name == "Stick") || (itemOne->Name == "Stick" && itemTwo->Name == "Pogo")) {
-        emit issueConsoleOutput("Combined items: 'Pogo' and 'Stick' to 'PogoStick'");
-        mInventory.DeleteOne(*itemOne);
-        mInventory.DeleteOne(*itemTwo);
-        Item pogoStick;
-        pogoStick.Name = "PogoStick";
-        pogoStick.Description = "Bouncy thing used for jumping";
-        pogoStick.LocationDescription = "Laying on the floor";
-        mInventory.InsertOne(pogoStick);
+    if((itemOne->Name == "key_segment_A" && itemTwo->Name == "key_segment_B") || (itemOne->Name == "key_segment_B" && itemTwo->Name == "key_segment_A")) {
+        emit issueConsoleOutput("Combined items: 'key_segment_B' and 'key_segment_A' to 'key_B'");
+
+        mInventory.DeleteOne(itemOne);
+
+        for(int i=0; i<mInventory.CollectedItems.length(); i++) { // Had to reassing the pointer here, because the array is changed in the first 'DeleteOne()'
+            if(mInventory.CollectedItems[i].Name == splittedInput[1]) {
+                itemTwo = &mInventory.CollectedItems[i];
+            }
+        }
+
+        mInventory.DeleteOne(itemTwo);
+
+        Item key;
+        key.Name = "key_B";
+        key.Description = "The key used to be sawed in half. I'm glad that I could reassemble it.";
+        key.LocationDescription = "Laying on the floor";
+        mInventory.InsertOne(key);
     }
     else {
         emit issueConsoleOutput("I can't combine these two items");
@@ -501,9 +510,17 @@ void Player::UseItem(QString itemName)
         return;
     }
 
-    if(itemName == "key") {
+    if(itemName == "key_A") {
         if(CurrentField->Id == "2") {
             CurrentField->FieldForward = "5";
+            emit issueConsoleOutput("You have sucessfully unlocked the way into direction: forward");
+            return;
+        }
+    }
+
+    if(itemName == "key_B") {
+        if(CurrentField->Id == "10") {
+            CurrentField->FieldForward = "13";
             emit issueConsoleOutput("You have sucessfully unlocked the way into direction: forward");
             return;
         }
@@ -513,6 +530,14 @@ void Player::UseItem(QString itemName)
         if(CurrentField->Id == "5") {
             CurrentField->FieldForward = "7";
             emit issueConsoleOutput("You have sucessfully unlocked the way into direction: forward");
+            return;
+        }
+    }
+
+    if(itemName == "passcode_B") {
+        if(CurrentField->Id == "10") {
+            CurrentField->FieldRight = "14";
+            emit issueConsoleOutput("You have sucessfully unlocked the way into direction: right");
             return;
         }
     }

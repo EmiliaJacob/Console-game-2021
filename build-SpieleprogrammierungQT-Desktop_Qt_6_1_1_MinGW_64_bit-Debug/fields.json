@@ -50,7 +50,7 @@
             "items": [
                 {
                     "description": "A golden key",
-                    "name": "key",
+                    "name": "key_A",
                     "locationDescription": "buried under dirt."
                 }
             ]
@@ -88,8 +88,8 @@
         {            
             "id": "9",
             "description": "A workshop. Here are loads of loose machine parts and rusty tools.",
-            "forward": "8",
-            "backward": "x", 
+            "forward": "x",
+            "backward": "8", 
             "left":"x",
             "right":"x",
             "items": [
@@ -103,11 +103,75 @@
         {            
             "id": "7",
             "description": "Reached fist checkpoint",
-            "forward": "x",
-            "backward": "x", 
+            "forward": "10",
+            "backward": "5", 
             "left":"x",
             "right":"x",
             "items": [
+            ]
+        },
+        {            
+            "id": "10",
+            "description": "A huge cave.\n   No machines are here in sight. But more of the mysterious glowing signs on the walls.\n   The walls themselves appear smoother. As if someone tried to sand them even.\n   Three doors are located here. Two of them appear locked.",
+            "forward": "x",
+            "backward": "7", 
+            "left":"11",
+            "right":"x",
+            "items": [
+            ]
+        },
+        {            
+            "id": "11",
+            "description": "A relatively small room.\n   A bunch of wooden boxes lay on the floor",
+            "forward": "12",
+            "backward": "x", 
+            "left":"x",
+            "right":"10",
+            "items": [
+                {
+                    "description": "I looks like a key has been cut into halfs.\n   The other half is nowhere in sight.",
+                    "name": "key_segment_A",
+                    "locationDescription": "buried under layers of dust."
+                }
+            ]
+        },
+        {            
+            "id": "12",
+            "description": "A dead end.\n   Looks like is has been a storage room of sorts.\n   Strange looking tools lean on the wall",
+            "forward": "x",
+            "backward": "11", 
+            "left":"x",
+            "right":"x",
+            "items": [
+                {
+                    "description": "A piece of paper with numbers written on it.\n   Maybe this will open one of the two locked doors.",
+                    "name": "passcode_B",
+                    "locationDescription": "laying on a work-bench."
+                }
+            ]
+        },
+        {            
+            "id": "14",
+            "description": "A short corridor.\n  More glowing signs are painted onto the walls",
+            "forward": "x",
+            "backward": "11", 
+            "left":"10",
+            "right":"15",
+            "items": []
+        },
+        {            
+            "id": "15",
+            "description": "Another dead end.\n   There are tiny holes drilled into the walls.\n   Maybe there is something hidden inside one of them.",
+            "forward": "x",
+            "backward": "11", 
+            "left":"10",
+            "right":"15",
+            "items": [
+                {
+                    "description": "Finally! The second half of the key.\n   Looks I can easily assemble them to a functioning key again.",
+                    "name": "key_segment_B",
+                    "locationDescription": "laying there."
+                }
             ]
         }
     ]

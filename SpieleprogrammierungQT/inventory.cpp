@@ -9,9 +9,9 @@ void Inventory::InsertOne(Item item) {
     CollectedItems.append(item);
 }
 
-void Inventory::DeleteOne(Item item) {
+void Inventory::DeleteOne(Item* item) {
    for(int i=0; i<CollectedItems.length(); i++) {
-       if(CollectedItems[i].Name == item.Name) {
+       if(CollectedItems[i].Name == item->Name) {
            CollectedItems.removeAt(i);
            break;
        }
