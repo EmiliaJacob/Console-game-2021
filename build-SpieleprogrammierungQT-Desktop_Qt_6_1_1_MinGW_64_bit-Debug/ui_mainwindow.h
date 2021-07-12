@@ -1324,7 +1324,6 @@ public:
         pushButton_1->setMinimumSize(QSize(60, 60));
         pushButton_1->setMaximumSize(QSize(60, 60));
         pushButton_1->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/13os.png);\n"
-"background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
 "border-color: rgb(255, 255, 255);\n"
 ""));

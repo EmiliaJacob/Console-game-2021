@@ -2651,7 +2651,6 @@ border-color: rgb(255, 255, 255);
             </property>
             <property name="styleSheet">
              <string notr="true">background-image:url(./sorcebilder/13os.png);
-background-image:url(./sorcebilder/0.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
