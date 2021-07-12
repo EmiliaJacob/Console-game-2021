@@ -75,6 +75,7 @@ void Player::Move(QString direction)
             Game::Level_One.ExecuteFieldEvent(CurrentField->Id);
 
             emit moved(lastFieldId, CurrentField->Id);
+            GetFieldDescription();
         }
         else
         {
@@ -92,6 +93,7 @@ void Player::Move(QString direction)
             Game::Level_One.ExecuteFieldEvent(CurrentField->Id);
 
             emit moved(lastFieldId, CurrentField->Id);
+            GetFieldDescription();
         }
         else
         {
@@ -109,6 +111,7 @@ void Player::Move(QString direction)
             Game::Level_One.ExecuteFieldEvent(CurrentField->Id);
 
             emit moved(lastFieldId, CurrentField->Id);
+            GetFieldDescription();
         }
         else
         {
@@ -126,6 +129,7 @@ void Player::Move(QString direction)
             Game::Level_One.ExecuteFieldEvent(CurrentField->Id);
 
             emit moved(lastFieldId, CurrentField->Id);
+            GetFieldDescription();
         }
         else
         {
