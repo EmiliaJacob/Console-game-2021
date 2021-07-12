@@ -12,6 +12,7 @@ release/main.o
 release/mainwindow.o
 release/pickupstate.o
 release/player.o
+release/savegamestate.o
 release/savepoint.o
 release/states.o
 release/testhelper.o
@@ -26,4 +27,5 @@ release/moc_level.o
 release/moc_mainwindow.o
 release/moc_pickupstate.o
 release/moc_player.o
+release/moc_savegamestate.o
 release/moc_useitemstate.o

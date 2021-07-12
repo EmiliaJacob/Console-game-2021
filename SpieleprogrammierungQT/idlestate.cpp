@@ -31,7 +31,7 @@ void IdleState::ExecuteCommand(QString command)
         emit changeStateRequest("dropState");
     }
     else if(command == "sg") {
-        emit saveGameRequest();
+        emit changeStateRequest("saveGameState");
     }
     else if(command == "sp") {
         emit setSavePointRequest();

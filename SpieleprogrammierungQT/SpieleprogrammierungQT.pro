@@ -23,6 +23,7 @@ SOURCES += \
     mainwindow.cpp \
     pickupstate.cpp \
     player.cpp \
+    savegamestate.cpp \
     savepoint.cpp \
     states.cpp \
     testhelper.cpp \
@@ -43,6 +44,7 @@ HEADERS += \
     mainwindow.h \
     pickupstate.h \
     player.h \
+    savegamestate.h \
     savepoint.h \
     states.h \
     testhelper.h \

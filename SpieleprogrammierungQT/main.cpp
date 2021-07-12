@@ -60,6 +60,10 @@ int main(int argc, char *argv[])
     QObject::connect(&States::useItemState, &UseItemState::useItemRequest, &game.mPlayer, &Player::UseItem);
     QObject::connect(&States::useItemState, &UseItemState::listInventoryRequest, &game.mPlayer, &Player::ListInventory);
 
+    QObject::connect(&States::saveGameState, &SaveGameState::issueConsoleOutput, &mainWindow, &MainWindow::PrintOntoConsole);
+    QObject::connect(&States::saveGameState, &SaveGameState::changeStateRequest, &game, &Game::ChangeState);
+    QObject::connect(&States::saveGameState, &SaveGameState::saveGameRequest, &game, &Game::SaveGame);
+
     mainWindow.SetGame(&game);
     mainWindow.show();
 

@@ -7,6 +7,7 @@
 #include "fasttravelstate.h"
 #include "combineitemsstate.h"
 #include "useitemstate.h"
+#include "savegamestate.h"
 
 class States
 {
@@ -18,6 +19,7 @@ public:
     inline static FastTravelState fastTravelState;
     inline static CombineItemsState combineItemsState;
     inline static UseItemState useItemState;
+    inline static SaveGameState saveGameState;
 };
 
 #endif // STATES_H

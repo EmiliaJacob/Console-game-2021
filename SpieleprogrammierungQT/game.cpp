@@ -6,6 +6,7 @@
 #include <QJsonDocument>
 #include <QDebug>
 #include <QString>
+#include <QDateTimeEdit>
 
 Game::Game()
 {
@@ -68,12 +69,41 @@ void Game::ChangeState(QString stateName)
     else if(stateName == "useItemState") {
         currentState = &States::useItemState;
     }
+    else if(stateName == "saveGameState") {
+        currentState = &States::saveGameState;
+    }
 }
 
 
 void Game::SaveGame()
 {
-    QFile playerFile(QStringLiteral("player.json"));
+    //
+    QDateTime dateTime = QDateTime::fromSecsSinceEpoch(QDateTime::currentSecsSinceEpoch());
+    qDebug() << dateTime;
+
+    QFile savepointsFile(QStringLiteral("savepoints.json"));
+
+    if(!savepointsFile.open(QIODevice::ReadWrite)) {
+        qDebug() << "Couldn't open savepoints file";
+    }
+    else {
+        QByteArray savepointsData = savepointsFile.readAll();
+        QJsonDocument savepointsDoc(QJsonDocument::fromJson(savepointsData));
+        QJsonObject savepointsObject = savepointsDoc.object();
+        QJsonArray savepointsArray = savepointsObject["savepoints"].toArray();
+        savepointsFile.resize(0);
+
+        QJsonObject newSavepoint;
+        newSavepoint["dateTime"] = dateTime.toString();
+
+        savepointsArray.append(newSavepoint);
+        savepointsObject["savepoints"] = savepointsArray;
+
+        savepointsFile.write(QJsonDocument(savepointsObject).toJson());
+    }
+    //
+
+    QFile playerFile(QStringLiteral("playerx.json"));
 
     if(!playerFile.open(QIODevice::WriteOnly))
     {

@@ -12,6 +12,7 @@ debug/main.o
 debug/mainwindow.o
 debug/pickupstate.o
 debug/player.o
+debug/savegamestate.o
 debug/savepoint.o
 debug/states.o
 debug/testhelper.o
@@ -26,4 +27,5 @@ debug/moc_level.o
 debug/moc_mainwindow.o
 debug/moc_pickupstate.o
 debug/moc_player.o
+debug/moc_savegamestate.o
 debug/moc_useitemstate.o
