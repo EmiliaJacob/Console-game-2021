@@ -14,6 +14,8 @@ class Player : public QObject
 private:
     Inventory mInventory;
     QString lastFieldId;
+    QString lastSavePoint;
+
 public:
     QString Name;
     Field* CurrentField;
@@ -21,11 +23,11 @@ public:
     Player();
     void Read(const QJsonObject &json);
     void Write(QJsonObject &json);
-    QString SetSavePoint();
     bool HasItem(QString itemName);
 public slots:
-    //QString FastTravel(QString destination);
-    QString ListAvailableSavePoints();
+    void SetSavePoint();
+    void FastTravel(QString destination);
+    void ListAvailableSavePoints();
     void Move(QString direction);
     //QString PickUpItems(QString itemType, int numberOfItems);
     QString PickUpItemOfType(QString itemType);
@@ -35,8 +37,11 @@ public slots:
     QString DropMultipleItemsOfType(QString itemType, int numberOfItems);
     QString DropAllItemsOfType(QString itemType);
     QString ListAvailableItemsOnField();
+    void CombineItems(QString items);
     void ListInventory();
     void GetFieldDescription(); // TODO : rename -> you don't get anything
+    void UseItem(QString itemName);
+    void Die();
 signals:
     void issueConsoleOutput(QString output);
     void moved (QString lastFieldId, QString newFieldId);

@@ -9,7 +9,9 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    combineitemsstate.cpp \
     dropstate.cpp \
+    fasttravelstate.cpp \
     field.cpp \
     game.cpp \
     idlestate.cpp \
@@ -23,10 +25,13 @@ SOURCES += \
     player.cpp \
     savepoint.cpp \
     states.cpp \
-    testhelper.cpp
+    testhelper.cpp \
+    useitemstate.cpp
 
 HEADERS += \
+    combineitemsstate.h \
     dropstate.h \
+    fasttravelstate.h \
     field.h \
     game.h \
     idlestate.h \
@@ -40,7 +45,8 @@ HEADERS += \
     player.h \
     savepoint.h \
     states.h \
-    testhelper.h
+    testhelper.h \
+    useitemstate.h
 
 FORMS += \
     mainwindow.ui

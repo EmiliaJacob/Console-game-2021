@@ -8,8 +8,9 @@
 
 Player::Player()
 {
-
+    lastSavePoint = "The entry of the caves";
 }
+
 
 void Player::Read(const QJsonObject &json)
 {
@@ -62,64 +63,105 @@ void Player::Write(QJsonObject &json)
 }
 
 
-
-void Player::Move(QString direction)
+void Player::Move(QString direction) // TODO: refactor make it smaller
 {
     if(direction == "forward"){
-        if(QString::compare(CurrentField->FieldForward, "x") != 0)
-        {
-            lastFieldId = CurrentField->Id;
-            CurrentField = Game::Level_One.GetField(CurrentField->FieldForward);
-            emit issueConsoleOutput("Moved forward to field with id: " + CurrentField->Id);
-            emit moved(lastFieldId, CurrentField->Id);
+        if(CurrentField->FieldForward == "x") {
+            emit issueConsoleOutput("It is impossible to move into this direction.");
+            return;
         }
-        else
-        {
-            emit issueConsoleOutput("Can't move into that direction");
+        if(CurrentField->FieldForward == "b") {
+            emit issueConsoleOutput("This direction is blocked.\n   There might be some way to free the way.");
+            return;
         }
+
+        lastFieldId = CurrentField->Id;
+        CurrentField = Game::Level_One.GetField(CurrentField->FieldForward);
+        emit issueConsoleOutput("Moved forward to field with id: " + CurrentField->Id);
+
+        Game::Level_One.ExecuteFieldEvent(CurrentField->Id);
+
+        emit moved(lastFieldId, CurrentField->Id);
+        GetFieldDescription();
     }
 
     if(direction == "backward"){
-        if(QString::compare(CurrentField->FieldBackward, "x") != 0)
-        {
-            lastFieldId = CurrentField->Id;
-            CurrentField = Game::Level_One.GetField(CurrentField->FieldBackward);
-            emit issueConsoleOutput("Moved forward to field with id: " + CurrentField->Id);
-            emit moved(lastFieldId, CurrentField->Id);
+        if(CurrentField->FieldBackward == "x") {
+            emit issueConsoleOutput("It is impossible to move into this direction.");
+            return;
         }
-        else
-        {
-            emit issueConsoleOutput("Can't move into that direction");
+        if(CurrentField->FieldBackward == "b") {
+            emit issueConsoleOutput("This direction is blocked.\n   There might be some way to free the way.");
+            return;
         }
+
+        lastFieldId = CurrentField->Id;
+        CurrentField = Game::Level_One.GetField(CurrentField->FieldBackward);
+        emit issueConsoleOutput("Moved backward to field with id: " + CurrentField->Id);
+
+        Game::Level_One.ExecuteFieldEvent(CurrentField->Id);
+
+        emit moved(lastFieldId, CurrentField->Id);
+        GetFieldDescription();
     }
 
     if(direction == "left"){
-        if(QString::compare(CurrentField->FieldBackward, "x") != 0)
-        {
-            lastFieldId = CurrentField->Id;
-            CurrentField = Game::Level_One.GetField(CurrentField->FieldBackward);
-            emit issueConsoleOutput("Moved forward to field with id: " + CurrentField->Id);
-            emit moved(lastFieldId, CurrentField->Id);
+        if(CurrentField->FieldLeft== "x") {
+            emit issueConsoleOutput("It is impossible to move into this direction.");
+            return;
         }
-        else
-        {
-            emit issueConsoleOutput("Can't move into that direction");
+        if(CurrentField->FieldLeft == "b") {
+            emit issueConsoleOutput("This direction is blocked.\n   There might be some way to free the way.");
+            return;
         }
+
+        lastFieldId = CurrentField->Id;
+        CurrentField = Game::Level_One.GetField(CurrentField->FieldLeft);
+        emit issueConsoleOutput("Moved left to field with id: " + CurrentField->Id);
+
+        Game::Level_One.ExecuteFieldEvent(CurrentField->Id);
+
+        emit moved(lastFieldId, CurrentField->Id);
+        GetFieldDescription();
     }
 
     if(direction == "right"){
-        if(QString::compare(CurrentField->FieldBackward, "x") != 0)
-        {
-            lastFieldId = CurrentField->Id;
-            CurrentField = Game::Level_One.GetField(CurrentField->FieldBackward);
-            emit issueConsoleOutput("Moved forward to field with id: " + CurrentField->Id);
-            emit moved(lastFieldId, CurrentField->Id);
+        if(CurrentField->FieldRight == "x") {
+            emit issueConsoleOutput("It is impossible to move into this direction.");
+            return;
         }
-        else
-        {
-            emit issueConsoleOutput("Can't move into that direction");
+        if(CurrentField->FieldRight == "b") {
+            emit issueConsoleOutput("This direction is blocked.\n   There might be some way to free the way.");
+            return;
+        }
+
+        lastFieldId = CurrentField->Id;
+        CurrentField = Game::Level_One.GetField(CurrentField->FieldRight);
+        emit issueConsoleOutput("Moved right to field with id: " + CurrentField->Id);
+
+        Game::Level_One.ExecuteFieldEvent(CurrentField->Id);
+
+        emit moved(lastFieldId, CurrentField->Id);
+        GetFieldDescription();
+    }
+}
+
+void Player::Die()
+{
+    qDebug() << "YOU DED";
+    emit issueConsoleOutput("You fell victim to a deadly trap.\n   You will respawn at your last save-point");
+    this->FastTravel(lastSavePoint);
+}
+
+bool Player::HasItem(QString itemName)
+{
+    for (int i=0; i<mInventory.CollectedItems.size(); i++) {
+        Item item = mInventory.CollectedItems[i];
+        if(item.Name == itemName) {
+            return true;
         }
     }
+    return false;
 }
 
 
@@ -214,21 +256,7 @@ QString Player::PickUpAllItemsOfType(QString itemType)
 }
 
 
-
-bool Player::HasItem(QString itemName)
-{
-    for (int i=0; i<mInventory.CollectedItems.size(); i++) {
-        Item item = mInventory.CollectedItems[i];
-        if(item.Name == itemName) {
-            return true;
-        }
-    }
-    return false;
-}
-
-
-
-QString Player::DropItemOfType(QString itemType) // Done!
+QString Player::DropItemOfType(QString itemType)
 {
     for(int i=0; i<mInventory.CollectedItems.size(); i++)
     {
@@ -245,7 +273,7 @@ QString Player::DropItemOfType(QString itemType) // Done!
     return("Item not found in inventory");
 }
 
-QString Player::DropMultipleItemsOfType(QString itemType, int numberOfItems) // Done!
+QString Player::DropMultipleItemsOfType(QString itemType, int numberOfItems)
 {
     int i = 0;
     int remainingItemsToDrop = numberOfItems;
@@ -276,7 +304,7 @@ QString Player::DropMultipleItemsOfType(QString itemType, int numberOfItems) // 
     }
 }
 
-QString Player::DropAllItemsOfType(QString itemType) // Done!
+QString Player::DropAllItemsOfType(QString itemType)
 {
     bool itemTypeAvailable = false;
     int i = 0;
@@ -308,7 +336,7 @@ QString Player::DropAllItemsOfType(QString itemType) // Done!
 }
 
 
-QString Player::ListAvailableItemsOnField() // Done!
+QString Player::ListAvailableItemsOnField()
 {
    if(Player::CurrentField->Items.length() == 0) {
        emit issueConsoleOutput("There are no items on this field");
@@ -316,11 +344,18 @@ QString Player::ListAvailableItemsOnField() // Done!
    }
    else
    {
-       QString answer;
+       QString answer = "Found following items:\n";
+       QString* spacerLeft = new QString(5, ' ');
+
        for(int i = 0; i<Player::CurrentField->Items.length(); i++)
        {
-           answer.append("Found Item: " + Player::CurrentField->Items[i].Name + "\n");
+           if(i == Player::CurrentField->Items.length() - 1)
+               answer.append(*spacerLeft + "• " + Player::CurrentField->Items[i].Name);
+           else
+               answer.append(*spacerLeft + "• " + Player::CurrentField->Items[i].Name + "\n");
        }
+
+       delete spacerLeft;
        emit issueConsoleOutput(answer);
        return answer;
    }
@@ -329,47 +364,202 @@ QString Player::ListAvailableItemsOnField() // Done!
 void Player::ListInventory()
 {
     if(mInventory.CollectedItems.size() == 0) {
-        qDebug() << "1";
         emit issueConsoleOutput("Inventory is empty\n");
     }
     else {
-        qDebug() << "2";
         QString answer = "Inventory:\n";
+        QString* spacerLeft = new QString(5, ' ');
+
         for(int i=0; i<mInventory.CollectedItems.size(); i++) {
-            qDebug() << "3";
             Item item = mInventory.CollectedItems[i];
-            answer.append("Collected Item: " + item.Name + "\n");
+
+            if(i == mInventory.CollectedItems.size() - 1)
+                answer.append(*spacerLeft + "• " + item.Name);
+            else
+                answer.append(*spacerLeft + "• " + item.Name + "\n");
         }
-        qDebug() << "4";
+
+        delete spacerLeft;
         emit issueConsoleOutput(answer);
     }
 }
 
-void Player::GetFieldDescription() // Done!
+void Player::GetFieldDescription()
 {
-    emit issueConsoleOutput("Field Description: " + Player::CurrentField->Description);
+    emit issueConsoleOutput("Field Description: \n" + Player::CurrentField->Description);
 }
 
-QString Player::SetSavePoint()
+void Player::SetSavePoint()
 {
     if(CurrentField->HasSavePoint) {
+        for(int i=0; i < unlockedSavePoints.length(); i++) {
+            if(unlockedSavePoints[i].Name == CurrentField->mSavePoint.Name) {
+                emit issueConsoleOutput("Savepoint is already set on this field");
+                return;
+            }
+        }
         unlockedSavePoints.append(CurrentField->mSavePoint);
-        return "Savepoint successfully set";
+        emit issueConsoleOutput("Savepoint successfully set");
     }
     else
-        return "The current field is not eligable to set a savepoint here";
+        emit issueConsoleOutput("The current field is not eligable to set a savepoint here");
 }
 
-QString Player::ListAvailableSavePoints()
+void Player::ListAvailableSavePoints()
 {
     if(unlockedSavePoints.length() == 0) {
-        return("You have not checkpoints unlocked");
+        emit issueConsoleOutput("You have no checkpoints unlocked yet");
     }
     else {
-        QString answer;
+        QString answer = "Unlocked savepoints: \n";
+        QString* spacerLeft = new QString(5, ' ');
+
         for(int i=0; i<unlockedSavePoints.length(); i++) {
-            answer.append("Checkpoint: " + unlockedSavePoints[i].Name);
+            if(i == unlockedSavePoints.length() - 1)
+                answer.append(*spacerLeft + "• " + unlockedSavePoints[i].Name);
+            else
+                answer.append(*spacerLeft + "• " + unlockedSavePoints[i].Name + "\n");
         }
-        return answer;
+
+        delete  spacerLeft;
+        emit issueConsoleOutput(answer);
     }
+}
+
+void Player::FastTravel(QString destination)
+{
+    for(int i=0; i<unlockedSavePoints.length(); i++) { // Player entered FieldId
+        if(unlockedSavePoints[i].fieldId == destination) {
+            CurrentField = Game::Level_One.GetField(unlockedSavePoints[i].fieldId);
+            lastSavePoint = unlockedSavePoints[i].Name;
+            emit issueConsoleOutput("Successfully fast-traveled to field: " + unlockedSavePoints[i].Name);
+            return;
+        }
+    }
+    for(int i=0; i<unlockedSavePoints.length(); i++) { // Player entered Name
+        if(unlockedSavePoints[i].Name == destination) {
+            CurrentField = Game::Level_One.GetField(unlockedSavePoints[i].fieldId);
+            lastSavePoint = unlockedSavePoints[i].Name;
+            emit issueConsoleOutput("Successfully fast-traveled to field: " + unlockedSavePoints[i].Name);
+        }
+    }
+}
+
+void Player::CombineItems(QString items) // TODO: This is bad code
+{
+    QStringList splittedInput = items.split(' ');
+
+    if(splittedInput.length() != 2) {
+        emit issueConsoleOutput("Please specify TWO items");
+        return;
+    }
+
+    Item* itemOne = nullptr;
+    Item* itemTwo = nullptr;
+
+    for(int i=0; i<mInventory.CollectedItems.length(); i++) {
+        if(mInventory.CollectedItems[i].Name == splittedInput[0]) {
+            itemOne = &mInventory.CollectedItems[i];
+        }
+        if(mInventory.CollectedItems[i].Name == splittedInput[1]) {
+            itemTwo = &mInventory.CollectedItems[i];
+        }
+    }
+
+    if(itemOne == nullptr || itemTwo == nullptr) {
+        if(itemOne == nullptr  && itemTwo == nullptr ) {
+            emit issueConsoleOutput("I can't find: " + splittedInput[0] + " and " + splittedInput[1] + " in the Inventory");
+            return;
+        }
+        if(itemOne == nullptr) {
+            emit issueConsoleOutput("I can't find: " + splittedInput[0] + " in the Inventory");
+            return;
+        }
+        if(itemTwo == nullptr) {
+            emit issueConsoleOutput("I can't find: " + splittedInput[1] + " in the Inventory");
+            return;
+        }
+    }
+
+    if((itemOne->Name == "key_segment_A" && itemTwo->Name == "key_segment_B") || (itemOne->Name == "key_segment_B" && itemTwo->Name == "key_segment_A")) {
+        emit issueConsoleOutput("Combined items: 'key_segment_B' and 'key_segment_A' to 'key_B'");
+
+        mInventory.DeleteOne(itemOne);
+
+        for(int i=0; i<mInventory.CollectedItems.length(); i++) { // Had to reassing the pointer here, because the array is changed in the first 'DeleteOne()'
+            if(mInventory.CollectedItems[i].Name == splittedInput[1]) {
+                itemTwo = &mInventory.CollectedItems[i];
+            }
+        }
+
+        mInventory.DeleteOne(itemTwo);
+
+        Item key;
+        key.Name = "key_B";
+        key.Description = "The key used to be sawed in half. I'm glad that I could reassemble it.";
+        key.LocationDescription = "Laying on the floor";
+        mInventory.InsertOne(key);
+    }
+    else {
+        emit issueConsoleOutput("I can't combine these two items");
+    }
+}
+
+void Player::UseItem(QString itemName)
+{
+    QStringList splittedInput = itemName.split(' ');
+    if (splittedInput.length() > 1) {
+        emit issueConsoleOutput("I can only use one item at a time");
+        return;
+    }
+    if(splittedInput.length() == 0) {
+        emit issueConsoleOutput("Please specify the name of the item you want to use");
+        return;
+    }
+
+    if(!mInventory.HasItem(itemName)) {
+        emit issueConsoleOutput("The item: " + itemName + " cannot be found in the inventory");
+        return;
+    }
+
+    if(itemName == "key_A") {
+        if(CurrentField->Id == "2") {
+            CurrentField->FieldForward = "5";
+            emit issueConsoleOutput("You have sucessfully unlocked the way into direction: forward");
+            return;
+        }
+    }
+
+    if(itemName == "key_B") {
+        if(CurrentField->Id == "10") {
+            CurrentField->FieldForward = "13";
+            emit issueConsoleOutput("You have sucessfully unlocked the way into direction: forward");
+            return;
+        }
+    }
+
+    if(itemName == "passcode_A") {
+        if(CurrentField->Id == "5") {
+            CurrentField->FieldForward = "7";
+            emit issueConsoleOutput("You have sucessfully unlocked the way into direction: forward");
+            return;
+        }
+    }
+
+    if(itemName == "passcode_B") {
+        if(CurrentField->Id == "10") {
+            CurrentField->FieldRight = "14";
+            emit issueConsoleOutput("You have sucessfully unlocked the way into direction: right");
+            return;
+        }
+    }
+
+    if(itemName == "pickaxe") {
+        if(CurrentField->Id == "4") {
+            CurrentField->FieldLeft = "1";
+            emit issueConsoleOutput("The wall broke. You have sucessfully unlocked the way into direction: left");
+            return;
+        }
+    }
+    emit issueConsoleOutput("I'm sorry this items seems to have no effect on this field.");
 }

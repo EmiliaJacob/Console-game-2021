@@ -1,75 +1,187 @@
 {
     "fields": [
         {
-            "backward": "x",
-            "description": "This is the entrance to the caves. A single light stralen vallen behind you through denn eingant. Towards the north there is a large tunnel that looks almost like hell. To the west there is a crevice and to the east there is a small shaft.",
-            "forward": "2",
             "id": "1",
-            "items": [
-                {
-                    "description": "A rusty key",
-                    "locationDescription": "",
-                    "name": "key"
-                },
-                {
-                    "description": "A shining emerald. It looks like it's been part of a piece of jewelery",
-                    "locationDescription": "",
-                    "name": "emerald"
-                },
-                {
-                    "description": "A shining emerald. It looks like it's been part of a piece of jewelery",
-                    "locationDescription": "",
-                    "name": "emerald"
-                },
-                {
-                    "description": "A shining emerald. It looks like it's been part of a piece of jewelery",
-                    "locationDescription": "",
-                    "name": "emerald"
-                }
-            ],
-            "left": "3",
-            "right": "x"
-        },
-        {
-            "backward": "1",
-            "description": "This nothing but a plain dark tunnel",
-            "forward": "3",
-            "id": "2",
-            "items": [
-                {
-                    "description": "An extinguished torch that somebody must have left here",
-                    "locationDescription": "",
-                    "name": "torch"
-                }
-            ],
-            "left": "x",
-            "right": "x"
-        },
-        {
-            "id":"3",
-            "backward" : "2",
-            "forward" : "x",
-            "left" :"x",
-            "right":"x",
-            "description":"You stand in front of an ancient looking door. It is locked.",
-            "items":[
-                {
-                    "description":"A swipey thing that somebody must have lost. It is super dusty!",
-                    "locationDescription":"It is laying on the floor right in front of us",
-                    "name":"Swipey thing"
-                }
-            ]
-        },
-        {
-            "id":"4",
-            "backward": "3",
-            "forward":"x",
+            "description": "The entry to the caves. The beginning of your journey.",
+            "forward": "2",
+            "backward": "x", 
             "left":"x",
             "right":"x",
-            "description":"A luxurious atrium",
-            "items":[
-                
+            "savePoint":"The entry of the caves",
+            "items": [
+                {
+                    "description": "A rusty pickaxe",
+                    "name": "pickaxe",
+                    "locationDescription": "is laying on the floor."
+                }
             ]
-        } 
+        },
+        {            
+            "id": "2",
+            "description": "A spacious room. It has some weirdly looking glowing signs on the walls. I'm not sure how to describe them.",
+            "forward": "b",
+            "backward": "1", 
+            "left":"x",
+            "right":"3",
+            "items": []
+        },
+        {            
+            "id": "3",
+            "description": "A short hallway. Nothing interesting here.",
+            "forward": "x",
+            "backward": "4", 
+            "left":"x",
+            "right":"x",
+            "items": [                
+                {
+                    "description": "A rusty pickaxe",
+                    "name": "pickaxe",
+                    "locationDescription": "is laying on the floor."
+                }
+            ]
+        },
+        {            
+            "id": "4",
+            "description": "A tiny cave. One of the walls looks quite thin.",
+            "forward": "3",
+            "backward": "x", 
+            "left":"b",
+            "right":"x",
+            "items": [
+                {
+                    "description": "A golden key",
+                    "name": "key_A",
+                    "locationDescription": "buried under dirt."
+                }
+            ]
+        },
+        {            
+            "id": "5",
+            "description": "A room full of machines unknown to mankind. At one of the doors is a terminal. It seems like we need a passcode to procede.",
+            "forward": "b",
+            "backward": "2", 
+            "left":"8",
+            "right":"6",
+            "items": [
+            ]
+        },
+        {            
+            "id": "6",
+            "description": "A deadly trap!",
+            "forward": "x",
+            "backward": "x", 
+            "left":"x",
+            "right":"x",
+            "items": [
+            ]
+        },
+        {            
+            "id": "8",
+            "description": "Even more machines. I have never seen anything like this.",
+            "forward": "9",
+            "backward": "x", 
+            "left":"x",
+            "right":"5",
+            "items": [
+            ]
+        },
+        {            
+            "id": "9",
+            "description": "A workshop. Here are loads of loose machine parts and rusty tools.",
+            "forward": "x",
+            "backward": "8", 
+            "left":"x",
+            "right":"x",
+            "items": [
+                {
+                    "description": "A piece of paper with numbers written on it. Maybe this is the required passcode.",
+                    "name": "passcode_A",
+                    "locationDescription": "laying on a work-bench."
+                }
+            ]
+        },
+        {            
+            "id": "7",
+            "description": "Reached fist checkpoint",
+            "forward": "10",
+            "backward": "5", 
+            "left":"x",
+            "right":"x",
+            "items": [
+            ]
+        },
+        {            
+            "id": "10",
+            "description": "A huge cave.\n   No machines are here in sight. But more of the mysterious glowing signs on the walls.\n   The walls themselves appear smoother. As if someone tried to sand them even.\n   Three doors are located here. Two of them appear locked.",
+            "forward": "b",
+            "backward": "7", 
+            "left":"11",
+            "right":"b",
+            "items": [
+            ]
+        },
+        {            
+            "id": "11",
+            "description": "A relatively small room.\n   A bunch of wooden boxes lay on the floor",
+            "forward": "12",
+            "backward": "x", 
+            "left":"x",
+            "right":"10",
+            "items": [
+                {
+                    "description": "I looks like a key has been cut into halfs.\n   The other half is nowhere in sight.",
+                    "name": "key_segment_A",
+                    "locationDescription": "buried under layers of dust."
+                }
+            ]
+        },
+        {            
+            "id": "12",
+            "description": "A dead end.\n   Looks like is has been a storage room of sorts.\n   Strange looking tools lean on the wall",
+            "forward": "x",
+            "backward": "11", 
+            "left":"x",
+            "right":"x",
+            "items": [
+                {
+                    "description": "A piece of paper with numbers written on it.\n   Maybe this will open one of the two locked doors.",
+                    "name": "passcode_B",
+                    "locationDescription": "laying on a work-bench."
+                }
+            ]
+        },
+        {
+            "id": "13",
+            "description": "The end of the demo.",
+            "forward": "x",
+            "backward": "10", 
+            "left":"0",
+            "right":"0",
+            "items": []
+        },
+        {            
+            "id": "14",
+            "description": "A short corridor.\n  More glowing signs are painted onto the walls",
+            "forward": "x",
+            "backward": "11", 
+            "left":"10",
+            "right":"15",
+            "items": []
+        },
+        {            
+            "id": "15",
+            "description": "Another dead end.\n   There are tiny holes drilled into the walls.\n   Maybe there is something hidden inside one of them.",
+            "forward": "x",
+            "backward": "11", 
+            "left":"10",
+            "right":"15",
+            "items": [
+                {
+                    "description": "Finally! The second half of the key.\n   Looks I can easily assemble them to a functioning key again.",
+                    "name": "key_segment_B",
+                    "locationDescription": "laying there."
+                }
+            ]
+        }
     ]
 }

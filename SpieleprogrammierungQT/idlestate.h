@@ -15,6 +15,8 @@ signals:
     void moveRequest(QString direction);
     void descriptionRequest();
     void issueConsoleOutput(QString output);
+    void saveGameRequest();
+    void setSavePointRequest();
 };
 
 #endif // IDLESTATE_H

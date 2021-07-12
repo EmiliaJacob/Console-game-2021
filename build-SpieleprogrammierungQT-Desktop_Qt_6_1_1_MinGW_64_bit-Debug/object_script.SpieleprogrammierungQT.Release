@@ -1,4 +1,6 @@
+release/combineitemsstate.o
 release/dropstate.o
+release/fasttravelstate.o
 release/field.o
 release/game.o
 release/idlestate.o
@@ -13,10 +15,15 @@ release/player.o
 release/savepoint.o
 release/states.o
 release/testhelper.o
+release/useitemstate.o
+release/moc_combineitemsstate.o
 release/moc_dropstate.o
+release/moc_fasttravelstate.o
 release/moc_game.o
 release/moc_idlestate.o
 release/moc_istates.o
+release/moc_level.o
 release/moc_mainwindow.o
 release/moc_pickupstate.o
 release/moc_player.o
+release/moc_useitemstate.o

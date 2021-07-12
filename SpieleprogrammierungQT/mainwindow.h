@@ -27,6 +27,7 @@ public slots:
     void UpdateUiinventaradd(QString);
     void UpdateUiinventarsuptrakt(QString);
     void test();
+    void DeleteLastLine();
 
 private slots:
     void on_Send_clicked();
@@ -67,5 +68,6 @@ private:
     IStates* currentState;
     Ui::MainWindow *ui;
     comunicazionhendler *mComunicazionhdendler;
+    void PrintSystemBoot();
 };
 #endif // MAINWINDOW_H

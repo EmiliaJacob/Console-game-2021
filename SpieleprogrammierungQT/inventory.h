@@ -9,8 +9,10 @@ class Inventory
 private:
 public:
     Inventory();
-
-    QList<Item> CollectedItems;
+    void InsertOne(Item item);
+    void DeleteOne(Item* item);
+    bool HasItem(QString itemName);
+    QList<Item> CollectedItems; // QList can be made private
 };
 
 #endif // INVENTORY_H
