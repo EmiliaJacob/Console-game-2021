@@ -20,7 +20,9 @@ public:
 
     void WriteLine(QString newLine);
     void UpdatePositionInUi(QString oldPosition, QString newPosition);
-
+    void UpdateUiinventaradd(QString);
+    void UpdateUiinventarsuptrakt(QString);
+    void test();
 private slots:
     void on_Send_clicked();
 
@@ -48,8 +50,7 @@ private slots:
 
     void muveuser(QString);
     void discoverUimap(QString);
-    void UpdateUiinventaradd(int);
-    void UpdateUiinventarsuptrakt(int);
+
     void on_tableWidget_cellClicked(int row, int column);
 
     void on_tableWidget_2_cellPressed(int row, int column);

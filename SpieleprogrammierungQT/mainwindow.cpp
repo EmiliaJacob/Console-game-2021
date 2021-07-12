@@ -7,7 +7,8 @@
 #include <QFile>
 #include <QPushButton>
 
-int florlevel=0,maxflorlevel=1, inventory[20];
+int florlevel=0,maxflorlevel=1;
+QString inventory[20];
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -17,9 +18,8 @@ MainWindow::MainWindow(QWidget *parent)
     //comunicazionhendler = new comunicazionhendler(this);
     ui->stackedWidget->setCurrentIndex(0);
     for (int i=0;i<20 ;i++ ) {
-        inventory[i]=-1;
+        inventory[i]="n";
     }
-     inventory[0]=1;
 }
 
 MainWindow::~MainWindow()
@@ -34,11 +34,10 @@ void MainWindow::on_lineEdit_returnPressed(){
 dotext();}
 void MainWindow::dotext(){
     QString command = ui ->lineEdit->text();
-
+    test();
     if(!command.isEmpty()){
        WriteLine(command);
 
-    UpdateUiinventarsuptrakt(1);
           QString answer = mGame.InputHandler(command);
           if(answer.split(" ")[0] == "Moved")
           {
@@ -119,6 +118,14 @@ void MainWindow::discoverUimap(QString button){
 }
 
 
+//Test
+void MainWindow::test(){
+    qDebug() <<ui->tableWidget->model();
+
+    ui->tableWidget->model()->insertRow(2);
+    qDebug() <<"";
+}
+
 //inventar
 //inventar clicked
 void MainWindow::on_tableWidget_cellClicked(int row, int column)
@@ -130,11 +137,11 @@ void MainWindow::on_tableWidget_cellClicked(int row, int column)
     if(row==3) ui->textBrowser->append("A red ore \n It's rather light\n");
 }
 //add intem
-void MainWindow::UpdateUiinventaradd(int item_id){
+void MainWindow::UpdateUiinventaradd(QString item_Name){
     int i=0;
     bool exist=false;
-    while (inventory[i]!=-1&&exist==false) {
-        if(inventory[i]==item_id){
+    while (inventory[i]!="n"&&exist==false) {
+        if(inventory[i]==item_Name){
             exist=true;
 
         }else{
@@ -143,29 +150,39 @@ void MainWindow::UpdateUiinventaradd(int item_id){
     }
    //add item
     if(exist==true){
-//        ui->tabWidget->modifi cell;
+
+        ui->tableWidget->
     }
     else{
-        inventory[i]=item_id;
-       // getitemnamebyid(item_id)
-         // ui->tableWidget->model()->insertRow();
+        inventory[i]=item_Name;
+        ui->tableWidget->model()->insertRow(i);//add item_Name //TODO
     }
 }
 //tacke item
-void MainWindow::UpdateUiinventarsuptrakt(int item_id){
+void MainWindow::UpdateUiinventarsuptrakt(QString item_Name){
     int i=0;
     bool exist=false;
-    while (inventory[i]!= item_id) {
+    while (inventory[i]!= item_Name&&i<20) {
             i++;
     }
-    //if(dubel item){}else{
-    ui->tableWidget->model()->removeRow(i);
-    i++;
-    while (i<21) {
-          inventory[i-1]=inventory[i];
-    }
-    inventory[20]=-1;
-//}
+//    if(ui->tabWidget->getcell!="x1"){
+
+//        ui->tabWidget->update();
+
+//       get row
+//        anzal -1
+//        update row
+//    }
+//    else
+//    {
+//        ui->tableWidget->model()->removeRow(i);
+//        i++;
+//        while (i<20)
+//        {
+//          inventory[i-1]=inventory[i];
+//        }
+//        inventory[19]=-1;
+//    }
 }
 
 //opzionen
@@ -182,6 +199,12 @@ void MainWindow::on_pushButton_clicked()
     ui->stackedWidget->setCurrentIndex(1);
     if(!mGame.LoadGame()){
         QMessageBox::information(0,"Error", " file not fonde");
+    }
+    for(int i=1;i<41;i++){
+        if(true){//fils is descovert){//TODO
+            QString button= "pushButton_"+ QString::number(i);
+            discoverUimap(button);
+        }
     }
     ui->textBrowser->append("System reboot 100% \n all funktions rady \n");
 }
@@ -215,8 +238,6 @@ void MainWindow::on_pushButton_help_clicked()
     ui->textBrowser->append(hilfestring);
 
 }
-
-
 
 
 
