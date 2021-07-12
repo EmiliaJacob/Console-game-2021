@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
     QObject::connect(&game, &Game::issueConsoleOutput, &mainWindow, &MainWindow::PrintOntoConsole);
 
     QObject::connect(&game.Level_One, &Level::issueConsoleOutput, &mainWindow, &MainWindow::PrintOntoConsole);
-    QObject::connect(&game.Level_One, &Level::playerDiesRequest, &game.mPlayer, &Player::Dies);
+    QObject::connect(&game.Level_One, &Level::playerDiesRequest, &game.mPlayer, &Player::Die);
 
     QObject::connect(&game.mPlayer, &Player::pickedUpItems, &mainWindow, &MainWindow::UpdateUiinventaradd);
     QObject::connect(&game.mPlayer, &Player::droppedItems, &mainWindow, &MainWindow::UpdateUiinventarsuptrakt);

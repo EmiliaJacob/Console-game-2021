@@ -134,7 +134,7 @@ void Player::Move(QString direction)
     }
 }
 
-void Player::Dies()
+void Player::Die()
 {
     qDebug() << "YOU DED";
     emit issueConsoleOutput("You fell victim to a deadly trap.\n   You will respawn at your last save-point");

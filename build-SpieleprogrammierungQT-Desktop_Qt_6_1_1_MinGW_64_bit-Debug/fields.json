@@ -150,6 +150,15 @@
                 }
             ]
         },
+        {
+            "id": "13",
+            "description": "The end of the demo.",
+            "forward": "x",
+            "backward": "10", 
+            "left":"0",
+            "right":"0",
+            "items": []
+        },
         {            
             "id": "14",
             "description": "A short corridor.\n  More glowing signs are painted onto the walls",

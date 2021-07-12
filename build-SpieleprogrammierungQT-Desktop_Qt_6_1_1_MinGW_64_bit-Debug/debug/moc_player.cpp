@@ -23,7 +23,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Player_t {
     const uint offsetsAndSize[64];
-    char stringdata0[418];
+    char stringdata0[417];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(offsetof(qt_meta_stringdata_Player_t, stringdata0) + ofs), len 
@@ -60,7 +60,7 @@ QT_MOC_LITERAL(365, 5), // "items"
 QT_MOC_LITERAL(371, 13), // "ListInventory"
 QT_MOC_LITERAL(385, 19), // "GetFieldDescription"
 QT_MOC_LITERAL(405, 7), // "UseItem"
-QT_MOC_LITERAL(413, 4) // "Dies"
+QT_MOC_LITERAL(413, 3) // "Die"
 
     },
     "Player\0issueConsoleOutput\0\0output\0"
@@ -73,7 +73,7 @@ QT_MOC_LITERAL(413, 4) // "Dies"
     "DropItemOfType\0DropMultipleItemsOfType\0"
     "DropAllItemsOfType\0ListAvailableItemsOnField\0"
     "CombineItems\0items\0ListInventory\0"
-    "GetFieldDescription\0UseItem\0Dies"
+    "GetFieldDescription\0UseItem\0Die"
 };
 #undef QT_MOC_LITERAL
 
@@ -173,7 +173,7 @@ void Player::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
         case 16: _t->ListInventory(); break;
         case 17: _t->GetFieldDescription(); break;
         case 18: _t->UseItem((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 19: _t->Dies(); break;
+        case 19: _t->Die(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {

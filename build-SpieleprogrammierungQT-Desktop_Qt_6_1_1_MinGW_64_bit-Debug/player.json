@@ -1,31 +1,13 @@
 {
     "currentFieldId": "1",
     "inventory": [
-        {
-            "description": "A beautiful amulet",
-            "locationDescription": "",
-            "name": "Magic Amulet"
-        },
-        {
-            "description": "I looks like a key has been cut into halfs.\n   The other half is nowhere in sight.",
-            "name": "key_segment_A",
-            "locationDescription": "buried under layers of dust."
-        },
-        {
-            "description": "Finally! The second half of the key.\n   Looks I can easily assemble them to a functioning key again.",
-            "name": "key_segment_B",
-            "locationDescription": "laying there."
-        }
+
     ],
     "name": "Felix",
     "unlockedSavePoints": [
         {
             "fieldId": "1",
             "name": "The entry of the caves"
-        },
-        {
-            "fieldId": "7",
-            "name": "First checkpoint"
         }
     ]
 }

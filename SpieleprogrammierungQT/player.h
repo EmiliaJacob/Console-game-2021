@@ -41,7 +41,7 @@ public slots:
     void ListInventory();
     void GetFieldDescription(); // TODO : rename -> you don't get anything
     void UseItem(QString itemName);
-    void Dies();
+    void Die();
 signals:
     void issueConsoleOutput(QString output);
     void moved (QString lastFieldId, QString newFieldId);
