@@ -69,6 +69,7 @@ public:
     QWidget *Options;
     QWidget *layoutWidget4;
     QGridLayout *gridLayout;
+    QSpacerItem *verticalSpacer_2;
     QVBoxLayout *verticalLayout_3;
     QSpacerItem *verticalSpacer_7;
     QPushButton *pushButton_help;
@@ -82,7 +83,6 @@ public:
     QSpacerItem *verticalSpacer_6;
     QPushButton *pushButton_leave;
     QSpacerItem *verticalSpacer_5;
-    QSpacerItem *verticalSpacer_2;
     QWidget *Map;
     QWidget *layoutWidget5;
     QHBoxLayout *horizontalLayout_3;
@@ -352,6 +352,7 @@ public:
         QTableWidgetItem *__qtablewidgetitem5 = new QTableWidgetItem();
         tableWidget->setVerticalHeaderItem(3, __qtablewidgetitem5);
         QTableWidgetItem *__qtablewidgetitem6 = new QTableWidgetItem();
+        __qtablewidgetitem6->setFlags(Qt::ItemIsSelectable|Qt::ItemIsUserCheckable|Qt::ItemIsEnabled);
         tableWidget->setItem(0, 0, __qtablewidgetitem6);
         QTableWidgetItem *__qtablewidgetitem7 = new QTableWidgetItem();
         tableWidget->setItem(0, 1, __qtablewidgetitem7);
@@ -371,15 +372,33 @@ public:
         __qtablewidgetitem13->setFont(font6);
         tableWidget->setItem(3, 1, __qtablewidgetitem13);
         tableWidget->setObjectName(QString::fromUtf8("tableWidget"));
-        tableWidget->setGeometry(QRect(20, 50, 576, 275));
+        tableWidget->setGeometry(QRect(20, 50, 578, 276));
         QSizePolicy sizePolicy3(QSizePolicy::Fixed, QSizePolicy::Fixed);
         sizePolicy3.setHorizontalStretch(0);
         sizePolicy3.setVerticalStretch(0);
         sizePolicy3.setHeightForWidth(tableWidget->sizePolicy().hasHeightForWidth());
         tableWidget->setSizePolicy(sizePolicy3);
-        tableWidget->setMinimumSize(QSize(576, 275));
+        tableWidget->setMinimumSize(QSize(578, 276));
         tableWidget->setMaximumSize(QSize(525, 275));
-        tableWidget->setFont(font6);
+        QFont font7;
+        font7.setPointSize(12);
+        font7.setBold(false);
+        font7.setItalic(false);
+        font7.setUnderline(false);
+        font7.setStrikeOut(false);
+        font7.setKerning(true);
+        tableWidget->setFont(font7);
+        tableWidget->setTabletTracking(false);
+        tableWidget->setStyleSheet(QString::fromUtf8("border: 2px solid;\n"
+"border-color: rgb(217, 124, 44)\n"
+"\n"
+""));
+        tableWidget->setDragDropOverwriteMode(false);
+        tableWidget->setAlternatingRowColors(true);
+        tableWidget->setSelectionMode(QAbstractItemView::SingleSelection);
+        tableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
+        tableWidget->setTextElideMode(Qt::ElideMiddle);
+        tableWidget->setShowGrid(false);
         tableWidget->horizontalHeader()->setVisible(false);
         tableWidget->horizontalHeader()->setCascadingSectionResizes(false);
         tableWidget->horizontalHeader()->setDefaultSectionSize(287);
@@ -440,6 +459,10 @@ public:
         gridLayout = new QGridLayout(layoutWidget4);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         gridLayout->setContentsMargins(0, 0, 0, 0);
+        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout->addItem(verticalSpacer_2, 2, 0, 1, 1);
+
         verticalLayout_3 = new QVBoxLayout();
         verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
         verticalSpacer_7 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
@@ -498,10 +521,6 @@ public:
 
 
         gridLayout->addLayout(verticalLayout_3, 1, 0, 1, 1);
-
-        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        gridLayout->addItem(verticalSpacer_2, 0, 0, 1, 1);
 
         tabWidget->addTab(Options, QString());
         Map = new QWidget(page);
@@ -1126,6 +1145,7 @@ public:
         pushButton_11->setMinimumSize(QSize(60, 60));
         pushButton_11->setMaximumSize(QSize(60, 60));
         pushButton_11->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/11os.png);\n"
+"background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
 "border-color: rgb(255, 255, 255);\n"
 ""));
@@ -1140,6 +1160,7 @@ public:
         pushButton_35->setMinimumSize(QSize(60, 60));
         pushButton_35->setMaximumSize(QSize(60, 60));
         pushButton_35->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/11now.png);\n"
+"background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
 "border-color: rgb(255, 255, 255);\n"
 ""));
@@ -1154,6 +1175,7 @@ public:
         pushButton_7->setMinimumSize(QSize(60, 60));
         pushButton_7->setMaximumSize(QSize(60, 60));
         pushButton_7->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/13nw.png);\n"
+"background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
 "border-color: rgb(255, 255, 255);\n"
 ""));
@@ -1168,6 +1190,7 @@ public:
         pushButton_8->setMinimumSize(QSize(60, 60));
         pushButton_8->setMaximumSize(QSize(60, 60));
         pushButton_8->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/12ow.png);\n"
+"background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
 "border-color: rgb(255, 255, 255);\n"
 ""));
@@ -1182,6 +1205,7 @@ public:
         pushButton_32->setMinimumSize(QSize(60, 60));
         pushButton_32->setMaximumSize(QSize(60, 60));
         pushButton_32->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/13nosw.png);\n"
+"background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
 "border-color: rgb(255, 255, 255);\n"
 ""));
@@ -1196,8 +1220,10 @@ public:
         pushButton_18->setMinimumSize(QSize(60, 60));
         pushButton_18->setMaximumSize(QSize(60, 60));
         pushButton_18->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/12osw.png);\n"
+"background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
-"border-color: rgb(255, 255, 255);"));
+"border-color: rgb(255, 255, 255);\n"
+""));
 
         gridLayout_7->addWidget(pushButton_18, 3, 3, 1, 1);
 
@@ -1208,6 +1234,7 @@ public:
         pushButton_21->setSizePolicy(sizePolicy3);
         pushButton_21->setMaximumSize(QSize(60, 60));
         pushButton_21->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/11sw.png);\n"
+"background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
 "border-color: rgb(255, 255, 255);\n"
 ""));
@@ -1222,6 +1249,7 @@ public:
         pushButton_3->setMinimumSize(QSize(60, 60));
         pushButton_3->setMaximumSize(QSize(60, 60));
         pushButton_3->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/12nos.png);\n"
+"background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
 "border-color: rgb(255, 255, 255);\n"
 ""));
@@ -1236,6 +1264,7 @@ public:
         pushButton_36->setMinimumSize(QSize(60, 60));
         pushButton_36->setMaximumSize(QSize(60, 60));
         pushButton_36->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/13sw.png);\n"
+"background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
 "border-color: rgb(255, 255, 255);\n"
 ""));
@@ -1250,6 +1279,7 @@ public:
         pushButton_28->setMinimumSize(QSize(60, 60));
         pushButton_28->setMaximumSize(QSize(60, 60));
         pushButton_28->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/13no.png);\n"
+"background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
 "border-color: rgb(255, 255, 255);\n"
 ""));
@@ -1264,6 +1294,7 @@ public:
         pushButton_31->setMinimumSize(QSize(60, 60));
         pushButton_31->setMaximumSize(QSize(60, 60));
         pushButton_31->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/13osw.png);\n"
+"background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
 "border-color: rgb(255, 255, 255);\n"
 ""));
@@ -1278,6 +1309,7 @@ public:
         pushButton_16->setMinimumSize(QSize(60, 60));
         pushButton_16->setMaximumSize(QSize(60, 60));
         pushButton_16->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/12ow.png);\n"
+"background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
 "border-color: rgb(255, 255, 255);\n"
 ""));
@@ -1292,6 +1324,7 @@ public:
         pushButton_1->setMinimumSize(QSize(60, 60));
         pushButton_1->setMaximumSize(QSize(60, 60));
         pushButton_1->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/13os.png);\n"
+"background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
 "border-color: rgb(255, 255, 255);\n"
 ""));
@@ -1306,6 +1339,7 @@ public:
         pushButton_33->setMinimumSize(QSize(60, 60));
         pushButton_33->setMaximumSize(QSize(60, 60));
         pushButton_33->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/13now.png);\n"
+"background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
 "border-color: rgb(255, 255, 255);\n"
 ""));
@@ -1320,6 +1354,7 @@ public:
         pushButton_29->setMinimumSize(QSize(60, 60));
         pushButton_29->setMaximumSize(QSize(60, 60));
         pushButton_29->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/12sw.png);\n"
+"background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
 "border-color: rgb(255, 255, 255);\n"
 ""));
@@ -1334,6 +1369,7 @@ public:
         pushButton_34->setMinimumSize(QSize(60, 60));
         pushButton_34->setMaximumSize(QSize(60, 60));
         pushButton_34->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/12s.png);\n"
+"background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
 "border-color: rgb(255, 255, 255);\n"
 ""));
@@ -1348,6 +1384,7 @@ public:
         pushButton_13->setMinimumSize(QSize(60, 60));
         pushButton_13->setMaximumSize(QSize(60, 60));
         pushButton_13->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/11now.png);\n"
+"background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
 "border-color: rgb(255, 255, 255);\n"
 ""));
@@ -1362,6 +1399,7 @@ public:
         pushButton_12->setMinimumSize(QSize(60, 60));
         pushButton_12->setMaximumSize(QSize(60, 60));
         pushButton_12->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/01ns.png);\n"
+"background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
 "border-color: rgb(255, 255, 255);\n"
 ""));
@@ -1376,6 +1414,7 @@ public:
         pushButton_25->setMinimumSize(QSize(60, 60));
         pushButton_25->setMaximumSize(QSize(60, 60));
         pushButton_25->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/11ow.png);\n"
+"background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
 "border-color: rgb(255, 255, 255);\n"
 ""));
@@ -1390,6 +1429,7 @@ public:
         pushButton_19->setMinimumSize(QSize(60, 60));
         pushButton_19->setMaximumSize(QSize(60, 60));
         pushButton_19->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/12ns.png);\n"
+"background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
 "border-color: rgb(255, 255, 255);\n"
 ""));
@@ -1404,6 +1444,7 @@ public:
         pushButton_26->setMinimumSize(QSize(60, 60));
         pushButton_26->setMaximumSize(QSize(60, 60));
         pushButton_26->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/13os.png);\n"
+"background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
 "border-color: rgb(255, 255, 255);\n"
 ""));
@@ -1417,6 +1458,7 @@ public:
         pushButton_23->setSizePolicy(sizePolicy3);
         pushButton_23->setMaximumSize(QSize(60, 60));
         pushButton_23->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/12nsw.png);\n"
+"background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
 "border-color: rgb(255, 255, 255);\n"
 ""));
@@ -1430,6 +1472,7 @@ public:
         pushButton_24->setSizePolicy(sizePolicy3);
         pushButton_24->setMaximumSize(QSize(60, 60));
         pushButton_24->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/12no.png);\n"
+"background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
 "border-color: rgb(255, 255, 255);\n"
 ""));
@@ -1444,6 +1487,7 @@ public:
         pushButton_30->setMinimumSize(QSize(60, 60));
         pushButton_30->setMaximumSize(QSize(60, 60));
         pushButton_30->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/12now.png);\n"
+"background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
 "border-color: rgb(255, 255, 255);\n"
 ""));
@@ -1458,6 +1502,7 @@ public:
         pushButton_4->setMinimumSize(QSize(60, 60));
         pushButton_4->setMaximumSize(QSize(60, 60));
         pushButton_4->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/12nos.png);\n"
+"background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
 "border-color: rgb(255, 255, 255);\n"
 ""));
@@ -1472,6 +1517,7 @@ public:
         pushButton_2->setMinimumSize(QSize(60, 60));
         pushButton_2->setMaximumSize(QSize(60, 60));
         pushButton_2->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/13no_s.png);\n"
+"background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
 "border-color: rgb(255, 255, 255);\n"
 ""));
@@ -1486,6 +1532,7 @@ public:
         pushButton_5->setMinimumSize(QSize(60, 60));
         pushButton_5->setMaximumSize(QSize(60, 60));
         pushButton_5->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/12no.png);\n"
+"background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
 "border-color: rgb(255, 255, 255);\n"
 ""));
@@ -1500,6 +1547,7 @@ public:
         pushButton_20->setMinimumSize(QSize(60, 60));
         pushButton_20->setMaximumSize(QSize(60, 60));
         pushButton_20->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/12now.png);\n"
+"background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
 "border-color: rgb(255, 255, 255);\n"
 ""));
@@ -1514,6 +1562,7 @@ public:
         pushButton_39->setMinimumSize(QSize(60, 60));
         pushButton_39->setMaximumSize(QSize(60, 60));
         pushButton_39->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/12nsw.png);\n"
+"background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
 "border-color: rgb(255, 255, 255);\n"
 ""));
@@ -1528,6 +1577,7 @@ public:
         pushButton_37->setMinimumSize(QSize(60, 60));
         pushButton_37->setMaximumSize(QSize(60, 60));
         pushButton_37->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/13nsw.png);\n"
+"background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
 "border-color: rgb(255, 255, 255);\n"
 ""));
@@ -1542,6 +1592,7 @@ public:
         pushButton_6->setMinimumSize(QSize(60, 60));
         pushButton_6->setMaximumSize(QSize(60, 60));
         pushButton_6->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/13sw.png);\n"
+"background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
 "border-color: rgb(255, 255, 255);\n"
 ""));
@@ -1556,6 +1607,7 @@ public:
         pushButton_10->setMinimumSize(QSize(60, 60));
         pushButton_10->setMaximumSize(QSize(60, 60));
         pushButton_10->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/12sw.png);\n"
+"background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
 "border-color: rgb(255, 255, 255);\n"
 ""));
@@ -1570,6 +1622,7 @@ public:
         pushButton_15->setMinimumSize(QSize(60, 60));
         pushButton_15->setMaximumSize(QSize(60, 60));
         pushButton_15->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/11no.png);\n"
+"background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
 "border-color: rgb(255, 255, 255);\n"
 ""));
@@ -1584,6 +1637,7 @@ public:
         pushButton_38->setMinimumSize(QSize(60, 60));
         pushButton_38->setMaximumSize(QSize(60, 60));
         pushButton_38->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/13nw_s.png);\n"
+"background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
 "border-color: rgb(255, 255, 255);\n"
 ""));
@@ -1597,7 +1651,8 @@ public:
         pushButton_9->setSizePolicy(sizePolicy3);
         pushButton_9->setMinimumSize(QSize(60, 60));
         pushButton_9->setMaximumSize(QSize(60, 60));
-        pushButton_9->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/12ow.png);\n"
+        pushButton_9->setStyleSheet(QString::fromUtf8("background-image:url(../sorcebilder/12ow.png);\n"
+"background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
 "border-color: rgb(255, 255, 255);\n"
 ""));
@@ -1612,6 +1667,7 @@ public:
         pushButton_14->setMinimumSize(QSize(60, 60));
         pushButton_14->setMaximumSize(QSize(60, 60));
         pushButton_14->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/11sw.png);\n"
+"background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
 "border-color: rgb(255, 255, 255);\n"
 ""));
@@ -1625,6 +1681,7 @@ public:
         pushButton_22->setSizePolicy(sizePolicy3);
         pushButton_22->setMaximumSize(QSize(60, 60));
         pushButton_22->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/12nos.png);\n"
+"background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
 "border-color: rgb(255, 255, 255);\n"
 ""));
@@ -1639,6 +1696,7 @@ public:
         pushButton_40->setMinimumSize(QSize(60, 60));
         pushButton_40->setMaximumSize(QSize(60, 60));
         pushButton_40->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/12nw.png);\n"
+"background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
 "border-color: rgb(255, 255, 255);\n"
 ""));
@@ -1653,8 +1711,10 @@ public:
         pushButton_17->setMinimumSize(QSize(60, 60));
         pushButton_17->setMaximumSize(QSize(60, 60));
         pushButton_17->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/11.png);\n"
+"background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
-"border-color: rgb(255, 255, 255);"));
+"border-color: rgb(255, 255, 255);\n"
+""));
 
         gridLayout_7->addWidget(pushButton_17, 1, 3, 1, 1);
 
@@ -1666,6 +1726,7 @@ public:
         pushButton_27->setMinimumSize(QSize(60, 60));
         pushButton_27->setMaximumSize(QSize(60, 60));
         pushButton_27->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/13nos_w.png);\n"
+"background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
 "border-color: rgb(255, 255, 255);\n"
 ""));
@@ -1688,9 +1749,9 @@ public:
         Florlabel = new QLabel(verticalLayoutWidget);
         Florlabel->setObjectName(QString::fromUtf8("Florlabel"));
         Florlabel->setEnabled(true);
-        QFont font7;
-        font7.setPointSize(16);
-        Florlabel->setFont(font7);
+        QFont font8;
+        font8.setPointSize(16);
+        Florlabel->setFont(font8);
         Florlabel->setLayoutDirection(Qt::RightToLeft);
 
         verticalLayout->addWidget(Florlabel);
@@ -1715,7 +1776,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 587, 708));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 587, 711));
         scrollAreaWidgetContents->setStyleSheet(QString::fromUtf8("border: 0px soild;"));
         textBrowser = new QTextBrowser(scrollAreaWidgetContents);
         textBrowser->setObjectName(QString::fromUtf8("textBrowser"));
@@ -1770,10 +1831,102 @@ public:
 
         stackedWidget->addWidget(page);
         MainWindow->setCentralWidget(centralwidget);
-        QWidget::setTabOrder(lineEdit, tabWidget);
-        QWidget::setTabOrder(tabWidget, scrollArea);
-        QWidget::setTabOrder(scrollArea, Send);
-        QWidget::setTabOrder(Send, textBrowser);
+        QWidget::setTabOrder(lineEdit, Send);
+        QWidget::setTabOrder(Send, tabWidget);
+        QWidget::setTabOrder(tabWidget, tableWidget);
+        QWidget::setTabOrder(tableWidget, tableWidget_2);
+        QWidget::setTabOrder(tableWidget_2, pushButton_help);
+        QWidget::setTabOrder(pushButton_help, pushButton_titel);
+        QWidget::setTabOrder(pushButton_titel, pushButton_save);
+        QWidget::setTabOrder(pushButton_save, pushButton_save_2);
+        QWidget::setTabOrder(pushButton_save_2, pushButton_leave);
+        QWidget::setTabOrder(pushButton_leave, textBrowser);
+        QWidget::setTabOrder(textBrowser, pushButton_1);
+        QWidget::setTabOrder(pushButton_1, pushButton_6);
+        QWidget::setTabOrder(pushButton_6, pushButton_11);
+        QWidget::setTabOrder(pushButton_11, pushButton_16);
+        QWidget::setTabOrder(pushButton_16, pushButton_21);
+        QWidget::setTabOrder(pushButton_21, pushButton_26);
+        QWidget::setTabOrder(pushButton_26, pushButton_31);
+        QWidget::setTabOrder(pushButton_31, pushButton_36);
+        QWidget::setTabOrder(pushButton_36, pushButton_2);
+        QWidget::setTabOrder(pushButton_2, pushButton_7);
+        QWidget::setTabOrder(pushButton_7, pushButton_12);
+        QWidget::setTabOrder(pushButton_12, pushButton_17);
+        QWidget::setTabOrder(pushButton_17, pushButton_22);
+        QWidget::setTabOrder(pushButton_22, pushButton_27);
+        QWidget::setTabOrder(pushButton_27, pushButton_32);
+        QWidget::setTabOrder(pushButton_32, pushButton_37);
+        QWidget::setTabOrder(pushButton_37, pushButton_3);
+        QWidget::setTabOrder(pushButton_3, pushButton_8);
+        QWidget::setTabOrder(pushButton_8, pushButton_13);
+        QWidget::setTabOrder(pushButton_13, pushButton_18);
+        QWidget::setTabOrder(pushButton_18, pushButton_23);
+        QWidget::setTabOrder(pushButton_23, pushButton_28);
+        QWidget::setTabOrder(pushButton_28, pushButton_38);
+        QWidget::setTabOrder(pushButton_38, pushButton_33);
+        QWidget::setTabOrder(pushButton_33, pushButton_4);
+        QWidget::setTabOrder(pushButton_4, pushButton_9);
+        QWidget::setTabOrder(pushButton_9, pushButton_14);
+        QWidget::setTabOrder(pushButton_14, pushButton_19);
+        QWidget::setTabOrder(pushButton_19, pushButton_24);
+        QWidget::setTabOrder(pushButton_24, pushButton_29);
+        QWidget::setTabOrder(pushButton_29, pushButton_34);
+        QWidget::setTabOrder(pushButton_34, pushButton_39);
+        QWidget::setTabOrder(pushButton_39, pushButton_5);
+        QWidget::setTabOrder(pushButton_5, pushButton_15);
+        QWidget::setTabOrder(pushButton_15, pushButton_10);
+        QWidget::setTabOrder(pushButton_10, pushButton_20);
+        QWidget::setTabOrder(pushButton_20, pushButton_25);
+        QWidget::setTabOrder(pushButton_25, pushButton_30);
+        QWidget::setTabOrder(pushButton_30, pushButton_35);
+        QWidget::setTabOrder(pushButton_35, pushButton_40);
+        QWidget::setTabOrder(pushButton_40, upbutton);
+        QWidget::setTabOrder(upbutton, downbutton);
+        QWidget::setTabOrder(downbutton, pushButton_1_1);
+        QWidget::setTabOrder(pushButton_1_1, pushButton_1_6);
+        QWidget::setTabOrder(pushButton_1_6, pushButton_1_11);
+        QWidget::setTabOrder(pushButton_1_11, pushButton_1_16);
+        QWidget::setTabOrder(pushButton_1_16, pushButton_1_21);
+        QWidget::setTabOrder(pushButton_1_21, pushButton_1_26);
+        QWidget::setTabOrder(pushButton_1_26, pushButton_1_31);
+        QWidget::setTabOrder(pushButton_1_31, pushButton_1_36);
+        QWidget::setTabOrder(pushButton_1_36, pushButton_1_2);
+        QWidget::setTabOrder(pushButton_1_2, pushButton_1_7);
+        QWidget::setTabOrder(pushButton_1_7, pushButton_1_12);
+        QWidget::setTabOrder(pushButton_1_12, pushButton_1_17);
+        QWidget::setTabOrder(pushButton_1_17, pushButton_1_22);
+        QWidget::setTabOrder(pushButton_1_22, pushButton_1_27);
+        QWidget::setTabOrder(pushButton_1_27, pushButton_1_32);
+        QWidget::setTabOrder(pushButton_1_32, pushButton_1_37);
+        QWidget::setTabOrder(pushButton_1_37, pushButton_1_3);
+        QWidget::setTabOrder(pushButton_1_3, pushButton_1_8);
+        QWidget::setTabOrder(pushButton_1_8, pushButton_1_13);
+        QWidget::setTabOrder(pushButton_1_13, pushButton_1_18);
+        QWidget::setTabOrder(pushButton_1_18, pushButton_1_23);
+        QWidget::setTabOrder(pushButton_1_23, pushButton_1_28);
+        QWidget::setTabOrder(pushButton_1_28, pushButton_1_33);
+        QWidget::setTabOrder(pushButton_1_33, pushButton_1_38);
+        QWidget::setTabOrder(pushButton_1_38, pushButton_1_4);
+        QWidget::setTabOrder(pushButton_1_4, pushButton_1_9);
+        QWidget::setTabOrder(pushButton_1_9, pushButton_1_14);
+        QWidget::setTabOrder(pushButton_1_14, pushButton_1_19);
+        QWidget::setTabOrder(pushButton_1_19, pushButton_1_24);
+        QWidget::setTabOrder(pushButton_1_24, pushButton_1_29);
+        QWidget::setTabOrder(pushButton_1_29, pushButton_1_34);
+        QWidget::setTabOrder(pushButton_1_34, pushButton_1_39);
+        QWidget::setTabOrder(pushButton_1_39, pushButton_1_5);
+        QWidget::setTabOrder(pushButton_1_5, pushButton_1_10);
+        QWidget::setTabOrder(pushButton_1_10, pushButton_1_15);
+        QWidget::setTabOrder(pushButton_1_15, pushButton_1_20);
+        QWidget::setTabOrder(pushButton_1_20, pushButton_1_25);
+        QWidget::setTabOrder(pushButton_1_25, pushButton_1_30);
+        QWidget::setTabOrder(pushButton_1_30, pushButton_1_35);
+        QWidget::setTabOrder(pushButton_1_35, pushButton_1_40);
+        QWidget::setTabOrder(pushButton_1_40, pushButton);
+        QWidget::setTabOrder(pushButton, pushButton_newgame);
+        QWidget::setTabOrder(pushButton_newgame, textBrowser_2);
+        QWidget::setTabOrder(textBrowser_2, scrollArea);
 
         retranslateUi(MainWindow);
 
@@ -1945,10 +2098,10 @@ public:
         textBrowser->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">System Lodet 100%</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#7fff00;\">Welcom User</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#7fff00;\">vor help tipe help or ?</span></p></body></html>", nullptr));
+"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:7.8pt;\">System Lodet 100%</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:7.8pt; color:#7fff00;\">Welcom User</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:7.8pt; color:#7fff00;\">vor help tipe help or ?</span></p></body></html>", nullptr));
         label_5->setText(QString());
         userLabel->setText(QCoreApplication::translate("MainWindow", "~$", nullptr));
         lineEdit->setText(QString());

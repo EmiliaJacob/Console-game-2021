@@ -5,21 +5,27 @@
 #include <comunicazionhendler.h>
 #include <QTextStream>
 #include <QFile>
+#include <QFont>
 #include <QPushButton>
 
 int florlevel=0,maxflorlevel=1;
 QString inventory[20];
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
     //ui->tabWidget->setTabIcon(1, const QIcon & icon);
-    //comunicazionhendler = new comunicazionhendler(this);
     ui->stackedWidget->setCurrentIndex(0);
+
     for (int i=0;i<20 ;i++ ) {
         inventory[i]="n";
     }
+    QFont textFont;
+    textFont.setFamily("monospace");
+    textFont.setFixedPitch(true);
+    ui->textBrowser->setFont(textFont);
 }
 
 MainWindow::~MainWindow()
@@ -32,13 +38,14 @@ void MainWindow::on_Send_clicked(){
     dotext();}
 void MainWindow::on_lineEdit_returnPressed(){
 dotext();}
+
 void MainWindow::dotext(){
     QString command = ui ->lineEdit->text();
     test();
     if(!command.isEmpty()){
-       WriteLine(command);
+       PrintOntoConsole(command);
 
-          QString answer = mGame.InputHandler(command);
+          QString answer = mGame->InputHandler(command);
           if(answer.split(" ")[0] == "Moved")
           {
             //  UpdatePositionInUi(oldPosition, answer.split(" ")[4]);
@@ -51,9 +58,10 @@ void MainWindow::dotext(){
           {
           //    UpdateUiinventarsuptrakt();
           }
-       WriteLine(answer);
+       PrintOntoConsole(answer);
        ui->lineEdit->clear();
     }
+    emit receivedCommand(command);
 }
 
 void MainWindow::on_lineEdit_upPressed()
@@ -66,8 +74,9 @@ void MainWindow::on_tabWidget_tabBarClicked(int)
 
 }
 
-void MainWindow::WriteLine(QString input)
+void MainWindow::PrintOntoConsole(QString input)
 {
+    qDebug() << "received input for consoe: " + input;
     QString newLine = "~$ " + input + "\n";
     ui->textBrowser->append(newLine);
 }
@@ -151,7 +160,7 @@ void MainWindow::UpdateUiinventaradd(QString item_Name){
    //add item
     if(exist==true){
 
-        ui->tableWidget->
+       // ui->tableWidget->
     }
     else{
         inventory[i]=item_Name;
@@ -197,7 +206,7 @@ void MainWindow::on_pushButton_clicked()
 {
     ui->textBrowser->clear();
     ui->stackedWidget->setCurrentIndex(1);
-    if(!mGame.LoadGame()){
+    if(!mGame->LoadGame()){
         QMessageBox::information(0,"Error", " file not fonde");
     }
     for(int i=1;i<41;i++){
@@ -218,7 +227,7 @@ void MainWindow::on_pushButton_titel_clicked()
 //verlasen
 void MainWindow::on_pushButton_leave_clicked()
 {
-    mGame.SaveGame();
+    mGame->SaveGame();
     close();
 }
 
@@ -239,8 +248,10 @@ void MainWindow::on_pushButton_help_clicked()
 
 }
 
-
-
+void MainWindow::SetGame(Game* game)
+{
+    mGame = game;
+}
 
 //Story mails
 void MainWindow::on_tableWidget_2_cellPressed(int row, int column)
