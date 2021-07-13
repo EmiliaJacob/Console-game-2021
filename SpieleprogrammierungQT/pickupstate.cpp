@@ -9,8 +9,11 @@ PickUpState::PickUpState()
 void PickUpState::ExecuteCommand(QString command)
 {
     if(command != "b") {
+
         QStringList splittedCommand = command.split(' ');
         if(splittedCommand.length() == 1) {
+            qDebug() << "FIVE";
+
             emit pickUpOneRequest(splittedCommand[0]);
         }
         else if(splittedCommand.length() == 2) {

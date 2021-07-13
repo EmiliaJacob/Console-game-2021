@@ -150,7 +150,6 @@ void Player::Move(QString direction) // TODO: refactor make it smaller
 
 void Player::Die()
 {
-    qDebug() << "YOU DED";
     emit issueConsoleOutput("You fell victim to a deadly trap.\n   You will respawn at your last save-point");
     this->FastTravel(lastSavePoint);
 }
@@ -169,6 +168,7 @@ bool Player::HasItem(QString itemName)
 
 QString Player::PickUpItemOfType(QString itemType)
 {
+
     for(int i = 0; i < CurrentField->Items.size(); i++)
     {
         if(CurrentField->Items[i].Name == itemType)
@@ -177,6 +177,7 @@ QString Player::PickUpItemOfType(QString itemType)
             CurrentField->Items.removeAt(i);
             emit issueConsoleOutput("Picked up " + itemType);
             emit pickedUpItems(itemType, 1);
+            PrintItemDescription(itemType);
             return("Picked up " + itemType);
         }
     }
@@ -187,6 +188,8 @@ QString Player::PickUpItemOfType(QString itemType)
 QString Player::PickUpMultipleItemsOfType(QString itemType, int numberOfItems) {
     int i = 0;
     int remainingItemsToPickUp = numberOfItems;
+
+    qDebug() << "THREE";
 
     while (i != CurrentField->Items.size())
     {
@@ -199,6 +202,7 @@ QString Player::PickUpMultipleItemsOfType(QString itemType, int numberOfItems) {
             if(remainingItemsToPickUp == 0) {
                 emit issueConsoleOutput("Picked up " + QString::number(numberOfItems) + " " + itemType);
                 emit pickedUpItems(itemType, numberOfItems);
+                PrintItemDescription(itemType);
                 return("Picked up " + QString::number(numberOfItems) + " " + itemType);
             }
 
@@ -217,6 +221,8 @@ QString Player::PickUpMultipleItemsOfType(QString itemType, int numberOfItems) {
             emit issueConsoleOutput("The field doesn't contain as many items as you requested. I only found: "
                     + QString::number(numberOfItems - remainingItemsToPickUp)
                     + " " + itemType + "s");
+            PrintItemDescription(itemType);
+
             return("The field doesn't contain as many items as you requested. I only found: "
                     + QString::number(numberOfItems - remainingItemsToPickUp)
                     + " " + itemType + "s");
@@ -253,6 +259,7 @@ QString Player::PickUpAllItemsOfType(QString itemType)
     else {
         emit issueConsoleOutput("Picked all available " + itemType);
         emit pickedUpItems(itemType, numberOfItemsFound);
+        PrintItemDescription(itemType);
         return("Picked up item");
     }
 }
@@ -460,7 +467,7 @@ void Player::CombineItems(QString items) // TODO: This is bad code
     Item* itemOne = nullptr;
     Item* itemTwo = nullptr;
 
-    for(int i=0; i<mInventory.CollectedItems.length(); i++) {
+    for(int i=0; i<mInventory.CollectedItems.length(); i++) { // TODO: remove for loops with function-call to 'HasItem'
         if(mInventory.CollectedItems[i].Name == splittedInput[0]) {
             itemOne = &mInventory.CollectedItems[i];
         }
@@ -566,4 +573,16 @@ void Player::UseItem(QString itemName)
         }
     }
     emit issueConsoleOutput("I'm sorry this items seems to have no effect on this field.");
+}
+
+void Player::PrintItemDescription(QString itemName)
+{
+    if(! mInventory.HasItem(itemName)) {
+        emit issueConsoleOutput("Item cannot be found in Inventory");
+        return;
+    }
+
+    QString itemDescription = mInventory.GetItem(itemName).Description;
+
+    emit issueConsoleOutput("Description: " + itemDescription);
 }

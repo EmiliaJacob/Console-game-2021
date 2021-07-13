@@ -28,3 +28,12 @@ bool Inventory::HasItem(QString itemName)
 
     return false;
 }
+
+Item Inventory::GetItem(QString itemName)
+{
+    for(int i=0; i<CollectedItems.length(); i++) {
+        if(CollectedItems[i].Name == itemName) {
+            return CollectedItems[i];
+        }
+    }
+}

@@ -12,6 +12,7 @@ public:
     void InsertOne(Item item);
     void DeleteOne(Item* item);
     bool HasItem(QString itemName);
+    Item GetItem(QString itemName);
     QList<Item> CollectedItems; // QList can be made private
 };
 
