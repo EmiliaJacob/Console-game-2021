@@ -8,6 +8,7 @@ debug/inputparser.o
 debug/inventory.o
 debug/item.o
 debug/level.o
+debug/loadgamestate.o
 debug/main.o
 debug/mainwindow.o
 debug/pickupstate.o
@@ -24,6 +25,7 @@ debug/moc_game.o
 debug/moc_idlestate.o
 debug/moc_istates.o
 debug/moc_level.o
+debug/moc_loadgamestate.o
 debug/moc_mainwindow.o
 debug/moc_pickupstate.o
 debug/moc_player.o

@@ -13,7 +13,6 @@ Q_OBJECT
 
 private:
     IStates* currentState;
-
 public:
     enum SaveFormat // TODO: By-default binary speichern
     {
@@ -25,12 +24,14 @@ public:
     Game();
     void Write(QJsonObject &json);
     void NewGame();
-    bool LoadGame();
     QString InputHandler(QString input);
 public slots:
+    bool LoadGame();
     void SaveGame();
     void HandleCommand(QString command);
     void ChangeState(QString stateName);
+    void ListSavePoints();
+
 signals:
     void issueConsoleOutput(QString output);
 };

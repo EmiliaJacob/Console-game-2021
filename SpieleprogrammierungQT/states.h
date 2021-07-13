@@ -8,6 +8,7 @@
 #include "combineitemsstate.h"
 #include "useitemstate.h"
 #include "savegamestate.h"
+#include "loadgamestate.h"
 
 class States
 {
@@ -20,6 +21,7 @@ public:
     inline static CombineItemsState combineItemsState;
     inline static UseItemState useItemState;
     inline static SaveGameState saveGameState;
+    inline static LoadGameState loadGameState;
 };
 
 #endif // STATES_H

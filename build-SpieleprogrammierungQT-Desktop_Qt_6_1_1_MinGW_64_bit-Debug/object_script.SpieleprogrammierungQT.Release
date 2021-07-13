@@ -8,6 +8,7 @@ release/inputparser.o
 release/inventory.o
 release/item.o
 release/level.o
+release/loadgamestate.o
 release/main.o
 release/mainwindow.o
 release/pickupstate.o
@@ -24,6 +25,7 @@ release/moc_game.o
 release/moc_idlestate.o
 release/moc_istates.o
 release/moc_level.o
+release/moc_loadgamestate.o
 release/moc_mainwindow.o
 release/moc_pickupstate.o
 release/moc_player.o

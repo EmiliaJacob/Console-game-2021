@@ -13,6 +13,40 @@ Game::Game()
    currentState = &States::idleState; // TODO: Move into own function
 }
 
+void Game::ListSavePoints()
+{
+    QFile savepointsFile(QStringLiteral("savepoints.json"));
+
+    if(!savepointsFile.open(QIODevice::ReadWrite)) {
+        qDebug() << "Couldn't open savepoints file";
+        emit issueConsoleOutput("Couldn't find a savepoints file");
+    }
+    else {
+        QByteArray savepointsData = savepointsFile.readAll();
+        QJsonDocument savepointsDoc(QJsonDocument::fromJson(savepointsData));
+        QJsonObject savepointsObject = savepointsDoc.object();
+        QJsonArray savepointsArray = savepointsObject["savepoints"].toArray();
+
+        QString answer;
+
+        if(savepointsArray.size() == 0) {
+            answer = "You haven't set any savepoints yet";
+        }
+        else {
+            for(int i=0; i<savepointsArray.size(); i++) {
+                if(i == 0)
+                    answer.append(QString::number(i) + ":   " + savepointsArray.at(i)["dateTime"].toString() + "\n");
+                else if(i == savepointsArray.size()-1)
+                    answer.append("   " + QString::number(i) + ":   " + savepointsArray.at(i)["dateTime"].toString());
+                else
+                    answer.append("   " + QString::number(i) + ":   " + savepointsArray.at(i)["dateTime"].toString() + "\n");
+            }
+        }
+
+        emit issueConsoleOutput(answer);
+    }
+}
+
 bool Game::LoadGame()
 {
     //Loading Fields
@@ -72,8 +106,10 @@ void Game::ChangeState(QString stateName)
     else if(stateName == "saveGameState") {
         currentState = &States::saveGameState;
     }
+    else if(stateName == "loadGameState") {
+        currentState = &States::loadGameState;
+    }
 }
-
 
 void Game::SaveGame()
 {

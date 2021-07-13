@@ -19,6 +19,7 @@ SOURCES += \
     inventory.cpp \
     item.cpp \
     level.cpp \
+    loadgamestate.cpp \
     main.cpp \
     mainwindow.cpp \
     pickupstate.cpp \
@@ -41,6 +42,7 @@ HEADERS += \
     istates.h \
     item.h \
     level.h \
+    loadgamestate.h \
     mainwindow.h \
     pickupstate.h \
     player.h \
