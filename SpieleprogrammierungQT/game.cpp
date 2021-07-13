@@ -71,11 +71,49 @@ void Game::ListSavePoints()
         else {
             for(int i=0; i<savepointsArray.size(); i++) {
                 if(i == 0)
-                    answer.append(QString::number(i) + ":   " + savepointsArray.at(i)["dateTime"].toString() + "\n");
+                    answer.append(QString::number(i) + ":   " + savepointsArray.at(i)["name"].toString() + "   " + savepointsArray.at(i)["dateTime"].toString() + "\n");
                 else if(i == savepointsArray.size()-1)
-                    answer.append("   " + QString::number(i) + ":   " + savepointsArray.at(i)["dateTime"].toString());
+                    answer.append("   " + QString::number(i) + ":   " + savepointsArray.at(i)["name"].toString() + "   " + savepointsArray.at(i)["dateTime"].toString());
                 else
-                    answer.append("   " + QString::number(i) + ":   " + savepointsArray.at(i)["dateTime"].toString() + "\n");
+                    answer.append("   " + QString::number(i) + ":   "  + savepointsArray.at(i)["name"].toString() + "   " + savepointsArray.at(i)["dateTime"].toString() + "\n");
+            }
+        }
+
+        emit issueConsoleOutput(answer);
+    }
+}
+
+void Game::ListSavePointsForMenu()
+{
+    QFile savepointsFile(QStringLiteral("savepoints.json"));
+
+    if(!savepointsFile.open(QIODevice::ReadWrite)) {
+        qDebug() << "Couldn't open savepoints file";
+        emit issueConsoleOutput("Couldn't find a savepoints file");
+    }
+    else {
+        QByteArray savepointsData = savepointsFile.readAll();
+        QJsonDocument savepointsDoc(QJsonDocument::fromJson(savepointsData));
+        QJsonObject savepointsObject = savepointsDoc.object();
+        QJsonArray savepointsArray = savepointsObject["savepoints"].toArray();
+
+        QString answer;
+
+        if(savepointsArray.size() == 0) {
+            emit issueConsoleOutput("You don't haven't created any savepoints yet.\n   Please start a new game.");
+            ChangeState("newGameState");
+            States::newGameState.PrintMenu();
+            return;
+        }
+
+        else {
+            for(int i=0; i<savepointsArray.size(); i++) {
+                if(i == 0)
+                    answer.append(QString::number(i) + ":   " + savepointsArray.at(i)["name"].toString() + "   " + savepointsArray.at(i)["dateTime"].toString() + "\n");
+                else if(i == savepointsArray.size()-1)
+                    answer.append("   " + QString::number(i) + ":   " + savepointsArray.at(i)["name"].toString() + "   " + savepointsArray.at(i)["dateTime"].toString());
+                else
+                    answer.append("   " + QString::number(i) + ":   "  + savepointsArray.at(i)["name"].toString() + "   " + savepointsArray.at(i)["dateTime"].toString() + "\n");
             }
         }
 
@@ -96,6 +134,7 @@ bool Game::LoadGame(int savepointIndex)
         QJsonDocument savepointsDoc(QJsonDocument::fromJson(savepointsData));
         QJsonObject savepointsObject = savepointsDoc.object();
         QJsonArray savepointsArray = savepointsObject["savepoints"].toArray();
+
 
         if(savepointIndex < 0 || savepointIndex > savepointsArray.size() - 1) {
             emit issueConsoleOutput("Please enter a number that is in the specified range");
@@ -207,7 +246,7 @@ void Game::SaveGame()
 
         QJsonObject newSavepoint;
         newSavepoint["dateTime"] = dateTime.toString();
-
+        newSavepoint["name"] = mPlayer.Name;
         savepointsArray.append(newSavepoint);
         savepointsObject["savepoints"] = savepointsArray;
 

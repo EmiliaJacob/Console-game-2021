@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Game_t {
-    const uint offsetsAndSize[32];
-    char stringdata0[183];
+    const uint offsetsAndSize[34];
+    char stringdata0[205];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(offsetof(qt_meta_stringdata_Game_t, stringdata0) + ofs), len 
@@ -43,15 +43,17 @@ QT_MOC_LITERAL(98, 7), // "command"
 QT_MOC_LITERAL(106, 11), // "ChangeState"
 QT_MOC_LITERAL(118, 9), // "stateName"
 QT_MOC_LITERAL(128, 14), // "ListSavePoints"
-QT_MOC_LITERAL(143, 17), // "SetStateToNewGame"
-QT_MOC_LITERAL(161, 21) // "SetStateToInitialLoad"
+QT_MOC_LITERAL(143, 21), // "ListSavePointsForMenu"
+QT_MOC_LITERAL(165, 17), // "SetStateToNewGame"
+QT_MOC_LITERAL(183, 21) // "SetStateToInitialLoad"
 
     },
     "Game\0issueConsoleOutput\0\0output\0NewGame\0"
     "playerName\0LoadGame\0savepointIndex\0"
     "SaveGame\0HandleCommand\0command\0"
     "ChangeState\0stateName\0ListSavePoints\0"
-    "SetStateToNewGame\0SetStateToInitialLoad"
+    "ListSavePointsForMenu\0SetStateToNewGame\0"
+    "SetStateToInitialLoad"
 };
 #undef QT_MOC_LITERAL
 
@@ -61,7 +63,7 @@ static const uint qt_meta_data_Game[] = {
        9,       // revision
        0,       // classname
        0,    0, // classinfo
-       9,   14, // methods
+      10,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -69,17 +71,18 @@ static const uint qt_meta_data_Game[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    1,   68,    2, 0x06,    0 /* Public */,
+       1,    1,   74,    2, 0x06,    0 /* Public */,
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       4,    1,   71,    2, 0x0a,    2 /* Public */,
-       6,    1,   74,    2, 0x0a,    4 /* Public */,
-       8,    0,   77,    2, 0x0a,    6 /* Public */,
-       9,    1,   78,    2, 0x0a,    7 /* Public */,
-      11,    1,   81,    2, 0x0a,    9 /* Public */,
-      13,    0,   84,    2, 0x0a,   11 /* Public */,
-      14,    0,   85,    2, 0x0a,   12 /* Public */,
-      15,    0,   86,    2, 0x0a,   13 /* Public */,
+       4,    1,   77,    2, 0x0a,    2 /* Public */,
+       6,    1,   80,    2, 0x0a,    4 /* Public */,
+       8,    0,   83,    2, 0x0a,    6 /* Public */,
+       9,    1,   84,    2, 0x0a,    7 /* Public */,
+      11,    1,   87,    2, 0x0a,    9 /* Public */,
+      13,    0,   90,    2, 0x0a,   11 /* Public */,
+      14,    0,   91,    2, 0x0a,   12 /* Public */,
+      15,    0,   92,    2, 0x0a,   13 /* Public */,
+      16,    0,   93,    2, 0x0a,   14 /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QString,    3,
@@ -90,6 +93,7 @@ static const uint qt_meta_data_Game[] = {
     QMetaType::Void,
     QMetaType::Void, QMetaType::QString,   10,
     QMetaType::Void, QMetaType::QString,   12,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -111,8 +115,9 @@ void Game::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void *
         case 4: _t->HandleCommand((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 5: _t->ChangeState((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 6: _t->ListSavePoints(); break;
-        case 7: _t->SetStateToNewGame(); break;
-        case 8: _t->SetStateToInitialLoad(); break;
+        case 7: _t->ListSavePointsForMenu(); break;
+        case 8: _t->SetStateToNewGame(); break;
+        case 9: _t->SetStateToInitialLoad(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -135,7 +140,7 @@ const QMetaObject Game::staticMetaObject = { {
     nullptr,
 qt_incomplete_metaTypeArray<qt_meta_stringdata_Game_t
 , QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>
-, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<bool, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>
+, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<bool, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>
 
 
 >,
@@ -162,13 +167,13 @@ int Game::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 9)
+        if (_id < 10)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 9;
+        _id -= 10;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 9)
+        if (_id < 10)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 9;
+        _id -= 10;
     }
     return _id;
 }

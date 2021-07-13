@@ -31,6 +31,7 @@ public slots:
     void HandleCommand(QString command);
     void ChangeState(QString stateName);
     void ListSavePoints();
+    void ListSavePointsForMenu();
     void SetStateToNewGame();
     void SetStateToInitialLoad();
 signals:

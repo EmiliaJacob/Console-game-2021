@@ -79,7 +79,7 @@ int main(int argc, char *argv[])
     QObject::connect(&States::initialLoadGameState, &InitialLoadGameState::issueConsoleOutput, &mainWindow, &MainWindow::PrintOntoConsole);
     QObject::connect(&States::initialLoadGameState, &InitialLoadGameState::changeStateRequest, &game, &Game::ChangeState);
     QObject::connect(&States::initialLoadGameState, &InitialLoadGameState::loadGameRequest, &game, &Game::LoadGame);
-    QObject::connect(&States::initialLoadGameState, &InitialLoadGameState::listSavepointsRequest, &game, &Game::ListSavePoints);
+    QObject::connect(&States::initialLoadGameState, &InitialLoadGameState::listSavepointsRequest, &game, &Game::ListSavePointsForMenu);
 
     mainWindow.SetGame(&game);
     mainWindow.show();
