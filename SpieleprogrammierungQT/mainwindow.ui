@@ -313,6 +313,9 @@ p, li { white-space: pre-wrap; }
          </layout>
         </widget>
         <widget class="QTableWidget" name="tableWidget">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
          <property name="geometry">
           <rect>
            <x>20</x>
@@ -358,6 +361,12 @@ p, li { white-space: pre-wrap; }
 border-color: rgb(217, 124, 44)
 
 </string>
+         </property>
+         <property name="editTriggers">
+          <set>QAbstractItemView::NoEditTriggers</set>
+         </property>
+         <property name="tabKeyNavigation">
+          <bool>false</bool>
          </property>
          <property name="dragDropOverwriteMode">
           <bool>false</bool>

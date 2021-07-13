@@ -342,6 +342,7 @@ public:
         QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
         tableWidget->setHorizontalHeaderItem(1, __qtablewidgetitem1);
         tableWidget->setObjectName(QString::fromUtf8("tableWidget"));
+        tableWidget->setEnabled(true);
         tableWidget->setGeometry(QRect(20, 50, 578, 276));
         QSizePolicy sizePolicy3(QSizePolicy::Fixed, QSizePolicy::Fixed);
         sizePolicy3.setHorizontalStretch(0);
@@ -363,6 +364,8 @@ public:
 "border-color: rgb(217, 124, 44)\n"
 "\n"
 ""));
+        tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
+        tableWidget->setTabKeyNavigation(false);
         tableWidget->setDragDropOverwriteMode(false);
         tableWidget->setAlternatingRowColors(true);
         tableWidget->setSelectionMode(QAbstractItemView::SingleSelection);
