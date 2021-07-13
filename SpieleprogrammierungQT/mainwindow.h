@@ -59,7 +59,8 @@ private slots:
 
 signals:
     void receivedCommand(QString command);
-
+    void newGameStateRequest();
+    void initialLoadStateRequest();
 private:
     Game* mGame;
     IStates* currentState;

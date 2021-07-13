@@ -10,7 +10,43 @@
 
 Game::Game()
 {
-   currentState = &States::idleState; // TODO: Move into own function
+  // currentState = &States::idleState; // TODO: Move into own function
+}
+
+void Game::NewGame(QString playerName)
+{
+    QFile fieldsFile("fields_blueprint.json"); // TODO: can be refactored into a private method
+    if(!fieldsFile.open(QIODevice::ReadOnly)){
+        qWarning("Can't open fields - file");
+        return;
+    }
+
+    QByteArray fieldsData = fieldsFile.readAll();
+    QJsonDocument fieldsDoc(QJsonDocument::fromJson(fieldsData));
+
+    Level_One.Read(fieldsDoc.object());
+
+
+
+
+    QFile playerFile("player_blueprint.json");
+    if(!playerFile.open(QIODevice::ReadOnly)){
+        qWarning("Can't open save file");
+        return;
+    }
+
+    QByteArray playerData = playerFile.readAll();
+    QJsonDocument playerDoc(QJsonDocument::fromJson(playerData));
+
+    mPlayer.Read(playerDoc.object());
+    mPlayer.Name = playerName;
+
+
+
+
+    emit issueConsoleOutput("New Game was successfully created");
+
+    ChangeState("idleState");
 }
 
 void Game::ListSavePoints()
@@ -104,6 +140,8 @@ bool Game::LoadGame(int savepointIndex)
         mPlayer.Read(playerDoc.object());
 
         emit issueConsoleOutput("Savepoint was successfully loaded");
+
+        ChangeState("idleState");
         return true;
     }
 }
@@ -140,6 +178,12 @@ void Game::ChangeState(QString stateName)
     }
     else if(stateName == "loadGameState") {
         currentState = &States::loadGameState;
+    }
+    else if(stateName == "newGameState") {
+        currentState = &States::newGameState;
+    }
+    else if(stateName == "initialLoadGameState") {
+        currentState = &States::initialLoadGameState;
     }
 }
 
@@ -303,4 +347,14 @@ QString Game::InputHandler(QString input)
     }
 
     return("No fitting interpretation was found for: " + input + "\n      Please try something else.");
+}
+
+void Game::SetStateToNewGame()
+{
+    currentState = &States::newGameState;
+}
+
+void Game::SetStateToInitialLoad()
+{
+    ChangeState("initialLoadGameState");
 }

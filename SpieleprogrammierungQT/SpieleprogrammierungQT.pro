@@ -15,6 +15,7 @@ SOURCES += \
     field.cpp \
     game.cpp \
     idlestate.cpp \
+    initialLoadGameState.cpp \
     inputparser.cpp \
     inventory.cpp \
     item.cpp \
@@ -22,6 +23,7 @@ SOURCES += \
     loadgamestate.cpp \
     main.cpp \
     mainwindow.cpp \
+    newgamestate.cpp \
     pickupstate.cpp \
     player.cpp \
     savegamestate.cpp \
@@ -37,6 +39,7 @@ HEADERS += \
     field.h \
     game.h \
     idlestate.h \
+    initialLoadGameState.h \
     inputparser.h \
     inventory.h \
     istates.h \
@@ -44,6 +47,7 @@ HEADERS += \
     level.h \
     loadgamestate.h \
     mainwindow.h \
+    newgamestate.h \
     pickupstate.h \
     player.h \
     savegamestate.h \

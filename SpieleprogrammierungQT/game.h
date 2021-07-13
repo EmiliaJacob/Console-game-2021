@@ -7,7 +7,7 @@
 #include "states.h"
 #include <QObject>
 
-class Game : public QObject
+class   Game : public QObject
 {
 Q_OBJECT
 
@@ -23,15 +23,16 @@ public:
     inline static Level Level_One;
     Game();
     void Write(QJsonObject &json);
-    void NewGame();
     QString InputHandler(QString input);
 public slots:
+    void NewGame(QString playerName);
     bool LoadGame(int savepointIndex);
     void SaveGame();
     void HandleCommand(QString command);
     void ChangeState(QString stateName);
     void ListSavePoints();
-
+    void SetStateToNewGame();
+    void SetStateToInitialLoad();
 signals:
     void issueConsoleOutput(QString output);
 };

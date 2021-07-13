@@ -9,6 +9,8 @@
 #include "useitemstate.h"
 #include "savegamestate.h"
 #include "loadgamestate.h"
+#include "newgamestate.h"
+#include "initialLoadGameState.h"
 
 class States
 {
@@ -22,6 +24,8 @@ public:
     inline static UseItemState useItemState;
     inline static SaveGameState saveGameState;
     inline static LoadGameState loadGameState;
+    inline static NewGameState newGameState;
+    inline static InitialLoadGameState initialLoadGameState;
 };
 
 #endif // STATES_H

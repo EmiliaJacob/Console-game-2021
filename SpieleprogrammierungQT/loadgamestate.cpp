@@ -15,8 +15,6 @@ void LoadGameState::ExecuteCommand(QString command)
         else
             emit issueConsoleOutput("Please enter a valid number");
     }
-
-    emit changeStateRequest("idleState");
 };
 
 void LoadGameState::PrintMenu()

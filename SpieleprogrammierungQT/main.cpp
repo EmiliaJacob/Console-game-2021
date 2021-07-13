@@ -12,6 +12,9 @@ int main(int argc, char *argv[])
     Game game;
     MainWindow mainWindow;
 
+    QObject::connect(&mainWindow, &MainWindow::newGameStateRequest, &game, &Game::SetStateToNewGame);
+    QObject::connect(&mainWindow, &MainWindow::initialLoadStateRequest, &game, &Game::SetStateToInitialLoad);
+
     QObject::connect(&game, &Game::issueConsoleOutput, &mainWindow, &MainWindow::PrintOntoConsole);
 
     QObject::connect(&game.Level_One, &Level::issueConsoleOutput, &mainWindow, &MainWindow::PrintOntoConsole);
@@ -68,6 +71,15 @@ int main(int argc, char *argv[])
     QObject::connect(&States::loadGameState, &LoadGameState::changeStateRequest, &game, &Game::ChangeState);
     QObject::connect(&States::loadGameState, &LoadGameState::loadGameRequest, &game, &Game::LoadGame);
     QObject::connect(&States::loadGameState, &LoadGameState::listSavepointsRequest, &game, &Game::ListSavePoints);
+
+    QObject::connect(&States::newGameState, &NewGameState::issueConsoleOutput, &mainWindow, &MainWindow::PrintOntoConsole);
+    QObject::connect(&States::newGameState, &NewGameState::changeStateRequest, &game, &Game::ChangeState);
+    QObject::connect(&States::newGameState, &NewGameState::newGameRequest, &game, &Game::NewGame);
+
+    QObject::connect(&States::initialLoadGameState, &InitialLoadGameState::issueConsoleOutput, &mainWindow, &MainWindow::PrintOntoConsole);
+    QObject::connect(&States::initialLoadGameState, &InitialLoadGameState::changeStateRequest, &game, &Game::ChangeState);
+    QObject::connect(&States::initialLoadGameState, &InitialLoadGameState::loadGameRequest, &game, &Game::LoadGame);
+    QObject::connect(&States::initialLoadGameState, &InitialLoadGameState::listSavepointsRequest, &game, &Game::ListSavePoints);
 
     mainWindow.SetGame(&game);
     mainWindow.show();

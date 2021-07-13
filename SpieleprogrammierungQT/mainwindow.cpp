@@ -179,6 +179,12 @@ void MainWindow::UpdateUiinventarsuptrakt(QString itemName, int amount){
 void MainWindow::on_pushButton_newgame_clicked()
 {
     ui->stackedWidget->setCurrentIndex(1);
+    emit newGameStateRequest();
+
+
+    States::newGameState.PrintMenu();
+    ui->lineEdit->setDisabled(false);
+    ui->lineEdit->setFocus();
 }
 
 //Load Game
@@ -186,15 +192,19 @@ void MainWindow::on_pushButton_clicked()
 {
     ui->textBrowser->clear();
     ui->stackedWidget->setCurrentIndex(1);
-    if(!mGame->LoadGame(0)){
-        QMessageBox::information(0,"Error", " file not fonde");
-    }
+
+    emit initialLoadStateRequest();
+
+    States::initialLoadGameState.PrintMenu();
+
+   //if(!mGame->LoadGame(0)){
+   //    QMessageBox::information(0,"Error", " file not fonde");
+   //}
 
     //PrintSystemBoot();
     // TODO: Remove again
     ui->lineEdit->setDisabled(false);
     ui->lineEdit->setFocus();
-    States::idleState.PrintMenu();
 }
 
 void MainWindow::PrintSystemBoot()
