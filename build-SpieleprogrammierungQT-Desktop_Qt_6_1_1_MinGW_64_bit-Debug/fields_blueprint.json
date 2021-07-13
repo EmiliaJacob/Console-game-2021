@@ -8,7 +8,6 @@
             "items": [
                 {
                     "description": "A rusty pickaxe",
-                    "locationDescription": "is laying on the floor.",
                     "name": "pickaxe"
                 }
             ],
@@ -35,7 +34,6 @@
             "items": [
                 {
                     "description": "A rusty pickaxe",
-                    "locationDescription": "is laying on the floor.",
                     "name": "pickaxe"
                 }
             ],
@@ -45,13 +43,12 @@
         },
         {
             "backward": "x",
-            "description": "   A tiny cave.\n   I see somthing shiny on the floor\n   One of the walls looks quite thin.",
+            "description": "   A tiny cave.\n   I see somthing shiny on the floor.\n   One of the walls looks quite thin.",
             "forward": "3",
             "id": "4",
             "items": [
                 {
                     "description": "A golden key",
-                    "locationDescription": "buried under dirt.",
                     "name": "key_A"
                 }
             ],
@@ -100,7 +97,6 @@
             "items": [
                 {
                     "description": "   A piece of paper with numbers written on it.\n   Maybe this is the required passcode.",
-                    "locationDescription": "laying on a work-bench.",
                     "name": "passcode_A"
                 }
             ],
@@ -132,13 +128,12 @@
         },
         {
             "backward": "x",
-            "description": "   A relatively small room.\n   A bunch of wooden boxes lay on the floor",
+            "description": "   A relatively small room.\n   A bunch of wooden boxes lay on the floor.",
             "forward": "12",
             "id": "11",
             "items": [
                 {
                     "description": "I looks like a key has been cut into halfs.\n   The other half is nowhere in sight.",
-                    "locationDescription": "buried under layers of dust.",
                     "name": "key_segment_A"
                 }
             ],
@@ -154,7 +149,6 @@
             "items": [
                 {
                     "description": "   A piece of paper with numbers written on it.\n   Maybe this will open one of the two locked doors.",
-                    "locationDescription": "laying on a work-bench.",
                     "name": "passcode_B"
                 }
             ],
@@ -192,7 +186,6 @@
             "items": [
                 {
                     "description": "   Finally! The second half of the key.\n   Looks I can easily assemble them to a functioning key again.",
-                    "locationDescription": "laying there.",
                     "name": "key_segment_B"
                 }
             ],

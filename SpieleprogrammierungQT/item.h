@@ -12,7 +12,6 @@ public:
     Item();
     QString Name;
     QString Description;
-    QString LocationDescription;
     void Read(QJsonObject &json);
     void Write(QJsonObject &json);
 };

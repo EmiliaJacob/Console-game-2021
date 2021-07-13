@@ -507,7 +507,6 @@ void Player::CombineItems(QString items) // TODO: This is bad code
         Item key;
         key.Name = "key_B";
         key.Description = "The key used to be sawed in half. I'm glad that I could reassemble it.";
-        key.LocationDescription = "Laying on the floor";
         mInventory.InsertOne(key);
     }
     else {
