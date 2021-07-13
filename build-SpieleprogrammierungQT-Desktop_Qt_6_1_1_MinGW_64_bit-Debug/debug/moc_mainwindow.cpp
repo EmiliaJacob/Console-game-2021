@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    const uint offsetsAndSize[80];
-    char stringdata0[635];
+    const uint offsetsAndSize[78];
+    char stringdata0[628];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(offsetof(qt_meta_stringdata_MainWindow_t, stringdata0) + ofs), len 
@@ -45,30 +45,29 @@ QT_MOC_LITERAL(143, 11), // "oldPosition"
 QT_MOC_LITERAL(155, 11), // "newPosition"
 QT_MOC_LITERAL(167, 24), // "UpdateUiinventarsuptrakt"
 QT_MOC_LITERAL(192, 8), // "itemName"
-QT_MOC_LITERAL(201, 6), // "amount"
-QT_MOC_LITERAL(208, 19), // "UpdateUiinventaradd"
-QT_MOC_LITERAL(228, 10), // "Inventory*"
-QT_MOC_LITERAL(239, 9), // "inventory"
-QT_MOC_LITERAL(249, 14), // "DeleteLastLine"
-QT_MOC_LITERAL(264, 15), // "on_Send_clicked"
-QT_MOC_LITERAL(280, 25), // "on_lineEdit_returnPressed"
-QT_MOC_LITERAL(306, 6), // "dotext"
-QT_MOC_LITERAL(313, 21), // "on_lineEdit_upPressed"
-QT_MOC_LITERAL(335, 29), // "on_pushButton_newgame_clicked"
-QT_MOC_LITERAL(365, 21), // "on_pushButton_clicked"
-QT_MOC_LITERAL(387, 26), // "on_tabWidget_tabBarClicked"
-QT_MOC_LITERAL(414, 5), // "index"
-QT_MOC_LITERAL(420, 27), // "on_pushButton_titel_clicked"
-QT_MOC_LITERAL(448, 27), // "on_pushButton_leave_clicked"
-QT_MOC_LITERAL(476, 26), // "on_pushButton_help_clicked"
-QT_MOC_LITERAL(503, 21), // "on_downbutton_clicked"
-QT_MOC_LITERAL(525, 19), // "on_upbutton_clicked"
-QT_MOC_LITERAL(545, 8), // "muveuser"
-QT_MOC_LITERAL(554, 13), // "discoverUimap"
-QT_MOC_LITERAL(568, 26), // "on_tableWidget_cellClicked"
-QT_MOC_LITERAL(595, 3), // "row"
-QT_MOC_LITERAL(599, 6), // "column"
-QT_MOC_LITERAL(606, 28) // "on_tableWidget_2_cellPressed"
+QT_MOC_LITERAL(201, 10), // "Inventory*"
+QT_MOC_LITERAL(212, 9), // "inventory"
+QT_MOC_LITERAL(222, 19), // "UpdateUiinventaradd"
+QT_MOC_LITERAL(242, 14), // "DeleteLastLine"
+QT_MOC_LITERAL(257, 15), // "on_Send_clicked"
+QT_MOC_LITERAL(273, 25), // "on_lineEdit_returnPressed"
+QT_MOC_LITERAL(299, 6), // "dotext"
+QT_MOC_LITERAL(306, 21), // "on_lineEdit_upPressed"
+QT_MOC_LITERAL(328, 29), // "on_pushButton_newgame_clicked"
+QT_MOC_LITERAL(358, 21), // "on_pushButton_clicked"
+QT_MOC_LITERAL(380, 26), // "on_tabWidget_tabBarClicked"
+QT_MOC_LITERAL(407, 5), // "index"
+QT_MOC_LITERAL(413, 27), // "on_pushButton_titel_clicked"
+QT_MOC_LITERAL(441, 27), // "on_pushButton_leave_clicked"
+QT_MOC_LITERAL(469, 26), // "on_pushButton_help_clicked"
+QT_MOC_LITERAL(496, 21), // "on_downbutton_clicked"
+QT_MOC_LITERAL(518, 19), // "on_upbutton_clicked"
+QT_MOC_LITERAL(538, 8), // "muveuser"
+QT_MOC_LITERAL(547, 13), // "discoverUimap"
+QT_MOC_LITERAL(561, 26), // "on_tableWidget_cellClicked"
+QT_MOC_LITERAL(588, 3), // "row"
+QT_MOC_LITERAL(592, 6), // "column"
+QT_MOC_LITERAL(599, 28) // "on_tableWidget_2_cellPressed"
 
     },
     "MainWindow\0receivedCommand\0\0command\0"
@@ -76,8 +75,8 @@ QT_MOC_LITERAL(606, 28) // "on_tableWidget_2_cellPressed"
     "PrintOntoConsole\0newLine\0SetGame\0Game*\0"
     "game\0UpdatePositionInUi\0oldPosition\0"
     "newPosition\0UpdateUiinventarsuptrakt\0"
-    "itemName\0amount\0UpdateUiinventaradd\0"
-    "Inventory*\0inventory\0DeleteLastLine\0"
+    "itemName\0Inventory*\0inventory\0"
+    "UpdateUiinventaradd\0DeleteLastLine\0"
     "on_Send_clicked\0on_lineEdit_returnPressed\0"
     "dotext\0on_lineEdit_upPressed\0"
     "on_pushButton_newgame_clicked\0"
@@ -115,24 +114,24 @@ static const uint qt_meta_data_MainWindow[] = {
        8,    1,  172,    2, 0x0a,    6 /* Public */,
       11,    2,  175,    2, 0x0a,    8 /* Public */,
       14,    2,  180,    2, 0x0a,   11 /* Public */,
-      17,    2,  185,    2, 0x0a,   14 /* Public */,
-      20,    0,  190,    2, 0x0a,   17 /* Public */,
-      21,    0,  191,    2, 0x08,   18 /* Private */,
-      22,    0,  192,    2, 0x08,   19 /* Private */,
-      23,    0,  193,    2, 0x08,   20 /* Private */,
-      24,    0,  194,    2, 0x08,   21 /* Private */,
-      25,    0,  195,    2, 0x08,   22 /* Private */,
-      26,    0,  196,    2, 0x08,   23 /* Private */,
-      27,    1,  197,    2, 0x08,   24 /* Private */,
-      29,    0,  200,    2, 0x08,   26 /* Private */,
-      30,    0,  201,    2, 0x08,   27 /* Private */,
-      31,    0,  202,    2, 0x08,   28 /* Private */,
-      32,    0,  203,    2, 0x08,   29 /* Private */,
-      33,    0,  204,    2, 0x08,   30 /* Private */,
-      34,    1,  205,    2, 0x08,   31 /* Private */,
-      35,    1,  208,    2, 0x08,   33 /* Private */,
-      36,    2,  211,    2, 0x08,   35 /* Private */,
-      39,    2,  216,    2, 0x08,   38 /* Private */,
+      18,    2,  185,    2, 0x0a,   14 /* Public */,
+      19,    0,  190,    2, 0x0a,   17 /* Public */,
+      20,    0,  191,    2, 0x08,   18 /* Private */,
+      21,    0,  192,    2, 0x08,   19 /* Private */,
+      22,    0,  193,    2, 0x08,   20 /* Private */,
+      23,    0,  194,    2, 0x08,   21 /* Private */,
+      24,    0,  195,    2, 0x08,   22 /* Private */,
+      25,    0,  196,    2, 0x08,   23 /* Private */,
+      26,    1,  197,    2, 0x08,   24 /* Private */,
+      28,    0,  200,    2, 0x08,   26 /* Private */,
+      29,    0,  201,    2, 0x08,   27 /* Private */,
+      30,    0,  202,    2, 0x08,   28 /* Private */,
+      31,    0,  203,    2, 0x08,   29 /* Private */,
+      32,    0,  204,    2, 0x08,   30 /* Private */,
+      33,    1,  205,    2, 0x08,   31 /* Private */,
+      34,    1,  208,    2, 0x08,   33 /* Private */,
+      35,    2,  211,    2, 0x08,   35 /* Private */,
+      38,    2,  216,    2, 0x08,   38 /* Private */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QString,    3,
@@ -143,8 +142,8 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void, QMetaType::QString,    7,
     QMetaType::Void, 0x80000000 | 9,   10,
     QMetaType::Void, QMetaType::QString, QMetaType::QString,   12,   13,
-    QMetaType::Void, QMetaType::QString, QMetaType::Int,   15,   16,
-    QMetaType::Void, QMetaType::QString, 0x80000000 | 18,   15,   19,
+    QMetaType::Void, QMetaType::QString, 0x80000000 | 16,   15,   17,
+    QMetaType::Void, QMetaType::QString, 0x80000000 | 16,   15,   17,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -152,7 +151,7 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int,   28,
+    QMetaType::Void, QMetaType::Int,   27,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -160,8 +159,8 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void, QMetaType::QString,    2,
     QMetaType::Void, QMetaType::QString,    2,
-    QMetaType::Void, QMetaType::Int, QMetaType::Int,   37,   38,
-    QMetaType::Void, QMetaType::Int, QMetaType::Int,   37,   38,
+    QMetaType::Void, QMetaType::Int, QMetaType::Int,   36,   37,
+    QMetaType::Void, QMetaType::Int, QMetaType::Int,   36,   37,
 
        0        // eod
 };
@@ -178,7 +177,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 3: _t->PrintOntoConsole((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 4: _t->SetGame((*reinterpret_cast< Game*(*)>(_a[1]))); break;
         case 5: _t->UpdatePositionInUi((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2]))); break;
-        case 6: _t->UpdateUiinventarsuptrakt((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 6: _t->UpdateUiinventarsuptrakt((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< Inventory*(*)>(_a[2]))); break;
         case 7: _t->UpdateUiinventaradd((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< Inventory*(*)>(_a[2]))); break;
         case 8: _t->DeleteLastLine(); break;
         case 9: _t->on_Send_clicked(); break;
@@ -244,7 +243,7 @@ const QMetaObject MainWindow::staticMetaObject = { {
     nullptr,
 qt_incomplete_metaTypeArray<qt_meta_stringdata_MainWindow_t
 , QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>
-, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<Game *, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<Inventory *, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>
+, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<Game *, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<Inventory *, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<Inventory *, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>
 
 
 >,

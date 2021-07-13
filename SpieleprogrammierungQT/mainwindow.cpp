@@ -178,8 +178,30 @@ void MainWindow::UpdateUiinventaradd(QString itemName, Inventory* inventory){
 
 
 //tacke item
-void MainWindow::UpdateUiinventarsuptrakt(QString itemName, int amount){
-    qDebug() << "Dropped: " + itemName + " " + QString::number(amount) + " times";
+void MainWindow::UpdateUiinventarsuptrakt(QString itemName, Inventory* inventory){
+
+    if(inventory->GetItemAmount(itemName) == 0) {
+        for(int rowCounter=0; rowCounter<ui->tableWidget->rowCount(); rowCounter++) {
+            QTableWidgetItem* item = ui->tableWidget->item(rowCounter, 0);
+            if(item->text() == itemName) {
+                ui->tableWidget->removeRow(rowCounter);
+                return;
+            }
+        }
+    }
+    else {
+        QString amountInInventory = QString::number(inventory->GetItemAmount(itemName));
+        for(int rowCounter=0; rowCounter<ui->tableWidget->rowCount(); rowCounter++) {
+            QTableWidgetItem* item = ui->tableWidget->item(rowCounter, 0);
+            qDebug() << item->text();
+            if(item->text() == itemName) {
+                ui->tableWidget->setItem(rowCounter, 1, new QTableWidgetItem(amountInInventory));
+                return;
+            }
+        }
+    }
+
+
    //int i=0;
    //bool exist=false;
    //while (inventory[i]!= item_id) {

@@ -274,7 +274,7 @@ QString Player::DropItemOfType(QString itemType)
             mInventory.CollectedItems.removeAt(i);
             CurrentField->Items.append(item);
             emit issueConsoleOutput("Dropped item");
-            emit droppedItems(itemType, 1);
+            emit droppedItems(itemType, &mInventory);
             return("Dropped item");
         }
     }
@@ -297,7 +297,7 @@ QString Player::DropMultipleItemsOfType(QString itemType, int numberOfItems)
 
             if(remainingItemsToDrop == 0) {
                 emit issueConsoleOutput("Dropped item");
-                emit droppedItems(itemType, numberOfItems);
+                emit droppedItems(itemType, &mInventory);
                 return("Dropped item");
                 break;
             }
@@ -339,7 +339,7 @@ QString Player::DropAllItemsOfType(QString itemType)
     }
     else {
         emit issueConsoleOutput("Dropped item");
-        emit droppedItems(itemType, numberOfItemsDropped);
+        emit droppedItems(itemType, &mInventory);
         return("Dropped item");
     }
 }
