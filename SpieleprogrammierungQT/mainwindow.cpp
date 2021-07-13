@@ -123,6 +123,10 @@ void MainWindow::discoverUimap(QString button){
 }
 
 
+
+
+//inventar
+//inventar clicked
 void MainWindow::on_tableWidget_cellClicked(int row, int column)
 {
     QString itemName = ui->tableWidget->item(row, column)->text();
@@ -172,6 +176,8 @@ void MainWindow::UpdateUiinventarsuptrakt(QString itemName, Inventory* inventory
         }
     }
 }
+
+
 
 //opzionen
 //New Game
