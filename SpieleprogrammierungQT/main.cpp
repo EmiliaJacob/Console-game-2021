@@ -14,6 +14,8 @@ int main(int argc, char *argv[])
 
     QObject::connect(&mainWindow, &MainWindow::newGameStateRequest, &game, &Game::SetStateToNewGame);
     QObject::connect(&mainWindow, &MainWindow::initialLoadStateRequest, &game, &Game::SetStateToInitialLoad);
+    QObject::connect(&mainWindow, &MainWindow::printItemDescriptionRequest, &game.mPlayer, &Player::PrintItemDescription);
+
 
     QObject::connect(&game, &Game::issueConsoleOutput, &mainWindow, &MainWindow::PrintOntoConsole);
 

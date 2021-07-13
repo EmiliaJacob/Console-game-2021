@@ -61,6 +61,8 @@ signals:
     void receivedCommand(QString command);
     void newGameStateRequest();
     void initialLoadStateRequest();
+    void printItemDescriptionRequest(QString itemName);
+
 private:
     Game* mGame;
     IStates* currentState;

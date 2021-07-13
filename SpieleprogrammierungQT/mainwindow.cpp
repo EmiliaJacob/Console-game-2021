@@ -123,17 +123,12 @@ void MainWindow::discoverUimap(QString button){
 }
 
 
-//inventar
-//inventar clicked
 void MainWindow::on_tableWidget_cellClicked(int row, int column)
 {
-//    ui->textBrowser->append(Qstring getintendiscription(inventory[row]));
-    if(row==0) ui->textBrowser->append("it is emti tank\n");
-    if(row==1) ui->textBrowser->append("A Cristal\n it's schinie nofing more\n");
-    if(row==2) ui->textBrowser->append("A purple fluorescence ore \n It's rather heavy\n");
-    if(row==3) ui->textBrowser->append("A red ore \n It's rather light\n");
+    QString itemName = ui->tableWidget->item(row, column)->text();
+    emit printItemDescriptionRequest(itemName);
 }
-//add intem
+
 void MainWindow::UpdateUiinventaradd(QString itemName, Inventory* inventory){
 
     QString amountInInventory = QString::number(inventory->GetItemAmount(itemName));
@@ -152,32 +147,8 @@ void MainWindow::UpdateUiinventaradd(QString itemName, Inventory* inventory){
     ui->tableWidget->insertRow(ui->tableWidget->rowCount());
     ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,0,new QTableWidgetItem(itemName));
     ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,1,new QTableWidgetItem(amountInInventory));
-
-
-    //QList<QTableWidgetItem*> itemRepresentative = ui->tableWidget->findItems("")
-   //int i=0;
-   //bool exist=false;
-   //while (inventory[i]!=-1&&exist==false) {
-   //    if(inventory[i]==item_id){
-   //        exist=true;
-   //
-   //    }else{
-   //        i++;
-   //    }
-   //}
-   ///add item
-   //if(exist==true){
-// //      ui->tabWidget->modifi cell;
-   //}
-   //else{
-   //    inventory[i]=item_id;
-   //   // getitemnamebyid(item_id)
-   //     // ui->tableWidget->model()->insertRow();
-   //}
 }
 
-
-//tacke item
 void MainWindow::UpdateUiinventarsuptrakt(QString itemName, Inventory* inventory){
 
     if(inventory->GetItemAmount(itemName) == 0) {
@@ -200,21 +171,6 @@ void MainWindow::UpdateUiinventarsuptrakt(QString itemName, Inventory* inventory
             }
         }
     }
-
-
-   //int i=0;
-   //bool exist=false;
-   //while (inventory[i]!= item_id) {
-   //        i++;
-   //}
-   ////if(dubel item){}else{
-   //ui->tableWidget->model()->removeRow(i);
-   //i++;
-   //while (i<21) {
-   //      inventory[i-1]=inventory[i];
-   //}
-   //inventory[20]=-1;
-//}
 }
 
 //opzionen

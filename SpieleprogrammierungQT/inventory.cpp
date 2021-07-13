@@ -38,6 +38,15 @@ Item Inventory::GetItem(QString itemName)
     }
 }
 
+QString Inventory::GetItemDescription(QString itemName)
+{
+    for(int i=0; i<CollectedItems.length(); i++) {
+        if(CollectedItems[i].Name == itemName) {
+            return CollectedItems[i].Description;
+        }
+    }
+}
+
 int Inventory::GetItemAmount(QString itemName)
 {
     int amount = 0;

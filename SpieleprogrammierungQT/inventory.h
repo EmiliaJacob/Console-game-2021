@@ -15,6 +15,7 @@ public:
     int GetItemAmount(QString itemName);
     Item GetItem(QString itemName);
     QList<Item> CollectedItems; // QList can be made private
+    QString GetItemDescription(QString itemName);
 };
 
 #endif // INVENTORY_H
