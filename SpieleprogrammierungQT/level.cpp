@@ -11,6 +11,8 @@ Level::Level()
 void Level::Read(const QJsonObject &json)
 {
     QJsonArray fieldArray = json["fields"].toArray();
+    mFields.clear();
+
     for(int i=0; i<fieldArray.size(); i++)
     {
         QJsonObject fieldObject = fieldArray[i].toObject();

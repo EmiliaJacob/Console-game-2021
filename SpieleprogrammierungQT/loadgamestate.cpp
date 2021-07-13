@@ -8,7 +8,12 @@ LoadGameState::LoadGameState()
 void LoadGameState::ExecuteCommand(QString command)
 {
     if(command != "b") {
-        // emit loadGameRequest();
+        bool ok;
+        int savepointIndex = command.toInt(&ok);
+        if(ok)
+            emit loadGameRequest(savepointIndex);
+        else
+            emit issueConsoleOutput("Please enter a valid number");
     }
 
     emit changeStateRequest("idleState");

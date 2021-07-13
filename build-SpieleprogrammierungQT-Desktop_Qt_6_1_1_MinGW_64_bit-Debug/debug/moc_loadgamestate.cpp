@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_LoadGameState_t {
-    const uint offsetsAndSize[16];
-    char stringdata0[107];
+    const uint offsetsAndSize[18];
+    char stringdata0[123];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(offsetof(qt_meta_stringdata_LoadGameState_t, stringdata0) + ofs), len 
@@ -36,12 +36,14 @@ QT_MOC_LITERAL(34, 8), // "newState"
 QT_MOC_LITERAL(43, 18), // "issueConsoleOutput"
 QT_MOC_LITERAL(62, 6), // "output"
 QT_MOC_LITERAL(69, 15), // "loadGameRequest"
-QT_MOC_LITERAL(85, 21) // "listSavepointsRequest"
+QT_MOC_LITERAL(85, 15), // "savespointIndex"
+QT_MOC_LITERAL(101, 21) // "listSavepointsRequest"
 
     },
     "LoadGameState\0changeStateRequest\0\0"
     "newState\0issueConsoleOutput\0output\0"
-    "loadGameRequest\0listSavepointsRequest"
+    "loadGameRequest\0savespointIndex\0"
+    "listSavepointsRequest"
 };
 #undef QT_MOC_LITERAL
 
@@ -61,13 +63,13 @@ static const uint qt_meta_data_LoadGameState[] = {
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
        1,    1,   38,    2, 0x06,    0 /* Public */,
        4,    1,   41,    2, 0x06,    2 /* Public */,
-       6,    0,   44,    2, 0x06,    4 /* Public */,
-       7,    0,   45,    2, 0x06,    5 /* Public */,
+       6,    1,   44,    2, 0x06,    4 /* Public */,
+       8,    0,   47,    2, 0x06,    6 /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QString,    3,
     QMetaType::Void, QMetaType::QString,    5,
-    QMetaType::Void,
+    QMetaType::Void, QMetaType::Int,    7,
     QMetaType::Void,
 
        0        // eod
@@ -81,7 +83,7 @@ void LoadGameState::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
         switch (_id) {
         case 0: _t->changeStateRequest((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 1: _t->issueConsoleOutput((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 2: _t->loadGameRequest(); break;
+        case 2: _t->loadGameRequest((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 3: _t->listSavepointsRequest(); break;
         default: ;
         }
@@ -102,7 +104,7 @@ void LoadGameState::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
             }
         }
         {
-            using _t = void (LoadGameState::*)();
+            using _t = void (LoadGameState::*)(int );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&LoadGameState::loadGameRequest)) {
                 *result = 2;
                 return;
@@ -125,7 +127,7 @@ const QMetaObject LoadGameState::staticMetaObject = { {
     qt_static_metacall,
     nullptr,
 qt_incomplete_metaTypeArray<qt_meta_stringdata_LoadGameState_t
-, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>
+, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>
 
 
 
@@ -179,9 +181,10 @@ void LoadGameState::issueConsoleOutput(QString _t1)
 }
 
 // SIGNAL 2
-void LoadGameState::loadGameRequest()
+void LoadGameState::loadGameRequest(int _t1)
 {
-    QMetaObject::activate(this, &staticMetaObject, 2, nullptr);
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 2, _a);
 }
 
 // SIGNAL 3

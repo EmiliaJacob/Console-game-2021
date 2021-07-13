@@ -17,6 +17,8 @@ void Player::Read(const QJsonObject &json)
     Player::Name = json["name"].toString();
 
     QJsonArray itemArray = json["inventory"].toArray();
+    this->mInventory.CollectedItems.clear();
+
     for(int i=0; i<itemArray.size(); i++)
     {
         QJsonObject itemObject = itemArray[i].toObject();
@@ -507,6 +509,7 @@ void Player::CombineItems(QString items) // TODO: This is bad code
 
 void Player::UseItem(QString itemName)
 {
+    qDebug() << "Playername " + Name;
     QStringList splittedInput = itemName.split(' ');
     if (splittedInput.length() > 1) {
         emit issueConsoleOutput("I can only use one item at a time");

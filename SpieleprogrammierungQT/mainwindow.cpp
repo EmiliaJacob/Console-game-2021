@@ -186,7 +186,7 @@ void MainWindow::on_pushButton_clicked()
 {
     ui->textBrowser->clear();
     ui->stackedWidget->setCurrentIndex(1);
-    if(!mGame->LoadGame()){
+    if(!mGame->LoadGame(0)){
         QMessageBox::information(0,"Error", " file not fonde");
     }
 

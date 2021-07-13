@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Game_t {
-    const uint offsetsAndSize[22];
-    char stringdata0[109];
+    const uint offsetsAndSize[24];
+    char stringdata0[124];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(offsetof(qt_meta_stringdata_Game_t, stringdata0) + ofs), len 
@@ -34,17 +34,19 @@ QT_MOC_LITERAL(5, 18), // "issueConsoleOutput"
 QT_MOC_LITERAL(24, 0), // ""
 QT_MOC_LITERAL(25, 6), // "output"
 QT_MOC_LITERAL(32, 8), // "LoadGame"
-QT_MOC_LITERAL(41, 8), // "SaveGame"
-QT_MOC_LITERAL(50, 13), // "HandleCommand"
-QT_MOC_LITERAL(64, 7), // "command"
-QT_MOC_LITERAL(72, 11), // "ChangeState"
-QT_MOC_LITERAL(84, 9), // "stateName"
-QT_MOC_LITERAL(94, 14) // "ListSavePoints"
+QT_MOC_LITERAL(41, 14), // "savepointIndex"
+QT_MOC_LITERAL(56, 8), // "SaveGame"
+QT_MOC_LITERAL(65, 13), // "HandleCommand"
+QT_MOC_LITERAL(79, 7), // "command"
+QT_MOC_LITERAL(87, 11), // "ChangeState"
+QT_MOC_LITERAL(99, 9), // "stateName"
+QT_MOC_LITERAL(109, 14) // "ListSavePoints"
 
     },
     "Game\0issueConsoleOutput\0\0output\0"
-    "LoadGame\0SaveGame\0HandleCommand\0command\0"
-    "ChangeState\0stateName\0ListSavePoints"
+    "LoadGame\0savepointIndex\0SaveGame\0"
+    "HandleCommand\0command\0ChangeState\0"
+    "stateName\0ListSavePoints"
 };
 #undef QT_MOC_LITERAL
 
@@ -65,20 +67,20 @@ static const uint qt_meta_data_Game[] = {
        1,    1,   50,    2, 0x06,    0 /* Public */,
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       4,    0,   53,    2, 0x0a,    2 /* Public */,
-       5,    0,   54,    2, 0x0a,    3 /* Public */,
-       6,    1,   55,    2, 0x0a,    4 /* Public */,
-       8,    1,   58,    2, 0x0a,    6 /* Public */,
-      10,    0,   61,    2, 0x0a,    8 /* Public */,
+       4,    1,   53,    2, 0x0a,    2 /* Public */,
+       6,    0,   56,    2, 0x0a,    4 /* Public */,
+       7,    1,   57,    2, 0x0a,    5 /* Public */,
+       9,    1,   60,    2, 0x0a,    7 /* Public */,
+      11,    0,   63,    2, 0x0a,    9 /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QString,    3,
 
  // slots: parameters
-    QMetaType::Bool,
+    QMetaType::Bool, QMetaType::Int,    5,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QString,    7,
-    QMetaType::Void, QMetaType::QString,    9,
+    QMetaType::Void, QMetaType::QString,    8,
+    QMetaType::Void, QMetaType::QString,   10,
     QMetaType::Void,
 
        0        // eod
@@ -91,7 +93,7 @@ void Game::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void *
         (void)_t;
         switch (_id) {
         case 0: _t->issueConsoleOutput((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 1: { bool _r = _t->LoadGame();
+        case 1: { bool _r = _t->LoadGame((*reinterpret_cast< int(*)>(_a[1])));
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
         case 2: _t->SaveGame(); break;
         case 3: _t->HandleCommand((*reinterpret_cast< QString(*)>(_a[1]))); break;
@@ -119,7 +121,7 @@ const QMetaObject Game::staticMetaObject = { {
     nullptr,
 qt_incomplete_metaTypeArray<qt_meta_stringdata_Game_t
 , QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>
-, QtPrivate::TypeAndForceComplete<bool, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>
+, QtPrivate::TypeAndForceComplete<bool, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>
 
 
 >,

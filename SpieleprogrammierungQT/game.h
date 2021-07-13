@@ -26,7 +26,7 @@ public:
     void NewGame();
     QString InputHandler(QString input);
 public slots:
-    bool LoadGame();
+    bool LoadGame(int savepointIndex);
     void SaveGame();
     void HandleCommand(QString command);
     void ChangeState(QString stateName);

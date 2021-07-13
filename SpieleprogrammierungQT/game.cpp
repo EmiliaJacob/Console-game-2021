@@ -47,33 +47,65 @@ void Game::ListSavePoints()
     }
 }
 
-bool Game::LoadGame()
+bool Game::LoadGame(int savepointIndex)
 {
-    //Loading Fields
-    QFile fieldsFile("fields.json");
-    if(!fieldsFile.open(QIODevice::ReadOnly)){
-        qWarning("Can't open fields - file");
-        return false;
+    QFile savepointsFile(QStringLiteral("savepoints.json"));
+
+    if(!savepointsFile.open(QIODevice::ReadWrite)) {
+        qDebug() << "Couldn't open savepoints file";
+        emit issueConsoleOutput("Couldn't find a savepoints file");
     }
+    else {
+        QByteArray savepointsData = savepointsFile.readAll();
+        QJsonDocument savepointsDoc(QJsonDocument::fromJson(savepointsData));
+        QJsonObject savepointsObject = savepointsDoc.object();
+        QJsonArray savepointsArray = savepointsObject["savepoints"].toArray();
 
-    QByteArray fieldsData = fieldsFile.readAll();
-    QJsonDocument fieldsDoc(QJsonDocument::fromJson(fieldsData));
+        if(savepointIndex < 0 || savepointIndex > savepointsArray.size() - 1) {
+            emit issueConsoleOutput("Please enter a number that is in the specified range");
+            return false;
+        }
 
-    Level_One.Read(fieldsDoc.object());
+        QString fieldsFileName = "fields_" +
+                savepointsArray.at(savepointIndex)["dateTime"].toString()
+                .remove(QChar(':'), Qt::CaseInsensitive)
+                .replace(QChar(' '), QChar('_'),Qt::CaseInsensitive)
+                + ".json";
 
-    // Loading Player
-    QFile playerFile("player.json");
-    if(!playerFile.open(QIODevice::ReadOnly)){
-        qWarning("Can't open save file");
-        return false;
+        QString playerFileName = "player_" +
+                savepointsArray.at(savepointIndex)["dateTime"].toString()
+                .remove(QChar(':'), Qt::CaseInsensitive)
+                .replace(QChar(' '), QChar('_'),Qt::CaseInsensitive)
+                + ".json";
+
+        //Loading Fields
+        QFile fieldsFile(fieldsFileName);
+        if(!fieldsFile.open(QIODevice::ReadOnly)){
+            qWarning("Can't open fields - file");
+            return false;
+        }
+
+        QByteArray fieldsData = fieldsFile.readAll();
+        QJsonDocument fieldsDoc(QJsonDocument::fromJson(fieldsData));
+
+        Level_One.Read(fieldsDoc.object());
+
+        // Loading Player
+
+        QFile playerFile(playerFileName);
+        if(!playerFile.open(QIODevice::ReadOnly)){
+            qWarning("Can't open save file");
+            return false;
+        }
+
+        QByteArray playerData = playerFile.readAll();
+        QJsonDocument playerDoc(QJsonDocument::fromJson(playerData));
+
+        mPlayer.Read(playerDoc.object());
+
+        emit issueConsoleOutput("Savepoint was successfully loaded");
+        return true;
     }
-
-    QByteArray playerData = playerFile.readAll();
-    QJsonDocument playerDoc(QJsonDocument::fromJson(playerData));
-
-    mPlayer.Read(playerDoc.object());
-
-    return true;
 }
 
 void Game::HandleCommand(QString command)
@@ -139,7 +171,13 @@ void Game::SaveGame()
     }
     //
 
-    QFile playerFile(QStringLiteral("playerx.json"));
+    QString playerFileName = "player_" +
+            dateTime.toString()
+            .remove(QChar(':'), Qt::CaseInsensitive)
+            .replace(QChar(' '), QChar('_'),Qt::CaseInsensitive)
+            + ".json";
+
+    QFile playerFile(playerFileName);
 
     if(!playerFile.open(QIODevice::WriteOnly))
     {
@@ -153,7 +191,13 @@ void Game::SaveGame()
         playerFile.write(QJsonDocument(playerObject).toJson());
     }
 
-    QFile fieldsFile(QStringLiteral("fields.json"));
+    QString fieldsFileName = "fields_" +
+            dateTime.toString()
+            .remove(QChar(':'), Qt::CaseInsensitive)
+            .replace(QChar(' '), QChar('_'),Qt::CaseInsensitive)
+            + ".json";
+
+    QFile fieldsFile(fieldsFileName);
 
     if(!fieldsFile.open((QIODevice::WriteOnly)))
     {

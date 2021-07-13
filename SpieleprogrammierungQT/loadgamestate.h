@@ -18,7 +18,7 @@ public:
 signals:
     void changeStateRequest(QString newState);
     void issueConsoleOutput(QString output);
-    void loadGameRequest();
+    void loadGameRequest(int savespointIndex);
     void listSavepointsRequest();
 };
 
