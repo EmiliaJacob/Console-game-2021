@@ -25,7 +25,7 @@ public slots:
     void SetGame(Game* game);
     void UpdatePositionInUi(QString oldPosition, QString newPosition);
     void UpdateUiinventarsuptrakt(QString itemName, int amount);
-    void UpdateUiinventaradd(QString itemName, int amount);
+    void UpdateUiinventaradd(QString itemName, Inventory* inventory);
     void DeleteLastLine();
 private slots:
     void on_Send_clicked();

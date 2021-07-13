@@ -134,8 +134,27 @@ void MainWindow::on_tableWidget_cellClicked(int row, int column)
     if(row==3) ui->textBrowser->append("A red ore \n It's rather light\n");
 }
 //add intem
-void MainWindow::UpdateUiinventaradd(QString itemName, int amount){
-    qDebug() << "Picked up: " + itemName + " " + QString::number(amount) + " times";
+void MainWindow::UpdateUiinventaradd(QString itemName, Inventory* inventory){
+
+    QString amountInInventory = QString::number(inventory->GetItemAmount(itemName));
+
+    // Case: Item is already in table once
+    for(int rowCounter=0; rowCounter<ui->tableWidget->rowCount(); rowCounter++) {
+        QTableWidgetItem* item = ui->tableWidget->item(rowCounter, 0);
+        qDebug() << item->text();
+        if(item->text() == itemName) {
+            ui->tableWidget->setItem(rowCounter, 1, new QTableWidgetItem(amountInInventory));
+            return;
+        }
+    }
+
+    // Case: Item isn't in table yet
+    ui->tableWidget->insertRow(ui->tableWidget->rowCount());
+    ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,0,new QTableWidgetItem(itemName));
+    ui->tableWidget->setItem(ui->tableWidget->rowCount()-1,1,new QTableWidgetItem(amountInInventory));
+
+
+    //QList<QTableWidgetItem*> itemRepresentative = ui->tableWidget->findItems("")
    //int i=0;
    //bool exist=false;
    //while (inventory[i]!=-1&&exist==false) {
@@ -156,6 +175,8 @@ void MainWindow::UpdateUiinventaradd(QString itemName, int amount){
    //     // ui->tableWidget->model()->insertRow();
    //}
 }
+
+
 //tacke item
 void MainWindow::UpdateUiinventarsuptrakt(QString itemName, int amount){
     qDebug() << "Dropped: " + itemName + " " + QString::number(amount) + " times";

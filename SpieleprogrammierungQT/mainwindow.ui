@@ -392,26 +392,6 @@ border-color: rgb(217, 124, 44)
          <attribute name="verticalHeaderVisible">
           <bool>false</bool>
          </attribute>
-         <row>
-          <property name="text">
-           <string>Neue Zeile</string>
-          </property>
-         </row>
-         <row>
-          <property name="text">
-           <string>Neue Zeile</string>
-          </property>
-         </row>
-         <row>
-          <property name="text">
-           <string>Neue Zeile</string>
-          </property>
-         </row>
-         <row>
-          <property name="text">
-           <string>Neue Zeile</string>
-          </property>
-         </row>
          <column>
           <property name="text">
            <string>Item</string>
@@ -422,54 +402,6 @@ border-color: rgb(217, 124, 44)
            <string>Anzal</string>
           </property>
          </column>
-         <item row="0" column="0">
-          <property name="text">
-           <string>tank</string>
-          </property>
-          <property name="flags">
-           <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
-          </property>
-         </item>
-         <item row="0" column="1">
-          <property name="text">
-           <string>x1</string>
-          </property>
-         </item>
-         <item row="1" column="0">
-          <property name="text">
-           <string>cristal</string>
-          </property>
-         </item>
-         <item row="1" column="1">
-          <property name="text">
-           <string>x6</string>
-          </property>
-         </item>
-         <item row="2" column="0">
-          <property name="text">
-           <string>iridium</string>
-          </property>
-         </item>
-         <item row="2" column="1">
-          <property name="text">
-           <string>x3</string>
-          </property>
-         </item>
-         <item row="3" column="0">
-          <property name="text">
-           <string>wakasium</string>
-          </property>
-         </item>
-         <item row="3" column="1">
-          <property name="text">
-           <string>x1</string>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>12</pointsize>
-           </font>
-          </property>
-         </item>
         </widget>
        </widget>
        <widget class="QWidget" name="Mails">

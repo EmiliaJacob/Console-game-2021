@@ -176,7 +176,7 @@ QString Player::PickUpItemOfType(QString itemType)
             mInventory.CollectedItems.append(CurrentField->Items[i]);
             CurrentField->Items.removeAt(i);
             emit issueConsoleOutput("Picked up " + itemType);
-            emit pickedUpItems(itemType, 1);
+            emit pickedUpItems(itemType, &mInventory);
             PrintItemDescription(itemType);
             return("Picked up " + itemType);
         }
@@ -201,7 +201,7 @@ QString Player::PickUpMultipleItemsOfType(QString itemType, int numberOfItems) {
 
             if(remainingItemsToPickUp == 0) {
                 emit issueConsoleOutput("Picked up " + QString::number(numberOfItems) + " " + itemType);
-                emit pickedUpItems(itemType, numberOfItems);
+                emit pickedUpItems(itemType, &mInventory);
                 PrintItemDescription(itemType);
                 return("Picked up " + QString::number(numberOfItems) + " " + itemType);
             }
@@ -258,7 +258,7 @@ QString Player::PickUpAllItemsOfType(QString itemType)
     }
     else {
         emit issueConsoleOutput("Picked all available " + itemType);
-        emit pickedUpItems(itemType, numberOfItemsFound);
+        emit pickedUpItems(itemType, &mInventory);
         PrintItemDescription(itemType);
         return("Picked up item");
     }
