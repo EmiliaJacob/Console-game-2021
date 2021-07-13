@@ -73,7 +73,7 @@ void Player::Move(QString direction) // TODO: refactor make it smaller
             return;
         }
         if(CurrentField->FieldForward == "b") {
-            emit issueConsoleOutput("This direction is blocked.\n   There might be some way to free the way.");
+            emit issueConsoleOutput("This direction is blocked.\n   There might be some way to free this way.");
             return;
         }
 
@@ -93,7 +93,7 @@ void Player::Move(QString direction) // TODO: refactor make it smaller
             return;
         }
         if(CurrentField->FieldBackward == "b") {
-            emit issueConsoleOutput("This direction is blocked.\n   There might be some way to free the way.");
+            emit issueConsoleOutput("This direction is blocked.\n   There might be some way to free this way.");
             return;
         }
 
@@ -113,7 +113,7 @@ void Player::Move(QString direction) // TODO: refactor make it smaller
             return;
         }
         if(CurrentField->FieldLeft == "b") {
-            emit issueConsoleOutput("This direction is blocked.\n   There might be some way to free the way.");
+            emit issueConsoleOutput("This direction is blocked.\n   There might be some way to free this way.");
             return;
         }
 
@@ -133,7 +133,7 @@ void Player::Move(QString direction) // TODO: refactor make it smaller
             return;
         }
         if(CurrentField->FieldRight == "b") {
-            emit issueConsoleOutput("This direction is blocked.\n   There might be some way to free the way.");
+            emit issueConsoleOutput("This direction is blocked.\n   There might be some way to free this way.");
             return;
         }
 
@@ -402,6 +402,7 @@ void Player::SetSavePoint()
         }
         unlockedSavePoints.append(CurrentField->mSavePoint);
         emit issueConsoleOutput("Savepoint successfully set");
+        lastSavePoint = CurrentField->mSavePoint.Name;
     }
     else
         emit issueConsoleOutput("The current field is not eligable to set a savepoint here");
