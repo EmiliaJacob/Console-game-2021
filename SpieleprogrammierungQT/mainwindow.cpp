@@ -258,6 +258,9 @@ void MainWindow::on_pushButton_newgame_clicked()
 
 
     States::newGameState.PrintMenu();
+
+    UpdateButtonImage("p_e.png", "Field_1");
+
     ui->lineEdit->setDisabled(false);
     ui->lineEdit->setFocus();
 }
@@ -278,8 +281,10 @@ void MainWindow::on_pushButton_clicked()
 
     //PrintSystemBoot();
     // TODO: Remove again
+    UpdateButtonImage("p_e.png", "Field_1");
     ui->lineEdit->setDisabled(false);
     ui->lineEdit->setFocus();
+
 }
 
 void MainWindow::PrintSystemBoot()
