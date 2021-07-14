@@ -37,6 +37,7 @@ public slots:
 signals:
     void issueConsoleOutput(QString output);
     void loadButtonImagesRequest();
+    void updateButtonImageRequest(QString imageName, QString buttonName);
 };
 
 #endif // GAME_H

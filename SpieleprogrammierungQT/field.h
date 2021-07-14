@@ -12,7 +12,7 @@ public:
     QString FieldRight, FieldLeft, FieldUp, FieldDown; // Create ID with QUUid::createUuid().toString()
     QString Description;
     QList<Item> Items;
-    bool IsDiscovered;
+    QString IsDiscovered;
     SavePoint mSavePoint;
     bool HasSavePoint = false;
 

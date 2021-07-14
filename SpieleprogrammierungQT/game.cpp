@@ -157,8 +157,45 @@ bool Game::LoadGame(int savepointIndex)
             return false;
         }
 
+        //
         QByteArray fieldsData = fieldsFile.readAll();
         QJsonDocument fieldsDoc(QJsonDocument::fromJson(fieldsData));
+
+        ///////////////Set the icons for the unlocked fields
+        QJsonArray fieldArray = fieldsDoc.object()["fields"].toArray();
+
+        for(int i=0; i<fieldArray.size(); i++)
+        {
+            QJsonObject fieldObject = fieldArray[i].toObject();
+            QString hasBeenDiscovered = fieldObject["discovered"].toString();
+
+            if(hasBeenDiscovered == "1") {
+
+
+                QString buttonName = "Field_"+ fieldObject["id"].toString();
+                QString fieldUp = fieldObject["up"].toString();
+                QString fieldDown = fieldObject["down"].toString();
+                QString fieldLeft = fieldObject["left"].toString();
+                QString fieldRight = fieldObject["right"].toString();
+
+                QString imageName;
+
+                if(fieldUp != "x" && fieldUp != "b")
+                    imageName.append("n");
+                if(fieldRight != "x" && fieldRight != "b")
+                    imageName.append("e");
+                if(fieldDown != "x" && fieldDown != "b")
+                    imageName.append("s");
+                if(fieldLeft != "x" && fieldLeft != "b")
+                    imageName.append("w");
+
+                imageName.append(".png");
+
+                emit updateButtonImageRequest(imageName, buttonName);
+
+            }
+        }
+        /////////////////////////////////////////
 
         Level_One.Read(fieldsDoc.object());
 
@@ -170,8 +207,38 @@ bool Game::LoadGame(int savepointIndex)
             return false;
         }
 
+
         QByteArray playerData = playerFile.readAll();
         QJsonDocument playerDoc(QJsonDocument::fromJson(playerData));
+
+
+        // Set image icon for current position
+
+        QString playerPositionId = playerDoc.object()["currentFieldId"].toString();
+
+        Field* currentField = Level_One.GetField(playerPositionId);
+
+        QString buttonName = "Field_"+ playerPositionId;
+
+        QString imageName;
+        imageName.append("p_");
+
+        if(currentField->FieldUp != "x" && currentField->FieldUp != "b")
+            imageName.append("n");
+        if(currentField->FieldRight != "x" && currentField->FieldRight != "b")
+            imageName.append("e");
+        if(currentField->FieldDown != "x" && currentField->FieldDown != "b")
+            imageName.append("s");
+        if(currentField->FieldLeft != "x" && currentField->FieldLeft != "b")
+            imageName.append("w");
+
+        imageName.append(".png");
+
+        emit updateButtonImageRequest(imageName, buttonName);
+
+        /////////////////
+
+
 
         mPlayer.Read(playerDoc.object());
 

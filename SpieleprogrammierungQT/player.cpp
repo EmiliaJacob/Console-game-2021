@@ -79,6 +79,8 @@ void Player::Move(QString direction) // TODO: refactor make it smaller
 
         lastFieldId = CurrentField->Id;
         CurrentField = Game::Level_One.GetField(CurrentField->FieldUp);
+        CurrentField->IsDiscovered = "1";
+
         emit issueConsoleOutput("Moved up to field with id: " + CurrentField->Id);
 
         Game::Level_One.ExecuteFieldEvent(CurrentField->Id);
@@ -99,6 +101,8 @@ void Player::Move(QString direction) // TODO: refactor make it smaller
 
         lastFieldId = CurrentField->Id;
         CurrentField = Game::Level_One.GetField(CurrentField->FieldDown);
+        CurrentField->IsDiscovered = "1";
+
         emit issueConsoleOutput("Moved down to field with id: " + CurrentField->Id);
 
         Game::Level_One.ExecuteFieldEvent(CurrentField->Id);
@@ -119,6 +123,8 @@ void Player::Move(QString direction) // TODO: refactor make it smaller
 
         lastFieldId = CurrentField->Id;
         CurrentField = Game::Level_One.GetField(CurrentField->FieldLeft);
+        CurrentField->IsDiscovered = "1";
+
         emit issueConsoleOutput("Moved left to field with id: " + CurrentField->Id);
 
         Game::Level_One.ExecuteFieldEvent(CurrentField->Id);
@@ -139,6 +145,8 @@ void Player::Move(QString direction) // TODO: refactor make it smaller
 
         lastFieldId = CurrentField->Id;
         CurrentField = Game::Level_One.GetField(CurrentField->FieldRight);
+        CurrentField->IsDiscovered = "1";
+
         emit issueConsoleOutput("Moved right to field with id: " + CurrentField->Id);
 
         Game::Level_One.ExecuteFieldEvent(CurrentField->Id);

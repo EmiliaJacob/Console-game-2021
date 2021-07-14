@@ -14,7 +14,7 @@ void Field::Read(QJsonObject &json)
    this->FieldUp = json["up"].toString();
    this->FieldDown = json["down"].toString();
    this->Description = json["description"].toString();
-   this->IsDiscovered = json["discovered"].toBool();
+   this->IsDiscovered = json["discovered"].toString();
 
    if(!json["savePoint"].isNull()) {
        this->HasSavePoint = true;
@@ -42,6 +42,7 @@ void Field::Write(QJsonObject &json)
     json["right"] = this->FieldRight;
     json["description"] = this->Description;
     json["savePoint"] = this->mSavePoint.Name;
+    json["discovered"] = this->IsDiscovered;
 
     QJsonArray itemArray;
 
