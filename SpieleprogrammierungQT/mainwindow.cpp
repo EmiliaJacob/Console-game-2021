@@ -103,7 +103,7 @@ void MainWindow::on_downbutton_clicked()
 
 void MainWindow::UpdatePositionInUi(Field* newField, QString lastFieldId)
 {
-    qDebug() << "MOVED ONTO FIELD " + newField->Id;
+    qDebug() << "NEWFIELD " + newField->Id;
 
     QString buttonName = "Field_"+newField->Id;
 
@@ -117,8 +117,9 @@ void MainWindow::UpdatePositionInUi(Field* newField, QString lastFieldId)
         imageName.append("e");
     if(newField->FieldDown != "x" && newField->FieldDown != "b")
         imageName.append("s");
-    if(newField->FieldLeft != "x" && newField->FieldDown != "b")
+    if(newField->FieldLeft != "x" && newField->FieldLeft != "b") {
         imageName.append("w");
+    }
 
     imageName.append(".png");
 
@@ -131,6 +132,8 @@ void MainWindow::UpdatePositionInUi(Field* newField, QString lastFieldId)
     //Change to icon of the last field to one without the player marker
     Field* lastField = Game::Level_One.GetField(lastFieldId);
 
+    qDebug() << "LASTFIELD " + lastFieldId;
+
     QString lastFieldButtonName = "Field_"+lastFieldId;
 
     QString imageNameLastField;
@@ -141,9 +144,10 @@ void MainWindow::UpdatePositionInUi(Field* newField, QString lastFieldId)
         imageNameLastField.append("e");
     if(lastField->FieldDown != "x" && lastField->FieldDown != "b")
         imageNameLastField.append("s");
-    if(lastField->FieldLeft != "x" && lastField->FieldDown != "b")
+    if(lastField->FieldLeft != "x" && lastField->FieldLeft != "b")
         imageNameLastField.append("w");
 
+    qDebug () << "CURRENTLEFTR " + newField->FieldLeft;
     imageNameLastField.append(".png");
 
     qDebug() << "IMAGENAME last field: " + imageName;
