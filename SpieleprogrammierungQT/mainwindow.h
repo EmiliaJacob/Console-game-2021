@@ -28,7 +28,6 @@ public slots:
     void UpdateUiinventaradd(QString itemName, Inventory* inventory);
     void DeleteLastLine();
     void UpdateButtonImage(QString imageName, QString buttonName);
-    void LoadAllButtonImages();
 
 private slots:
     void on_Send_clicked();
@@ -71,6 +70,6 @@ private:
     IStates* currentState;
     Ui::MainWindow *ui;
     comunicazionhendler *mComunicazionhdendler;
-    void PrintSystemBoot();
+    void PrintSystemBoot(bool newGame);
 };
 #endif // MAINWINDOW_H

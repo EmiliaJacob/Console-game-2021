@@ -18,7 +18,6 @@ int main(int argc, char *argv[])
 
 
     QObject::connect(&game, &Game::issueConsoleOutput, &mainWindow, &MainWindow::PrintOntoConsole);
-    QObject::connect(&game, &Game::loadButtonImagesRequest, &mainWindow, &MainWindow::LoadAllButtonImages);
     QObject::connect(&game, &Game::updateButtonImageRequest, &mainWindow, &MainWindow::UpdateButtonImage);
 
     QObject::connect(&game.Level_One, &Level::issueConsoleOutput, &mainWindow, &MainWindow::PrintOntoConsole);

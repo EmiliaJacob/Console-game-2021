@@ -31,7 +31,7 @@ MainWindow::MainWindow(QWidget *parent)
     textFont.setFamily("monospace[Consolas]");
     textFont.setFixedPitch(true);
     ui->textBrowser->setFont(textFont);
-    ui->textBrowser->setAcceptRichText(true);
+    //ui->textBrowser->setAcceptRichText(true);
     ui->lineEdit->setDisabled(true);
 }
 
@@ -246,11 +246,14 @@ void MainWindow::UpdateUiinventarsuptrakt(QString itemName, Inventory* inventory
 //New Game
 void MainWindow::on_pushButton_newgame_clicked()
 {
+
+
     ui->stackedWidget->setCurrentIndex(1);
-    emit newGameStateRequest();
+    PrintSystemBoot(true);
+    //emit newGameStateRequest();
 
 
-    States::newGameState.PrintMenu();
+    //States::newGameState.PrintMenu();
 
     UpdateButtonImage("p_e.png", "Field_1");
 
@@ -264,28 +267,23 @@ void MainWindow::on_pushButton_clicked()
     ui->textBrowser->clear();
     ui->stackedWidget->setCurrentIndex(1);
 
-    emit initialLoadStateRequest();
-
-    States::initialLoadGameState.PrintMenu();
+    //emit initialLoadStateRequest();
+    //
+    //States::initialLoadGameState.PrintMenu();
 
    //if(!mGame->LoadGame(0)){
    //    QMessageBox::information(0,"Error", " file not fonde");
    //}
 
-    //PrintSystemBoot();
     // TODO: Remove again
-    LoadAllButtonImages();
-    ui->lineEdit->setDisabled(false);
-    ui->lineEdit->setFocus();
+   // ui->lineEdit->setDisabled(false);
+   //  ui->lineEdit->setFocus();
+    PrintSystemBoot(false);
 
 }
 
-void MainWindow::LoadAllButtonImages()
-{
 
-}
-
-void MainWindow::PrintSystemBoot()
+void MainWindow::PrintSystemBoot(bool newGame)
 {
     ui->textBrowser->append("I'm initializing please wait");
     for(int i=0; i<1000; i+=200) {
@@ -341,9 +339,17 @@ void MainWindow::PrintSystemBoot()
 
     QTimer::singleShot(9500, this, [=] () {
         DeleteLastLine();
-        States::idleState.PrintMenu();
+        //States::idleState.PrintMenu();
         ui->lineEdit->setDisabled(false);
         ui->lineEdit->setFocus();
+        if(newGame){
+            emit newGameStateRequest();
+            States::newGameState.PrintMenu();
+        }
+        else {
+            emit initialLoadStateRequest();
+            States::initialLoadGameState.PrintMenu();
+        }
     });
 }
 

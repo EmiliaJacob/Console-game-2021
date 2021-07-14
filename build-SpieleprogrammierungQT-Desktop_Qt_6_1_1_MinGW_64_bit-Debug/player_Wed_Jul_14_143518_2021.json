@@ -1,0 +1,16 @@
+{
+    "currentFieldId": "3",
+    "inventory": [
+        {
+            "description": "A rusty pickaxe",
+            "name": "pickaxe"
+        }
+    ],
+    "name": "Felix",
+    "unlockedSavePoints": [
+        {
+            "fieldId": "1",
+            "name": "The entry of the caves"
+        }
+    ]
+}
