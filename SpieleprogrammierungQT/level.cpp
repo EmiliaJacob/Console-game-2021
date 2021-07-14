@@ -70,7 +70,7 @@ QString Level::UseItem(Field* CurrentField, QString itemName)
     if (CurrentField->Id == "2")
     {
         if(itemName == "Swipey thing" ) {
-            CurrentField->FieldForward = GetField("3")->Id;
+            CurrentField->FieldUp = GetField("3")->Id;
             return "Sucessfully opened the door";
         }
     }

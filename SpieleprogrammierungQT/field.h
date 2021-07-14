@@ -9,7 +9,7 @@ class Field
 private:
 public:
     QString Id;
-    QString FieldRight, FieldLeft, FieldForward, FieldBackward; // Create ID with QUUid::createUuid().toString()
+    QString FieldRight, FieldLeft, FieldUp, FieldDown; // Create ID with QUUid::createUuid().toString()
     QString Description;
     QList<Item> Items;
     bool IsDiscovered;

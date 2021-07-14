@@ -67,43 +67,43 @@ void Player::Write(QJsonObject &json)
 
 void Player::Move(QString direction) // TODO: refactor make it smaller
 {
-    if(direction == "forward"){
-        if(CurrentField->FieldForward == "x") {
+    if(direction == "up"){
+        if(CurrentField->FieldUp == "x") {
             emit issueConsoleOutput("It is impossible to move into this direction.");
             return;
         }
-        if(CurrentField->FieldForward == "b") {
+        if(CurrentField->FieldUp == "b") {
             emit issueConsoleOutput("This direction is blocked.\n   There might be some way to free this way.");
             return;
         }
 
         lastFieldId = CurrentField->Id;
-        CurrentField = Game::Level_One.GetField(CurrentField->FieldForward);
-        emit issueConsoleOutput("Moved forward to field with id: " + CurrentField->Id);
+        CurrentField = Game::Level_One.GetField(CurrentField->FieldUp);
+        emit issueConsoleOutput("Moved up to field with id: " + CurrentField->Id);
 
         Game::Level_One.ExecuteFieldEvent(CurrentField->Id);
 
-        emit moved(CurrentField);
+        emit moved(CurrentField, lastFieldId);
         GetFieldDescription();
     }
 
-    if(direction == "backward"){
-        if(CurrentField->FieldBackward == "x") {
+    if(direction == "down"){
+        if(CurrentField->FieldDown == "x") {
             emit issueConsoleOutput("It is impossible to move into this direction.");
             return;
         }
-        if(CurrentField->FieldBackward == "b") {
+        if(CurrentField->FieldDown == "b") {
             emit issueConsoleOutput("This direction is blocked.\n   There might be some way to free this way.");
             return;
         }
 
         lastFieldId = CurrentField->Id;
-        CurrentField = Game::Level_One.GetField(CurrentField->FieldBackward);
-        emit issueConsoleOutput("Moved backward to field with id: " + CurrentField->Id);
+        CurrentField = Game::Level_One.GetField(CurrentField->FieldDown);
+        emit issueConsoleOutput("Moved down to field with id: " + CurrentField->Id);
 
         Game::Level_One.ExecuteFieldEvent(CurrentField->Id);
 
-        emit moved(CurrentField);
+        emit moved(CurrentField, lastFieldId);
         GetFieldDescription();
     }
 
@@ -123,7 +123,7 @@ void Player::Move(QString direction) // TODO: refactor make it smaller
 
         Game::Level_One.ExecuteFieldEvent(CurrentField->Id);
 
-        emit moved(CurrentField);
+        emit moved(CurrentField, lastFieldId);
         GetFieldDescription();
     }
 
@@ -143,7 +143,7 @@ void Player::Move(QString direction) // TODO: refactor make it smaller
 
         Game::Level_One.ExecuteFieldEvent(CurrentField->Id);
 
-        emit moved(CurrentField);
+        emit moved(CurrentField, lastFieldId);
         GetFieldDescription();
     }
 }
@@ -535,6 +535,8 @@ void Player::UseItem(QString itemName)
     if(itemName == "key_A") {
         if(CurrentField->Id == "2") {
             CurrentField->FieldRight = "5";
+            Game::Level_One.GetField("5")->FieldLeft = "2";
+
             emit issueConsoleOutput("You have sucessfully unlocked the way into direction: right");
             return;
         }
@@ -543,6 +545,8 @@ void Player::UseItem(QString itemName)
     if(itemName == "key_B") {
         if(CurrentField->Id == "10") {
             CurrentField->FieldRight = "13";
+            Game::Level_One.GetField("13")->FieldLeft = "10";
+
             emit issueConsoleOutput("You have sucessfully unlocked the way into direction: right");
             return;
         }
@@ -551,6 +555,8 @@ void Player::UseItem(QString itemName)
     if(itemName == "passcode_A") {
         if(CurrentField->Id == "5") {
             CurrentField->FieldRight = "7";
+            Game::Level_One.GetField("7")->FieldLeft = "5";
+
             emit issueConsoleOutput("You have sucessfully unlocked the way into direction: right");
             return;
         }
@@ -558,16 +564,20 @@ void Player::UseItem(QString itemName)
 
     if(itemName == "passcode_B") {
         if(CurrentField->Id == "10") {
-            CurrentField->FieldForward = "14";
-            emit issueConsoleOutput("You have sucessfully unlocked the way into direction: forward");
+            CurrentField->FieldDown = "14";
+            Game::Level_One.GetField("14")->FieldUp = "10";
+
+            emit issueConsoleOutput("You have sucessfully unlocked the way into direction: down");
             return;
         }
     }
 
     if(itemName == "pickaxe") {
         if(CurrentField->Id == "4") {
-            CurrentField->FieldBackward = "1";
-            emit issueConsoleOutput("The wall broke. You have sucessfully unlocked the way into direction: backward");
+            CurrentField->FieldUp = "1";
+            Game::Level_One.GetField("1")->FieldDown = "4";
+
+            emit issueConsoleOutput("The wall broke. You have sucessfully unlocked the way into direction: up");
             return;
         }
     }

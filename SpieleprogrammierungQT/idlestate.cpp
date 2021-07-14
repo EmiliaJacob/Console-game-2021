@@ -10,10 +10,10 @@ IdleState::IdleState()
 void IdleState::ExecuteCommand(QString command)
 {
     if(command == "w") {
-        emit moveRequest("forward");
+        emit moveRequest("up");
     }
     else if(command == "s") {
-        emit moveRequest("backward");
+        emit moveRequest("down");
     }
     else if(command == "a") {
         emit moveRequest("left");

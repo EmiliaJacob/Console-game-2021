@@ -2,9 +2,9 @@
     "fields": [
         {
             "discovered" : "1",
-            "backward": "x",
+            "down": "x",
             "description": "   The entry to the caves.\n   The beginning of your journey.",
-            "forward": "x",
+            "up": "x",
             "id": "1",
             "items": [
             ],
@@ -14,9 +14,9 @@
         },
         {
             "discovered" : "0",
-            "backward": "x",
-            "description": "   A spacious room.\n   It has some weirdly looking glowing signs on the walls.\n   I'm not sure how to describe them.\n   The way forward is blocked by a locked gate",
-            "forward": "3",
+            "down": "3",
+            "description": "   A spacious room.\n   It has some weirdly looking glowing signs on the walls.\n   I'm not sure how to describe them.\n   The way up is blocked by a locked gate",
+            "up": "x",
             "id": "2",
             "items": [
             ],
@@ -26,9 +26,9 @@
         },
         {
             "discovered" : "0",
-            "backward": "x",
+            "down": "x",
             "description": "   A short hallway.\n   A bunch of tools lie on the floor.",
-            "forward": "x",
+            "up": "x",
             "id": "3",
             "items": [
                 {
@@ -42,9 +42,9 @@
         },
         {            
             "discovered" : "0",
-            "backward": "b",
+            "down": "x",
             "description": "   A tiny cave.\n   I see somthing shiny on the floor.\n   One of the walls looks quite thin.",
-            "forward": "x",
+            "up": "b",
             "id": "4",
             "items": [
                 {
@@ -58,9 +58,9 @@
         },
         {
             "discovered" : "0",
-            "backward": "8",
+            "down": "6",
             "description": "   A room full of machines unknown to mankind.\n   At one of the doors is a terminal.\n   It seems like we need a passcode to procede.",
-            "forward": "6",
+            "up": "8",
             "id": "5",
             "items": [
             ],
@@ -70,9 +70,9 @@
         },
         {
             "discovered" : "0",
-            "backward": "x",
+            "down": "x",
             "description": "A deadly trap!",
-            "forward": "x",
+            "up": "5",
             "id": "6",
             "items": [
             ],
@@ -82,9 +82,9 @@
         },
         {
             "discovered" : "0",
-            "backward": "x",
+            "down": "5",
             "description": "   Even more machines.\n   I have never seen anything like this.",
-            "forward": "5",
+            "up": "5",
             "id": "8",
             "items": [
             ],
@@ -94,9 +94,9 @@
         },
         {
             "discovered" : "0",
-            "backward": "x",
+            "down": "x",
             "description": "   A workshop.\n   Here are loads of loose machine parts and rusty tools.",
-            "forward": "x",
+            "up": "x",
             "id": "9",
             "items": [
                 {
@@ -110,9 +110,9 @@
         },
         {
             "discovered" : "0",
-            "backward": "x",
+            "down": "x",
             "description": "  Light shines though an opening in the walls\n   This looks like the perfect place to set a checkpoint",
-            "forward": "x",
+            "up": "x",
             "id": "7",
             "items": [
             ],
@@ -122,9 +122,9 @@
         },
         {
             "discovered" : "0",
-            "backward": "11",
+            "down": "b",
             "description": "   A huge cave.\n   No machines are here in sight.\n   But more of the mysterious glowing signs on the walls.\n   The walls themselves appear smoother. As if someone tried to sand them even.\n   Three doors are located here. Two of them appear locked.",
-            "forward": "b",
+            "up": "11",
             "id": "10",
             "items": [
             ],
@@ -134,9 +134,9 @@
         },
         {
             "discovered" : "0",
-            "backward": "x",
+            "down": "10",
             "description": "   A relatively small room.\n   A bunch of wooden boxes lay on the floor.",
-            "forward": "10",
+            "up": "x",
             "id": "11",
             "items": [
                 {
@@ -150,9 +150,9 @@
         },
         {
             "discovered" : "0",
-            "backward": "x",
+            "down": "x",
             "description": "   A dead end.\n   Looks like is has been a storage room of sorts.\n   Strange looking tools lean on the wall",
-            "forward": "x",
+            "up": "x",
             "id": "12",
             "items": [
                 {
@@ -166,9 +166,9 @@
         },
         {
             "discovered" : "0",
-            "backward": "x",
+            "down": "x",
             "description": "The end of the demo.",
-            "forward": "x",
+            "up": "x",
             "id": "13",
             "items": [
             ],
@@ -178,9 +178,9 @@
         },
         {
             "discovered" : "0",
-            "backward": "10",
+            "down": "15",
             "description": "   A short corridor.\n  More glowing signs are painted onto the walls",
-            "forward": "15",
+            "up": "10",
             "id": "14",
             "items": [
             ],
@@ -190,9 +190,9 @@
         },
         {
             "discovered" : "0",
-            "backward": "14",
+            "down": "x",
             "description": "   Another dead end.\n   There are tiny holes drilled into the walls.\n   Maybe there is something hidden inside one of them.",
-            "forward": "x",
+            "up": "14",
             "id": "15",
             "items": [
                 {

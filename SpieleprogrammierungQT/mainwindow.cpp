@@ -99,55 +99,60 @@ void MainWindow::on_downbutton_clicked()
 }
 
 //mapupdate
-void MainWindow::UpdatePositionInUi(Field* newField)
+
+
+void MainWindow::UpdatePositionInUi(Field* newField, QString lastFieldId)
 {
-    //Determine new image
-    if(newField->FieldForward != "x" && newField->FieldBackward != "x" && newField->FieldLeft != "x" && newField->FieldRight != "x") {
-
-    }
-    else if(newField->FieldForward == "x" && newField->FieldBackward != "x" && newField->FieldLeft != "x" && newField->FieldRight != "x") {
-
-    }
-    else if(newField->FieldForward != "x" && newField->FieldBackward == "x" && newField->FieldLeft != "x" && newField->FieldRight != "x") {
-
-    }
-    else if(newField->FieldForward != "x" && newField->FieldBackward != "x" && newField->FieldLeft == "x" && newField->FieldRight != "x") {
-
-    }
-    else if(newField->FieldForward != "x" && newField->FieldBackward != "x" && newField->FieldLeft != "x" && newField->FieldRight == "x") {
-
-    }
-    else if(newField->FieldForward == "x" && newField->FieldBackward == "x" && newField->FieldLeft != "x" && newField->FieldRight != "x") {
-
-    }
-    else if(newField->FieldForward == "x" && newField->FieldBackward != "x" && newField->FieldLeft == "x" && newField->FieldRight != "x") {
-
-    }
-    else if(newField->FieldForward == "x" && newField->FieldBackward != "x" && newField->FieldLeft != "x" && newField->FieldRight == "x") {
-
-    }
-    else if(newField->FieldForward != "x" && newField->FieldBackward == "x" && newField->FieldLeft == "x" && newField->FieldRight != "x") {
-
-    }
-    else if(newField->FieldForward != "x" && newField->FieldBackward == "x" && newField->FieldLeft != "x" && newField->FieldRight == "x") {
-
-    }
-    else if(newField->FieldForward != "x" && newField->FieldBackward != "x" && newField->FieldLeft == "x" && newField->FieldRight == "x") {
-
-    }
-
     qDebug() << "MOVED ONTO FIELD " + newField->Id;
-    QPixmap pixmap("sorcebilder/03nosw.png");
-    QIcon ButtonIcon(pixmap);
-    QPushButton* button = MainWindow::findChild<QPushButton*>("Field_"+newField->Id);
-    button->setIcon(ButtonIcon);
-    button->setIconSize(pixmap.rect().size());
+
+    QString buttonName = "Field_"+newField->Id;
+
+    QString imageName;
+
+    imageName.append("p_");
+
+    if(newField->FieldUp != "x" && newField->FieldUp != "b")
+        imageName.append("n");
+    if(newField->FieldRight != "x" && newField->FieldRight != "b")
+        imageName.append("e");
+    if(newField->FieldDown != "x" && newField->FieldDown != "b")
+        imageName.append("s");
+    if(newField->FieldLeft != "x" && newField->FieldDown != "b")
+        imageName.append("w");
+
+    imageName.append(".png");
+
+    qDebug() << "IMAGENAME: " + imageName;
+
+    UpdateButtonImage(imageName, buttonName);
 
 
+
+    //Change to icon of the last field to one without the player marker
+    Field* lastField = Game::Level_One.GetField(lastFieldId);
+
+    QString lastFieldButtonName = "Field_"+lastFieldId;
+
+    QString imageNameLastField;
+
+    if(lastField->FieldUp != "x" && lastField->FieldUp != "b")
+        imageNameLastField.append("n");
+    if(lastField->FieldRight != "x" && lastField->FieldRight != "b")
+        imageNameLastField.append("e");
+    if(lastField->FieldDown != "x" && lastField->FieldDown != "b")
+        imageNameLastField.append("s");
+    if(lastField->FieldLeft != "x" && lastField->FieldDown != "b")
+        imageNameLastField.append("w");
+
+    imageNameLastField.append(".png");
+
+    qDebug() << "IMAGENAME last field: " + imageName;
+
+    UpdateButtonImage(imageNameLastField, lastFieldButtonName);
 }
 
 void MainWindow::UpdateButtonImage(QString imageName, QString buttonName) {
-    QPixmap pixmap("sorcebilder/" + imageName + ".png");
+    QPixmap pixmap("sorcebilder/" + imageName);
     QIcon ButtonIcon(pixmap);
     QPushButton* button = MainWindow::findChild<QPushButton*>(buttonName);
     button->setIcon(ButtonIcon);

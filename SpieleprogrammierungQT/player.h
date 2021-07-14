@@ -46,7 +46,7 @@ public slots:
 
 signals:
     void issueConsoleOutput(QString output);
-    void moved (Field* newField);
+    void moved (Field* newField, QString lastFieldId);
     void pickedUpItems(QString itemName, Inventory* inventory);
     void droppedItems(QString itemName, Inventory* inventory);
 };

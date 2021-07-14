@@ -11,8 +11,8 @@ void Field::Read(QJsonObject &json)
    this->Id = json["id"].toString();
    this->FieldRight = json["right"].toString();
    this->FieldLeft = json["left"].toString();
-   this->FieldForward = json["forward"].toString();
-   this->FieldBackward = json["backward"].toString();
+   this->FieldUp = json["up"].toString();
+   this->FieldDown = json["down"].toString();
    this->Description = json["description"].toString();
    this->IsDiscovered = json["discovered"].toBool();
 
@@ -36,8 +36,8 @@ void Field::Read(QJsonObject &json)
 void Field::Write(QJsonObject &json)
 {
     json["id"] = this->Id;
-    json["forward"] = this->FieldForward;
-    json["backward"] = this->FieldBackward;
+    json["up"] = this->FieldUp;
+    json["down"] = this->FieldDown;
     json["left"] = this->FieldLeft;
     json["right"] = this->FieldRight;
     json["description"] = this->Description;

@@ -23,7 +23,7 @@ public:
 public slots:
     void PrintOntoConsole(QString newLine);
     void SetGame(Game* game);
-    void UpdatePositionInUi(Field* newField);
+    void UpdatePositionInUi(Field* newField, QString lastFieldId);
     void UpdateUiinventarsuptrakt(QString itemName, Inventory* inventory);
     void UpdateUiinventaradd(QString itemName, Inventory* inventory);
     void DeleteLastLine();
