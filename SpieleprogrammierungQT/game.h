@@ -36,6 +36,7 @@ public slots:
     void SetStateToInitialLoad();
 signals:
     void issueConsoleOutput(QString output);
+    void loadButtonImagesRequest();
 };
 
 #endif // GAME_H

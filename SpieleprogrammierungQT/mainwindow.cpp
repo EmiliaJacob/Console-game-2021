@@ -103,8 +103,6 @@ void MainWindow::on_downbutton_clicked()
 
 void MainWindow::UpdatePositionInUi(Field* newField, QString lastFieldId)
 {
-    qDebug() << "NEWFIELD " + newField->Id;
-
     QString buttonName = "Field_"+newField->Id;
 
     QString imageName;
@@ -281,9 +279,14 @@ void MainWindow::on_pushButton_clicked()
 
     //PrintSystemBoot();
     // TODO: Remove again
-    UpdateButtonImage("p_e.png", "Field_1");
+    LoadAllButtonImages();
     ui->lineEdit->setDisabled(false);
     ui->lineEdit->setFocus();
+
+}
+
+void MainWindow::LoadAllButtonImages()
+{
 
 }
 

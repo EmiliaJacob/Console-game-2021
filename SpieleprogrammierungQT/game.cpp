@@ -26,9 +26,6 @@ void Game::NewGame(QString playerName)
 
     Level_One.Read(fieldsDoc.object());
 
-
-
-
     QFile playerFile("player_blueprint.json");
     if(!playerFile.open(QIODevice::ReadOnly)){
         qWarning("Can't open save file");
