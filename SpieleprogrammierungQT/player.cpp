@@ -83,7 +83,7 @@ void Player::Move(QString direction) // TODO: refactor make it smaller
 
         Game::Level_One.ExecuteFieldEvent(CurrentField->Id);
 
-        emit moved(lastFieldId, CurrentField->Id);
+        emit moved(CurrentField);
         GetFieldDescription();
     }
 
@@ -103,7 +103,7 @@ void Player::Move(QString direction) // TODO: refactor make it smaller
 
         Game::Level_One.ExecuteFieldEvent(CurrentField->Id);
 
-        emit moved(lastFieldId, CurrentField->Id);
+        emit moved(CurrentField);
         GetFieldDescription();
     }
 
@@ -123,7 +123,7 @@ void Player::Move(QString direction) // TODO: refactor make it smaller
 
         Game::Level_One.ExecuteFieldEvent(CurrentField->Id);
 
-        emit moved(lastFieldId, CurrentField->Id);
+        emit moved(CurrentField);
         GetFieldDescription();
     }
 
@@ -143,7 +143,7 @@ void Player::Move(QString direction) // TODO: refactor make it smaller
 
         Game::Level_One.ExecuteFieldEvent(CurrentField->Id);
 
-        emit moved(lastFieldId, CurrentField->Id);
+        emit moved(CurrentField);
         GetFieldDescription();
     }
 }
@@ -516,8 +516,8 @@ void Player::CombineItems(QString items) // TODO: This is bad code
 
 void Player::UseItem(QString itemName)
 {
-    qDebug() << "Playername " + Name;
     QStringList splittedInput = itemName.split(' ');
+
     if (splittedInput.length() > 1) {
         emit issueConsoleOutput("I can only use one item at a time");
         return;
@@ -534,40 +534,40 @@ void Player::UseItem(QString itemName)
 
     if(itemName == "key_A") {
         if(CurrentField->Id == "2") {
-            CurrentField->FieldForward = "5";
-            emit issueConsoleOutput("You have sucessfully unlocked the way into direction: forward");
+            CurrentField->FieldRight = "5";
+            emit issueConsoleOutput("You have sucessfully unlocked the way into direction: right");
             return;
         }
     }
 
     if(itemName == "key_B") {
         if(CurrentField->Id == "10") {
-            CurrentField->FieldForward = "13";
-            emit issueConsoleOutput("You have sucessfully unlocked the way into direction: forward");
+            CurrentField->FieldRight = "13";
+            emit issueConsoleOutput("You have sucessfully unlocked the way into direction: right");
             return;
         }
     }
 
     if(itemName == "passcode_A") {
         if(CurrentField->Id == "5") {
-            CurrentField->FieldForward = "7";
-            emit issueConsoleOutput("You have sucessfully unlocked the way into direction: forward");
+            CurrentField->FieldRight = "7";
+            emit issueConsoleOutput("You have sucessfully unlocked the way into direction: right");
             return;
         }
     }
 
     if(itemName == "passcode_B") {
         if(CurrentField->Id == "10") {
-            CurrentField->FieldRight = "14";
-            emit issueConsoleOutput("You have sucessfully unlocked the way into direction: right");
+            CurrentField->FieldForward = "14";
+            emit issueConsoleOutput("You have sucessfully unlocked the way into direction: forward");
             return;
         }
     }
 
     if(itemName == "pickaxe") {
         if(CurrentField->Id == "4") {
-            CurrentField->FieldLeft = "1";
-            emit issueConsoleOutput("The wall broke. You have sucessfully unlocked the way into direction: left");
+            CurrentField->FieldBackward = "1";
+            emit issueConsoleOutput("The wall broke. You have sucessfully unlocked the way into direction: backward");
             return;
         }
     }

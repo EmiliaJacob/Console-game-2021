@@ -14,6 +14,7 @@ void Field::Read(QJsonObject &json)
    this->FieldForward = json["forward"].toString();
    this->FieldBackward = json["backward"].toString();
    this->Description = json["description"].toString();
+   this->IsDiscovered = json["discovered"].toBool();
 
    if(!json["savePoint"].isNull()) {
        this->HasSavePoint = true;

@@ -23,7 +23,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Player_t {
     const uint offsetsAndSize[68];
-    char stringdata0[452];
+    char stringdata0[445];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(offsetof(qt_meta_stringdata_Player_t, stringdata0) + ofs), len 
@@ -34,39 +34,39 @@ QT_MOC_LITERAL(7, 18), // "issueConsoleOutput"
 QT_MOC_LITERAL(26, 0), // ""
 QT_MOC_LITERAL(27, 6), // "output"
 QT_MOC_LITERAL(34, 5), // "moved"
-QT_MOC_LITERAL(40, 11), // "lastFieldId"
-QT_MOC_LITERAL(52, 10), // "newFieldId"
-QT_MOC_LITERAL(63, 13), // "pickedUpItems"
-QT_MOC_LITERAL(77, 8), // "itemName"
-QT_MOC_LITERAL(86, 10), // "Inventory*"
-QT_MOC_LITERAL(97, 9), // "inventory"
-QT_MOC_LITERAL(107, 12), // "droppedItems"
-QT_MOC_LITERAL(120, 12), // "SetSavePoint"
-QT_MOC_LITERAL(133, 10), // "FastTravel"
-QT_MOC_LITERAL(144, 11), // "destination"
-QT_MOC_LITERAL(156, 23), // "ListAvailableSavePoints"
-QT_MOC_LITERAL(180, 4), // "Move"
-QT_MOC_LITERAL(185, 9), // "direction"
-QT_MOC_LITERAL(195, 16), // "PickUpItemOfType"
-QT_MOC_LITERAL(212, 8), // "itemType"
-QT_MOC_LITERAL(221, 25), // "PickUpMultipleItemsOfType"
-QT_MOC_LITERAL(247, 13), // "numberOfItems"
-QT_MOC_LITERAL(261, 20), // "PickUpAllItemsOfType"
-QT_MOC_LITERAL(282, 14), // "DropItemOfType"
-QT_MOC_LITERAL(297, 23), // "DropMultipleItemsOfType"
-QT_MOC_LITERAL(321, 18), // "DropAllItemsOfType"
-QT_MOC_LITERAL(340, 25), // "ListAvailableItemsOnField"
-QT_MOC_LITERAL(366, 20), // "PrintItemDescription"
-QT_MOC_LITERAL(387, 12), // "CombineItems"
-QT_MOC_LITERAL(400, 5), // "items"
-QT_MOC_LITERAL(406, 13), // "ListInventory"
-QT_MOC_LITERAL(420, 19), // "GetFieldDescription"
-QT_MOC_LITERAL(440, 7), // "UseItem"
-QT_MOC_LITERAL(448, 3) // "Die"
+QT_MOC_LITERAL(40, 6), // "Field*"
+QT_MOC_LITERAL(47, 8), // "newField"
+QT_MOC_LITERAL(56, 13), // "pickedUpItems"
+QT_MOC_LITERAL(70, 8), // "itemName"
+QT_MOC_LITERAL(79, 10), // "Inventory*"
+QT_MOC_LITERAL(90, 9), // "inventory"
+QT_MOC_LITERAL(100, 12), // "droppedItems"
+QT_MOC_LITERAL(113, 12), // "SetSavePoint"
+QT_MOC_LITERAL(126, 10), // "FastTravel"
+QT_MOC_LITERAL(137, 11), // "destination"
+QT_MOC_LITERAL(149, 23), // "ListAvailableSavePoints"
+QT_MOC_LITERAL(173, 4), // "Move"
+QT_MOC_LITERAL(178, 9), // "direction"
+QT_MOC_LITERAL(188, 16), // "PickUpItemOfType"
+QT_MOC_LITERAL(205, 8), // "itemType"
+QT_MOC_LITERAL(214, 25), // "PickUpMultipleItemsOfType"
+QT_MOC_LITERAL(240, 13), // "numberOfItems"
+QT_MOC_LITERAL(254, 20), // "PickUpAllItemsOfType"
+QT_MOC_LITERAL(275, 14), // "DropItemOfType"
+QT_MOC_LITERAL(290, 23), // "DropMultipleItemsOfType"
+QT_MOC_LITERAL(314, 18), // "DropAllItemsOfType"
+QT_MOC_LITERAL(333, 25), // "ListAvailableItemsOnField"
+QT_MOC_LITERAL(359, 20), // "PrintItemDescription"
+QT_MOC_LITERAL(380, 12), // "CombineItems"
+QT_MOC_LITERAL(393, 5), // "items"
+QT_MOC_LITERAL(399, 13), // "ListInventory"
+QT_MOC_LITERAL(413, 19), // "GetFieldDescription"
+QT_MOC_LITERAL(433, 7), // "UseItem"
+QT_MOC_LITERAL(441, 3) // "Die"
 
     },
     "Player\0issueConsoleOutput\0\0output\0"
-    "moved\0lastFieldId\0newFieldId\0pickedUpItems\0"
+    "moved\0Field*\0newField\0pickedUpItems\0"
     "itemName\0Inventory*\0inventory\0"
     "droppedItems\0SetSavePoint\0FastTravel\0"
     "destination\0ListAvailableSavePoints\0"
@@ -96,32 +96,32 @@ static const uint qt_meta_data_Player[] = {
 
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
        1,    1,  140,    2, 0x06,    0 /* Public */,
-       4,    2,  143,    2, 0x06,    2 /* Public */,
-       7,    2,  148,    2, 0x06,    5 /* Public */,
-      11,    2,  153,    2, 0x06,    8 /* Public */,
+       4,    1,  143,    2, 0x06,    2 /* Public */,
+       7,    2,  146,    2, 0x06,    4 /* Public */,
+      11,    2,  151,    2, 0x06,    7 /* Public */,
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-      12,    0,  158,    2, 0x0a,   11 /* Public */,
-      13,    1,  159,    2, 0x0a,   12 /* Public */,
-      15,    0,  162,    2, 0x0a,   14 /* Public */,
-      16,    1,  163,    2, 0x0a,   15 /* Public */,
-      18,    1,  166,    2, 0x0a,   17 /* Public */,
-      20,    2,  169,    2, 0x0a,   19 /* Public */,
-      22,    1,  174,    2, 0x0a,   22 /* Public */,
-      23,    1,  177,    2, 0x0a,   24 /* Public */,
-      24,    2,  180,    2, 0x0a,   26 /* Public */,
-      25,    1,  185,    2, 0x0a,   29 /* Public */,
-      26,    0,  188,    2, 0x0a,   31 /* Public */,
-      27,    1,  189,    2, 0x0a,   32 /* Public */,
-      28,    1,  192,    2, 0x0a,   34 /* Public */,
-      30,    0,  195,    2, 0x0a,   36 /* Public */,
-      31,    0,  196,    2, 0x0a,   37 /* Public */,
-      32,    1,  197,    2, 0x0a,   38 /* Public */,
-      33,    0,  200,    2, 0x0a,   40 /* Public */,
+      12,    0,  156,    2, 0x0a,   10 /* Public */,
+      13,    1,  157,    2, 0x0a,   11 /* Public */,
+      15,    0,  160,    2, 0x0a,   13 /* Public */,
+      16,    1,  161,    2, 0x0a,   14 /* Public */,
+      18,    1,  164,    2, 0x0a,   16 /* Public */,
+      20,    2,  167,    2, 0x0a,   18 /* Public */,
+      22,    1,  172,    2, 0x0a,   21 /* Public */,
+      23,    1,  175,    2, 0x0a,   23 /* Public */,
+      24,    2,  178,    2, 0x0a,   25 /* Public */,
+      25,    1,  183,    2, 0x0a,   28 /* Public */,
+      26,    0,  186,    2, 0x0a,   30 /* Public */,
+      27,    1,  187,    2, 0x0a,   31 /* Public */,
+      28,    1,  190,    2, 0x0a,   33 /* Public */,
+      30,    0,  193,    2, 0x0a,   35 /* Public */,
+      31,    0,  194,    2, 0x0a,   36 /* Public */,
+      32,    1,  195,    2, 0x0a,   37 /* Public */,
+      33,    0,  198,    2, 0x0a,   39 /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QString,    3,
-    QMetaType::Void, QMetaType::QString, QMetaType::QString,    5,    6,
+    QMetaType::Void, 0x80000000 | 5,    6,
     QMetaType::Void, QMetaType::QString, 0x80000000 | 9,    8,   10,
     QMetaType::Void, QMetaType::QString, 0x80000000 | 9,    8,   10,
 
@@ -154,7 +154,7 @@ void Player::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
         (void)_t;
         switch (_id) {
         case 0: _t->issueConsoleOutput((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 1: _t->moved((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< QString(*)>(_a[2]))); break;
+        case 1: _t->moved((*reinterpret_cast< Field*(*)>(_a[1]))); break;
         case 2: _t->pickedUpItems((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< Inventory*(*)>(_a[2]))); break;
         case 3: _t->droppedItems((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< Inventory*(*)>(_a[2]))); break;
         case 4: _t->SetSavePoint(); break;
@@ -193,7 +193,7 @@ void Player::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
             }
         }
         {
-            using _t = void (Player::*)(QString , QString );
+            using _t = void (Player::*)(Field * );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Player::moved)) {
                 *result = 1;
                 return;
@@ -223,7 +223,7 @@ const QMetaObject Player::staticMetaObject = { {
     qt_static_metacall,
     nullptr,
 qt_incomplete_metaTypeArray<qt_meta_stringdata_Player_t
-, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<Inventory *, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<Inventory *, std::false_type>
+, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<Field *, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<Inventory *, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<Inventory *, std::false_type>
 , QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>
 
 
@@ -270,9 +270,9 @@ void Player::issueConsoleOutput(QString _t1)
 }
 
 // SIGNAL 1
-void Player::moved(QString _t1, QString _t2)
+void Player::moved(Field * _t1)
 {
-    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 1, _a);
 }
 

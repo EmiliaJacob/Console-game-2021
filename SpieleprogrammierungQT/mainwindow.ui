@@ -2259,7 +2259,7 @@ border-color: rgb(255, 255, 255);
            </widget>
           </item>
           <item row="3" column="1">
-           <widget class="QPushButton" name="pushButton_8">
+           <widget class="QPushButton" name="Field_1">
             <property name="enabled">
              <bool>false</bool>
             </property>
@@ -2281,20 +2281,23 @@ border-color: rgb(255, 255, 255);
               <height>60</height>
              </size>
             </property>
+            <property name="autoFillBackground">
+             <bool>true</bool>
+            </property>
             <property name="styleSheet">
-             <string notr="true">background-image:url(./sorcebilder/12ow.png);
-background-image:url(./sorcebilder/0.png);
-border: 0px solid;
-border-color: rgb(255, 255, 255);
-</string>
+             <string notr="true">
+color: rgb(170, 255, 127);</string>
             </property>
             <property name="text">
              <string/>
             </property>
+            <property name="flat">
+             <bool>false</bool>
+            </property>
            </widget>
           </item>
           <item row="1" column="6">
-           <widget class="QPushButton" name="pushButton_32">
+           <widget class="QPushButton" name="Field_12">
             <property name="enabled">
              <bool>false</bool>
             </property>
@@ -2329,7 +2332,7 @@ border-color: rgb(255, 255, 255);
            </widget>
           </item>
           <item row="3" column="3">
-           <widget class="QPushButton" name="pushButton_18">
+           <widget class="QPushButton" name="Field_5">
             <property name="enabled">
              <bool>false</bool>
             </property>
@@ -2463,7 +2466,7 @@ border-color: rgb(255, 255, 255);
            </widget>
           </item>
           <item row="3" column="5">
-           <widget class="QPushButton" name="pushButton_28">
+           <widget class="QPushButton" name="Field_10">
             <property name="enabled">
              <bool>false</bool>
             </property>
@@ -2591,7 +2594,7 @@ border-color: rgb(255, 255, 255);
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-image:url(./sorcebilder/13os.png);
+             <string notr="true">background-image:url(./sorcebilder/0.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -2602,7 +2605,7 @@ border-color: rgb(255, 255, 255);
            </widget>
           </item>
           <item row="3" column="6">
-           <widget class="QPushButton" name="pushButton_33">
+           <widget class="QPushButton" name="Field_13">
             <property name="enabled">
              <bool>false</bool>
             </property>
@@ -2637,7 +2640,7 @@ border-color: rgb(255, 255, 255);
            </widget>
           </item>
           <item row="4" column="5">
-           <widget class="QPushButton" name="pushButton_29">
+           <widget class="QPushButton" name="Field_14">
             <property name="enabled">
              <bool>false</bool>
             </property>
@@ -2707,7 +2710,7 @@ border-color: rgb(255, 255, 255);
            </widget>
           </item>
           <item row="3" column="2">
-           <widget class="QPushButton" name="pushButton_13">
+           <widget class="QPushButton" name="Field_2">
             <property name="enabled">
              <bool>false</bool>
             </property>
@@ -2812,7 +2815,7 @@ border-color: rgb(255, 255, 255);
            </widget>
           </item>
           <item row="4" column="3">
-           <widget class="QPushButton" name="pushButton_19">
+           <widget class="QPushButton" name="Field_6">
             <property name="enabled">
              <bool>false</bool>
             </property>
@@ -2882,7 +2885,7 @@ border-color: rgb(255, 255, 255);
            </widget>
           </item>
           <item row="3" column="4">
-           <widget class="QPushButton" name="pushButton_23">
+           <widget class="QPushButton" name="Field_7">
             <property name="enabled">
              <bool>false</bool>
             </property>
@@ -2940,7 +2943,7 @@ border-color: rgb(255, 255, 255);
            </widget>
           </item>
           <item row="5" column="5">
-           <widget class="QPushButton" name="pushButton_30">
+           <widget class="QPushButton" name="Field_15">
             <property name="enabled">
              <bool>false</bool>
             </property>
@@ -3209,7 +3212,6 @@ border-color: rgb(255, 255, 255);
             </property>
             <property name="styleSheet">
              <string notr="true">background-image:url(./sorcebilder/13sw.png);
-background-image:url(./sorcebilder/0.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -3325,7 +3327,7 @@ border-color: rgb(255, 255, 255);
            </widget>
           </item>
           <item row="4" column="1">
-           <widget class="QPushButton" name="pushButton_9">
+           <widget class="QPushButton" name="Field_4">
             <property name="enabled">
              <bool>false</bool>
             </property>
@@ -3360,7 +3362,7 @@ border-color: rgb(255, 255, 255);
            </widget>
           </item>
           <item row="4" column="2">
-           <widget class="QPushButton" name="pushButton_14">
+           <widget class="QPushButton" name="Field_3">
             <property name="enabled">
              <bool>false</bool>
             </property>
@@ -3383,8 +3385,7 @@ border-color: rgb(255, 255, 255);
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-image:url(./sorcebilder/11sw.png);
-background-image:url(./sorcebilder/0.png);
+             <string notr="true">background-image:url(./sorcebilder/0.png);
 border: 0px solid;
 border-color: rgb(255, 255, 255);
 </string>
@@ -3395,7 +3396,7 @@ border-color: rgb(255, 255, 255);
            </widget>
           </item>
           <item row="1" column="4">
-           <widget class="QPushButton" name="pushButton_22">
+           <widget class="QPushButton" name="Field_9">
             <property name="enabled">
              <bool>false</bool>
             </property>
@@ -3459,7 +3460,7 @@ border-color: rgb(255, 255, 255);
            </widget>
           </item>
           <item row="1" column="3">
-           <widget class="QPushButton" name="pushButton_17">
+           <widget class="QPushButton" name="Field_8">
             <property name="enabled">
              <bool>false</bool>
             </property>
@@ -3494,7 +3495,7 @@ border-color: rgb(255, 255, 255);
            </widget>
           </item>
           <item row="1" column="5">
-           <widget class="QPushButton" name="pushButton_27">
+           <widget class="QPushButton" name="Field_11">
             <property name="enabled">
              <bool>false</bool>
             </property>
@@ -3734,25 +3735,25 @@ border-bottom-color: rgb(255,255,255);</string>
   <tabstop>pushButton_2</tabstop>
   <tabstop>pushButton_7</tabstop>
   <tabstop>pushButton_12</tabstop>
-  <tabstop>pushButton_17</tabstop>
-  <tabstop>pushButton_22</tabstop>
-  <tabstop>pushButton_27</tabstop>
-  <tabstop>pushButton_32</tabstop>
+  <tabstop>Field_8</tabstop>
+  <tabstop>Field_9</tabstop>
+  <tabstop>Field_11</tabstop>
+  <tabstop>Field_12</tabstop>
   <tabstop>pushButton_37</tabstop>
   <tabstop>pushButton_3</tabstop>
-  <tabstop>pushButton_8</tabstop>
-  <tabstop>pushButton_13</tabstop>
-  <tabstop>pushButton_18</tabstop>
-  <tabstop>pushButton_23</tabstop>
-  <tabstop>pushButton_28</tabstop>
+  <tabstop>Field_1</tabstop>
+  <tabstop>Field_2</tabstop>
+  <tabstop>Field_5</tabstop>
+  <tabstop>Field_7</tabstop>
+  <tabstop>Field_10</tabstop>
   <tabstop>pushButton_38</tabstop>
-  <tabstop>pushButton_33</tabstop>
+  <tabstop>Field_13</tabstop>
   <tabstop>pushButton_4</tabstop>
-  <tabstop>pushButton_9</tabstop>
-  <tabstop>pushButton_14</tabstop>
-  <tabstop>pushButton_19</tabstop>
+  <tabstop>Field_4</tabstop>
+  <tabstop>Field_3</tabstop>
+  <tabstop>Field_6</tabstop>
   <tabstop>pushButton_24</tabstop>
-  <tabstop>pushButton_29</tabstop>
+  <tabstop>Field_14</tabstop>
   <tabstop>pushButton_34</tabstop>
   <tabstop>pushButton_39</tabstop>
   <tabstop>pushButton_5</tabstop>
@@ -3760,7 +3761,7 @@ border-bottom-color: rgb(255,255,255);</string>
   <tabstop>pushButton_10</tabstop>
   <tabstop>pushButton_20</tabstop>
   <tabstop>pushButton_25</tabstop>
-  <tabstop>pushButton_30</tabstop>
+  <tabstop>Field_15</tabstop>
   <tabstop>pushButton_35</tabstop>
   <tabstop>pushButton_40</tabstop>
   <tabstop>upbutton</tabstop>

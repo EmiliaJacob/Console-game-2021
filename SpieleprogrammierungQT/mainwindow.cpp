@@ -99,27 +99,88 @@ void MainWindow::on_downbutton_clicked()
 }
 
 //mapupdate
-void MainWindow::UpdatePositionInUi(QString oldPosition, QString newPosition)
+void MainWindow::UpdatePositionInUi(Field* newField)
 {
-    qDebug() << "OldPosition: " << oldPosition << " NewPosition: " << newPosition;
-    muveuser(oldPosition);
-    muveuser(newPosition);
+    //Determine new image
+    if(newField->FieldForward != "x" && newField->FieldBackward != "x" && newField->FieldLeft != "x" && newField->FieldRight != "x") {
+
+    }
+    else if(newField->FieldForward == "x" && newField->FieldBackward != "x" && newField->FieldLeft != "x" && newField->FieldRight != "x") {
+
+    }
+    else if(newField->FieldForward != "x" && newField->FieldBackward == "x" && newField->FieldLeft != "x" && newField->FieldRight != "x") {
+
+    }
+    else if(newField->FieldForward != "x" && newField->FieldBackward != "x" && newField->FieldLeft == "x" && newField->FieldRight != "x") {
+
+    }
+    else if(newField->FieldForward != "x" && newField->FieldBackward != "x" && newField->FieldLeft != "x" && newField->FieldRight == "x") {
+
+    }
+    else if(newField->FieldForward == "x" && newField->FieldBackward == "x" && newField->FieldLeft != "x" && newField->FieldRight != "x") {
+
+    }
+    else if(newField->FieldForward == "x" && newField->FieldBackward != "x" && newField->FieldLeft == "x" && newField->FieldRight != "x") {
+
+    }
+    else if(newField->FieldForward == "x" && newField->FieldBackward != "x" && newField->FieldLeft != "x" && newField->FieldRight == "x") {
+
+    }
+    else if(newField->FieldForward != "x" && newField->FieldBackward == "x" && newField->FieldLeft == "x" && newField->FieldRight != "x") {
+
+    }
+    else if(newField->FieldForward != "x" && newField->FieldBackward == "x" && newField->FieldLeft != "x" && newField->FieldRight == "x") {
+
+    }
+    else if(newField->FieldForward != "x" && newField->FieldBackward != "x" && newField->FieldLeft == "x" && newField->FieldRight == "x") {
+
+    }
+
+    qDebug() << "MOVED ONTO FIELD " + newField->Id;
+    QPixmap pixmap("sorcebilder/03nosw.png");
+    QIcon ButtonIcon(pixmap);
+    QPushButton* button = MainWindow::findChild<QPushButton*>("Field_"+newField->Id);
+    button->setIcon(ButtonIcon);
+    button->setIconSize(pixmap.rect().size());
+
+
 }
+
+void MainWindow::UpdateButtonImage(QString imageName, QString buttonName) {
+    QPixmap pixmap("sorcebilder/" + imageName + ".png");
+    QIcon ButtonIcon(pixmap);
+    QPushButton* button = MainWindow::findChild<QPushButton*>(buttonName);
+    button->setIcon(ButtonIcon);
+    button->setIconSize(pixmap.rect().size());
+}
+
 void MainWindow::muveuser(QString posishon){
-    QString button= "pushButton_"+ posishon;
-    QPushButton *but = MainWindow::findChild<QPushButton*>(button);
-    QString style=but->styleSheet();
-    if(style.length()>130){discoverUimap(button);}
-    style.insert(35, "0");
-    style.remove(36,1);
-    but->setStyleSheet(style);
+    //QString button= "pushButton_"+ posishon;
+    //QPushButton *but = MainWindow::findChild<QPushButton*>(button);
+    //QString style=but->styleSheet();
+    //if(style.length()>130){discoverUimap(button);}
+    //style.insert(35, "0");
+    //style.remove(36,1);
+    //but->setStyleSheet(style);
+    //QString button= "pushButton_"+ posishon;
+    //QPushButton but = MainWindow::findChild<QPushButton>(button);
+    //QString style=but.styleSheet();
+    //if(style.length()>130){discoverUimap(button);}
+    //style=but.styleSheet();
+    //if(style[35]=="1"){
+    //    style.insert(35, "0");
+    //    style.remove(36,1);
+    //}else{
+    //    style.insert(35, "1");
+    //    style.remove(36,1);
+    //}
+    //but.setStyleSheet(style);
 }
 void MainWindow::discoverUimap(QString button){
-    QPushButton *but = MainWindow::findChild<QPushButton*>(button);
-    QString styl=but->styleSheet();
-    styl.remove(44,43);
-    qDebug() << styl;
-    but->setStyleSheet(styl);
+    //QPushButton but = MainWindow::findChild<QPushButton>(button);
+    //QString styl=but->styleSheet();
+    //styl.remove(44,43);
+    //but->setStyleSheet(styl);
 }
 
 

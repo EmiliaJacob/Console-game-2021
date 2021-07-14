@@ -140,27 +140,27 @@ public:
     QPushButton *pushButton_11;
     QPushButton *pushButton_35;
     QPushButton *pushButton_7;
-    QPushButton *pushButton_8;
-    QPushButton *pushButton_32;
-    QPushButton *pushButton_18;
+    QPushButton *Field_1;
+    QPushButton *Field_12;
+    QPushButton *Field_5;
     QPushButton *pushButton_21;
     QPushButton *pushButton_3;
     QPushButton *pushButton_36;
-    QPushButton *pushButton_28;
+    QPushButton *Field_10;
     QPushButton *pushButton_31;
     QPushButton *pushButton_16;
     QPushButton *pushButton_1;
-    QPushButton *pushButton_33;
-    QPushButton *pushButton_29;
+    QPushButton *Field_13;
+    QPushButton *Field_14;
     QPushButton *pushButton_34;
-    QPushButton *pushButton_13;
+    QPushButton *Field_2;
     QPushButton *pushButton_12;
     QPushButton *pushButton_25;
-    QPushButton *pushButton_19;
+    QPushButton *Field_6;
     QPushButton *pushButton_26;
-    QPushButton *pushButton_23;
+    QPushButton *Field_7;
     QPushButton *pushButton_24;
-    QPushButton *pushButton_30;
+    QPushButton *Field_15;
     QPushButton *pushButton_4;
     QPushButton *pushButton_2;
     QPushButton *pushButton_5;
@@ -171,12 +171,12 @@ public:
     QPushButton *pushButton_10;
     QPushButton *pushButton_15;
     QPushButton *pushButton_38;
-    QPushButton *pushButton_9;
-    QPushButton *pushButton_14;
-    QPushButton *pushButton_22;
+    QPushButton *Field_4;
+    QPushButton *Field_3;
+    QPushButton *Field_9;
     QPushButton *pushButton_40;
-    QPushButton *pushButton_17;
-    QPushButton *pushButton_27;
+    QPushButton *Field_8;
+    QPushButton *Field_11;
     QWidget *verticalLayoutWidget;
     QVBoxLayout *verticalLayout;
     QPushButton *upbutton;
@@ -1155,50 +1155,49 @@ public:
 
         gridLayout_7->addWidget(pushButton_7, 1, 1, 1, 1);
 
-        pushButton_8 = new QPushButton(gridLayoutWidget_6);
-        pushButton_8->setObjectName(QString::fromUtf8("pushButton_8"));
-        pushButton_8->setEnabled(false);
-        sizePolicy3.setHeightForWidth(pushButton_8->sizePolicy().hasHeightForWidth());
-        pushButton_8->setSizePolicy(sizePolicy3);
-        pushButton_8->setMinimumSize(QSize(60, 60));
-        pushButton_8->setMaximumSize(QSize(60, 60));
-        pushButton_8->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/12ow.png);\n"
+        Field_1 = new QPushButton(gridLayoutWidget_6);
+        Field_1->setObjectName(QString::fromUtf8("Field_1"));
+        Field_1->setEnabled(false);
+        sizePolicy3.setHeightForWidth(Field_1->sizePolicy().hasHeightForWidth());
+        Field_1->setSizePolicy(sizePolicy3);
+        Field_1->setMinimumSize(QSize(60, 60));
+        Field_1->setMaximumSize(QSize(60, 60));
+        Field_1->setAutoFillBackground(true);
+        Field_1->setStyleSheet(QString::fromUtf8("\n"
+"color: rgb(170, 255, 127);"));
+        Field_1->setFlat(false);
+
+        gridLayout_7->addWidget(Field_1, 3, 1, 1, 1);
+
+        Field_12 = new QPushButton(gridLayoutWidget_6);
+        Field_12->setObjectName(QString::fromUtf8("Field_12"));
+        Field_12->setEnabled(false);
+        sizePolicy3.setHeightForWidth(Field_12->sizePolicy().hasHeightForWidth());
+        Field_12->setSizePolicy(sizePolicy3);
+        Field_12->setMinimumSize(QSize(60, 60));
+        Field_12->setMaximumSize(QSize(60, 60));
+        Field_12->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/13nosw.png);\n"
 "background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
 "border-color: rgb(255, 255, 255);\n"
 ""));
 
-        gridLayout_7->addWidget(pushButton_8, 3, 1, 1, 1);
+        gridLayout_7->addWidget(Field_12, 1, 6, 1, 1);
 
-        pushButton_32 = new QPushButton(gridLayoutWidget_6);
-        pushButton_32->setObjectName(QString::fromUtf8("pushButton_32"));
-        pushButton_32->setEnabled(false);
-        sizePolicy3.setHeightForWidth(pushButton_32->sizePolicy().hasHeightForWidth());
-        pushButton_32->setSizePolicy(sizePolicy3);
-        pushButton_32->setMinimumSize(QSize(60, 60));
-        pushButton_32->setMaximumSize(QSize(60, 60));
-        pushButton_32->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/13nosw.png);\n"
+        Field_5 = new QPushButton(gridLayoutWidget_6);
+        Field_5->setObjectName(QString::fromUtf8("Field_5"));
+        Field_5->setEnabled(false);
+        sizePolicy3.setHeightForWidth(Field_5->sizePolicy().hasHeightForWidth());
+        Field_5->setSizePolicy(sizePolicy3);
+        Field_5->setMinimumSize(QSize(60, 60));
+        Field_5->setMaximumSize(QSize(60, 60));
+        Field_5->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/12osw.png);\n"
 "background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
 "border-color: rgb(255, 255, 255);\n"
 ""));
 
-        gridLayout_7->addWidget(pushButton_32, 1, 6, 1, 1);
-
-        pushButton_18 = new QPushButton(gridLayoutWidget_6);
-        pushButton_18->setObjectName(QString::fromUtf8("pushButton_18"));
-        pushButton_18->setEnabled(false);
-        sizePolicy3.setHeightForWidth(pushButton_18->sizePolicy().hasHeightForWidth());
-        pushButton_18->setSizePolicy(sizePolicy3);
-        pushButton_18->setMinimumSize(QSize(60, 60));
-        pushButton_18->setMaximumSize(QSize(60, 60));
-        pushButton_18->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/12osw.png);\n"
-"background-image:url(./sorcebilder/0.png);\n"
-"border: 0px solid;\n"
-"border-color: rgb(255, 255, 255);\n"
-""));
-
-        gridLayout_7->addWidget(pushButton_18, 3, 3, 1, 1);
+        gridLayout_7->addWidget(Field_5, 3, 3, 1, 1);
 
         pushButton_21 = new QPushButton(gridLayoutWidget_6);
         pushButton_21->setObjectName(QString::fromUtf8("pushButton_21"));
@@ -1244,20 +1243,20 @@ public:
 
         gridLayout_7->addWidget(pushButton_36, 0, 7, 1, 1);
 
-        pushButton_28 = new QPushButton(gridLayoutWidget_6);
-        pushButton_28->setObjectName(QString::fromUtf8("pushButton_28"));
-        pushButton_28->setEnabled(false);
-        sizePolicy3.setHeightForWidth(pushButton_28->sizePolicy().hasHeightForWidth());
-        pushButton_28->setSizePolicy(sizePolicy3);
-        pushButton_28->setMinimumSize(QSize(60, 60));
-        pushButton_28->setMaximumSize(QSize(60, 60));
-        pushButton_28->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/13no.png);\n"
+        Field_10 = new QPushButton(gridLayoutWidget_6);
+        Field_10->setObjectName(QString::fromUtf8("Field_10"));
+        Field_10->setEnabled(false);
+        sizePolicy3.setHeightForWidth(Field_10->sizePolicy().hasHeightForWidth());
+        Field_10->setSizePolicy(sizePolicy3);
+        Field_10->setMinimumSize(QSize(60, 60));
+        Field_10->setMaximumSize(QSize(60, 60));
+        Field_10->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/13no.png);\n"
 "background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
 "border-color: rgb(255, 255, 255);\n"
 ""));
 
-        gridLayout_7->addWidget(pushButton_28, 3, 5, 1, 1);
+        gridLayout_7->addWidget(Field_10, 3, 5, 1, 1);
 
         pushButton_31 = new QPushButton(gridLayoutWidget_6);
         pushButton_31->setObjectName(QString::fromUtf8("pushButton_31"));
@@ -1296,42 +1295,42 @@ public:
         pushButton_1->setSizePolicy(sizePolicy3);
         pushButton_1->setMinimumSize(QSize(60, 60));
         pushButton_1->setMaximumSize(QSize(60, 60));
-        pushButton_1->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/13os.png);\n"
+        pushButton_1->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
 "border-color: rgb(255, 255, 255);\n"
 ""));
 
         gridLayout_7->addWidget(pushButton_1, 0, 0, 1, 1);
 
-        pushButton_33 = new QPushButton(gridLayoutWidget_6);
-        pushButton_33->setObjectName(QString::fromUtf8("pushButton_33"));
-        pushButton_33->setEnabled(false);
-        sizePolicy3.setHeightForWidth(pushButton_33->sizePolicy().hasHeightForWidth());
-        pushButton_33->setSizePolicy(sizePolicy3);
-        pushButton_33->setMinimumSize(QSize(60, 60));
-        pushButton_33->setMaximumSize(QSize(60, 60));
-        pushButton_33->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/13now.png);\n"
+        Field_13 = new QPushButton(gridLayoutWidget_6);
+        Field_13->setObjectName(QString::fromUtf8("Field_13"));
+        Field_13->setEnabled(false);
+        sizePolicy3.setHeightForWidth(Field_13->sizePolicy().hasHeightForWidth());
+        Field_13->setSizePolicy(sizePolicy3);
+        Field_13->setMinimumSize(QSize(60, 60));
+        Field_13->setMaximumSize(QSize(60, 60));
+        Field_13->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/13now.png);\n"
 "background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
 "border-color: rgb(255, 255, 255);\n"
 ""));
 
-        gridLayout_7->addWidget(pushButton_33, 3, 6, 1, 1);
+        gridLayout_7->addWidget(Field_13, 3, 6, 1, 1);
 
-        pushButton_29 = new QPushButton(gridLayoutWidget_6);
-        pushButton_29->setObjectName(QString::fromUtf8("pushButton_29"));
-        pushButton_29->setEnabled(false);
-        sizePolicy3.setHeightForWidth(pushButton_29->sizePolicy().hasHeightForWidth());
-        pushButton_29->setSizePolicy(sizePolicy3);
-        pushButton_29->setMinimumSize(QSize(60, 60));
-        pushButton_29->setMaximumSize(QSize(60, 60));
-        pushButton_29->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/12sw.png);\n"
+        Field_14 = new QPushButton(gridLayoutWidget_6);
+        Field_14->setObjectName(QString::fromUtf8("Field_14"));
+        Field_14->setEnabled(false);
+        sizePolicy3.setHeightForWidth(Field_14->sizePolicy().hasHeightForWidth());
+        Field_14->setSizePolicy(sizePolicy3);
+        Field_14->setMinimumSize(QSize(60, 60));
+        Field_14->setMaximumSize(QSize(60, 60));
+        Field_14->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/12sw.png);\n"
 "background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
 "border-color: rgb(255, 255, 255);\n"
 ""));
 
-        gridLayout_7->addWidget(pushButton_29, 4, 5, 1, 1);
+        gridLayout_7->addWidget(Field_14, 4, 5, 1, 1);
 
         pushButton_34 = new QPushButton(gridLayoutWidget_6);
         pushButton_34->setObjectName(QString::fromUtf8("pushButton_34"));
@@ -1348,20 +1347,20 @@ public:
 
         gridLayout_7->addWidget(pushButton_34, 4, 6, 1, 1);
 
-        pushButton_13 = new QPushButton(gridLayoutWidget_6);
-        pushButton_13->setObjectName(QString::fromUtf8("pushButton_13"));
-        pushButton_13->setEnabled(false);
-        sizePolicy3.setHeightForWidth(pushButton_13->sizePolicy().hasHeightForWidth());
-        pushButton_13->setSizePolicy(sizePolicy3);
-        pushButton_13->setMinimumSize(QSize(60, 60));
-        pushButton_13->setMaximumSize(QSize(60, 60));
-        pushButton_13->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/11now.png);\n"
+        Field_2 = new QPushButton(gridLayoutWidget_6);
+        Field_2->setObjectName(QString::fromUtf8("Field_2"));
+        Field_2->setEnabled(false);
+        sizePolicy3.setHeightForWidth(Field_2->sizePolicy().hasHeightForWidth());
+        Field_2->setSizePolicy(sizePolicy3);
+        Field_2->setMinimumSize(QSize(60, 60));
+        Field_2->setMaximumSize(QSize(60, 60));
+        Field_2->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/11now.png);\n"
 "background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
 "border-color: rgb(255, 255, 255);\n"
 ""));
 
-        gridLayout_7->addWidget(pushButton_13, 3, 2, 1, 1);
+        gridLayout_7->addWidget(Field_2, 3, 2, 1, 1);
 
         pushButton_12 = new QPushButton(gridLayoutWidget_6);
         pushButton_12->setObjectName(QString::fromUtf8("pushButton_12"));
@@ -1393,20 +1392,20 @@ public:
 
         gridLayout_7->addWidget(pushButton_25, 5, 4, 1, 1);
 
-        pushButton_19 = new QPushButton(gridLayoutWidget_6);
-        pushButton_19->setObjectName(QString::fromUtf8("pushButton_19"));
-        pushButton_19->setEnabled(false);
-        sizePolicy3.setHeightForWidth(pushButton_19->sizePolicy().hasHeightForWidth());
-        pushButton_19->setSizePolicy(sizePolicy3);
-        pushButton_19->setMinimumSize(QSize(60, 60));
-        pushButton_19->setMaximumSize(QSize(60, 60));
-        pushButton_19->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/12ns.png);\n"
+        Field_6 = new QPushButton(gridLayoutWidget_6);
+        Field_6->setObjectName(QString::fromUtf8("Field_6"));
+        Field_6->setEnabled(false);
+        sizePolicy3.setHeightForWidth(Field_6->sizePolicy().hasHeightForWidth());
+        Field_6->setSizePolicy(sizePolicy3);
+        Field_6->setMinimumSize(QSize(60, 60));
+        Field_6->setMaximumSize(QSize(60, 60));
+        Field_6->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/12ns.png);\n"
 "background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
 "border-color: rgb(255, 255, 255);\n"
 ""));
 
-        gridLayout_7->addWidget(pushButton_19, 4, 3, 1, 1);
+        gridLayout_7->addWidget(Field_6, 4, 3, 1, 1);
 
         pushButton_26 = new QPushButton(gridLayoutWidget_6);
         pushButton_26->setObjectName(QString::fromUtf8("pushButton_26"));
@@ -1423,19 +1422,19 @@ public:
 
         gridLayout_7->addWidget(pushButton_26, 0, 5, 1, 1);
 
-        pushButton_23 = new QPushButton(gridLayoutWidget_6);
-        pushButton_23->setObjectName(QString::fromUtf8("pushButton_23"));
-        pushButton_23->setEnabled(false);
-        sizePolicy3.setHeightForWidth(pushButton_23->sizePolicy().hasHeightForWidth());
-        pushButton_23->setSizePolicy(sizePolicy3);
-        pushButton_23->setMaximumSize(QSize(60, 60));
-        pushButton_23->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/12nsw.png);\n"
+        Field_7 = new QPushButton(gridLayoutWidget_6);
+        Field_7->setObjectName(QString::fromUtf8("Field_7"));
+        Field_7->setEnabled(false);
+        sizePolicy3.setHeightForWidth(Field_7->sizePolicy().hasHeightForWidth());
+        Field_7->setSizePolicy(sizePolicy3);
+        Field_7->setMaximumSize(QSize(60, 60));
+        Field_7->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/12nsw.png);\n"
 "background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
 "border-color: rgb(255, 255, 255);\n"
 ""));
 
-        gridLayout_7->addWidget(pushButton_23, 3, 4, 1, 1);
+        gridLayout_7->addWidget(Field_7, 3, 4, 1, 1);
 
         pushButton_24 = new QPushButton(gridLayoutWidget_6);
         pushButton_24->setObjectName(QString::fromUtf8("pushButton_24"));
@@ -1451,20 +1450,20 @@ public:
 
         gridLayout_7->addWidget(pushButton_24, 4, 4, 1, 1);
 
-        pushButton_30 = new QPushButton(gridLayoutWidget_6);
-        pushButton_30->setObjectName(QString::fromUtf8("pushButton_30"));
-        pushButton_30->setEnabled(false);
-        sizePolicy3.setHeightForWidth(pushButton_30->sizePolicy().hasHeightForWidth());
-        pushButton_30->setSizePolicy(sizePolicy3);
-        pushButton_30->setMinimumSize(QSize(60, 60));
-        pushButton_30->setMaximumSize(QSize(60, 60));
-        pushButton_30->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/12now.png);\n"
+        Field_15 = new QPushButton(gridLayoutWidget_6);
+        Field_15->setObjectName(QString::fromUtf8("Field_15"));
+        Field_15->setEnabled(false);
+        sizePolicy3.setHeightForWidth(Field_15->sizePolicy().hasHeightForWidth());
+        Field_15->setSizePolicy(sizePolicy3);
+        Field_15->setMinimumSize(QSize(60, 60));
+        Field_15->setMaximumSize(QSize(60, 60));
+        Field_15->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/12now.png);\n"
 "background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
 "border-color: rgb(255, 255, 255);\n"
 ""));
 
-        gridLayout_7->addWidget(pushButton_30, 5, 5, 1, 1);
+        gridLayout_7->addWidget(Field_15, 5, 5, 1, 1);
 
         pushButton_4 = new QPushButton(gridLayoutWidget_6);
         pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
@@ -1564,7 +1563,6 @@ public:
         pushButton_6->setMinimumSize(QSize(60, 60));
         pushButton_6->setMaximumSize(QSize(60, 60));
         pushButton_6->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/13sw.png);\n"
-"background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
 "border-color: rgb(255, 255, 255);\n"
 ""));
@@ -1616,49 +1614,48 @@ public:
 
         gridLayout_7->addWidget(pushButton_38, 3, 7, 1, 1);
 
-        pushButton_9 = new QPushButton(gridLayoutWidget_6);
-        pushButton_9->setObjectName(QString::fromUtf8("pushButton_9"));
-        pushButton_9->setEnabled(false);
-        sizePolicy3.setHeightForWidth(pushButton_9->sizePolicy().hasHeightForWidth());
-        pushButton_9->setSizePolicy(sizePolicy3);
-        pushButton_9->setMinimumSize(QSize(60, 60));
-        pushButton_9->setMaximumSize(QSize(60, 60));
-        pushButton_9->setStyleSheet(QString::fromUtf8("background-image:url(../sorcebilder/12ow.png);\n"
+        Field_4 = new QPushButton(gridLayoutWidget_6);
+        Field_4->setObjectName(QString::fromUtf8("Field_4"));
+        Field_4->setEnabled(false);
+        sizePolicy3.setHeightForWidth(Field_4->sizePolicy().hasHeightForWidth());
+        Field_4->setSizePolicy(sizePolicy3);
+        Field_4->setMinimumSize(QSize(60, 60));
+        Field_4->setMaximumSize(QSize(60, 60));
+        Field_4->setStyleSheet(QString::fromUtf8("background-image:url(../sorcebilder/12ow.png);\n"
 "background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
 "border-color: rgb(255, 255, 255);\n"
 ""));
 
-        gridLayout_7->addWidget(pushButton_9, 4, 1, 1, 1);
+        gridLayout_7->addWidget(Field_4, 4, 1, 1, 1);
 
-        pushButton_14 = new QPushButton(gridLayoutWidget_6);
-        pushButton_14->setObjectName(QString::fromUtf8("pushButton_14"));
-        pushButton_14->setEnabled(false);
-        sizePolicy3.setHeightForWidth(pushButton_14->sizePolicy().hasHeightForWidth());
-        pushButton_14->setSizePolicy(sizePolicy3);
-        pushButton_14->setMinimumSize(QSize(60, 60));
-        pushButton_14->setMaximumSize(QSize(60, 60));
-        pushButton_14->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/11sw.png);\n"
+        Field_3 = new QPushButton(gridLayoutWidget_6);
+        Field_3->setObjectName(QString::fromUtf8("Field_3"));
+        Field_3->setEnabled(false);
+        sizePolicy3.setHeightForWidth(Field_3->sizePolicy().hasHeightForWidth());
+        Field_3->setSizePolicy(sizePolicy3);
+        Field_3->setMinimumSize(QSize(60, 60));
+        Field_3->setMaximumSize(QSize(60, 60));
+        Field_3->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/0.png);\n"
+"border: 0px solid;\n"
+"border-color: rgb(255, 255, 255);\n"
+""));
+
+        gridLayout_7->addWidget(Field_3, 4, 2, 1, 1);
+
+        Field_9 = new QPushButton(gridLayoutWidget_6);
+        Field_9->setObjectName(QString::fromUtf8("Field_9"));
+        Field_9->setEnabled(false);
+        sizePolicy3.setHeightForWidth(Field_9->sizePolicy().hasHeightForWidth());
+        Field_9->setSizePolicy(sizePolicy3);
+        Field_9->setMaximumSize(QSize(60, 60));
+        Field_9->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/12nos.png);\n"
 "background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
 "border-color: rgb(255, 255, 255);\n"
 ""));
 
-        gridLayout_7->addWidget(pushButton_14, 4, 2, 1, 1);
-
-        pushButton_22 = new QPushButton(gridLayoutWidget_6);
-        pushButton_22->setObjectName(QString::fromUtf8("pushButton_22"));
-        pushButton_22->setEnabled(false);
-        sizePolicy3.setHeightForWidth(pushButton_22->sizePolicy().hasHeightForWidth());
-        pushButton_22->setSizePolicy(sizePolicy3);
-        pushButton_22->setMaximumSize(QSize(60, 60));
-        pushButton_22->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/12nos.png);\n"
-"background-image:url(./sorcebilder/0.png);\n"
-"border: 0px solid;\n"
-"border-color: rgb(255, 255, 255);\n"
-""));
-
-        gridLayout_7->addWidget(pushButton_22, 1, 4, 1, 1);
+        gridLayout_7->addWidget(Field_9, 1, 4, 1, 1);
 
         pushButton_40 = new QPushButton(gridLayoutWidget_6);
         pushButton_40->setObjectName(QString::fromUtf8("pushButton_40"));
@@ -1675,35 +1672,35 @@ public:
 
         gridLayout_7->addWidget(pushButton_40, 5, 7, 1, 1);
 
-        pushButton_17 = new QPushButton(gridLayoutWidget_6);
-        pushButton_17->setObjectName(QString::fromUtf8("pushButton_17"));
-        pushButton_17->setEnabled(false);
-        sizePolicy3.setHeightForWidth(pushButton_17->sizePolicy().hasHeightForWidth());
-        pushButton_17->setSizePolicy(sizePolicy3);
-        pushButton_17->setMinimumSize(QSize(60, 60));
-        pushButton_17->setMaximumSize(QSize(60, 60));
-        pushButton_17->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/11.png);\n"
+        Field_8 = new QPushButton(gridLayoutWidget_6);
+        Field_8->setObjectName(QString::fromUtf8("Field_8"));
+        Field_8->setEnabled(false);
+        sizePolicy3.setHeightForWidth(Field_8->sizePolicy().hasHeightForWidth());
+        Field_8->setSizePolicy(sizePolicy3);
+        Field_8->setMinimumSize(QSize(60, 60));
+        Field_8->setMaximumSize(QSize(60, 60));
+        Field_8->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/11.png);\n"
 "background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
 "border-color: rgb(255, 255, 255);\n"
 ""));
 
-        gridLayout_7->addWidget(pushButton_17, 1, 3, 1, 1);
+        gridLayout_7->addWidget(Field_8, 1, 3, 1, 1);
 
-        pushButton_27 = new QPushButton(gridLayoutWidget_6);
-        pushButton_27->setObjectName(QString::fromUtf8("pushButton_27"));
-        pushButton_27->setEnabled(false);
-        sizePolicy3.setHeightForWidth(pushButton_27->sizePolicy().hasHeightForWidth());
-        pushButton_27->setSizePolicy(sizePolicy3);
-        pushButton_27->setMinimumSize(QSize(60, 60));
-        pushButton_27->setMaximumSize(QSize(60, 60));
-        pushButton_27->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/13nos_w.png);\n"
+        Field_11 = new QPushButton(gridLayoutWidget_6);
+        Field_11->setObjectName(QString::fromUtf8("Field_11"));
+        Field_11->setEnabled(false);
+        sizePolicy3.setHeightForWidth(Field_11->sizePolicy().hasHeightForWidth());
+        Field_11->setSizePolicy(sizePolicy3);
+        Field_11->setMinimumSize(QSize(60, 60));
+        Field_11->setMaximumSize(QSize(60, 60));
+        Field_11->setStyleSheet(QString::fromUtf8("background-image:url(./sorcebilder/13nos_w.png);\n"
 "background-image:url(./sorcebilder/0.png);\n"
 "border: 0px solid;\n"
 "border-color: rgb(255, 255, 255);\n"
 ""));
 
-        gridLayout_7->addWidget(pushButton_27, 1, 5, 1, 1);
+        gridLayout_7->addWidget(Field_11, 1, 5, 1, 1);
 
         stackedWidget_2->addWidget(page_4);
         verticalLayoutWidget = new QWidget(Map);
@@ -1824,34 +1821,34 @@ public:
         QWidget::setTabOrder(pushButton_36, pushButton_2);
         QWidget::setTabOrder(pushButton_2, pushButton_7);
         QWidget::setTabOrder(pushButton_7, pushButton_12);
-        QWidget::setTabOrder(pushButton_12, pushButton_17);
-        QWidget::setTabOrder(pushButton_17, pushButton_22);
-        QWidget::setTabOrder(pushButton_22, pushButton_27);
-        QWidget::setTabOrder(pushButton_27, pushButton_32);
-        QWidget::setTabOrder(pushButton_32, pushButton_37);
+        QWidget::setTabOrder(pushButton_12, Field_8);
+        QWidget::setTabOrder(Field_8, Field_9);
+        QWidget::setTabOrder(Field_9, Field_11);
+        QWidget::setTabOrder(Field_11, Field_12);
+        QWidget::setTabOrder(Field_12, pushButton_37);
         QWidget::setTabOrder(pushButton_37, pushButton_3);
-        QWidget::setTabOrder(pushButton_3, pushButton_8);
-        QWidget::setTabOrder(pushButton_8, pushButton_13);
-        QWidget::setTabOrder(pushButton_13, pushButton_18);
-        QWidget::setTabOrder(pushButton_18, pushButton_23);
-        QWidget::setTabOrder(pushButton_23, pushButton_28);
-        QWidget::setTabOrder(pushButton_28, pushButton_38);
-        QWidget::setTabOrder(pushButton_38, pushButton_33);
-        QWidget::setTabOrder(pushButton_33, pushButton_4);
-        QWidget::setTabOrder(pushButton_4, pushButton_9);
-        QWidget::setTabOrder(pushButton_9, pushButton_14);
-        QWidget::setTabOrder(pushButton_14, pushButton_19);
-        QWidget::setTabOrder(pushButton_19, pushButton_24);
-        QWidget::setTabOrder(pushButton_24, pushButton_29);
-        QWidget::setTabOrder(pushButton_29, pushButton_34);
+        QWidget::setTabOrder(pushButton_3, Field_1);
+        QWidget::setTabOrder(Field_1, Field_2);
+        QWidget::setTabOrder(Field_2, Field_5);
+        QWidget::setTabOrder(Field_5, Field_7);
+        QWidget::setTabOrder(Field_7, Field_10);
+        QWidget::setTabOrder(Field_10, pushButton_38);
+        QWidget::setTabOrder(pushButton_38, Field_13);
+        QWidget::setTabOrder(Field_13, pushButton_4);
+        QWidget::setTabOrder(pushButton_4, Field_4);
+        QWidget::setTabOrder(Field_4, Field_3);
+        QWidget::setTabOrder(Field_3, Field_6);
+        QWidget::setTabOrder(Field_6, pushButton_24);
+        QWidget::setTabOrder(pushButton_24, Field_14);
+        QWidget::setTabOrder(Field_14, pushButton_34);
         QWidget::setTabOrder(pushButton_34, pushButton_39);
         QWidget::setTabOrder(pushButton_39, pushButton_5);
         QWidget::setTabOrder(pushButton_5, pushButton_15);
         QWidget::setTabOrder(pushButton_15, pushButton_10);
         QWidget::setTabOrder(pushButton_10, pushButton_20);
         QWidget::setTabOrder(pushButton_20, pushButton_25);
-        QWidget::setTabOrder(pushButton_25, pushButton_30);
-        QWidget::setTabOrder(pushButton_30, pushButton_35);
+        QWidget::setTabOrder(pushButton_25, Field_15);
+        QWidget::setTabOrder(Field_15, pushButton_35);
         QWidget::setTabOrder(pushButton_35, pushButton_40);
         QWidget::setTabOrder(pushButton_40, upbutton);
         QWidget::setTabOrder(upbutton, downbutton);
@@ -1998,27 +1995,27 @@ public:
         pushButton_11->setText(QString());
         pushButton_35->setText(QString());
         pushButton_7->setText(QString());
-        pushButton_8->setText(QString());
-        pushButton_32->setText(QString());
-        pushButton_18->setText(QString());
+        Field_1->setText(QString());
+        Field_12->setText(QString());
+        Field_5->setText(QString());
         pushButton_21->setText(QString());
         pushButton_3->setText(QString());
         pushButton_36->setText(QString());
-        pushButton_28->setText(QString());
+        Field_10->setText(QString());
         pushButton_31->setText(QString());
         pushButton_16->setText(QString());
         pushButton_1->setText(QString());
-        pushButton_33->setText(QString());
-        pushButton_29->setText(QString());
+        Field_13->setText(QString());
+        Field_14->setText(QString());
         pushButton_34->setText(QString());
-        pushButton_13->setText(QString());
+        Field_2->setText(QString());
         pushButton_12->setText(QString());
         pushButton_25->setText(QString());
-        pushButton_19->setText(QString());
+        Field_6->setText(QString());
         pushButton_26->setText(QString());
-        pushButton_23->setText(QString());
+        Field_7->setText(QString());
         pushButton_24->setText(QString());
-        pushButton_30->setText(QString());
+        Field_15->setText(QString());
         pushButton_4->setText(QString());
         pushButton_2->setText(QString());
         pushButton_5->setText(QString());
@@ -2029,12 +2026,12 @@ public:
         pushButton_10->setText(QString());
         pushButton_15->setText(QString());
         pushButton_38->setText(QString());
-        pushButton_9->setText(QString());
-        pushButton_14->setText(QString());
-        pushButton_22->setText(QString());
+        Field_4->setText(QString());
+        Field_3->setText(QString());
+        Field_9->setText(QString());
         pushButton_40->setText(QString());
-        pushButton_17->setText(QString());
-        pushButton_27->setText(QString());
+        Field_8->setText(QString());
+        Field_11->setText(QString());
         upbutton->setText(QCoreApplication::translate("MainWindow", "\311\205", nullptr));
         Florlabel->setText(QCoreApplication::translate("MainWindow", "  UG 0", nullptr));
         downbutton->setText(QCoreApplication::translate("MainWindow", "V", nullptr));
